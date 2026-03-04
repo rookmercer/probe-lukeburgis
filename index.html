@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Probe</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 40px;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.success {
+    background: #e8f5e8;
+    border: 1px solid #4caf50;
+    color: #2e7d32;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    text-align: center;
+    display: none;
+}
+
+form {
+    margin-bottom: 60px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: inherit;
+    resize: vertical;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    background: #000;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333;
+}
+
+button:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.probes {
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+}
+
+.probe {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.probe:last-child {
+    border-bottom: none;
+}
+
+.probe-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.probe-meta {
+    font-size: 14px;
+    color: #666;
+}
+
+@media (max-width: 600px) {
+    body {
+        margin: 40px auto;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+}
+</style>
+</head>
+<body>
+    <h1>Probe</h1>
+    
+    <div id="success" class="success">
+        Thank you! Your probe has been submitted for review.
+    </div>
+    
+    <form id="probeForm">
+        <textarea id="probeText" placeholder="Share your probe..." required></textarea>
+        <input type="text" id="submitterName" placeholder="Your name (optional)">
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div class="probes" id="probes">
+        <!-- Sample probes for now -->
+        <div class="probe">
+            <div class="probe-text">Why do we seek certainty in a universe that seems fundamentally uncertain?</div>
+            <div class="probe-meta">Sarah M. • Mar 2, 2026</div>
+        </div>
+        
+        <div class="probe">
+            <div class="probe-text">What if our greatest innovations come from the courage to stand alone with an unpopular truth?</div>
+            <div class="probe-meta">Anonymous • Feb 25, 2026</div>
+        </div>
+        
+        <div class="probe">
+            <div class="probe-text">Is questioning everything just another form of certainty?</div>
+            <div class="probe-meta">Michael R. • Feb 12, 2026</div>
+        </div>
+    </div>
+
+    <script>
+    document.getElementById('probeForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const probeText = document.getElementById('probeText').value;
+        const submitterName = document.getElementById('submitterName').value || 'Anonymous';
+        const button = this.querySelector('button');
+        
+        // Disable button during submission
+        button.disabled = true;
+        button.textContent = 'Submitting...';
+        
+        // Send to backend API (to be implemented)
+        fetch('/api/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                text: probeText,
+                name: submitterName
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Show success message
+            document.getElementById('success').style.display = 'block';
+            
+            // Clear form
+            document.getElementById('probeText').value = '';
+            document.getElementById('submitterName').value = '';
+            
+            // Reset button
+            button.disabled = false;
+            button.textContent = 'Submit';
+            
+            // Scroll to success message
+            document.getElementById('success').scrollIntoView({ behavior: 'smooth' });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // For now, just show success anyway (backend not implemented yet)
+            document.getElementById('success').style.display = 'block';
+            document.getElementById('probeText').value = '';
+            document.getElementById('submitterName').value = '';
+            button.disabled = false;
+            button.textContent = 'Submit';
+        });
+    });
+    </script>
+</body>
+</html>

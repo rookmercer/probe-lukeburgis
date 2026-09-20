@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formation — lukeburgis.com — lukeburgis.com</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,serif;background:#FAF8F3;color:#111}
+.wf-note{font-family:monospace;font-size:11px;background:#fffbe6;border-left:3px solid #e8b400;padding:6px 10px;color:#666;margin:6px 0;line-height:1.5}
+.needs-luke{background:#fff0f0;border:2px dashed #c00;padding:6px 10px;font-family:monospace;font-size:11px;color:#c00;margin:6px 0;line-height:1.5}
+.sec-tag{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#aaa;position:absolute;top:8px;right:12px}
+section{position:relative;border:2px solid #ccc;background:#fff;padding:48px}
+section+section{border-top:none}
+nav{background:#fff;border:2px solid #ccc;padding:18px 48px;display:flex;align-items:center;justify-content:space-between}
+.logo-box{border:2px solid #111;padding:8px 18px;font-family:monospace;font-size:12px;color:#888}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:monospace;font-size:13px}
+.nav-links li.active{font-weight:bold;text-decoration:underline}
+.nav-cta{border:2px solid #111;background:#111;color:#fff;padding:10px 18px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+h1{font-size:52px;font-weight:normal;line-height:1.1;max-width:800px;margin-bottom:20px}
+h2{font-size:28px;font-weight:normal;margin-bottom:16px}
+h3{font-size:20px;font-weight:normal;margin-bottom:10px}
+p{font-size:16px;line-height:1.7;max-width:680px;margin-bottom:12px;color:#222}
+.btn-dark{display:inline-block;background:#111;color:#fff;padding:15px 34px;font-family:monospace;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin:6px 10px 6px 0;text-decoration:none}
+.btn-light{display:inline-block;background:#fff;color:#111;border:2px solid #111;padding:13px 32px;font-family:monospace;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin:6px 0;text-decoration:none}
+.problem-section{background:#1a1a1a;color:#fff;padding:64px 48px;border:2px solid #000;border-top:none}
+.problem-section h2{color:#fff;font-size:32px;margin-bottom:20px}
+.problem-section p{color:#ccc;max-width:680px}
+.freebie{background:#f0ede8;border:2px solid #ccc;border-top:none;padding:48px}
+.freebie h2{font-size:22px;font-weight:normal;margin-bottom:10px}
+.freebie-form{display:flex;margin-top:20px;max-width:440px}
+.freebie-form input{flex:1;border:2px solid #111;padding:12px 16px;font-family:monospace;font-size:14px;background:#fff}
+.freebie-form button{border:2px solid #111;background:#111;color:#fff;padding:12px 20px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;white-space:nowrap}
+.what-it-is{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:24px}
+.course-visual{border:2px solid #ccc;background:#e8e8e8;height:260px;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#888}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.who-card{border:2px solid #ccc;padding:18px;background:#fafafa}
+.who-card h4{font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.who-card p{font-size:14px;color:#555;max-width:none;margin:0}
+.modules{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.module{border:2px solid #ccc;padding:16px 20px;background:#fafafa;display:flex;gap:14px;align-items:flex-start}
+.module-num{font-family:monospace;font-size:22px;color:#ccc;min-width:32px;line-height:1}
+.module-text h4{font-size:14px;margin-bottom:4px}
+.module-text p{font-size:13px;color:#666;max-width:none;margin:0}
+.social-proof{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:20px}
+.proof-item{border-left:3px solid #111;padding-left:14px}
+.proof-item blockquote{font-size:15px;line-height:1.6;font-style:italic;margin-bottom:8px}
+.proof-item cite{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
+.pricing-box{border:3px solid #111;padding:40px;max-width:480px;text-align:center;margin-top:24px}
+.pricing-box .price{font-size:52px;font-weight:normal;font-family:monospace;margin-bottom:8px}
+.pricing-box .price-note{font-family:monospace;font-size:13px;color:#666;margin-bottom:24px}
+.faq{margin-top:22px}
+.faq-item{border:2px solid #ccc;padding:20px 24px;background:#fafafa;margin-bottom:10px}
+.faq-item h4{font-size:15px;margin-bottom:8px}
+.faq-item p{font-size:14px;color:#555;max-width:none;margin:0}
+.corporate-banner{background:#f0ede8;border:2px solid #ccc;border-top:none;padding:32px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+/* Soulcraft logo inline SVG sizing */
+.soulcraft-logo{width:340px;height:auto;display:block;margin-bottom:20px}
+footer{background:#1a1a1a;color:#777;padding:48px;font-family:monospace;font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
+footer h4{color:#fff;margin-bottom:14px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+footer ul{list-style:none}
+footer li{margin-bottom:7px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-box">[ LOGO — B&amp;W single-color version <span style="color:#c00">NEEDS LUKE</span> ]</div>
+  <ul class="nav-links">
+    <li>Books</li>
+    <li>Speaking</li>
+    <li class="active">Formation</li>
+    <li>Writing</li>
+    <li>About</li>
+  </ul>
+  <div class="nav-cta">Newsletter →</div>
+</nav>
+<div class="wf-note">NAV: 5 items + Newsletter CTA. No cart, no Shop. Active = Courses.</div>
+
+<!-- §1 HERO -->
+<section style="background:#eeebe6;min-height:420px;display:flex;flex-direction:column;justify-content:center">
+  <span class="sec-tag">§1 HERO</span>
+  <!-- Soulcraft logo SVG inline -->
+  <svg class="soulcraft-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" role="img" aria-label="Work as Soulcraft">
+    <path d="M 123.7 49.2 A 56 56 0 1 1 76.3 49.2" fill="none" stroke="#111111" stroke-width="10" stroke-linecap="round"/>
+    <g fill="#111111" font-family="Georgia, 'Times New Roman', serif">
+      <text x="190" y="96" font-size="34" letter-spacing="5">WORK AS SOULCRAFT</text>
+      <text x="192" y="132" font-size="14" letter-spacing="3">BECOMING FULLY ALIVE AS A HUMAN WORKER</text>
+    </g>
+  </svg>
+  <p style="font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:8px">Formation — Structured learning for individuals and teams</p>
+  <p style="font-size:20px;color:#555;margin-bottom:8px;font-style:italic">Forming a Person in the Age of Intelligent Machines</p>
+  <p style="font-size:17px;color:#444;margin-bottom:32px;max-width:580px">An 8-module formation program on discernment, agency, and building a life that's actually yours. Rooted in the ideas of <em>Wanting</em> and <em>The One and the Ninety-Nine</em>.</p>
+  <div>
+    <a class="btn-dark" href="https://learn.lukeburgis.com" target="_blank">Enroll Now →</a>
+    <div class="needs-luke" style="display:inline-block;margin-left:12px">Price: $[XXX] &nbsp;|&nbsp; Next cohort: [DATE] or evergreen? [NEEDS LUKE]</div>
+  </div>
+  <div class="wf-note">DECISION: Soulcraft logo (Concept B, Luke-approved) shown here instead of plain title. CTA goes directly to learn.lukeburgis.com (Kajabi) — no on-site checkout. Price shown once available.</div>
+</section>
+
+<!-- §2 THE PROBLEM -->
+<div class="problem-section">
+  <h2>Something is wrong at work.</h2>
+  <p>Burnout. Quiet quitting. The nagging sense that your ambitions are borrowed — that you're chasing goals that were never really yours. These aren't management failures. They're desire failures.</p>
+  <p style="margin-top:16px">Most of us have never been taught to want well. We absorb goals from our peers, our culture, our algorithms — and then wonder why reaching them doesn't feel like we thought it would.</p>
+  <p style="margin-top:16px">Work as Soulcraft is a program about learning to want differently. It won't make you more productive. It will help you figure out what's actually worth doing.</p>
+  <div class="wf-note" style="color:#aaa;background:#2a2a2a;border-color:#555;margin-top:20px">DECISION: Dark section immediately after hero — establishes the problem before the product. No self-help language, no "coaching." Thinker register throughout.</div>
+</div>
+
+<!-- §3 PHILOSOPHY FOR CREATORS FREEBIE -->
+<div class="freebie">
+  <h2>Start here — free.</h2>
+  <p style="max-width:520px">A free guide to the ideas behind the course. Sign up and it arrives in your inbox.</p>
+  <p style="font-family:monospace;font-size:13px;color:#888;margin-top:4px"><strong>PHILOSOPHY FOR CREATORS</strong></p>
+  <div class="freebie-form">
+    <input type="email" placeholder="your@email.com">
+    <button>Get the free guide</button>
+  </div>
+  <div class="wf-note">BACKEND: Kajabi — 'Book Recommendations' form / 'Philosophy for Entrepreneurs and Creators' email list. Embed or link; preserve existing capture + delivery flow. Do NOT rebuild in HubSpot. Email only, no name field.</div>
+  <div class="needs-luke">Kajabi PHILOSOPHY FOR CREATORS form embed URL [NEEDS LUKE]</div>
+</div>
+
+<!-- §4 WHAT IT IS -->
+<section>
+  <span class="sec-tag">§4 WHAT IT IS</span>
+  <h2>What You'll Get</h2>
+  <div class="what-it-is">
+    <div>
+      <p><strong>8 modules.</strong> Each one builds on the last — from diagnosing your current desires to building practices that sustain meaningful work.</p>
+      <p><strong>20 key ideas</strong> drawn from Luke's two books, years of research, and his work teaching at the university level.</p>
+      <p><strong>A guided reflection companion</strong> — a custom model trained on Luke's ideas walks alongside you throughout the course.</p>
+      <div class="needs-luke">Community platform: Discord (https://discord.gg/QdqX8vTbhk) [NEEDS LUKE: confirm for course page]</div>
+    </div>
+    <div class="course-visual">[ COURSE VISUAL / PRODUCT SCREENSHOT — NEEDS LUKE ]</div>
+  </div>
+  <div class="wf-note">DECISION: "Personalized AI coaching" replaced with "guided reflection companion" — no coaching language front-of-house per Luke's standing rule.</div>
+</section>
+
+<!-- §5 WHO IT'S FOR -->
+<section style="background:#fafafa">
+  <span class="sec-tag">§5 WHO IT'S FOR</span>
+  <h2>Who This Is For</h2>
+  <div class="who-grid">
+    <div class="who-card">
+      <h4>Professionals</h4>
+      <p>You've achieved what you set out to achieve — and something still feels off. This program names what's wrong and gives you a way forward.</p>
+    </div>
+    <div class="who-card">
+      <h4>Leaders</h4>
+      <p>You're responsible for other people's sense of meaning at work. This program gives you the framework to lead cultures that don't hollow people out.</p>
+    </div>
+    <div class="who-card">
+      <h4>Teams</h4>
+      <p>Corporate cohorts available — bring Work as Soulcraft to your organization. Contact Luke's team for pricing.</p>
+    </div>
+    <div class="who-card">
+      <h4>People at a Crossroads</h4>
+      <p>Whether you're changing careers, reentering the workforce, or questioning everything — this course was built for the in-between.</p>
+    </div>
+  </div>
+</section>
+
+<!-- §6 CURRICULUM -->
+<section>
+  <span class="sec-tag">§6 CURRICULUM</span>
+  <h2>The 8 Modules</h2>
+  <div class="needs-luke">Module titles and one-line descriptions [NEEDS LUKE — all 8]</div>
+  <div class="modules">
+    <div class="module"><div class="module-num">I</div><div class="module-text"><h4 class="needs-luke">[Module 1 Title — NEEDS LUKE]</h4><p class="needs-luke">[One-line description]</p></div></div>
+    <div class="module"><div class="module-num">II</div><div class="module-text"><h4 class="needs-luke">[Module 2 Title — NEEDS LUKE]</h4><p class="needs-luke">[One-line description]</p></div></div>
+    <div class="module"><div class="module-num">III</div><div class="module-text"><h4 class="needs-luke">[Module 3 Title — NEEDS LUKE]</h4><p class="needs-luke">[One-line description]</p></div></div>
+    <div class="module"><div class="module-num">IV</div><div class="module-text"><h4 class="needs-luke">[Module 4 Title — NEEDS LUKE]</h4><p class="needs-luke">[One-line description]</p></div></div>
+    <div class="module"><div class="module-num">V</div><div class="module-text"><h4 class="needs-luke">[Module 5 Title — NEEDS LUKE]</h4><p class="needs-luke">[One-line description]</p></div></div>
+    <div class="module"><div class="module-num">VI</div><div class="module-text"><h4 class="needs-luke">[Module 6 Title — NEEDS LUKE]</h4><p class="needs-luke">[One-line description]</p></div></div>
+    <div class="module"><div class="module-num">VII</div><div class="module-text"><h4 class="needs-luke">[Module 7 Title — NEEDS LUKE]</h4><p class="needs-luke">[One-line description]</p></div></div>
+    <div class="module"><div class="module-num">VIII</div><div class="module-text"><h4 class="needs-luke">[Module 8 Title — NEEDS LUKE]</h4><p class="needs-luke">[One-line description]</p></div></div>
+  </div>
+</section>
+
+<!-- §7 WHAT STUDENTS SAY -->
+<section style="background:#fafafa">
+  <span class="sec-tag">§7 WHAT STUDENTS SAY</span>
+  <h2>What students say</h2>
+  <div class="wf-note">DECISION: Named-or-nothing. Full name + role required — no anonymous first-name quotes. If no student testimonials yet, hold section until available (do not substitute book press quotes).</div>
+  <div class="needs-luke">Student testimonials — NAMED-OR-NOTHING (full name and role required) [NEEDS LUKE]</div>
+  <div class="social-proof">
+    <div class="proof-item">
+      <blockquote class="needs-luke">"[Student testimonial — full name required]"</blockquote>
+      <cite class="needs-luke">[Full Name, Role] [NEEDS LUKE]</cite>
+    </div>
+    <div class="proof-item">
+      <blockquote class="needs-luke">"[Student testimonial — full name required]"</blockquote>
+      <cite class="needs-luke">[Full Name, Role] [NEEDS LUKE]</cite>
+    </div>
+    <div class="proof-item">
+      <blockquote class="needs-luke">"[Student testimonial — full name required]"</blockquote>
+      <cite class="needs-luke">[Full Name, Role] [NEEDS LUKE]</cite>
+    </div>
+  </div>
+</section>
+
+<!-- §8 ENROLL -->
+<section>
+  <span class="sec-tag">§8 ENROLL</span>
+  <h2>Enroll</h2>
+  <div class="pricing-box">
+    <div class="price needs-luke">$[XXX]</div>
+    <div class="price-note needs-luke">[Cohort or evergreen? Next start date?] [NEEDS LUKE]</div>
+    <a class="btn-dark" href="https://learn.lukeburgis.com" target="_blank" style="display:block;text-align:center">Enroll Now at learn.lukeburgis.com</a>
+    <p style="font-size:13px;color:#888;margin-top:14px;max-width:none">Questions? <a href="/contact" style="color:#111">Contact Luke's team →</a></p>
+  </div>
+  <div class="wf-note">DECISION: One price, no tier grids, no strikethrough discounts, no countdown timers. CTA routes to learn.lukeburgis.com (Kajabi). Enrollment is Kajabi-native — no on-site checkout.</div>
+</section>
+
+<!-- §9 CORPORATE -->
+<div class="corporate-banner">
+  <div>
+    <h3>Bring Work as Soulcraft to Your Team</h3>
+    <p style="max-width:480px">Corporate cohorts available for teams of 10+. License the curriculum for your organization or run a guided cohort with Luke's involvement.</p>
+    <a class="btn-dark" href="/contact" style="margin-top:14px;display:inline-block">Inquire — Corporate</a>
+  </div>
+  <div style="border:2px solid #ccc;padding:24px 40px;font-family:monospace;font-size:13px;color:#888;white-space:nowrap">[ CORPORATE LOGO STRIP — NEEDS LUKE ]</div>
+</div>
+
+<!-- §10 FAQ -->
+<section>
+  <span class="sec-tag">§10 FAQ</span>
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq">
+    <div class="faq-item"><h4>How long does the course take?</h4><p class="needs-luke">[NEEDS LUKE: time commitment per week, total duration]</p></div>
+    <div class="faq-item"><h4>Is it self-paced or cohort-based?</h4><p class="needs-luke">[NEEDS LUKE: evergreen vs. cohort model]</p></div>
+    <div class="faq-item"><h4>What's the refund policy?</h4><p class="needs-luke">[NEEDS LUKE: refund window]</p></div>
+    <div class="faq-item"><h4>Can I take this with my team?</h4><p>Yes — corporate cohorts are available. <a href="/contact" style="color:#111">Contact us</a> for team pricing.</p></div>
+    <div class="faq-item"><h4>Do I need to have read <em>Wanting</em>?</h4><p>No — the course is self-contained. Reading <em>Wanting</em> first enriches the experience but isn't required.</p></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="logo-box" style="display:inline-block;color:#777;border-color:#444;margin-bottom:14px">[ LOGO — B&amp;W ]</div>
+    <p style="color:#555;font-size:12px;margin-top:8px">Author · Professor · Founder<br>lukeburgis.com</p>
+  </div>
+  <div><h4>Work</h4><ul><li>Books</li><li>Speaking</li><li>Formation</li><li>Writing</li></ul></div>
+  <div><h4>Connect</h4><ul><li>Newsletter</li><li>Twitter / X</li><li>LinkedIn</li><li>Contact</li></ul></div>
+  <div><h4>Cluny Institute</h4><ul><li>cluny.org</li></ul></div>
+</footer>
+
+</body>
+</html>

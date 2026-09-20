@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[WIREFRAME v0.2] About — lukeburgis.com</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,serif;background:#FAF8F3;color:#111}
+.wf-note{font-family:monospace;font-size:11px;background:#fffbe6;border-left:3px solid #e8b400;padding:6px 10px;color:#666;margin:6px 0;line-height:1.5}
+.needs-luke{background:#fff0f0;border:2px dashed #c00;padding:6px 10px;font-family:monospace;font-size:11px;color:#c00;margin:6px 0;line-height:1.5}
+.sec-tag{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#aaa;position:absolute;top:8px;right:12px}
+section{position:relative;border:2px solid #ccc;background:#fff;padding:48px}
+section+section{border-top:none}
+nav{background:#fff;border:2px solid #ccc;padding:18px 48px;display:flex;align-items:center;justify-content:space-between}
+.logo-box{border:2px solid #111;padding:8px 18px;font-family:monospace;font-size:12px;color:#888}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:monospace;font-size:13px}
+.nav-links li.active{font-weight:bold;text-decoration:underline}
+.nav-cta{border:2px solid #111;background:#111;color:#fff;padding:10px 18px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+h1{font-size:48px;font-weight:normal;line-height:1.1;max-width:800px;margin-bottom:16px}
+h2{font-size:28px;font-weight:normal;margin-bottom:16px}
+h3{font-size:20px;font-weight:normal;margin-bottom:10px}
+p{font-size:16px;line-height:1.7;max-width:680px;margin-bottom:14px;color:#222}
+.btn-dark{display:inline-block;background:#111;color:#fff;padding:15px 34px;font-family:monospace;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin:6px 10px 6px 0;text-decoration:none}
+.btn-light{display:inline-block;background:#fff;color:#111;border:2px solid #111;padding:13px 32px;font-family:monospace;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin:6px 0;text-decoration:none}
+/* Hero */
+.hero-about{background:#eeebe6;border:2px solid #ccc;padding:80px 48px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;min-height:420px;position:relative}
+.hero-photo{position:absolute;top:0;right:0;bottom:0;width:45%;background:#d8d4ce;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#888}
+/* Bio */
+.bio-grid{display:grid;grid-template-columns:1fr 2fr;gap:56px;align-items:start;margin-top:8px}
+.portrait-placeholder{border:2px solid #ccc;background:#e8e8e8;height:380px;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#888}
+/* Pullquote */
+.pullquote{border-left:4px solid #111;padding:28px 36px;margin:32px 0;max-width:640px;background:#fafafa}
+.pullquote blockquote{font-size:22px;line-height:1.55;font-style:italic;margin-bottom:12px;color:#111}
+.pullquote cite{font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#666}
+/* Books compact */
+.books-compact{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px;max-width:680px}
+.book-card{display:flex;gap:18px;align-items:flex-start}
+.book-cover-sm{border:2px solid #ccc;background:#e8e8e8;width:72px;height:100px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:10px;color:#aaa;text-align:center;padding:4px}
+.book-card h4{font-size:15px;font-style:italic;margin-bottom:4px;font-weight:normal}
+.book-card p{font-size:13px;color:#666;max-width:none;margin-bottom:6px}
+.book-card a{font-family:monospace;font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.04em}
+/* Affiliations */
+.affiliations{list-style:none;margin-top:16px}
+.affiliations li{padding:14px 0;border-bottom:1px solid #e8e8e8;font-size:16px;display:flex;gap:12px;align-items:baseline}
+.affiliations li span.role{color:#666;font-size:14px;margin-left:8px}
+/* Download links */
+.download-link{display:inline-block;border:2px solid #ccc;padding:10px 20px;font-family:monospace;font-size:12px;color:#666;text-decoration:none;margin-top:12px;margin-right:10px}
+footer{background:#1a1a1a;color:#777;padding:48px;font-family:monospace;font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
+footer h4{color:#fff;margin-bottom:14px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+footer ul{list-style:none}
+footer li{margin-bottom:7px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-box">[ LOGO — B&amp;W single-color <span style="color:#c00">NEEDS LUKE</span> ]</div>
+  <ul class="nav-links">
+    <li>Books</li>
+    <li>Speaking</li>
+    <li>Formation</li>
+    <li>Writing</li>
+    <li class="active">About</li>
+  </ul>
+  <div class="nav-cta">Newsletter →</div>
+</nav>
+<div class="wf-note">NAV: 5 items + Newsletter CTA. Active = About.</div>
+
+<!-- §1 HERO -->
+<div class="hero-about">
+  <span class="sec-tag">§1 HERO</span>
+  <div class="hero-photo">[ Portrait photo — B&amp;W or muted<br>NEEDS LUKE ]</div>
+  <div style="position:relative;z-index:1">
+    <h1>Luke Burgis</h1>
+    <p style="font-family:monospace;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#666;max-width:none;margin-bottom:0">Author &nbsp;·&nbsp; Professor &nbsp;·&nbsp; Founder</p>
+  </div>
+  <div class="wf-note" style="margin-top:20px">DECISION: No hero headline — portrait and name do the work. Tagline is role, not aphorism. Photo bleeds right half of hero zone.</div>
+  <div class="needs-luke">Hero portrait photo — B&amp;W or muted color [NEEDS LUKE]</div>
+</div>
+
+<!-- §2 BIO -->
+<section>
+  <span class="sec-tag">§2 BIO</span>
+  <div class="bio-grid">
+    <div>
+      <div class="portrait-placeholder">[ Portrait —<br>secondary<br>NEEDS LUKE ]</div>
+    </div>
+    <div>
+      <p>Luke Burgis is the author of <em>Wanting: The Power of Mimetic Desire in Everyday Life</em> and <em>The One and the Ninety-Nine</em>. He is a professor at The Catholic University of America, where he received the Provost's Innovation and Advancement in Teaching Award in 2025, and founder of the Cluny Institute.</p>
+      <p>His work applies the insights of René Girard — particularly the theory of mimetic desire — to questions of leadership, culture, and the way human beings form their identities. He has spoken at organizations and universities around the world.</p>
+      <p>He was interviewed by Tyler Cowen in April 2026. Cowen called him "one of my favorite current thinkers" (<em>Conversations with Tyler</em>, Ep. 287, April 30, 2026).</p>
+      <div class="needs-luke">Additional bio paragraphs [NEEDS LUKE] &nbsp;|&nbsp; Bureau affiliation [NEEDS LUKE]</div>
+    </div>
+  </div>
+</section>
+
+<!-- §3 FEATURED PRAISE -->
+<section style="background:#fafafa">
+  <span class="sec-tag">§3 FEATURED PRAISE</span>
+  <div class="pullquote">
+    <blockquote>"One of my favorite current thinkers."</blockquote>
+    <cite>Tyler Cowen — <em>Conversations with Tyler</em>, Ep. 287 (April 30, 2026)</cite>
+  </div>
+  <div class="wf-note">VERIFIED: Confirmed from episode transcript — Conversations with Tyler, Ep. 287, recorded April 30, 2026. Do NOT substitute "one of the most interesting thinkers today" — that wording is unverified.</div>
+</section>
+
+<!-- §4 BOOKS (compact) -->
+<section>
+  <span class="sec-tag">§4 BOOKS</span>
+  <h2>Books</h2>
+  <div class="books-compact">
+    <div class="book-card">
+      <div class="book-cover-sm">Wanting<br>cover</div>
+      <div>
+        <h4>Wanting</h4>
+        <p>2021 · St. Martin's Press · 20+ languages</p>
+        <a href="/books/wanting">Read more →</a>
+      </div>
+    </div>
+    <div class="book-card">
+      <div class="book-cover-sm">1&amp;99<br>cover</div>
+      <div>
+        <h4>The One and the Ninety-Nine</h4>
+        <p>2026</p>
+        <a href="/books/one-and-ninety-nine">Read more →</a>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:24px;font-size:14px;color:#666">Also by Luke: <em>BE NOT CONFORMED</em>, <em>Unrepeatable</em> — <a href="/books" style="color:#111">see all books →</a></p>
+  <div class="wf-note">DECISION: Two flagship books with covers + links on About. Compact treatment only — full book pages at /books. "Also by" line covers BE NOT CONFORMED and Unrepeatable without diluting flagship positioning. All four books have full entries on books.html.</div>
+</section>
+
+<!-- §5 AFFILIATIONS -->
+<section style="background:#fafafa">
+  <span class="sec-tag">§5 AFFILIATIONS</span>
+  <h2>Affiliations</h2>
+  <ul class="affiliations">
+    <li>Professor <span class="role">— The Catholic University of America</span></li>
+    <li>Founder <span class="role">— Cluny Institute &nbsp;<a href="https://cluny.org" style="font-family:monospace;font-size:12px;color:#888">cluny.org</a></span></li>
+    <li class="needs-luke">[Bureau affiliation — NEEDS LUKE]</li>
+    <li class="needs-luke">[Advisory roles, board memberships — NEEDS LUKE]</li>
+  </ul>
+</section>
+
+<!-- §6 PRESS & MEDIA -->
+<section>
+  <span class="sec-tag">§6 PRESS &amp; MEDIA</span>
+  <h2>Press &amp; Media</h2>
+  <p>For media inquiries, interview requests, and press materials, use the contact form.</p>
+  <a class="btn-light" href="/contact">Media Inquiry Form →</a>
+  <div style="margin-top:20px">
+    <a class="download-link" href="#">[ Download Press Kit — NEEDS LUKE ]</a>
+    <a class="download-link" href="#">[ Download Headshot — NEEDS LUKE ]</a>
+  </div>
+  <div class="needs-luke">Press kit PDF + high-res headshot [NEEDS LUKE]</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="logo-box" style="display:inline-block;color:#777;border-color:#444;margin-bottom:14px">[ LOGO — B&amp;W ]</div>
+    <p style="color:#555;font-size:12px;margin-top:8px">Author · Professor · Founder<br>lukeburgis.com</p>
+  </div>
+  <div><h4>Work</h4><ul><li>Books</li><li>Speaking</li><li>Formation</li><li>Writing</li></ul></div>
+  <div><h4>Connect</h4><ul><li>Newsletter</li><li>Twitter / X</li><li>LinkedIn</li><li>Contact</li></ul></div>
+  <div><h4>Cluny Institute</h4><ul><li>cluny.org</li></ul></div>
+</footer>
+
+</body>
+</html>

@@ -1,201 +1,492 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Probe</title>
+<title>[WIREFRAME v0.2] Home — lukeburgis.com</title>
 <style>
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    max-width: 600px;
-    margin: 80px auto;
-    padding: 40px;
-    line-height: 1.5;
-    color: #000;
-    background: #fff;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,'Times New Roman',serif;background:#FAF8F3;color:#111;line-height:1}
+
+/* ── Annotation classes ── */
+.wf-note{font-family:monospace;font-size:11px;background:#fffbe6;border-left:3px solid #e8b400;padding:6px 10px;color:#666;margin:6px 0;line-height:1.5}
+.needs-luke{background:#fff0f0;border:2px dashed #c00;padding:6px 10px;font-family:monospace;font-size:11px;color:#c00;margin:6px 0;line-height:1.5}
+.sec-tag{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#aaa;position:absolute;top:8px;right:12px}
+
+/* ── Layout primitives ── */
+section{position:relative;border:2px solid #ccc;background:#fff;padding:48px 56px}
+section+section{border-top:none}
+.inner{max-width:1120px;margin:0 auto}
+
+/* ── Nav ── */
+nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:0}
+.nav-logo svg{width:48px;height:auto;display:block}
+.nav-links{list-style:none;display:flex;gap:32px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.nav-links a{color:#111;text-decoration:none}
+.nav-links a:hover{text-decoration:underline}
+.nav-cta{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none;border:none}
+
+/* ── Hero ── */
+.hero{position:relative;width:100%;height:min(94vh,680px);min-height:460px;background:#FAF8F3;overflow:hidden;border:2px solid #ccc}
+.hero-photo{position:absolute;inset:0;background:#ddd8d0;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#aaa}
+
+/* Mark animation — port from approved demo exactly */
+.mark-wrap{
+  position:absolute;
+  left:50%;
+  top:48%;
+  width:min(300px,52vw);
+  transform:translate(-50%,-50%);
+  animation:markMove 8s cubic-bezier(.65,.05,.36,1) forwards;
+}
+.mark-wrap svg{width:100%;height:auto;display:block}
+
+@keyframes markMove{
+  0%,55%  {left:50%;top:48%;width:min(300px,52vw);}
+  68%,100%{left:calc(50% - min(320px,32vw));top:48%;width:120px;}
 }
 
-h1 {
-    font-size: 2em;
-    font-weight: 400;
-    margin-bottom: 40px;
-    text-align: center;
+.draw{
+  fill:none;stroke:#111;stroke-width:1.6;stroke-linecap:round;
+  stroke-dasharray:1;stroke-dashoffset:1;
+  animation:drawStroke 1.15s cubic-bezier(.6,.05,.3,1) forwards,
+            strokeFade .6s ease forwards;
+}
+.d1{animation-delay:.2s, 2.6s}
+.d2{animation-delay:.55s,2.75s}
+.d3{animation-delay:.9s, 2.9s}
+.d4{animation-delay:1.25s,3.05s}
+@keyframes drawStroke{to{stroke-dashoffset:0}}
+@keyframes strokeFade{to{opacity:0}}
+
+.fill{fill:#111;opacity:0;animation:fillIn .7s ease forwards}
+.f1{animation-delay:2.2s}
+.f2{animation-delay:2.45s}
+.f3{animation-delay:2.7s}
+.f4{animation-delay:2.95s}
+@keyframes fillIn{to{opacity:1}}
+
+/* Words appear after mark settles left */
+.hero-words{
+  position:absolute;
+  left:calc(50% - min(320px,32vw) + 104px);
+  top:48%;
+  transform:translateY(-50%);
+  max-width:560px;
+  padding-right:40px;
+}
+.hero-words h1,
+.hero-words .hero-sub,
+.hero-words .hero-byline{opacity:0}
+
+.hero-words h1{
+  font-size:clamp(32px,4.4vw,56px);
+  font-weight:normal;
+  line-height:1.08;
+  letter-spacing:-.01em;
+  margin-bottom:22px;
+  animation:wordsIn .9s ease 4.9s forwards;
+}
+.hero-words .hero-sub{
+  font-size:clamp(15px,1.55vw,18px);
+  line-height:1.7;
+  color:#333;
+  margin-bottom:20px;
+  animation:wordsIn .9s ease 5.5s forwards;
+}
+.hero-words .hero-byline{
+  font-size:14px;
+  font-style:italic;
+  color:#666;
+  line-height:1.6;
+  animation:wordsIn .9s ease 6.1s forwards;
+}
+@keyframes wordsIn{
+  from{opacity:0;transform:translateY(14px)}
+  to  {opacity:1;transform:translateY(0)}
 }
 
-.success {
-    background: #e8f5e8;
-    border: 1px solid #4caf50;
-    color: #2e7d32;
-    padding: 15px;
-    border-radius: 4px;
-    margin-bottom: 30px;
-    text-align: center;
-    display: none;
+/* Mobile hero: static layout */
+@media(max-width:740px){
+  .mark-wrap{animation:none;left:50%;top:22%;width:100px;transform:translate(-50%,-50%)}
+  .hero-words{left:50%;top:58%;transform:translate(-50%,-50%);width:88%;max-width:400px;padding:0;text-align:center}
+  .hero-words h1,.hero-words .hero-sub,.hero-words .hero-byline{
+    animation:fadeUpMobile .8s ease forwards;opacity:0
+  }
+  .hero-words h1{animation-delay:.3s}
+  .hero-words .hero-sub{animation-delay:.7s}
+  .hero-words .hero-byline{animation-delay:1.1s}
+  @keyframes fadeUpMobile{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 }
 
-form {
-    margin-bottom: 60px;
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .mark-wrap{animation:none;left:calc(50% - min(320px,32vw));top:48%;width:120px;transform:translateY(-50%)}
+  .draw{display:none}
+  .fill{opacity:1;animation:none}
+  .hero-words h1,.hero-words .hero-sub,.hero-words .hero-byline{animation:none;opacity:1}
 }
 
-textarea {
-    width: 100%;
-    min-height: 120px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    font-family: inherit;
-    resize: vertical;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
+/* ── Proof strip ── */
+.proof-strip{background:#111;color:#FAF8F3;padding:13px 56px;display:flex;flex-wrap:wrap;gap:0;font-family:monospace;font-size:11px;align-items:center;border:2px solid #000;border-top:none}
+.proof-strip span{padding:3px 20px 3px 0;white-space:nowrap}
+.proof-strip span+span{border-left:1px solid #444;padding-left:20px}
 
-input[type="text"] {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
+/* ── Shared type ── */
+h2{font-size:30px;font-weight:normal;line-height:1.15;margin-bottom:18px}
+h3{font-size:19px;font-weight:normal;margin-bottom:8px}
+p{font-size:16px;line-height:1.72;max-width:660px;margin-bottom:12px;color:#222}
+.label{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:14px;display:block}
 
-button {
-    background: #000;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
+/* Buttons */
+.btn-dark{display:inline-block;background:#111;color:#FAF8F3;padding:14px 32px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:6px 10px 6px 0;text-decoration:none;border:2px solid #111}
+.btn-light{display:inline-block;background:transparent;color:#111;border:2px solid #111;padding:12px 30px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:6px 0;text-decoration:none}
 
-button:hover {
-    background: #333;
-}
+/* ── §2 Questions ── */
+.questions-index{margin-top:28px}
+.question-item{border-top:1px solid #e8e2d6;padding:22px 0;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
+.question-item:last-child{border-bottom:1px solid #e8e2d6}
+.question-item h3{font-size:20px;font-style:italic;font-weight:normal;margin-bottom:6px}
+.question-item .position{font-size:14px;color:#555;line-height:1.6;max-width:560px}
+.question-item .arrow{font-family:monospace;font-size:13px;color:#aaa;white-space:nowrap;margin-top:4px}
 
-button:disabled {
-    background: #666;
-    cursor: not-allowed;
-}
+/* ── §3 Books ── */
+.books-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:28px}
+.book-entry{display:flex;gap:22px;align-items:flex-start}
+.book-cover{border:2px solid #e0dbd4;background:#e8e4de;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:10px;color:#aaa;text-align:center;padding:6px}
+.book-cover.lg{width:110px;height:155px}
+.book-cover.sm{width:72px;height:100px}
+.book-entry h3{font-size:17px;font-style:italic;font-weight:normal;margin-bottom:4px}
+.book-entry .year{font-family:monospace;font-size:11px;color:#888;margin-bottom:8px;display:block}
+.book-entry p{font-size:14px;color:#555;max-width:none;margin-bottom:10px}
+.book-entry a{font-family:monospace;font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em;text-decoration:none}
+.book-entry a:hover{text-decoration:underline}
+.tier-label{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#bbb;margin:32px 0 16px;padding-top:28px;border-top:1px solid #e8e2d6}
 
-.probes {
-    border-top: 1px solid #eee;
-    padding-top: 40px;
-}
+/* ── §4 Speaking preview ── */
+.speaking-preview{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center;margin-top:28px}
+.reel-thumb{border:2px solid #ccc;background:#d8d4ce;height:190px;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#888;flex-shrink:0}
 
-.probe {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #f5f5f5;
-}
+/* ── §5 Testimonials ── */
+.testimonials-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-top:24px}
+.testimonial{border-left:3px solid #111;padding-left:16px}
+.testimonial blockquote{font-size:15px;line-height:1.65;font-style:italic;margin-bottom:10px}
+.testimonial cite{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
 
-.probe:last-child {
-    border-bottom: none;
-}
+/* ── §6 Freebie ── */
+.freebie{background:#f0ede8;border:2px solid #ccc;border-top:none;padding:48px 56px}
+.freebie-form{display:flex;margin-top:20px;max-width:440px}
+.freebie-form input{flex:1;border:2px solid #111;padding:12px 16px;font-family:monospace;font-size:13px;background:#fff;outline:none}
+.freebie-form button{border:2px solid #111;background:#111;color:#FAF8F3;padding:12px 20px;font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;white-space:nowrap}
 
-.probe-text {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
+/* ── §7 Newsletter ── */
+.newsletter{background:#111;color:#FAF8F3;padding:64px 56px;border:2px solid #000;border-top:none}
+.newsletter h2{color:#FAF8F3;font-size:32px;margin-bottom:14px}
+.newsletter p{color:#aaa;max-width:540px}
+.nl-form{display:flex;margin-top:26px;max-width:480px}
+.nl-form input{flex:1;border:2px solid #FAF8F3;background:transparent;color:#FAF8F3;padding:12px 16px;font-family:monospace;font-size:13px;outline:none}
+.nl-form input::placeholder{color:#666}
+.nl-form button{border:2px solid #FAF8F3;background:#FAF8F3;color:#111;padding:12px 20px;font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;white-space:nowrap}
 
-.probe-meta {
-    font-size: 14px;
-    color: #666;
-}
-
-@media (max-width: 600px) {
-    body {
-        margin: 40px auto;
-        padding: 20px;
-    }
-    h1 {
-        font-size: 1.5em;
-    }
-}
+/* ── Footer ── */
+footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:monospace;font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
+footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+footer ul{list-style:none}
+footer li{margin-bottom:8px}
+footer a{color:#777;text-decoration:none}
+footer a:hover{color:#FAF8F3}
+.footer-logo{margin-bottom:14px;font-size:11px;color:#555;border:1px solid #444;display:inline-block;padding:8px 16px}
 </style>
 </head>
 <body>
-    <h1>Probe</h1>
-    
-    <div id="success" class="success">
-        Thank you! Your probe has been submitted for review.
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <!-- LB monogram — black, single-color. Nav uses mark only. -->
+    <svg viewBox="0 0 82.39 81.96" width="44" height="44" role="img" aria-label="Luke Burgis">
+      <path class="nav-fill" fill="#111" d="M43.55,3.04c-.15.03-.29.07-.4.14-.87.55-.21,2.02-.21,2.8,0,.8.12,1.59.14,2.39.02.96-.11,1.94-.09,2.91.03,1.13.09,2.26.13,3.39.02.45-.05.89-.14,1.35-.15.84-.12,1.67-.13,2.51-.03,2.25.02,4.49,0,6.74,0,1.32.19,2.65-.04,3.96-.25,1.42-.22,2.68,0,4.1.19,1.19.12,2.31-.02,3.49-.06.55-.31,1.74.01,2.24-.02-.02,1.18-.1,1.29-.09.4.03.79.12,1.2.15.89.07,1.77-.11,2.66-.11,1.19,0,2.41.13,3.6-.02.68-.09,1.3-.32,1.98-.28.42.02.84.08,1.27.11.92.07,1.86.08,2.78.06,1.94-.04,3.87-.12,5.81-.13.71,0,1.42.07,2.1-.16.64-.21,1.29-.4,1.93-.63.68-.26,1.06-.49,1.6-.96.53-.46,1.19-.73,1.72-1.2.46-.41.77-.66,1.29-.98s1.01-.7,1.38-1.2c.44-.6.89-1.2,1.24-1.87.42-.82.68-1.57.95-2.44.12-.39.35-.58.57-.91.26-.39.36-.9.47-1.36.22-.89.45-1.77.69-2.66.26-.94.58-2.05.63-3.03.05-.79.04-1.59-.09-2.38-.11-.66-.09-1.4-.26-2.04-.28-1.02-.78-1.96-1.04-3-.23-.9-.72-1.74-1.34-2.44-.43-.48-.45-.98-.74-1.53-.56-1.07-1.9-1.42-2.5-2.41-.38-.62-.31-.8-.95-1.09-.71-.32-1.33-.77-2.04-1.06-.76-.3-1.64-.28-2.37-.54-.39-.14-.69-.46-1.09-.59-.45-.14-.94-.18-1.4-.3-1.04-.28-2.22-.61-3.31-.56-1.17.05-2.38-.13-3.56-.02-1.33.12-2.7.25-4.04.08-.74-.1-1.44-.15-2.17-.08-1.41.13-2.73-.14-4.12-.29-.69-.07-1.38-.09-2.07-.08-.36,0-.89-.05-1.32.02Z"/>
+      <path class="nav-fill" fill="#111" d="M75.78,69.62c.16-.29.3-.6.42-.93.22-.6.34-1.27.68-1.82.23-.37.49-.6.63-1,.21-.61.57-1.24.68-1.86s.18-1.23.29-1.83c.4-2.2.15-4.18-.2-6.36-.23-1.42-.52-2.86-1.17-4.16-.32-.64-.73-1.14-1.17-1.68-.45-.57-.77-1.25-1.23-1.83-.25-.32-.53-.62-.8-.92-.39-.44-.59-.86-1.13-1.11-.58-.28-1.15-.64-1.73-.97-1.27-.73-2.6-1.34-3.99-1.82-1.72-.59-3.33-1.16-5.19-1.07-.98.04-1.87-.32-2.82-.39-1.5-.11-3.07.03-4.57.17-.85.07-1.68-.01-2.53,0-1.04.03-2.07.13-3.11.12-.88,0-1.75.13-2.63.13-.4,0-.78-.12-1.18-.07-.46.05-.92.21-1.38.25,0,.65.51,1.05.86,1.51.45.59.85,1.34,1.19,2,.28.54.32,1.18.66,1.71.89,1.37,1.31,2.98,2.08,4.43.4.76.84,1.51,1.18,2.31.32.74.32,1.34.92,1.95.76.77.91,1.74,1.37,2.68.22.45.69.71.91,1.16s.4.77.67,1.18c.38.59.56,1.27.92,1.86.21.33.42.66.6,1.01.32.66.8,1.26,1.11,1.9.18.38.25.78.45,1.16.77,1.48,1.74,2.89,2.4,4.4.28.64.72,1.29,1.11,1.88.25.37.45.69.61,1.1.28.69.51,1.67,1.03,2.23.26.29.26.24.65.18s.74-.09,1.13-.11c.41-.03.79-.02,1.21-.04s.89-.07,1.3-.2c1.71-.53,3.44-.94,4.9-1.97.46-.33,1.02-.55,1.45-.93.31-.27.57-.71.87-1.05.9-1.05,1.87-2.01,2.53-3.22Z"/>
+      <path class="nav-fill" fill="#111" d="M26.34,67.63c.09-.16.18-.32.27-.48.35-.6.75-1.17,1.09-1.77.23-.41.25-.68.36-1.09.27-.99.9-1.99,1.3-2.96s.92-1.8,1.31-2.73c.26-.62.45-1.29.8-1.87.63-1.06,1.07-2.13,1.58-3.26.79-1.72,1.91-3.43,2.43-5.26.3-1.05.62-1.89,1.15-2.87.2-.37.36-.71.61-1.05.94-1.3.85-2.95,1.74-4.25.22-.32.28-.59.38-.96.07-.26.28-.52.34-.75.18-.68-.11-1.39-.01-2.08.13-.92,0-1.82.08-2.74.09-1,.29-2,.25-3.02-.05-1.4.03-2.79-.01-4.19-.03-.96-.04-1.89-.08-2.84-.05-1.25-.11-2.48-.03-3.73.09-1.41.2-2.82.16-4.23-.03-1.16.11-2.39.13-3.56.02-1.35-.06-2.71-.05-4.06,0-.57.09-1.12.09-1.69,0-.97-.08-1.91-.08-2.87-.88-.28-2.07.09-2.97.14-.83.05-1.63-.22-2.45-.3-.66-.07-1.34.11-2.02.1-1.72-.03-3.44-.09-5.16-.09-2.42,0-4.78.22-7.15.32-2.22.1-4.42-.15-6.64.06-2.04.19-3.97-.05-6.03-.03-.86,0-2.83-.4-3.54.22-.7.61-.25,2.56-.26,3.43-.02,2.06.73,4.1.59,6.15-.09,1.2-.59,2.31-.58,3.53.01.94.3,1.87.44,2.78.34,2.1.5,4.28.32,6.41-.07.78-.37,1.52-.43,2.28-.07.94.25,1.95.3,2.89.07,1.6-.21,3.19-.18,4.79.03,1.48-.04,3.02-.09,4.48-.06,1.95-.21,3.75.2,5.68.29,1.38.13,2.76.05,4.15-.07,1.13.23,2.13.19,3.24-.04,1.09-.39,2.14-.34,3.28.1,2.54-.43,4.96-.01,7.52.46,2.79-.13,5.64-.11,8.46.02,1.92.26,3.71.36,5.66,2.94.04,5.84-.13,8.79-.23,1.5-.05,2.89-.17,4.39-.12.92.03,1.82-.08,2.75-.11.28,0,.65.15.92.04.34-.14.49-.61.7-1,.36-.67.7-1.38.97-2.09.46-1.21,1.28-2.25,1.79-3.43.42-.95.29-2.11.84-3,.18-.3.36-.6.53-.9Z"/>
+      <path class="nav-fill" fill="#111" d="M55.86,73.12c-.07-.1-.15-.2-.23-.3-.56-.69-.93-1.49-1.45-2.2-.66-.9-1.46-1.8-1.92-2.83s-.86-2.05-1.31-3.07c-.75-1.69-1.66-3.31-2.6-4.91-.84-1.43-1.93-2.79-2.48-4.37-.31-.88-.7-1.58-1.14-2.4-.19-.35-.18-.56-.24-.93-.09-.53-.4-.89-.69-1.32-.44-.63-.83-1.53-1.12-2.25-.24-.62-.41-1.29-.7-1.88-.17-.35-.7-2.05-1.09-2.13-.36,1.13-.48,2.34-1.2,3.31-.78,1.07-.78,2.32-1.46,3.45-.86,1.43-1.29,3.03-2.2,4.43-.91,1.4-1.68,2.92-2.19,4.51-.21.65-.73,1.03-1.01,1.6-.25.52-.09,1.15-.36,1.66-.44.82-1.08,1.51-1.46,2.39-.57,1.32-.98,2.73-1.57,4.04-.44.97-1.02,1.83-1.41,2.84-.39,1.02-1.06,1.93-1.46,2.93-.1.25-.05.54-.13.78-.16.51-.51.96-.74,1.43,1.87.35,3.99.04,5.9.06,2.15.03,4.31.06,6.45-.21.72-.09,1.37.18,2.1.16.68-.02,1.36-.07,2.05-.12,1.03-.07,2.06,0,3.11-.02,2.14-.02,4.28-.04,6.42-.1,1.25-.03,2.49.06,3.73-.03.83-.06,1.66-.16,2.46-.22-.5-.39-.78-1.61-1-2.24-.27-.78-.59-1.44-1.07-2.09Z"/>
+    </svg>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/books">Books</a></li>
+    <li><a href="/speaking">Speaking</a></li>
+    <li><a href="/formation">Formation</a></li>
+    <li><a href="/writing">Writing</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+  <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
+</nav>
+<div class="wf-note">NAV: LB monogram mark only (black SVG, inline). 5 nav items. Newsletter CTA right. No cart, no Shop. Sticky on scroll.</div>
+
+<!-- §1 HERO -->
+<div class="hero" id="heroStage">
+  <span class="sec-tag">§1 HERO</span>
+  <div class="hero-photo">[ Hero photo — full-bleed, B&amp;W or muted &nbsp;|&nbsp; <span style="color:#c00">NEEDS LUKE</span> ]</div>
+
+  <!-- Monogram: draws itself, then glides left -->
+  <div class="mark-wrap">
+    <svg viewBox="0 0 82.39 81.96" id="markSvg" role="img" aria-label="Luke Burgis monogram"></svg>
+  </div>
+
+  <!-- Words: fade in after mark settles -->
+  <div class="hero-words">
+    <h1>History is a story of desire.</h1>
+    <p class="hero-sub">We don&rsquo;t form our desires alone &mdash; we borrow them from the people around us: models, rivals, friends. And those borrowed desires move markets, fracture institutions, and build entire cultures.</p>
+    <p class="hero-byline">Luke Burgis is the author of the bestselling <em>Wanting</em>, a professor at The Catholic University of America, and founder of the Cluny Institute.</p>
+  </div>
+</div>
+<div class="wf-note">HERO: Exact animation from approved demo (monogram-hero-sequence-demo.html). Mark draws centered ~3s → brief hold → glides left + shrinks → headline/subhead/byline fade in. Once per visit. prefers-reduced-motion honored. Hero headline decided: "History is a story of desire." — aphorism, no explanatory subhead. Subhead + byline from 2026-09-20-1250-website-v02-addendum.md.</div>
+<div class="needs-luke">Hero photo — B&amp;W or muted, full-bleed [NEEDS LUKE]</div>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <span>Author of the bestselling book <em>Wanting</em></span>
+  <span>Translated into 20+ languages</span>
+  <span>Professor, Catholic University of America</span>
+  <span>Provost&rsquo;s Innovation and Advancement in Teaching Award 2025</span>
+</div>
+<div class="needs-luke">Bureau affiliation [NEEDS LUKE] &nbsp;|&nbsp; Publisher/press logos for use? [NEEDS LUKE]</div>
+<div class="wf-note">PROOF STRIP: Verified claims only. No "200+ keynotes," no NEH, no "22+ languages." Arthur Brooks (not David Brooks) appears in endorsements — not here.</div>
+
+<!-- §2 QUESTIONS I KEEP RETURNING TO -->
+<section>
+  <span class="sec-tag">§2 QUESTIONS</span>
+  <div class="inner">
+    <span class="label">Questions I keep returning to</span>
+    <div class="wf-note">DECISION: Extensible index — no fixed count. Each entry: question + one-line position (for the skimmer and the $30K keynote buyer). New questions slot in over time without redesign. Three entries shown as starting set — drafts, not canon. Per 2026-09-20-1430-questions-position-lines.md.</div>
+    <div class="questions-index">
+      <div class="question-item">
+        <div>
+          <h3>Why do we want what other people want?</h3>
+          <p class="position">Because desire is mimetic — we borrow our wants from models, and those borrowed wants move everything from markets to marriages.</p>
+        </div>
+        <span class="arrow"><a href="/writing" style="color:#aaa;text-decoration:none;font-family:monospace;font-size:12px">Read →</a></span>
+      </div>
+      <div class="question-item">
+        <div>
+          <h3>What happens to individuals inside institutions?</h3>
+          <p class="position">Conformity is quiet and contagious — the question is whether cultures protect the individual or slowly dissolve them into the group.</p>
+        </div>
+        <span class="arrow"><a href="/writing" style="color:#aaa;text-decoration:none;font-family:monospace;font-size:12px">Read →</a></span>
+      </div>
+      <div class="question-item">
+        <div>
+          <h3>What makes work worth doing?</h3>
+          <p class="position">Burnout is a desire problem before it's a management problem — work hollows out when it stops being a place where a person can become fully themselves.</p>
+        </div>
+        <span class="arrow"><a href="/writing" style="color:#aaa;text-decoration:none;font-family:monospace;font-size:12px">Read →</a></span>
+      </div>
     </div>
-    
-    <form id="probeForm">
-        <textarea id="probeText" placeholder="Share your probe..." required></textarea>
-        <input type="text" id="submitterName" placeholder="Your name (optional)">
-        <button type="submit">Submit</button>
-    </form>
-    
-    <div class="probes" id="probes">
-        <!-- Sample probes for now -->
-        <div class="probe">
-            <div class="probe-text">Why do we seek certainty in a universe that seems fundamentally uncertain?</div>
-            <div class="probe-meta">Sarah M. • Mar 2, 2026</div>
+  </div>
+</section>
+
+<!-- §3 BOOKS -->
+<section style="background:#fafafa">
+  <span class="sec-tag">§3 BOOKS</span>
+  <div class="inner">
+    <span class="label">Books</span>
+    <div class="wf-note">DECISION: All four books, tiered. Wanting + 1&99 flagship (full treatment); BE NOT CONFORMED + Unrepeatable compact. Per 2026-09-20-1306-books-page-four-tiered.md.</div>
+
+    <!-- Tier 1: Flagship -->
+    <div class="books-grid">
+      <div class="book-entry">
+        <div class="book-cover lg">[ Cover<br><em>Wanting</em><br>NEEDS LUKE ]</div>
+        <div>
+          <h3><em>Wanting</em></h3>
+          <span class="year">2021 · St. Martin's Press</span>
+          <p>Why we want what other people want — and what to do about it. The essential guide to mimetic desire.</p>
+          <p style="font-size:13px;color:#888;margin-bottom:10px">Translated into 20+ languages</p>
+          <a href="/books/wanting" class="btn-light" style="font-size:11px;padding:9px 18px">Learn more</a>
+          &nbsp;<a href="https://www.amazon.com/dp/1250262488" target="_blank" style="font-family:monospace;font-size:11px;color:#888;text-decoration:none">Amazon →</a>
         </div>
-        
-        <div class="probe">
-            <div class="probe-text">What if our greatest innovations come from the courage to stand alone with an unpopular truth?</div>
-            <div class="probe-meta">Anonymous • Feb 25, 2026</div>
+      </div>
+      <div class="book-entry">
+        <div class="book-cover lg">[ Cover<br><em>The One &amp;<br>the 99</em><br>NEEDS LUKE ]</div>
+        <div>
+          <h3><em>The One and the Ninety-Nine</em></h3>
+          <span class="year">2026</span>
+          <p>How cultures protect — or destroy — the individual.</p>
+          <div class="needs-luke" style="margin-bottom:10px">Retailer links [NEEDS LUKE]</div>
+          <a href="/books/one-and-ninety-nine" class="btn-light" style="font-size:11px;padding:9px 18px">Learn more</a>
         </div>
-        
-        <div class="probe">
-            <div class="probe-text">Is questioning everything just another form of certainty?</div>
-            <div class="probe-meta">Michael R. • Feb 12, 2026</div>
-        </div>
+      </div>
     </div>
 
-    <script>
-    document.getElementById('probeForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const probeText = document.getElementById('probeText').value;
-        const submitterName = document.getElementById('submitterName').value || 'Anonymous';
-        const button = this.querySelector('button');
-        
-        // Disable button during submission
-        button.disabled = true;
-        button.textContent = 'Submitting...';
-        
-        // Send to backend API (to be implemented)
-        fetch('/api/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                text: probeText,
-                name: submitterName
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Show success message
-            document.getElementById('success').style.display = 'block';
-            
-            // Clear form
-            document.getElementById('probeText').value = '';
-            document.getElementById('submitterName').value = '';
-            
-            // Reset button
-            button.disabled = false;
-            button.textContent = 'Submit';
-            
-            // Scroll to success message
-            document.getElementById('success').scrollIntoView({ behavior: 'smooth' });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // For now, just show success anyway (backend not implemented yet)
-            document.getElementById('success').style.display = 'block';
-            document.getElementById('probeText').value = '';
-            document.getElementById('submitterName').value = '';
-            button.disabled = false;
-            button.textContent = 'Submit';
-        });
-    });
-    </script>
+    <!-- Tier 2: Compact -->
+    <div class="tier-label">Also by Luke Burgis</div>
+    <div class="books-grid">
+      <div class="book-entry">
+        <div class="book-cover sm">[ Cover<br>BNC<br>NEEDS ]</div>
+        <div>
+          <h3><em>BE NOT CONFORMED</em></h3>
+          <p class="needs-luke" style="font-size:13px">[Description — NEEDS LUKE]</p>
+          <a href="/books/be-not-conformed" style="font-family:monospace;font-size:11px;color:#111">Learn more →</a>
+        </div>
+      </div>
+      <div class="book-entry">
+        <div class="book-cover sm">[ Cover<br>Unrepeatable<br>NEEDS ]</div>
+        <div>
+          <h3><em>Unrepeatable</em></h3>
+          <p class="needs-luke" style="font-size:13px">[Description — NEEDS LUKE]</p>
+          <a href="/books/unrepeatable" style="font-family:monospace;font-size:11px;color:#111">Learn more →</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:28px"><a href="/books" class="btn-dark">All books</a></div>
+  </div>
+</section>
+
+<!-- §4 SPEAKING PREVIEW -->
+<section>
+  <span class="sec-tag">§4 SPEAKING PREVIEW</span>
+  <div class="inner">
+    <div class="speaking-preview">
+      <div>
+        <span class="label">Speaking</span>
+        <h2>Ideas worth the stage.</h2>
+        <p>Luke helps leaders and organizations understand the hidden forces shaping human behavior — and build cultures where individuals thrive.</p>
+        <p style="font-family:monospace;font-size:12px;color:#888;margin-bottom:20px">Keynote &nbsp;·&nbsp; Half-day workshop &nbsp;·&nbsp; Full-day retreat</p>
+        <a class="btn-dark" href="/speaking">Check Availability</a>
+      </div>
+      <div class="reel-thumb">[ Speaking reel<br>video embed ]<br><br><span style="font-size:10px">src: lukeburgis.com/wp-content/…/SPEAKING-REEL…mp4</span></div>
+    </div>
+    <div class="wf-note">SPEAKING REEL: Live at the wp-content URL. Embed as preview. CTA = "Check availability" (not "Inquire").</div>
+  </div>
+</section>
+
+<!-- §5 TESTIMONIALS -->
+<section style="background:#fafafa">
+  <span class="sec-tag">§5 TESTIMONIALS</span>
+  <div class="inner">
+    <span class="label">What people say</span>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <blockquote>"One of my favorite current thinkers."</blockquote>
+        <cite>Tyler Cowen — <em>Conversations with Tyler</em>, Ep. 287 (April 2026)</cite>
+      </div>
+      <div class="testimonial">
+        <blockquote class="needs-luke">"[Quote — Jonathan Haidt]"</blockquote>
+        <cite class="needs-luke">Jonathan Haidt — [Title] [NEEDS LUKE: confirm + permission]</cite>
+      </div>
+      <div class="testimonial">
+        <blockquote class="needs-luke">"[Quote — Arthur Brooks]"</blockquote>
+        <cite class="needs-luke">Arthur Brooks — [Title] [NEEDS LUKE: confirm + permission]</cite>
+      </div>
+    </div>
+    <div class="wf-note">VERIFIED: Tyler Cowen quote confirmed from Conversations with Tyler Ep. 287, April 30, 2026 transcript. Do NOT use "one of the most interesting thinkers today" — unverified. Arthur Brooks (not David Brooks).</div>
+  </div>
+</section>
+
+
+<!-- §X FORMATION -->
+<section style="background:#111;color:#FAF8F3;border:2px solid #000;border-top:none;padding:48px 56px">
+  <div class="inner" style="display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center">
+    <div>
+      <span class="label" style="color:#555">Formation</span>
+      <h2 style="color:#FAF8F3;font-size:28px;margin-bottom:12px">Work as Soulcraft</h2>
+      <p style="color:#aaa;max-width:560px">Structured learning for individuals and teams. An 8-module program on discernment, agency, and building a life that's actually yours.</p>
+    </div>
+    <div>
+      <a class="btn-dark" href="https://learn.lukeburgis.com" target="_blank" style="border-color:#FAF8F3;white-space:nowrap">Explore the program →</a>
+    </div>
+  </div>
+</section>
+
+<!-- §6 PHILOSOPHY FOR CREATORS FREEBIE -->
+<div class="freebie">
+  <div class="inner">
+    <span class="label">Free</span>
+    <h2 style="font-size:22px;font-weight:normal;margin-bottom:8px">Philosophy for Creators</h2>
+    <p style="max-width:480px">A free guide to the ideas behind the work. Sign up and it arrives in your inbox.</p>
+    <div class="freebie-form">
+      <input type="email" placeholder="your@email.com">
+      <button>Get the free guide</button>
+    </div>
+    <div class="wf-note">BACKEND: Kajabi — 'Book Recommendations' form / 'Philosophy for Entrepreneurs and Creators' email. Embed or link; preserve existing capture + delivery flow. Email only, no name field. Kajabi exception to the every-form-routes-to-HubSpot rule.</div>
+    <div class="needs-luke">Kajabi PHILOSOPHY FOR CREATORS form embed URL [NEEDS LUKE]</div>
+  </div>
+</div>
+
+<!-- §7 NEWSLETTER -->
+<div class="newsletter">
+  <div class="inner">
+    <span class="label" style="color:#666">Newsletter</span>
+    <h2>The Luke Burgis Newsletter</h2>
+    <p>37,000+ readers. Ideas on desire, identity, culture, and work — delivered when they're ready, not on a schedule.</p>
+    <div class="nl-form">
+      <input type="email" placeholder="your@email.com">
+      <button>Subscribe</button>
+    </div>
+    <p style="font-size:12px;color:#555;margin-top:12px">Free. Read at <a href="https://read.lukeburgis.com" style="color:#888">read.lukeburgis.com</a></p>
+    <div class="wf-note" style="background:#2a2a2a;border-color:#555;color:#888;margin-top:16px">NEWSLETTER: Name is "The Luke Burgis Newsletter" — never "Anti-Mimetic," never "Golden Age Problems." Backend: Substack embed. Do NOT convert to HubSpot.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">[ Full lockup — LukeBurgis_logo_BlackTint_horiz.svg &nbsp;<span style="color:#c00">NEEDS LUKE</span> ]</div>
+    <p style="color:#555;font-size:11px;margin-top:4px">Author · Professor · Founder<br>lukeburgis.com</p>
+  </div>
+  <div>
+    <h4>Work</h4>
+    <ul>
+      <li><a href="/books">Books</a></li>
+      <li><a href="/speaking">Speaking</a></li>
+      <li><a href="/formation">Formation</a></li>
+      <li><a href="/writing">Writing</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="https://read.lukeburgis.com">Newsletter</a></li>
+      <li><a href="#">Twitter / X</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Cluny Institute</h4>
+    <ul><li><a href="https://cluny.org">cluny.org</a></li></ul>
+  </div>
+</footer>
+<div class="wf-note">FOOTER: Full horizontal lockup (LukeBurgis_logo_BlackTint_horiz.svg) — NEEDS LUKE asset. No shop link. No cart.</div>
+
+<!-- Hero animation script — ported exactly from approved demo -->
+<script>
+(function(){
+  var PATHS = [
+    "M43.55,3.04c-.15.03-.29.07-.4.14-.87.55-.21,2.02-.21,2.8,0,.8.12,1.59.14,2.39.02.96-.11,1.94-.09,2.91.03,1.13.09,2.26.13,3.39.02.45-.05.89-.14,1.35-.15.84-.12,1.67-.13,2.51-.03,2.25.02,4.49,0,6.74,0,1.32.19,2.65-.04,3.96-.25,1.42-.22,2.68,0,4.1.19,1.19.12,2.31-.02,3.49-.06.55-.31,1.74.01,2.24-.02-.02,1.18-.1,1.29-.09.4.03.79.12,1.2.15.89.07,1.77-.11,2.66-.11,1.19,0,2.41.13,3.6-.02.68-.09,1.3-.32,1.98-.28.42.02.84.08,1.27.11.92.07,1.86.08,2.78.06,1.94-.04,3.87-.12,5.81-.13.71,0,1.42.07,2.1-.16.64-.21,1.29-.4,1.93-.63.68-.26,1.06-.49,1.6-.96.53-.46,1.19-.73,1.72-1.2.46-.41.77-.66,1.29-.98s1.01-.7,1.38-1.2c.44-.6.89-1.2,1.24-1.87.42-.82.68-1.57.95-2.44.12-.39.35-.58.57-.91.26-.39.36-.9.47-1.36.22-.89.45-1.77.69-2.66.26-.94.58-2.05.63-3.03.05-.79.04-1.59-.09-2.38-.11-.66-.09-1.4-.26-2.04-.28-1.02-.78-1.96-1.04-3-.23-.9-.72-1.74-1.34-2.44-.43-.48-.45-.98-.74-1.53-.56-1.07-1.9-1.42-2.5-2.41-.38-.62-.31-.8-.95-1.09-.71-.32-1.33-.77-2.04-1.06-.76-.3-1.64-.28-2.37-.54-.39-.14-.69-.46-1.09-.59-.45-.14-.94-.18-1.4-.3-1.04-.28-2.22-.61-3.31-.56-1.17.05-2.38-.13-3.56-.02-1.33.12-2.7.25-4.04.08-.74-.1-1.44-.15-2.17-.08-1.41.13-2.73-.14-4.12-.29-.69-.07-1.38-.09-2.07-.08-.36,0-.89-.05-1.32.02Z",
+    "M75.78,69.62c.16-.29.3-.6.42-.93.22-.6.34-1.27.68-1.82.23-.37.49-.6.63-1,.21-.61.57-1.24.68-1.86s.18-1.23.29-1.83c.4-2.2.15-4.18-.2-6.36-.23-1.42-.52-2.86-1.17-4.16-.32-.64-.73-1.14-1.17-1.68-.45-.57-.77-1.25-1.23-1.83-.25-.32-.53-.62-.8-.92-.39-.44-.59-.86-1.13-1.11-.58-.28-1.15-.64-1.73-.97-1.27-.73-2.6-1.34-3.99-1.82-1.72-.59-3.33-1.16-5.19-1.07-.98.04-1.87-.32-2.82-.39-1.5-.11-3.07.03-4.57.17-.85.07-1.68-.01-2.53,0-1.04.03-2.07.13-3.11.12-.88,0-1.75.13-2.63.13-.4,0-.78-.12-1.18-.07-.46.05-.92.21-1.38.25,0,.65.51,1.05.86,1.51.45.59.85,1.34,1.19,2,.28.54.32,1.18.66,1.71.89,1.37,1.31,2.98,2.08,4.43.4.76.84,1.51,1.18,2.31.32.74.32,1.34.92,1.95.76.77.91,1.74,1.37,2.68.22.45.69.71.91,1.16s.4.77.67,1.18c.38.59.56,1.27.92,1.86.21.33.42.66.6,1.01.32.66.8,1.26,1.11,1.9.18.38.25.78.45,1.16.77,1.48,1.74,2.89,2.4,4.4.28.64.72,1.29,1.11,1.88.25.37.45.69.61,1.1.28.69.51,1.67,1.03,2.23.26.29.26.24.65.18s.74-.09,1.13-.11c.41-.03.79-.02,1.21-.04s.89-.07,1.3-.2c1.71-.53,3.44-.94,4.9-1.97.46-.33,1.02-.55,1.45-.93.31-.27.57-.71.87-1.05.9-1.05,1.87-2.01,2.53-3.22Z",
+    "M26.34,67.63c.09-.16.18-.32.27-.48.35-.6.75-1.17,1.09-1.77.23-.41.25-.68.36-1.09.27-.99.9-1.99,1.3-2.96s.92-1.8,1.31-2.73c.26-.62.45-1.29.8-1.87.63-1.06,1.07-2.13,1.58-3.26.79-1.72,1.91-3.43,2.43-5.26.3-1.05.62-1.89,1.15-2.87.2-.37.36-.71.61-1.05.94-1.3.85-2.95,1.74-4.25.22-.32.28-.59.38-.96.07-.26.28-.52.34-.75.18-.68-.11-1.39-.01-2.08.13-.92,0-1.82.08-2.74.09-1,.29-2,.25-3.02-.05-1.4.03-2.79-.01-4.19-.03-.96-.04-1.89-.08-2.84-.05-1.25-.11-2.48-.03-3.73.09-1.41.2-2.82.16-4.23-.03-1.16.11-2.39.13-3.56.02-1.35-.06-2.71-.05-4.06,0-.57.09-1.12.09-1.69,0-.97-.08-1.91-.08-2.87-.88-.28-2.07.09-2.97.14-.83.05-1.63-.22-2.45-.3-.66-.07-1.34.11-2.02.1-1.72-.03-3.44-.09-5.16-.09-2.42,0-4.78.22-7.15.32-2.22.1-4.42-.15-6.64.06-2.04.19-3.97-.05-6.03-.03-.86,0-2.83-.4-3.54.22-.7.61-.25,2.56-.26,3.43-.02,2.06.73,4.1.59,6.15-.09,1.2-.59,2.31-.58,3.53.01.94.3,1.87.44,2.78.34,2.1.5,4.28.32,6.41-.07.78-.37,1.52-.43,2.28-.07.94.25,1.95.3,2.89.07,1.6-.21,3.19-.18,4.79.03,1.48-.04,3.02-.09,4.48-.06,1.95-.21,3.75.2,5.68.29,1.38.13,2.76.05,4.15-.07,1.13.23,2.13.19,3.24-.04,1.09-.39,2.14-.34,3.28.1,2.54-.43,4.96-.01,7.52.46,2.79-.13,5.64-.11,8.46.02,1.92.26,3.71.36,5.66,2.94.04,5.84-.13,8.79-.23,1.5-.05,2.89-.17,4.39-.12.92.03,1.82-.08,2.75-.11.28,0,.65.15.92.04.34-.14.49-.61.7-1,.36-.67.7-1.38.97-2.09.46-1.21,1.28-2.25,1.79-3.43.42-.95.29-2.11.84-3,.18-.3.36-.6.53-.9Z",
+    "M55.86,73.12c-.07-.1-.15-.2-.23-.3-.56-.69-.93-1.49-1.45-2.2-.66-.9-1.46-1.8-1.92-2.83s-.86-2.05-1.31-3.07c-.75-1.69-1.66-3.31-2.6-4.91-.84-1.43-1.93-2.79-2.48-4.37-.31-.88-.7-1.58-1.14-2.4-.19-.35-.18-.56-.24-.93-.09-.53-.4-.89-.69-1.32-.44-.63-.83-1.53-1.12-2.25-.24-.62-.41-1.29-.7-1.88-.17-.35-.7-2.05-1.09-2.13-.36,1.13-.48,2.34-1.2,3.31-.78,1.07-.78,2.32-1.46,3.45-.86,1.43-1.29,3.03-2.2,4.43-.91,1.4-1.68,2.92-2.19,4.51-.21.65-.73,1.03-1.01,1.6-.25.52-.09,1.15-.36,1.66-.44.82-1.08,1.51-1.46,2.39-.57,1.32-.98,2.73-1.57,4.04-.44.97-1.02,1.83-1.41,2.84-.39,1.02-1.06,1.93-1.46,2.93-.1.25-.05.54-.13.78-.16.51-.51.96-.74,1.43,1.87.35,3.99.04,5.9.06,2.15.03,4.31.06,6.45-.21.72-.09,1.37.18,2.1.16.68-.02,1.36-.07,2.05-.12,1.03-.07,2.06,0,3.11-.02,2.14-.02,4.28-.04,6.42-.1,1.25-.03,2.49.06,3.73-.03.83-.06,1.66-.16,2.46-.22-.5-.39-.78-1.61-1-2.24-.27-.78-.59-1.44-1.07-2.09Z"
+  ];
+  var NS = 'http://www.w3.org/2000/svg';
+  var svg = document.getElementById('markSvg');
+  if(!svg) return;
+  PATHS.forEach(function(d, i){
+    var n = i + 1;
+    var fill = document.createElementNS(NS,'path');
+    fill.setAttribute('d', d);
+    fill.setAttribute('class', 'fill f' + n);
+    var draw = document.createElementNS(NS,'path');
+    draw.setAttribute('d', d);
+    draw.setAttribute('class', 'draw d' + n);
+    draw.setAttribute('pathLength','1');
+    svg.appendChild(fill);
+    svg.appendChild(draw);
+  });
+})();
+</script>
+
 </body>
 </html>

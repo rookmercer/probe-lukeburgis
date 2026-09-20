@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[WIREFRAME v0.2] Books — lukeburgis.com</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,serif;background:#FAF8F3;color:#111}
+.wf-note{font-family:monospace;font-size:11px;background:#fffbe6;border-left:3px solid #e8b400;padding:6px 10px;color:#666;margin:6px 0;line-height:1.5}
+.needs-luke{background:#fff0f0;border:2px dashed #c00;padding:6px 10px;font-family:monospace;font-size:11px;color:#c00;margin:6px 0;line-height:1.5}
+.sec-tag{font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#aaa;position:absolute;top:8px;right:12px}
+section{position:relative;border:2px solid #ccc;background:#fff;padding:48px}
+section+section{border-top:none}
+nav{background:#fff;border:2px solid #ccc;padding:18px 48px;display:flex;align-items:center;justify-content:space-between}
+.logo-box{border:2px solid #111;padding:8px 18px;font-family:monospace;font-size:12px;color:#888}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:monospace;font-size:13px}
+.nav-links li.active{font-weight:bold;text-decoration:underline}
+.nav-cta{border:2px solid #111;background:#111;color:#fff;padding:10px 18px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+h1{font-size:48px;font-weight:normal;line-height:1.1;max-width:800px;margin-bottom:8px}
+h2{font-size:28px;font-weight:normal;margin-bottom:16px}
+p{font-size:16px;line-height:1.7;max-width:680px;margin-bottom:12px;color:#222}
+.btn-dark{display:inline-block;background:#111;color:#fff;padding:13px 28px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:4px 8px 4px 0;text-decoration:none}
+.btn-light{display:inline-block;background:#fff;color:#111;border:2px solid #111;padding:11px 26px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:4px 0;text-decoration:none}
+/* Flagship book entry */
+.book-flagship{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;padding:48px 0;border-bottom:2px solid #e8e2d6}
+.book-flagship:last-child{border-bottom:none}
+.book-cover-lg{border:2px solid #ccc;background:#e8e8e8;width:220px;height:310px;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#888;text-align:center;padding:8px;flex-shrink:0}
+.book-meta h2{font-size:30px;font-style:italic;font-weight:normal;margin-bottom:6px}
+.book-meta .year-pub{font-family:monospace;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.book-meta p{max-width:560px}
+.accolades{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.accolade{border:1px solid #ccc;padding:5px 12px;font-family:monospace;font-size:11px;color:#666;background:#fafafa}
+.marquee-quote{border-left:3px solid #111;padding:14px 20px;margin:20px 0;max-width:520px}
+.marquee-quote blockquote{font-size:17px;line-height:1.55;font-style:italic;margin-bottom:6px}
+.marquee-quote cite{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
+.retailer-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+/* Tier divider */
+.tier-divider{border:none;border-top:2px solid #e8e2d6;margin:8px 0;position:relative}
+.tier-label{text-align:center;font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#aaa;padding:20px 0 8px;border-bottom:1px solid #f0ede8;margin-bottom:8px}
+/* Compact book grid */
+.books-compact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:16px}
+.book-compact{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;padding:28px;border:2px solid #e8e2d6;background:#fafafa}
+.book-cover-sm{border:2px solid #ccc;background:#e8e8e8;width:120px;height:168px;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:11px;color:#888;text-align:center;padding:6px;flex-shrink:0}
+.book-compact h3{font-size:18px;font-style:italic;font-weight:normal;margin-bottom:4px}
+.book-compact .year-pub{font-family:monospace;font-size:11px;color:#888;margin-bottom:10px}
+.book-compact p{font-size:14px;color:#555;max-width:none;margin-bottom:12px}
+footer{background:#1a1a1a;color:#777;padding:48px;font-family:monospace;font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
+footer h4{color:#fff;margin-bottom:14px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+footer ul{list-style:none}
+footer li{margin-bottom:7px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-box">[ LOGO — B&amp;W <span style="color:#c00">NEEDS LUKE</span> ]</div>
+  <ul class="nav-links">
+    <li class="active">Books</li>
+    <li>Speaking</li>
+    <li>Formation</li>
+    <li>Writing</li>
+    <li>About</li>
+  </ul>
+  <div class="nav-cta">Newsletter →</div>
+</nav>
+<div class="wf-note">NAV: 5 items + Newsletter CTA. Active = Books. No cart, no Shop.</div>
+
+<!-- PAGE HEADER -->
+<section style="background:#eeebe6;padding:48px">
+  <h1>Books</h1>
+  <p style="font-family:monospace;font-size:13px;color:#888;text-transform:uppercase;letter-spacing:.08em;margin:0">Works by Luke Burgis</p>
+</section>
+
+<!-- §1 FLAGSHIP BOOKS (Tier 1) -->
+<section>
+  <span class="sec-tag">§1 FLAGSHIP BOOKS</span>
+  <div class="wf-note">TIER 1: Full treatment — large cover, full description, endorsements, accolades, retailer links. Two books: Wanting + The One and the Ninety-Nine.</div>
+
+  <!-- Book 1: Wanting -->
+  <div class="book-flagship">
+    <div class="book-cover-lg">[ Cover —<br><em>Wanting</em><br>(2021)<br>NEEDS LUKE ]</div>
+    <div class="book-meta">
+      <h2>Wanting</h2>
+      <p class="year-pub">2021 · St. Martin's Press</p>
+      <p>A landmark exploration of René Girard's theory of mimetic desire — why we want what other people want, and what to do about it. Translated into 20+ languages. Taught at universities, businesses, and religious communities worldwide.</p>
+      <div class="accolades">
+        <span class="accolade">FT Business Book of the Month</span>
+        <span class="accolade">Next Big Idea Club</span>
+        <span class="accolade">Bloomberg · 52 New Books</span>
+        <span class="accolade">Aleo Review of Books 2022 Book of the Year</span>
+      </div>
+      <div class="marquee-quote">
+        <blockquote>"The clearest, most accessible introduction to René Girard available."</blockquote>
+        <cite>Peter Thiel</cite>
+      </div>
+      <div class="wf-note">Thiel quote: from Amazon editorial reviews. Verify permission before final. Do NOT use National Review "most important book…" quote — source unverified, on hold until Luke provides it.</div>
+      <div class="retailer-links">
+        <a class="btn-dark" href="https://www.amazon.com/dp/1250262488" target="_blank">Amazon</a>
+        <a class="btn-light" href="https://bookshop.org/p/books/wanting-the-power-of-mimetic-desire-in-everyday-life-luke-burgis/15192737" target="_blank">Bookshop.org</a>
+        <a class="btn-light" href="#" target="_blank">Barnes &amp; Noble</a>
+      </div>
+      <div style="margin-top:16px"><a href="/books/wanting" style="font-family:monospace;font-size:12px;color:#111;text-transform:uppercase;letter-spacing:.06em">Read more + full endorsements →</a></div>
+    </div>
+  </div>
+
+  <!-- Book 2: The One and the Ninety-Nine -->
+  <div class="book-flagship">
+    <div class="book-cover-lg">[ Cover —<br><em>The One and<br>the Ninety-Nine</em><br>(2026)<br>NEEDS LUKE ]</div>
+    <div class="book-meta">
+      <h2>The One and the Ninety-Nine</h2>
+      <p class="year-pub">2026</p>
+      <p>How cultures protect — or destroy — the individual. A follow-up to <em>Wanting</em> that applies mimetic theory to the tension between individual identity and group conformity.</p>
+      <div class="marquee-quote">
+        <blockquote>"Social contagion is the most important phenomenon of our time…"</blockquote>
+        <cite>Tyler Cowen</cite>
+      </div>
+      <div class="wf-note">Cowen quote: from publisher/Target pages. Verify exact full wording + permission before final.</div>
+      <div class="retailer-links">
+        <a class="btn-dark" href="#" target="_blank">Amazon</a>
+        <a class="btn-light" href="#" target="_blank">Bookshop.org</a>
+        <a class="btn-light" href="#" target="_blank">Barnes &amp; Noble</a>
+      </div>
+      <div class="needs-luke">Retailer links for The One and the Ninety-Nine [NEEDS LUKE]</div>
+      <div style="margin-top:16px"><a href="/books/one-and-ninety-nine" style="font-family:monospace;font-size:12px;color:#111;text-transform:uppercase;letter-spacing:.06em">Read more + full endorsements →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- §2 COMPACT BOOKS (Tier 2) -->
+<section style="background:#fafafa">
+  <span class="sec-tag">§2 ALSO BY LUKE BURGIS</span>
+  <div class="tier-label">Also by Luke Burgis</div>
+  <div class="wf-note">TIER 2: Compact treatment — cover, short description, retailer links. Smaller visual weight than Tier 1. Rationale: hiding a book looks stranger than listing it small; tiering protects flagship positioning.</div>
+
+  <div class="books-compact-grid">
+
+    <!-- Book 3: BE NOT CONFORMED -->
+    <div class="book-compact">
+      <div class="book-cover-sm">[ Cover —<br>BE NOT<br>CONFORMED<br>NEEDS LUKE ]</div>
+      <div>
+        <h3>BE NOT CONFORMED</h3>
+        <p class="year-pub needs-luke">[Year · Publisher — NEEDS LUKE]</p>
+        <p class="needs-luke">[Short description — NEEDS LUKE: positioning copy for compact entry]</p>
+        <div class="retailer-links">
+          <a class="btn-light" href="#" style="font-size:11px;padding:8px 14px">Amazon</a>
+        </div>
+        <div class="needs-luke">Retailer links [NEEDS LUKE]</div>
+      </div>
+    </div>
+
+    <!-- Book 4: Unrepeatable -->
+    <div class="book-compact">
+      <div class="book-cover-sm">[ Cover —<br>Unrepeatable<br>NEEDS LUKE ]</div>
+      <div>
+        <h3>Unrepeatable</h3>
+        <p class="year-pub needs-luke">[Year · Publisher — NEEDS LUKE]</p>
+        <p class="needs-luke">[Short description — NEEDS LUKE: positioning copy for compact entry]</p>
+        <div class="retailer-links">
+          <a class="btn-light" href="#" style="font-size:11px;padding:8px 14px">Amazon</a>
+        </div>
+        <div class="needs-luke">Retailer links [NEEDS LUKE]</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="wf-note">DECISION (supersedes earlier "Unrepeatable on About only" plan): All four books on the Books index, tiered. See 2026-09-20-1306-books-page-four-tiered.md.</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="logo-box" style="display:inline-block;color:#777;border-color:#444;margin-bottom:14px">[ LOGO — B&amp;W ]</div>
+    <p style="color:#555;font-size:12px;margin-top:8px">Author · Professor · Founder<br>lukeburgis.com</p>
+  </div>
+  <div><h4>Work</h4><ul><li>Books</li><li>Speaking</li><li>Formation</li><li>Writing</li></ul></div>
+  <div><h4>Connect</h4><ul><li>Newsletter</li><li>Twitter / X</li><li>LinkedIn</li><li>Contact</li></ul></div>
+  <div><h4>Cluny Institute</h4><ul><li>cluny.org</li></ul></div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700">
+  <title>Work as Soulcraft vertical lockup</title>
+  <desc>Vertical lockup with the vesica piscis mark above the Work as Soulcraft wordmark.</desc>
+  <g transform="translate(600, 240)" fill="none" stroke="#1a1a1a" stroke-width="4" stroke-linecap="round">
+    <circle cx="-66" cy="0" r="130"/>
+    <circle cx="66" cy="0" r="130"/>
+  </g>
+  <text x="600" y="555"
+        font-family="'EB Garamond', 'Cormorant Garamond', Garamond, Georgia, 'Times New Roman', serif"
+        font-size="108"
+        font-weight="400"
+        text-anchor="middle"
+        fill="#1a1a1a">Work as Soulcraft</text>
+</svg>

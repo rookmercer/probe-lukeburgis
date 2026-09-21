@@ -19,12 +19,10 @@ h2{font-size:24px;font-weight:normal;margin-bottom:16px}
 p{font-size:16px;line-height:1.7;color:#222;margin-bottom:12px}
 .btn-dark{display:inline-block;background:#111;color:#FAF8F3;padding:12px 28px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 8px 4px 0}
 .btn-light{display:inline-block;background:transparent;color:#111;border:2px solid #111;padding:10px 26px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 0}
-.section{padding:64px 0;border-top:1px solid #e8e2d6}
-.section:first-of-type{border-top:none}
 /* Featured book layout */
 .book-featured{display:grid;grid-template-columns:220px 1fr;gap:56px;align-items:start;margin-bottom:64px}
 .book-featured:last-child{margin-bottom:0}
-.book-cover-wrap{width:220px;aspect-ratio:2/3;background:#FAF8F3;overflow:hidden;flex-shrink:0}
+.book-cover-wrap{width:220px;aspect-ratio:2/3;background:#FAF8F3;overflow:hidden;flex-shrink:0;box-shadow:0 8px 32px rgba(0,0,0,0.10)}
 .book-cover-wrap img{width:100%;height:100%;object-fit:contain}
 .pub-line{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:10px}
 .book-title{font-size:30px;font-style:italic;font-weight:normal;margin-bottom:16px}
@@ -33,11 +31,17 @@ p{font-size:16px;line-height:1.7;color:#222;margin-bottom:12px}
 .endorsement blockquote{font-size:16px;font-style:italic;line-height:1.6;margin-bottom:6px}
 .endorsement cite{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
 /* Compact book layout */
-.book-compact{display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:start;padding:28px 0;border-top:1px solid #e8e2d6}
+.book-compact{display:grid;gap:28px;align-items:start;padding:28px 0;border-top:1px solid #e8e2d6}
 .book-compact:first-child{border-top:none}
-.book-cover-sm{width:120px;aspect-ratio:2/3;background:#FAF8F3;overflow:hidden}
-.book-cover-sm img{width:100%;height:100%;object-fit:contain}
 .compact-title{font-size:18px;font-style:italic;font-weight:normal;margin-bottom:4px}
+/* Unrepeatable — smallest */
+.book-compact.sm{grid-template-columns:90px 1fr}
+.book-cover-xs{width:90px;aspect-ratio:2/3;background:#FAF8F3;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.08)}
+.book-cover-xs img{width:100%;height:100%;object-fit:contain}
+/* BNC — compact */
+.book-compact.md{grid-template-columns:120px 1fr}
+.book-cover-sm{width:120px;aspect-ratio:2/3;background:#FAF8F3;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.09)}
+.book-cover-sm img{width:100%;height:100%;object-fit:contain}
 /* Section divider */
 .also-by-heading{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:28px;padding-top:48px;border-top:2px solid #e8e2d6}
 footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:monospace;font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-top:80px}
@@ -67,6 +71,7 @@ footer a{color:#777;text-decoration:none}
     <li><a href="books.html"><strong>Books</strong></a></li>
     <li><a href="speaking.html">Speaking</a></li>
     <li><a href="formation.html">Formation</a></li>
+    <li><a href="events.html">Events</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
   <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
@@ -89,19 +94,17 @@ footer a{color:#777;text-decoration:none}
     <div>
       <p class="pub-line">St. Martin's Press · 2021</p>
       <h2 class="book-title"><em>Wanting: The Power of Mimetic Desire in Everyday Life</em></h2>
-      <p>Why do we want what other people want? Drawing on the work of René Girard, <em>Wanting</em> shows that desire is mimetic — we borrow our wants from models around us. The implications reach into every corner of life: careers, relationships, markets, and culture. Translated into 20+ languages and taught at universities, corporations, and religious communities worldwide.</p>
+      <p>A landmark exploration of René Girard's theory of mimetic desire — why we want what other people want, and what to do about it. Translated into 20+ languages.</p>
       <div class="endorsement">
         <blockquote>"The clearest, most accessible introduction to René Girard available."</blockquote>
         <cite>Peter Thiel</cite>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;margin-bottom:18px">
-        <span style="font-family:monospace;font-size:11px;background:#f0ede8;padding:4px 12px">FT Business Book of the Month</span>
-        <span style="font-family:monospace;font-size:11px;background:#f0ede8;padding:4px 12px">Next Big Idea Club</span>
-        <span style="font-family:monospace;font-size:11px;background:#f0ede8;padding:4px 12px">Bloomberg · 52 New Books</span>
-      </div>
       <div class="retailer-links">
         <a class="btn-dark" href="https://www.amazon.com/dp/1250262488" target="_blank">Amazon</a>
         <a class="btn-light" href="https://bookshop.org/p/books/wanting-the-power-of-mimetic-desire-in-everyday-life-luke-burgis/15192737" target="_blank">Bookshop.org</a>
+      </div>
+      <div style="margin-top:16px">
+        <a href="book-detail.html" style="font-family:monospace;font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Learn more →</a>
       </div>
     </div>
   </div>
@@ -113,14 +116,10 @@ footer a{color:#777;text-decoration:none}
     <div>
       <p class="pub-line">St. Martin's Press · 2026</p>
       <h2 class="book-title"><em>The One and the Ninety-Nine</em></h2>
-      <p>How cultures protect — or destroy — the individual. A follow-up to <em>Wanting</em> that applies mimetic theory to the tension between individual identity and group conformity.</p>
-      <div class="endorsement">
-        <blockquote>"Social contagion is the most important phenomenon of our time — and Luke Burgis is the go-to thinker on it."</blockquote>
-        <cite>Tyler Cowen, Economist, Mercatus Center</cite>
-      </div>
-      <div class="retailer-links">
-        <a class="btn-dark" href="#" target="_blank">Amazon</a>
-        <a class="btn-light" href="#" target="_blank">Bookshop.org</a>
+      <p>How cultures protect — or destroy — the individual. A follow-up to <em>Wanting</em> applying mimetic theory to identity and conformity.</p>
+      <p style="font-family:monospace;font-size:11px;color:#aaa;margin-top:8px">Retailer links coming soon.</p>
+      <div style="margin-top:16px">
+        <a href="book-detail.html" style="font-family:monospace;font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Learn more →</a>
       </div>
     </div>
   </div>
@@ -132,27 +131,25 @@ footer a{color:#777;text-decoration:none}
   <div class="inner">
     <p class="also-by-heading">Also by Luke Burgis</p>
 
-    <div class="book-compact" id="bnc">
+    <div class="book-compact md" id="bnc">
       <div class="book-cover-sm">
         <img src="assets/images/be-not-conformed-cover.jpg" alt="BE NOT CONFORMED">
       </div>
       <div>
         <p style="font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">CUA Press · Edited by Luke Burgis</p>
         <h3 class="compact-title"><em>BE NOT CONFORMED</em></h3>
-        <p style="font-size:14px;color:#555;margin-bottom:10px">René Girard at the nexus of Athens, Jerusalem, and Silicon Valley.</p>
-        <a href="#" style="font-family:monospace;font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Amazon →</a>
+        <p style="font-size:14px;color:#555;margin-bottom:0">René Girard at the nexus of Athens, Jerusalem, and Silicon Valley.</p>
       </div>
     </div>
 
-    <div class="book-compact" id="unrepeatable">
-      <div class="book-cover-sm">
+    <div class="book-compact sm" id="unrepeatable">
+      <div class="book-cover-xs">
         <img src="assets/images/unrepeatable-cover.jpg" alt="Unrepeatable">
       </div>
       <div>
         <p style="font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">Emmaus Road · Co-authored with Joshua Miller, PhD</p>
-        <h3 class="compact-title"><em>Unrepeatable</em></h3>
-        <p style="font-size:14px;color:#555;margin-bottom:10px">On the unique calling of every person — vocation, identity, and what it means to cultivate a life that is irreducibly yours. Foreword by George Weigel.</p>
-        <a href="#" style="font-family:monospace;font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Amazon →</a>
+        <h3 class="compact-title" style="font-size:15px"><em>Unrepeatable</em></h3>
+        <p style="font-size:13px;color:#555;margin-bottom:0">On the unique calling of every person — vocation, identity, and what it means to cultivate a life that is irreducibly yours.</p>
       </div>
     </div>
 
@@ -164,7 +161,7 @@ footer a{color:#777;text-decoration:none}
     <p style="font-size:14px;font-family:Georgia,serif;color:#FAF8F3;margin-bottom:6px">Luke Burgis</p>
     <p style="color:#555;font-size:11px">Author · Professor · Founder<br>lukeburgis.com</p>
   </div>
-  <div><h4>Work</h4><ul><li><a href="books.html">Books</a></li><li><a href="speaking.html">Speaking</a></li><li><a href="formation.html">Formation</a></li></ul></div>
+  <div><h4>Work</h4><ul><li><a href="books.html">Books</a></li><li><a href="speaking.html">Speaking</a></li><li><a href="formation.html">Formation</a></li><li><a href="events.html">Events</a></li></ul></div>
   <div><h4>Connect</h4><ul><li><a href="https://read.lukeburgis.com">Newsletter</a></li><li><a href="#">Twitter / X</a></li><li><a href="#">LinkedIn</a></li></ul></div>
   <div><h4>Cluny Institute</h4><ul><li><a href="https://cluny.org">cluny.org</a></li></ul></div>
 </footer>

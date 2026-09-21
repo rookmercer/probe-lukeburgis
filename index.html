@@ -190,6 +190,9 @@ p{font-size:16px;line-height:1.72;max-width:660px;margin-bottom:12px;color:#222}
 .nl-form input::placeholder{color:#666}
 .nl-form button{border:2px solid #FAF8F3;background:#FAF8F3;color:#111;padding:12px 20px;font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;white-space:nowrap}
 
+/* ── Books 3-up responsive ── */
+.books-3up{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:32px;align-items:start;justify-items:center}
+@media(max-width:700px){.books-3up{grid-template-columns:1fr!important;justify-items:center}}
 /* ── Footer ── */
 footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:monospace;font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
 footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
@@ -217,6 +220,7 @@ footer a:hover{color:#FAF8F3}
     <li><a href="books.html">Books</a></li>
     <li><a href="speaking.html">Speaking</a></li>
     <li><a href="formation.html">Formation</a></li>
+    <li><a href="events.html">Events</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
   <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
@@ -282,25 +286,25 @@ footer a:hover{color:#FAF8F3}
   <div class="inner">
     <span class="label">Books</span>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:32px;align-items:start">
+    <div class="books-3up">
 
       <!-- Wanting -->
       <div style="text-align:center">
         <a href="books.html#wanting" style="display:block;text-decoration:none">
-          <div style="width:100%;aspect-ratio:2/3;background:#FAF8F3;overflow:hidden;margin:0 auto 18px">
+          <div style="width:200px;aspect-ratio:2/3;background:#FAF8F3;overflow:hidden;margin:0 auto 18px;box-shadow:0 8px 32px rgba(0,0,0,0.10)">
             <img src="assets/images/wanting-cover.webp" alt="Wanting" style="width:100%;height:100%;object-fit:contain">
           </div>
         </a>
         <p style="font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#888;margin-bottom:4px">St. Martin's Press · 2021</p>
         <h3 style="font-size:17px;font-style:italic;font-weight:normal;margin-bottom:6px"><a href="books.html#wanting" style="color:#111;text-decoration:none"><em>Wanting</em></a></h3>
-        <p style="font-size:13px;color:#666;margin-bottom:10px">The essential guide to mimetic desire — why we want what other people want.</p>
+        <p style="font-size:13px;color:#666;margin-bottom:10px">The landmark book on mimetic desire — why we want what other people want.</p>
         <a href="books.html#wanting" style="font-family:monospace;font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Learn more →</a>
       </div>
 
       <!-- The One and the Ninety-Nine -->
       <div style="text-align:center">
         <a href="books.html#one-and-99" style="display:block;text-decoration:none">
-          <div style="width:100%;aspect-ratio:2/3;background:#FAF8F3;overflow:hidden;margin:0 auto 18px">
+          <div style="width:200px;aspect-ratio:2/3;background:#FAF8F3;overflow:hidden;margin:0 auto 18px;box-shadow:0 8px 32px rgba(0,0,0,0.10)">
             <img src="assets/images/one-and-99-cover.png" alt="The One and the Ninety-Nine" style="width:100%;height:100%;object-fit:contain">
           </div>
         </a>
@@ -313,7 +317,7 @@ footer a:hover{color:#FAF8F3}
       <!-- BE NOT CONFORMED -->
       <div style="text-align:center">
         <a href="books.html#bnc" style="display:block;text-decoration:none">
-          <div style="width:100%;aspect-ratio:2/3;background:#FAF8F3;overflow:hidden;margin:0 auto 18px">
+          <div style="width:200px;aspect-ratio:2/3;background:#FAF8F3;overflow:hidden;margin:0 auto 18px;box-shadow:0 8px 32px rgba(0,0,0,0.10)">
             <img src="assets/images/be-not-conformed-cover.jpg" alt="BE NOT CONFORMED" style="width:100%;height:100%;object-fit:contain">
           </div>
         </a>
@@ -332,30 +336,15 @@ footer a:hover{color:#FAF8F3}
 </section>
 
 
-<!-- §4 UPCOMING EVENTS -->
+<!-- §4 UPCOMING EVENTS TEASER -->
 <section>
   <div class="inner">
     <span class="label">Upcoming Events</span>
-    <div style="margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
-      <div style="border-top:2px solid #111;padding-top:16px">
-        <p style="font-family:monospace;font-size:11px;color:#888;margin-bottom:4px">[Placeholder Event — City, ST]</p>
-        <p style="font-size:15px;font-weight:normal;margin-bottom:2px">[Event Title]</p>
-        <p style="font-size:13px;color:#666">Mar 2027 · Keynote</p>
-      </div>
-      <div style="border-top:2px solid #111;padding-top:16px">
-        <p style="font-family:monospace;font-size:11px;color:#888;margin-bottom:4px">[Placeholder Event — City, ST]</p>
-        <p style="font-size:15px;font-weight:normal;margin-bottom:2px">[Event Title]</p>
-        <p style="font-size:13px;color:#666">Apr 2027 · Workshop</p>
-      </div>
-      <div style="border-top:2px solid #111;padding-top:16px">
-        <p style="font-family:monospace;font-size:11px;color:#888;margin-bottom:4px">[Placeholder Event — City, ST]</p>
-        <p style="font-size:15px;font-weight:normal;margin-bottom:2px">[Event Title]</p>
-        <p style="font-size:13px;color:#666">May 2027 · Conference</p>
-      </div>
+    <div style="margin-top:16px;border-top:1px solid #e8e2d6">
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e8e2d6"><span style="font-family:monospace;font-size:11px;color:#888">Mar 2027</span><span style="font-size:14px">[Event Title] &mdash; City, ST &mdash; Keynote</span></div>
+      <div style="display:grid;grid-template-columns:90px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #e8e2d6"><span style="font-family:monospace;font-size:11px;color:#888">Apr 2027</span><span style="font-size:14px">[Event Title] &mdash; City, ST &mdash; Workshop</span></div>
     </div>
-    <div style="margin-top:28px">
-      <a href="events.html" class="btn-light" style="font-size:12px">View All Events →</a>
-    </div>
+    <a href="events.html" style="display:inline-block;margin-top:18px;font-family:monospace;font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">View all events →</a>
   </div>
 </section>
 

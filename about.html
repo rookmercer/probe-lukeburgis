@@ -29,7 +29,7 @@ p{font-size:16px;line-height:1.7;max-width:680px;margin-bottom:14px;color:#222}
 .hero-photo{position:absolute;top:0;right:0;bottom:0;width:45%;background:#d8d4ce;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#888}
 /* Bio */
 .bio-grid{display:grid;grid-template-columns:1fr 2fr;gap:56px;align-items:start;margin-top:8px}
-.portrait-placeholder{border:2px solid #ccc;background:#e8e8e8;height:380px;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#888}
+.portrait-placeholder{border:2px solid #ccc;background:#e8e8e8;height:380px;overflow:hidden}
 /* Pullquote */
 .pullquote{border-left:4px solid #111;padding:28px 36px;margin:32px 0;max-width:640px;background:#fafafa}
 .pullquote blockquote{font-size:22px;line-height:1.55;font-style:italic;margin-bottom:12px;color:#111}
@@ -71,7 +71,7 @@ footer li{margin-bottom:7px}
 <!-- §1 HERO -->
 <div class="hero-about">
   <span class="sec-tag">§1 HERO</span>
-  <div class="hero-photo">[ Portrait photo — B&amp;W or muted<br>NEEDS LUKE ]</div>
+  <div class="hero-photo"></div>
   <div style="position:relative;z-index:1">
     <h1>Luke Burgis</h1>
     <p style="font-family:monospace;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#666;max-width:none;margin-bottom:0">Author &nbsp;·&nbsp; Professor &nbsp;·&nbsp; Founder</p>
@@ -85,7 +85,7 @@ footer li{margin-bottom:7px}
   <span class="sec-tag">§2 BIO</span>
   <div class="bio-grid">
     <div>
-      <div class="portrait-placeholder">[ Portrait —<br>secondary<br>NEEDS LUKE ]</div>
+      <div class="portrait-placeholder"><img src="assets/images/luke-portrait-1.webp" alt="Luke Burgis" style="width:100%;height:100%;object-fit:cover;object-position:center top"></div>
     </div>
     <div>
       <p>Luke Burgis is the author of <em>Wanting: The Power of Mimetic Desire in Everyday Life</em> and <em>The One and the Ninety-Nine</em>. He is a professor at The Catholic University of America, where he received the</p>

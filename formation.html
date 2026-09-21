@@ -4,221 +4,160 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formation — lukeburgis.com</title>
+<title>Formation — Luke Burgis</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Georgia,serif;background:#FAF8F3;color:#111}
+body{font-family:Georgia,serif;background:#FAF8F3;color:#111;font-size:16px;line-height:1.6}
+a{color:inherit;text-decoration:none}
 
-section{position:relative;border:2px solid #ccc;background:#fff;padding:48px}
-section+section{border-top:none}
-nav{background:#fff;border:2px solid #ccc;padding:18px 48px;display:flex;align-items:center;justify-content:space-between}
-.logo-box{border:2px solid #111;padding:8px 18px;font-family:monospace;font-size:12px;color:#888}
-.nav-links{list-style:none;display:flex;gap:28px;font-family:monospace;font-size:13px}
-.nav-links li.active{font-weight:bold;text-decoration:underline}
-.nav-cta{border:2px solid #111;background:#111;color:#fff;padding:10px 18px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
-h1{font-size:52px;font-weight:normal;line-height:1.1;max-width:800px;margin-bottom:20px}
-h2{font-size:28px;font-weight:normal;margin-bottom:16px}
-h3{font-size:20px;font-weight:normal;margin-bottom:10px}
-p{font-size:16px;line-height:1.7;max-width:680px;margin-bottom:12px;color:#222}
-.btn-dark{display:inline-block;background:#111;color:#fff;padding:15px 34px;font-family:monospace;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin:6px 10px 6px 0;text-decoration:none}
-.btn-light{display:inline-block;background:#fff;color:#111;border:2px solid #111;padding:13px 32px;font-family:monospace;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin:6px 0;text-decoration:none}
-.problem-section{background:#1a1a1a;color:#fff;padding:64px 48px;border:2px solid #000;border-top:none}
-.problem-section h2{color:#fff;font-size:32px;margin-bottom:20px}
-.problem-section p{color:#ccc;max-width:680px}
-.freebie{background:#f0ede8;border:2px solid #ccc;border-top:none;padding:48px}
-.freebie h2{font-size:22px;font-weight:normal;margin-bottom:10px}
-.freebie-form{display:flex;margin-top:20px;max-width:440px}
-.freebie-form input{flex:1;border:2px solid #111;padding:12px 16px;font-family:monospace;font-size:14px;background:#fff}
-.freebie-form button{border:2px solid #111;background:#111;color:#fff;padding:12px 20px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;white-space:nowrap}
-.what-it-is{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:24px}
-.course-visual{border:2px solid #ccc;background:#e8e8e8;height:260px;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:12px;color:#888}
-.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
-.who-card{border:2px solid #ccc;padding:18px;background:#fafafa}
-.who-card h4{font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-.who-card p{font-size:14px;color:#555;max-width:none;margin:0}
-.modules{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
-.module{border:2px solid #ccc;padding:16px 20px;background:#fafafa;display:flex;gap:14px;align-items:flex-start}
-.module-num{font-family:monospace;font-size:22px;color:#ccc;min-width:32px;line-height:1}
-.module-text h4{font-size:14px;margin-bottom:4px}
-.module-text p{font-size:13px;color:#666;max-width:none;margin:0}
-.social-proof{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:20px}
-.proof-item{border-left:3px solid #111;padding-left:14px}
-.proof-item blockquote{font-size:15px;line-height:1.6;font-style:italic;margin-bottom:8px}
-.proof-item cite{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
-.pricing-box{border:3px solid #111;padding:40px;max-width:480px;text-align:center;margin-top:24px}
-.pricing-box .price{font-size:52px;font-weight:normal;font-family:monospace;margin-bottom:8px}
-.pricing-box .price-note{font-family:monospace;font-size:13px;color:#666;margin-bottom:24px}
-.faq{margin-top:22px}
-.faq-item{border:2px solid #ccc;padding:20px 24px;background:#fafafa;margin-bottom:10px}
-.faq-item h4{font-size:15px;margin-bottom:8px}
-.faq-item p{font-size:14px;color:#555;max-width:none;margin:0}
-.corporate-banner{background:#f0ede8;border:2px solid #ccc;border-top:none;padding:32px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px}
-/* Soulcraft logo inline SVG sizing */
-.soulcraft-logo{width:340px;height:auto;display:block;margin-bottom:20px}
-footer{background:#1a1a1a;color:#777;padding:48px;font-family:monospace;font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
-footer h4{color:#fff;margin-bottom:14px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+/* NAV */
+nav{background:#FAF8F3;border-bottom:1px solid #ddd;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-monogram{font-family:Georgia,serif;font-size:20px;font-weight:normal;letter-spacing:-.01em;color:#111;text-decoration:none}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:monospace;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.nav-links a{color:#555;text-decoration:none;transition:color .15s}
+.nav-links a:hover{color:#111}
+.nav-links .active{color:#111;font-weight:bold}
+.nav-cta{border:1px solid #111;background:#111;color:#FAF8F3;padding:9px 18px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;text-decoration:none;transition:background .15s,color .15s}
+.nav-cta:hover{background:#333}
+
+/* PAGE HEADER */
+.page-header{padding:72px 48px 48px;border-bottom:1px solid #ddd}
+.page-header h1{font-size:48px;font-weight:normal;line-height:1.1;margin-bottom:12px;letter-spacing:-.02em}
+.page-header .subhead{font-family:monospace;font-size:15px;color:#666;letter-spacing:.03em}
+
+/* PROGRAM CARDS */
+.programs{padding:64px 48px;display:flex;flex-direction:column;gap:48px;max-width:860px}
+
+.program-card{background:#fff;border:1px solid #ddd;padding:48px;position:relative}
+.program-card.accent-soulcraft{border-left:4px solid #50826E}
+
+.program-label{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#888;margin-bottom:16px}
+.program-title{font-size:30px;font-weight:normal;line-height:1.15;margin-bottom:8px;letter-spacing:-.01em}
+.program-tagline{font-size:16px;color:#555;font-style:italic;margin-bottom:20px}
+.program-desc{font-size:16px;line-height:1.7;color:#333;margin-bottom:14px;max-width:620px}
+.program-audience{font-family:monospace;font-size:13px;color:#777;margin-bottom:28px;letter-spacing:.02em}
+
+.program-facts{display:flex;flex-wrap:wrap;gap:0;margin-bottom:28px;border:1px solid #e0ddd8;background:#faf8f3}
+.fact{padding:10px 18px;font-family:monospace;font-size:12px;color:#555;letter-spacing:.03em;border-right:1px solid #e0ddd8}
+.fact:last-child{border-right:none}
+.fact strong{color:#111}
+
+.btn-primary{display:inline-block;background:#111;color:#FAF8F3;padding:14px 28px;font-family:monospace;font-size:13px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;transition:background .15s}
+.btn-primary:hover{background:#333}
+
+/* FOOTER */
+footer{background:#1a1a1a;color:#777;padding:56px 48px;font-family:monospace;font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;border-top:1px solid #000;margin-top:64px}
+footer h4{color:#FAF8F3;margin-bottom:14px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
 footer ul{list-style:none}
-footer li{margin-bottom:7px}
+footer li{margin-bottom:8px}
+footer a{color:#777;text-decoration:none}
+footer a:hover{color:#FAF8F3}
+.footer-brand{font-family:Georgia,serif;font-size:18px;font-weight:normal;color:#FAF8F3;margin-bottom:10px;letter-spacing:-.01em}
+.footer-tagline{color:#555;font-size:12px;line-height:1.6}
+
+@media(max-width:700px){
+  nav{padding:14px 20px;flex-wrap:wrap;gap:12px}
+  .nav-links{gap:14px}
+  .page-header{padding:48px 20px 32px}
+  .page-header h1{font-size:36px}
+  .programs{padding:40px 20px}
+  .program-card{padding:28px 24px}
+  footer{grid-template-columns:1fr 1fr;gap:28px;padding:40px 20px}
+  .program-facts{flex-direction:column}
+  .fact{border-right:none;border-bottom:1px solid #e0ddd8}
+  .fact:last-child{border-bottom:none}
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div style="font-family:Georgia,serif;font-size:18px;font-weight:normal;letter-spacing:-.01em;color:#FAF8F3;margin-bottom:14px">Luke Burgis</div>
+  <a class="nav-monogram" href="index.html">Luke Burgis</a>
   <ul class="nav-links">
     <li><a href="books.html">Books</a></li>
     <li><a href="speaking.html">Speaking</a></li>
-    <li class="active">Formation</li>
+    <li><span class="active">Formation</span></li>
     <li><a href="events.html">Events</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <div class="nav-cta">Newsletter →</div>
+  <a class="nav-cta" href="newsletter.html">Newsletter →</a>
 </nav>
-<!-- §1 HERO -->
-<section style="background:#eeebe6;min-height:420px;display:flex;flex-direction:column;justify-content:center">
-  <!-- Soulcraft logo SVG inline -->
-  <svg class="soulcraft-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" role="img" aria-label="Work as Soulcraft">
-    <path d="M 123.7 49.2 A 56 56 0 1 1 76.3 49.2" fill="none" stroke="#111111" stroke-width="10" stroke-linecap="round"/>
-    <g fill="#111111" font-family="Georgia, 'Times New Roman', serif">
-      <text x="190" y="96" font-size="34" letter-spacing="5">WORK AS SOULCRAFT</text>
-      <text x="192" y="132" font-size="14" letter-spacing="3">BECOMING FULLY ALIVE AS A HUMAN WORKER</text>
-    </g>
-  </svg>
-  <p style="font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:8px">Formation — Structured learning for individuals and teams</p>
-  <p style="font-size:20px;color:#555;margin-bottom:8px;font-style:italic">Forming a Person in the Age of Intelligent Machines</p>
-  <p style="font-size:17px;color:#444;margin-bottom:32px;max-width:580px">An 8-module formation program on discernment, agency, and building a life that's actually yours. Rooted in the ideas of <em>Wanting</em> and <em>The One and the Ninety-Nine</em>.</p>
-  <div>
-    <a class="btn-dark" href="https://learn.lukeburgis.com" target="_blank">Enroll Now →</a>
-    
-  </div>
-  </section>
 
-<!-- §2 THE PROBLEM -->
-<div class="problem-section">
-  <h2>Something is wrong at work.</h2>
-  <p>Burnout. Quiet quitting. The nagging sense that your ambitions are borrowed — that you're chasing goals that were never really yours. These aren't management failures. They're desire failures.</p>
-  <p style="margin-top:16px">Most of us have never been taught to want well. We absorb goals from our peers, our culture, our algorithms — and then wonder why reaching them doesn't feel like we thought it would.</p>
-  <p style="margin-top:16px">Work as Soulcraft is a program about learning to want differently. It won't make you more productive. It will help you figure out what's actually worth doing.</p>
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <h1>Formation</h1>
+  <p class="subhead">Structured learning for individuals and teams.</p>
+</header>
+
+<!-- PROGRAM CARDS -->
+<main class="programs">
+
+  <!-- Card 1: Work as Soulcraft -->
+  <div class="program-card accent-soulcraft">
+    <p class="program-label">Online Course</p>
+    <h2 class="program-title">Work as Soulcraft</h2>
+    <p class="program-tagline">Forming a Person in the Age of Intelligent Machines</p>
+    <p class="program-desc">An 8-module program on discernment, agency, and building a life that's actually yours. Rooted in the ideas of <em>Wanting</em> and <em>The One and the Ninety-Nine</em>.</p>
+    <p class="program-audience">For professionals, leaders, and anyone at a crossroads.</p>
+    <a class="btn-primary" href="https://learn.lukeburgis.com/was">Explore the program →</a>
   </div>
 
-<!-- §3 PHILOSOPHY FOR CREATORS FREEBIE -->
-<div class="freebie">
-  <h2>Start here — free.</h2>
-  <p style="max-width:520px">A free guide to the ideas behind the course. Sign up and it arrives in your inbox.</p>
-  <p style="font-family:monospace;font-size:13px;color:#888;margin-top:4px"><strong>PHILOSOPHY FOR CREATORS</strong></p>
-  <div class="freebie-form">
-    <input type="email" placeholder="your@email.com">
-    <button>Get the free guide</button>
+  <!-- Card 2: Foundations of Agency -->
+  <div class="program-card">
+    <p class="program-label">Half-Day Workshop</p>
+    <h2 class="program-title">Foundations of Agency</h2>
+    <p class="program-desc">A half-day workshop for corporate teams on mimetic desire, identity, and what drives human behavior at work. Grounded in the ideas of <em>Wanting</em>.</p>
+    <p class="program-audience">For leadership teams, executive offsites, and organizations.</p>
+    <a class="btn-primary" href="https://learn.lukeburgis.com/foa">Learn more →</a>
   </div>
-  
-</div>
 
-<!-- §4 WHAT IT IS -->
-<section>
-  <h2>What You'll Get</h2>
-  <div class="what-it-is">
-    <div>
-      <p><strong>8 modules.</strong> Each one builds on the last — from diagnosing your current desires to building practices that sustain meaningful work.</p>
-      <p><strong>A guided reflection companion</strong> — a custom model trained on Luke's ideas walks alongside you throughout the course.</p>
-      
+  <!-- Card 3: Philosophy of Technology: Rome Experience -->
+  <div class="program-card">
+    <p class="program-label">Cluny Academy · One Week in Rome</p>
+    <h2 class="program-title">Philosophy of Technology: Rome Experience</h2>
+    <p class="program-desc">A one-week program in Rome on the philosophy of technology — 12 hours of instruction plus cultural enrichment. Held in partnership with the Pontifical University of the Holy Cross. Graduates receive a certificate of completion signed by the rector.</p>
+    <p class="program-audience">Selective cohort. Maximum 20 participants. Application required.</p>
+    <div class="program-facts">
+      <div class="fact"><strong>Tuition:</strong> $2,500 (instruction only)</div>
+      <div class="fact"><strong>Applications open:</strong> November 1, 2026</div>
+      <div class="fact"><strong>Waitlist open now</strong></div>
     </div>
-    
+    <a class="btn-primary" href="https://learn.lukeburgis.com/pot">Join the waitlist →</a>
   </div>
-  </section>
 
-<!-- §5 WHO IT'S FOR -->
-<section style="background:#fafafa">
-  <h2>Who This Is For</h2>
-  <div class="who-grid">
-    <div class="who-card">
-      <h4>Professionals</h4>
-      <p>You've achieved what you set out to achieve — and something still feels off. This program names what's wrong and gives you a way forward.</p>
-    </div>
-    <div class="who-card">
-      <h4>Leaders</h4>
-      <p>You're responsible for other people's sense of meaning at work. This program gives you the framework to lead cultures that don't hollow people out.</p>
-    </div>
-    <div class="who-card">
-      <h4>Teams</h4>
-      <p>Corporate cohorts available — bring Work as Soulcraft to your organization. Contact Luke's team for pricing.</p>
-    </div>
-    <div class="who-card">
-      <h4>People at a Crossroads</h4>
-      <p>Whether you're changing careers, reentering the workforce, or questioning everything — this course was built for the in-between.</p>
-    </div>
-  </div>
-</section>
-
-<!-- §6 CURRICULUM -->
-<section>
-  <h2>The 8 Modules</h2>
-  
-  <div class="modules">
-    <div class="module"><div class="module-num">I</div></div>
-    <div class="module"><div class="module-num">II</div></div>
-    <div class="module"><div class="module-num">III</div></div>
-    <div class="module"><div class="module-num">IV</div></div>
-    <div class="module"><div class="module-num">V</div></div>
-    <div class="module"><div class="module-num">VI</div></div>
-    <div class="module"><div class="module-num">VII</div></div>
-    <div class="module"><div class="module-num">VIII</div></div>
-  </div>
-</section>
-
-<!-- §7 WHAT STUDENTS SAY -->
-<section style="background:#fafafa">
-  <h2>What students say</h2>
-  
-  <div class="social-proof">
-    
-    
-    
-  </div>
-</section>
-
-<!-- §8 ENROLL -->
-<section>
-  <h2>Enroll</h2>
-  <div class="pricing-box">
-    
-    
-    <a class="btn-dark" href="https://learn.lukeburgis.com" target="_blank" style="display:block;text-align:center">Enroll Now at learn.lukeburgis.com</a>
-    <p style="font-size:13px;color:#888;margin-top:14px;max-width:none">Questions? Contact Luke's team →</p>
-  </div>
-  </section>
-
-<!-- §9 CORPORATE -->
-<div class="corporate-banner">
-  <div>
-    <h3>Bring Work as Soulcraft to Your Team</h3>
-    <p style="max-width:480px">Corporate cohorts available for teams of 10+. License the curriculum for your organization or run a guided cohort with Luke's involvement.</p>
-    <a class="btn-dark" href="#" style="margin-top:14px;display:inline-block">Inquire — Corporate</a>
-  </div>
-  
-</div>
-
-<!-- §10 FAQ -->
-<section>
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq">
-    <div class="faq-item"><h4>How long does the course take?</h4></div>
-    <div class="faq-item"><h4>Is it self-paced or cohort-based?</h4></div>
-    <div class="faq-item"><h4>What's the refund policy?</h4></div>
-    <div class="faq-item"><h4>Can I take this with my team?</h4><p>Yes — corporate cohorts are available. Contact us for team pricing.</p></div>
-    <div class="faq-item"><h4>Do I need to have read <em>Wanting</em>?</h4><p>No — the course is self-contained. Reading <em>Wanting</em> first enriches the experience but isn't required.</p></div>
-  </div>
-</section>
+</main>
 
 <!-- FOOTER -->
 <footer>
   <div>
-    <div style="font-family:Georgia,serif;font-size:18px;font-weight:normal;letter-spacing:-.01em;color:#FAF8F3;margin-bottom:14px">Luke Burgis</div>
-    <p style="color:#555;font-size:12px;margin-top:8px">Author · Professor · Founder<br>lukeburgis.com</p>
+    <div class="footer-brand">Luke Burgis</div>
+    <p class="footer-tagline">Author · Professor · Founder<br>lukeburgis.com</p>
   </div>
-  <div><h4>Work</h4><ul><li>Books</li><li>Speaking</li><li>Formation</li></ul></div>
-  <div><h4>Connect</h4><ul><li>Newsletter</li><li>Twitter / X</li><li>LinkedIn</li><li>Contact</li></ul></div>
-  <div><h4>Cluny Institute</h4><ul><li>cluny.org</li></ul></div>
+  <div>
+    <h4>Work</h4>
+    <ul>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="speaking.html">Speaking</a></li>
+      <li><a href="formation.html">Formation</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="newsletter.html">Newsletter</a></li>
+      <li><a href="https://twitter.com/lukeburgis">Twitter / X</a></li>
+      <li><a href="https://linkedin.com/in/lukeburgis">LinkedIn</a></li>
+      <li><a href="about.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Cluny Institute</h4>
+    <ul>
+      <li><a href="https://cluny.org">cluny.org</a></li>
+    </ul>
+  </div>
 </footer>
 
 </body>

@@ -72,25 +72,60 @@ footer li{margin-bottom:7px}
 </nav>
 
 <!-- PAGE HEADER -->
-<section style="padding:72px 0 48px;border-bottom:1px solid #e8e2d6">
+<style>
+.sh-word{display:inline-block;transform:translateY(110%);opacity:0}
+.sh-body,.sh-punch{opacity:0;transform:translateY(10px)}
+</style>
+<section style="padding:96px 0 72px;border-bottom:1px solid #e8e2d6;overflow:hidden">
   <div class="inner">
-    <span class="label">Speaking</span>
-    <h1 style="font-family:var(--font-heading);font-size:52px;font-weight:600;line-height:1.1;margin:16px 0 24px;max-width:720px">Desire runs every organization.<br>Almost no one can see it.</h1>
-    <div id="speaking-subhead" style="max-width:640px">
-      <p class="speaking-reveal" style="font-family:var(--font-body);font-size:19px;line-height:1.65;color:#333;margin-bottom:0;opacity:0;transform:translateY(12px);transition:opacity .5s ease-out,transform .5s ease-out">Luke speaks to boards, founders, and executive teams about the hidden dynamics — imitation, rivalry, desire — that shape what organizations actually do.</p>
-      <p class="speaking-reveal" style="font-family:var(--font-heading);font-size:28px;font-weight:600;margin:16px 0 0;opacity:0;transform:translateY(12px);transition:opacity .5s ease-out,transform .5s ease-out">Not motivation.</p>
-      <p class="speaking-reveal" style="font-family:var(--font-heading);font-size:36px;font-weight:600;margin:8px 0 0;color:#111;opacity:0;transform:translateY(12px);transition:opacity .5s ease-out,transform .5s ease-out">Diagnosis.</p>
+    <span class="label sh-body">Speaking</span>
+    <h1 style="font-family:var(--font-heading);font-size:clamp(36px,5.5vw,64px);font-weight:600;line-height:1.08;margin:20px 0 32px;max-width:800px">
+      <span style="display:block;overflow:hidden"><span class="sh-word">Desire runs every organization.</span></span>
+      <span style="display:block;overflow:hidden"><span class="sh-word" style="transition-delay:.12s">Almost no one can see it.</span></span>
+    </h1>
+    <div style="max-width:640px">
+      <p class="sh-body" style="font-family:var(--font-body);font-size:19px;line-height:1.65;color:#333;margin-bottom:0">Luke speaks to boards, founders, and executive teams about the hidden dynamics — imitation, rivalry, desire — that shape what organizations actually do.</p>
+      <p class="sh-punch" style="font-family:var(--font-heading);font-size:30px;font-weight:600;margin:24px 0 0">Not motivation.</p>
+      <p class="sh-punch" style="font-family:var(--font-heading);font-size:40px;font-weight:600;margin:6px 0 0;color:#111">Diagnosis.</p>
     </div>
   </div>
 </section>
+<script>
+(function(){
+  function run(){
+    var words=document.querySelectorAll('.sh-word');
+    var bodies=document.querySelectorAll('.sh-body');
+    var punches=document.querySelectorAll('.sh-punch');
+    setTimeout(function(){
+      bodies.forEach(function(el){el.style.transition='opacity .4s ease, transform .4s ease';el.style.opacity='1';el.style.transform='translateY(0)';});
+    },80);
+    words.forEach(function(el,i){
+      setTimeout(function(){
+        el.style.transition='transform .65s cubic-bezier(.16,1,.3,1), opacity .5s ease';
+        el.style.transform='translateY(0)';el.style.opacity='1';
+      },180+i*150);
+    });
+    punches.forEach(function(el,i){
+      setTimeout(function(){
+        el.style.transition='opacity .45s ease, transform .45s ease';
+        el.style.opacity='1';el.style.transform='translateY(0)';
+      },700+i*220);
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}
+})();
+</script>
 
 <!-- VIDEO SECTION -->
 <section style="background:#111;padding:0">
-  <div style="position:relative;width:100%;padding-bottom:56.25%;overflow:hidden">
-    <iframe src="https://www.youtube.com/embed/GHpqQTy89mw" title="Luke Burgis speaking" frameborder="0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
+  <div style="position:relative;width:100%;padding-bottom:56.25%;background:#0d0d0d;overflow:hidden">
+    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" style="opacity:.3"><circle cx="28" cy="28" r="27" stroke="#FAF8F3" stroke-width="1.5"/><polygon points="22,18 42,28 22,38" fill="#FAF8F3"/></svg>
+      <p style="font-family:var(--font-label);font-size:11px;color:#444;text-transform:uppercase;letter-spacing:.14em;margin:0">Reel — awaiting embed URL from Luke</p>
+    </div>
   </div>
-  <div class="inner" style="padding-top:16px;padding-bottom:24px;background:#111">
-    <p style="font-family:var(--font-label);font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.1em;margin:0">[NEEDS LUKE: footage source / event name]</p>
+  <div class="inner" style="padding:14px 0 20px">
+    <p style="font-family:var(--font-label);font-size:11px;color:#444;text-transform:uppercase;letter-spacing:.1em;margin:0">[NEEDS LUKE: paste YouTube or Vimeo link here]</p>
   </div>
 </section>
 

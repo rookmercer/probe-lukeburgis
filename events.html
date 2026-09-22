@@ -4,25 +4,43 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 <title>Events — lukeburgis.com</title>
 <style>
+:root{
+  --font-heading:'Eczar',Georgia,serif;
+  --font-body:'Sura',Georgia,serif;
+  --font-label:'Montserrat',sans-serif;
+  --color-parchment:#E2D9C4;
+  --color-gold:#DC9B3C;
+  --color-ink:#111111;
+  --color-paper:#FAF8F3;
+}
+body{font-family:var(--font-body)}
+h1,h2{font-family:var(--font-heading);font-weight:600}
+h3,h4,h5,h6{font-family:var(--font-heading);font-weight:400}
+nav,.nav-links,.nav-links a,.nav-cta,.label,.pub-line,.btn-dark,.btn-light,.also-by-heading{font-family:var(--font-label)}
+
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Georgia,serif;background:#FAF8F3;color:#111}
 nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .nav-logo svg{width:44px;height:auto;display:block}
-.nav-links{list-style:none;display:flex;gap:32px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.nav-links{list-style:none;display:flex;gap:32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
 .nav-links a{color:#111;text-decoration:none}
-.nav-cta{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none}
+.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none}
 .inner{max-width:1120px;margin:0 auto;padding:0 56px}
 h1{font-size:42px;font-weight:normal;margin-bottom:6px}
-h2{font-size:22px;font-weight:normal;margin-bottom:24px;font-family:monospace;text-transform:uppercase;letter-spacing:.08em}
+h2{font-size:22px;font-weight:normal;margin-bottom:24px;font-family:var(--font-label);text-transform:uppercase;letter-spacing:.08em}
 .event-row{display:grid;grid-template-columns:120px 1fr;gap:28px;padding:22px 0;border-top:1px solid #e8e2d6;align-items:baseline}
 .event-row:first-child{border-top:none}
-.event-date{font-family:monospace;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:.06em}
+.event-date{font-family:var(--font-label);font-size:12px;color:#888;text-transform:uppercase;letter-spacing:.06em}
 .event-title{font-size:17px;margin-bottom:4px}
-.event-meta{font-size:13px;color:#666;font-family:monospace}
+.event-meta{font-size:13px;color:#666;font-family:var(--font-label)}
 .section-divider{border:none;border-top:2px solid #e8e2d6;margin:48px 0 32px}
-footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:monospace;font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-top:80px}
+footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-top:80px}
 footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
 footer ul{list-style:none}
 footer li{margin-bottom:8px}
@@ -82,7 +100,7 @@ footer a{color:#777;text-decoration:none}
       </div>
     </div>
 
-    <p style="font-family:monospace;font-size:11px;color:#aaa;margin-top:28px">Real events list needed from Luke — contact <a href="speaking.html" style="color:#888">speaking page</a> for availability.</p>
+    <p style="font-family:var(--font-label);font-size:11px;color:#aaa;margin-top:28px">Real events list needed from Luke — contact <a href="speaking.html" style="color:#888">speaking page</a> for availability.</p>
 
     <hr class="section-divider">
 
@@ -110,7 +128,7 @@ footer a{color:#777;text-decoration:none}
       </div>
     </div>
 
-    <p style="font-family:monospace;font-size:11px;color:#aaa;margin-top:28px">Full past-events list needed from Luke.</p>
+    <p style="font-family:var(--font-label);font-size:11px;color:#aaa;margin-top:28px">Full past-events list needed from Luke.</p>
   </div>
 </div>
 

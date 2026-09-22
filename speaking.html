@@ -4,59 +4,77 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 <title>Speaking — lukeburgis.com</title>
 <style>
+:root{
+  --font-heading:'Eczar',Georgia,serif;
+  --font-body:'Sura',Georgia,serif;
+  --font-label:'Montserrat',sans-serif;
+  --color-parchment:#E2D9C4;
+  --color-gold:#DC9B3C;
+  --color-ink:#111111;
+  --color-paper:#FAF8F3;
+}
+body{font-family:var(--font-body)}
+h1,h2{font-family:var(--font-heading);font-weight:600}
+h3,h4,h5,h6{font-family:var(--font-heading);font-weight:400}
+nav,.nav-links,.nav-links a,.nav-cta,.label,.pub-line,.btn-dark,.btn-light,.also-by-heading{font-family:var(--font-label)}
+
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Georgia,serif;background:#FAF8F3;color:#111}
 
 section{position:relative;border:2px solid #ccc;background:#fff;padding:48px}
 section+section{border-top:none}
 nav{background:#fff;border:2px solid #ccc;padding:18px 48px;display:flex;align-items:center;justify-content:space-between}
-.logo-box{border:2px solid #111;padding:8px 18px;font-family:monospace;font-size:12px;color:#888}
-.nav-links{list-style:none;display:flex;gap:28px;font-family:monospace;font-size:13px}
+.logo-box{border:2px solid #111;padding:8px 18px;font-family:var(--font-label);font-size:12px;color:#888}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:var(--font-label);font-size:13px}
 .nav-links li.active{font-weight:bold;text-decoration:underline}
-.nav-cta{border:2px solid #111;background:#111;color:#fff;padding:10px 18px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.nav-cta{border:2px solid #111;background:#111;color:#fff;padding:10px 18px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
 h1{font-size:44px;font-weight:normal;line-height:1.1;max-width:800px;margin-bottom:20px}
 h2{font-size:28px;font-weight:normal;margin-bottom:16px}
 h3{font-size:20px;font-weight:normal;margin-bottom:10px}
 p{font-size:16px;line-height:1.7;max-width:680px;margin-bottom:12px;color:#222}
-.btn-dark{display:inline-block;background:#111;color:#fff;padding:15px 34px;font-family:monospace;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin:6px 10px 6px 0;text-decoration:none}
-.btn-light{display:inline-block;background:#fff;color:#111;border:2px solid #111;padding:13px 32px;font-family:monospace;font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin:6px 0;text-decoration:none}
-.strip{background:#111;color:#fff;padding:14px 48px;display:flex;flex-wrap:wrap;gap:0;font-family:monospace;font-size:12px;align-items:center}
+.btn-dark{display:inline-block;background:#111;color:#fff;padding:15px 34px;font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin:6px 10px 6px 0;text-decoration:none}
+.btn-light{display:inline-block;background:#fff;color:#111;border:2px solid #111;padding:13px 32px;font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;margin:6px 0;text-decoration:none}
+.strip{background:#111;color:#fff;padding:14px 48px;display:flex;flex-wrap:wrap;gap:0;font-family:var(--font-label);font-size:12px;align-items:center}
 .strip span{padding:4px 22px 4px 0}
 .strip span+span{border-left:1px solid #444;padding-left:22px}
-.reel-wrap{border:2px solid #ccc;background:#e0e0e0;height:360px;display:flex;align-items:center;justify-content:center;font-family:monospace;font-size:14px;color:#888;margin:24px 0}
+.reel-wrap{border:2px solid #ccc;background:#e0e0e0;height:360px;display:flex;align-items:center;justify-content:center;font-family:var(--font-label);font-size:14px;color:#888;margin:24px 0}
 .topics{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:22px}
 .topic{border:2px solid #ccc;padding:24px;background:#fafafa}
 .topic h4{font-size:15px;margin-bottom:8px}
 .topic p{font-size:14px;color:#555;max-width:none;margin-bottom:8px}
-.topic .audience{font-family:monospace;font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.06em}
+.topic .audience{font-family:var(--font-label);font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.06em}
 .formats{display:flex;gap:20px;margin-top:20px;flex-wrap:wrap}
 .format{border:2px solid #ccc;padding:20px 28px;background:#fafafa;text-align:center;min-width:160px}
-.format h4{font-family:monospace;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.format h4{font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
 .format p{font-size:13px;color:#666;max-width:none;margin:0}
 .testimonials{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:20px}
 .testimonial{border-left:3px solid #111;padding-left:16px}
 .testimonial blockquote{font-size:15px;line-height:1.6;font-style:italic;margin-bottom:8px}
-.testimonial cite{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
-.tour-dates{width:100%;border-collapse:collapse;margin-top:20px;font-family:monospace;font-size:13px}
+.testimonial cite{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
+.tour-dates{width:100%;border-collapse:collapse;margin-top:20px;font-family:var(--font-label);font-size:13px}
 .tour-dates th{text-align:left;padding:10px 16px;background:#111;color:#fff;font-weight:normal;text-transform:uppercase;letter-spacing:.06em;font-size:11px}
 .tour-dates td{padding:12px 16px;border-bottom:1px solid #e0e0e0;color:#555}
 .tour-dates tr:nth-child(even) td{background:#fafafa}
 .process-steps{display:flex;gap:0;margin-top:24px;counter-reset:step}
 .process-step{flex:1;padding:28px 32px;border:2px solid #ccc;border-right:none;background:#fafafa;position:relative}
 .process-step:last-child{border-right:2px solid #ccc}
-.process-step::before{content:counter(step);counter-increment:step;display:block;font-family:monospace;font-size:32px;color:#ccc;margin-bottom:10px;line-height:1}
-.process-step h4{font-size:14px;font-family:monospace;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.process-step::before{content:counter(step);counter-increment:step;display:block;font-family:var(--font-label);font-size:32px;color:#ccc;margin-bottom:10px;line-height:1}
+.process-step h4{font-size:14px;font-family:var(--font-label);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
 .process-step p{font-size:13px;color:#555;max-width:none;margin:0}
 .inquiry-form{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px;max-width:700px}
 .inquiry-form .full{grid-column:1/-1}
 .field{display:flex;flex-direction:column;gap:6px}
-.field label{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
-.field input,.field select,.field textarea{border:2px solid #ccc;padding:12px 16px;font-family:monospace;font-size:14px;background:#fff}
+.field label{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
+.field input,.field select,.field textarea{border:2px solid #ccc;padding:12px 16px;font-family:var(--font-label);font-size:14px;background:#fff}
 .field textarea{height:100px;resize:vertical}
-.onesheet-link{display:inline-block;border:2px solid #ccc;padding:10px 20px;font-family:monospace;font-size:12px;color:#666;text-decoration:none;margin-top:16px}
-footer{background:#1a1a1a;color:#777;padding:48px;font-family:monospace;font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
+.onesheet-link{display:inline-block;border:2px solid #ccc;padding:10px 20px;font-family:var(--font-label);font-size:12px;color:#666;text-decoration:none;margin-top:16px}
+footer{background:#1a1a1a;color:#777;padding:48px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
 footer h4{color:#fff;margin-bottom:14px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
 footer ul{list-style:none}
 footer li{margin-bottom:7px}

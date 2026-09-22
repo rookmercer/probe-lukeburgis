@@ -4,32 +4,50 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 <title>Books — lukeburgis.com</title>
 <style>
+:root{
+  --font-heading:'Eczar',Georgia,serif;
+  --font-body:'Sura',Georgia,serif;
+  --font-label:'Montserrat',sans-serif;
+  --color-parchment:#E2D9C4;
+  --color-gold:#DC9B3C;
+  --color-ink:#111111;
+  --color-paper:#FAF8F3;
+}
+body{font-family:var(--font-body)}
+h1,h2{font-family:var(--font-heading);font-weight:600}
+h3,h4,h5,h6{font-family:var(--font-heading);font-weight:400}
+nav,.nav-links,.nav-links a,.nav-cta,.label,.pub-line,.btn-dark,.btn-light,.also-by-heading{font-family:var(--font-label)}
+
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Georgia,serif;background:#FAF8F3;color:#111}
 nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .nav-logo svg{width:44px;height:auto;display:block}
-.nav-links{list-style:none;display:flex;gap:32px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.nav-links{list-style:none;display:flex;gap:32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
 .nav-links a{color:#111;text-decoration:none}
-.nav-cta{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none}
+.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none}
 .inner{max-width:1120px;margin:0 auto;padding:0 40px}
 h1{font-size:42px;font-weight:normal;margin-bottom:6px}
 h2{font-size:24px;font-weight:normal;margin-bottom:16px}
 p{font-size:16px;line-height:1.7;color:#222;margin-bottom:12px}
-.btn-dark{display:inline-block;background:#111;color:#FAF8F3;padding:12px 28px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 8px 4px 0}
-.btn-light{display:inline-block;background:transparent;color:#111;border:2px solid #111;padding:10px 26px;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 0}
+.btn-dark{display:inline-block;background:#111;color:#FAF8F3;padding:12px 28px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 8px 4px 0}
+.btn-light{display:inline-block;background:transparent;color:#111;border:2px solid #111;padding:10px 26px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 0}
 /* Featured book layout */
 .book-featured{display:grid;grid-template-columns:220px 1fr;gap:56px;align-items:start;margin-bottom:64px}
 .book-featured:last-child{margin-bottom:0}
 .book-cover-wrap{width:220px;aspect-ratio:2/3;background:transparent;overflow:hidden;flex-shrink:0;box-shadow:0 8px 32px rgba(0,0,0,0.10)}
 .book-cover-wrap img{width:100%;height:100%;object-fit:cover}
-.pub-line{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:10px}
+.pub-line{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:10px}
 .book-title{font-size:30px;font-style:italic;font-weight:normal;margin-bottom:16px}
 .retailer-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .endorsement{border-left:3px solid #111;padding:14px 20px;margin:20px 0;max-width:520px}
 .endorsement blockquote{font-size:16px;font-style:italic;line-height:1.6;margin-bottom:6px}
-.endorsement cite{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
+.endorsement cite{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
 /* Compact book layout */
 .book-compact{display:grid;gap:28px;align-items:start;padding:28px 0;border-top:1px solid #e8e2d6}
 .book-compact:first-child{border-top:none}
@@ -43,8 +61,8 @@ p{font-size:16px;line-height:1.7;color:#222;margin-bottom:12px}
 .book-cover-sm{width:120px;aspect-ratio:2/3;background:transparent;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.09)}
 .book-cover-sm img{width:100%;height:100%;object-fit:cover}
 /* Section divider */
-.also-by-heading{font-family:monospace;font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:28px;padding-top:48px;border-top:2px solid #e8e2d6}
-footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:monospace;font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-top:80px}
+.also-by-heading{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:28px;padding-top:48px;border-top:2px solid #e8e2d6}
+footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-top:80px}
 footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
 footer ul{list-style:none}
 footer li{margin-bottom:8px}
@@ -80,7 +98,7 @@ footer a{color:#777;text-decoration:none}
 <div style="padding:56px 0 0">
   <div class="inner">
     <h1>Books</h1>
-    <p style="color:#888;font-family:monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-top:6px">Works by Luke Burgis</p>
+    <p style="color:#888;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-top:6px">Works by Luke Burgis</p>
   </div>
 </div>
 
@@ -104,7 +122,7 @@ footer a{color:#777;text-decoration:none}
         <a class="btn-light" href="https://bookshop.org/p/books/wanting-the-power-of-mimetic-desire-in-everyday-life-luke-burgis/15192737" target="_blank">Bookshop.org</a>
       </div>
       <div style="margin-top:16px">
-        <a href="book-detail.html" style="font-family:monospace;font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Learn more →</a>
+        <a href="book-detail.html" style="font-family:var(--font-label);font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Learn more →</a>
       </div>
     </div>
   </div>
@@ -117,9 +135,9 @@ footer a{color:#777;text-decoration:none}
       <p class="pub-line">St. Martin's Press · 2026</p>
       <h2 class="book-title"><em>The One and the Ninety-Nine</em></h2>
       <p>How cultures protect — or destroy — the individual. A follow-up to <em>Wanting</em> applying mimetic theory to identity and conformity.</p>
-      <p style="font-family:monospace;font-size:11px;color:#aaa;margin-top:8px">Retailer links coming soon.</p>
+      <p style="font-family:var(--font-label);font-size:11px;color:#aaa;margin-top:8px">Retailer links coming soon.</p>
       <div style="margin-top:16px">
-        <a href="book-detail.html" style="font-family:monospace;font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Learn more →</a>
+        <a href="book-detail.html" style="font-family:var(--font-label);font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Learn more →</a>
       </div>
     </div>
   </div>
@@ -136,7 +154,7 @@ footer a{color:#777;text-decoration:none}
         <img src="assets/images/be-not-conformed-bookshot-nobg.png" alt="BE NOT CONFORMED">
       </div>
       <div>
-        <p style="font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">CUA Press · Edited by Luke Burgis</p>
+        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">CUA Press · Edited by Luke Burgis</p>
         <h3 class="compact-title"><em>BE NOT CONFORMED</em></h3>
         <p style="font-size:14px;color:#555;margin-bottom:0">René Girard at the nexus of Athens, Jerusalem, and Silicon Valley.</p>
       </div>
@@ -147,7 +165,7 @@ footer a{color:#777;text-decoration:none}
         <img src="assets/images/unrepeatable-bookshot.jpg" alt="Unrepeatable">
       </div>
       <div>
-        <p style="font-family:monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">Emmaus Road · Co-authored with Joshua Miller, PhD</p>
+        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">Emmaus Road · Co-authored with Joshua Miller, PhD</p>
         <h3 class="compact-title" style="font-size:15px"><em>Unrepeatable</em></h3>
         <p style="font-size:13px;color:#555;margin-bottom:0">On the unique calling of every person — vocation, identity, and what it means to cultivate a life that is irreducibly yours.</p>
       </div>

@@ -41,7 +41,7 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 .nav-logo svg{width:48px;height:auto;display:block}
 .nav-links{list-style:none;display:flex;gap:32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
 .nav-links a{color:#111;text-decoration:none}
-.nav-links a:hover{text-decoration:underline}
+.nav-links a:hover{text-decoration:none;color:var(--color-gold)}
 .nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none;border:none}
 
 /* ── Hero ── */
@@ -156,11 +156,13 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 h2{font-size:30px;font-weight:normal;line-height:1.15;margin-bottom:18px}
 h3{font-size:19px;font-weight:normal;margin-bottom:8px}
 p{font-size:16px;line-height:1.72;max-width:660px;margin-bottom:12px;color:#222}
-.label{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:14px;display:block}
+.label{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#666;margin-bottom:14px;display:block;border-left:3px solid var(--color-gold);padding-left:10px}
 
 /* Buttons */
-.btn-dark{display:inline-block;background:#111;color:#FAF8F3;padding:14px 32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:6px 10px 6px 0;text-decoration:none;border:2px solid #111}
-.btn-light{display:inline-block;background:transparent;color:#111;border:2px solid #111;padding:12px 30px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:6px 0;text-decoration:none}
+.btn-dark{display:inline-block;background:#111;color:#FAF8F3;padding:14px 32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:6px 10px 6px 0;text-decoration:none;border:2px solid #111;transition:background .18s,border-color .18s,color .18s}
+.btn-dark:hover{background:var(--color-gold);border-color:var(--color-gold);color:#111}
+.btn-light{display:inline-block;background:transparent;color:#111;border:2px solid #111;padding:12px 30px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:6px 0;text-decoration:none;transition:border-color .18s,color .18s}
+.btn-light:hover{border-color:var(--color-gold);color:var(--color-gold)}
 
 /* ── §2 Questions ── */
 .questions-index{margin-top:28px}
@@ -168,7 +170,7 @@ p{font-size:16px;line-height:1.72;max-width:660px;margin-bottom:12px;color:#222}
 .question-item:last-child{border-bottom:1px solid #e8e2d6}
 .question-item h3{font-size:20px;font-style:italic;font-weight:normal;margin-bottom:6px}
 .question-item .position{font-size:14px;color:#555;line-height:1.6;max-width:560px}
-.question-item .arrow{font-family:var(--font-label);font-size:13px;color:#aaa;white-space:nowrap;margin-top:4px}
+.question-item .arrow{font-family:var(--font-label);font-size:13px;color:var(--color-gold);white-space:nowrap;margin-top:4px}
 
 /* ── §3 Books ── */
 .books-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:28px}
@@ -189,12 +191,12 @@ p{font-size:16px;line-height:1.72;max-width:660px;margin-bottom:12px;color:#222}
 
 /* ── §5 Testimonials ── */
 .testimonials-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-top:24px}
-.testimonial{border-left:3px solid #111;padding-left:16px}
+.testimonial{border-left:3px solid var(--color-gold);padding-left:16px}
 .testimonial blockquote{font-size:15px;line-height:1.65;font-style:italic;margin-bottom:10px}
 .testimonial cite{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
 
 /* ── §6 Freebie ── */
-.freebie{background:#f0ede8;border:2px solid #ccc;border-top:none;padding:48px 56px}
+.freebie{background:var(--color-parchment);border:2px solid #ccc;border-top:none;padding:48px 56px}
 .freebie-form{display:flex;margin-top:20px;max-width:440px}
 .freebie-form input{flex:1;border:2px solid #111;padding:12px 16px;font-family:var(--font-label);font-size:13px;background:#fff;outline:none}
 .freebie-form button{border:2px solid #111;background:#111;color:#FAF8F3;padding:12px 20px;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;white-space:nowrap}
@@ -391,7 +393,22 @@ footer a:hover{color:#FAF8F3}
         <span class="label">Speaking</span>
         <h2>Ideas worth the stage.</h2>
         <p>Luke helps leaders and organizations understand the hidden forces shaping human behavior — and build cultures where individuals thrive.</p>
-        <p style="font-family:var(--font-label);font-size:12px;color:#888;margin-bottom:20px">Keynote &nbsp;·&nbsp; Half-day workshop &nbsp;·&nbsp; Full-day retreat</p>
+        <div style="margin-bottom:20px;border-top:1px solid #e8e2d6;padding-top:16px">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+    <div>
+      <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#111;margin-bottom:5px">Keynote</p>
+      <p style="font-family:var(--font-body);font-size:13px;color:#666;margin:0;line-height:1.55">60–90 min. For conferences, boards, and annual meetings. Fully customized to the event theme and audience. [NEEDS LUKE: typical audience size]</p>
+    </div>
+    <div>
+      <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#111;margin-bottom:5px">Half-Day Workshop</p>
+      <p style="font-family:var(--font-body);font-size:13px;color:#666;margin:0;line-height:1.55">For leadership teams and executive offsites. Interactive exercises, pre-work, and a shared frameworks session. [NEEDS LUKE: typical group size]</p>
+    </div>
+    <div>
+      <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#111;margin-bottom:5px">Full-Day Retreat</p>
+      <p style="font-family:var(--font-body);font-size:13px;color:#666;margin:0;line-height:1.55">Deep immersion for senior teams. Full formation arc: diagnosis, framework, application. Participants leave with a personal action plan. [NEEDS LUKE: typical group size]</p>
+    </div>
+  </div>
+</div>
         <div style="margin-top:28px;padding-top:28px;border-top:1px solid #e8e2d6">
   <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:18px">Signature Topics</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:680px">
@@ -437,7 +454,7 @@ footer a:hover{color:#FAF8F3}
 </section>
 
 <!-- §X FORMATION -->
-<section style="background:#111;color:#FAF8F3;border:2px solid #000;border-top:none;padding:48px 56px">
+<section style="background:#111;color:#FAF8F3;border:2px solid #000;border-top:4px solid var(--color-gold);padding:48px 56px">
   <div class="inner" style="display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center">
     <div>
       <span class="label" style="color:#555">Formation</span>

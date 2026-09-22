@@ -43,26 +43,29 @@ nav{background:#FAF8F3;border-bottom:1px solid #ddd;padding:18px 48px;display:fl
 .page-header h1{font-size:48px;font-weight:normal;line-height:1.1;margin-bottom:12px;letter-spacing:-.02em}
 .page-header .subhead{font-family:var(--font-label);font-size:15px;color:#666;letter-spacing:.03em}
 
-/* PROGRAM CARDS */
-.programs{padding:64px 48px;display:flex;flex-direction:column;gap:48px;max-width:860px}
+/* INNER CONTAINER */
+.inner{max-width:1100px;margin:0 auto;padding:0 48px}
 
-.program-card{background:#fff;border:1px solid #ddd;padding:48px;position:relative}
-.program-card.accent-soulcraft{border-left:4px solid #50826E}
-.program-card:not(.accent-soulcraft){border-top:3px solid var(--color-gold)}
-
-.program-label{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#888;margin-bottom:16px}
-.program-title{font-size:30px;font-weight:normal;line-height:1.15;margin-bottom:8px;letter-spacing:-.01em}
-.program-tagline{font-size:16px;color:#555;font-style:italic;margin-bottom:20px}
-.program-desc{font-size:16px;line-height:1.7;color:#333;margin-bottom:14px;max-width:620px}
-.program-audience{font-family:var(--font-label);font-size:13px;color:#777;margin-bottom:28px;letter-spacing:.02em}
-
-.program-facts{display:flex;flex-wrap:wrap;gap:0;margin-bottom:28px;border:1px solid #e0ddd8;background:#faf8f3}
-.fact{padding:10px 18px;font-family:var(--font-label);font-size:12px;color:#555;letter-spacing:.03em;border-right:1px solid #e0ddd8}
-.fact:last-child{border-right:none}
-.fact strong{color:#111}
-
-.btn-primary{display:inline-block;background:#111;color:#FAF8F3;padding:14px 28px;font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;transition:background .15s,color .15s,border-color .15s}
-.btn-primary:hover{background:var(--color-gold);color:#111}
+/* EDITORIAL BANDS */
+.band-number{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:8px}
+.band-title{font-family:var(--font-heading);font-size:36px;font-weight:600;line-height:1.2;margin-bottom:8px;color:#111}
+.band-label{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:20px;display:block}
+.band-intro{font-family:var(--font-body);font-size:17px;line-height:1.7;color:#333;margin-bottom:16px}
+.band-who{font-family:var(--font-body);font-size:15px;font-style:italic;color:#555;margin-bottom:24px}
+.facts-rail{background:#F5F0E8;padding:28px;border-left:3px solid var(--color-gold)}
+.facts-rail p{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:8px}
+.facts-rail dl{margin:0}
+.facts-rail dt{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-top:12px;margin-bottom:2px}
+.facts-rail dd{font-family:var(--font-body);font-size:14px;color:#111;margin:0;line-height:1.5}
+.outcome-list{list-style:none;padding:0;margin:20px 0 28px}
+.outcome-list li{font-family:var(--font-body);font-size:14px;line-height:1.65;color:#333;padding:10px 0 10px 20px;border-top:1px solid #e8e2d6;position:relative}
+.outcome-list li::before{content:'→';position:absolute;left:0;color:var(--color-gold)}
+.band-cta{display:inline-block;background:#111;color:#FAF8F3;padding:13px 30px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;transition:background .2s}
+.band-cta:hover{background:var(--color-gold)}
+.gold-rule{width:40px;height:2px;background:var(--color-gold);margin-bottom:28px}
+@media(max-width:768px){
+  .formation-band .inner{grid-template-columns:1fr!important;gap:40px!important}
+}
 
 /* FOOTER */
 footer{background:#1a1a1a;color:#777;padding:56px 48px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;border-top:1px solid #000;margin-top:64px}
@@ -79,12 +82,8 @@ footer a:hover{color:#FAF8F3}
   .nav-links{gap:14px}
   .page-header{padding:48px 20px 32px}
   .page-header h1{font-size:36px}
-  .programs{padding:40px 20px}
-  .program-card{padding:28px 24px}
+  .inner{padding:0 20px}
   footer{grid-template-columns:1fr 1fr;gap:28px;padding:40px 20px}
-  .program-facts{flex-direction:column}
-  .fact{border-right:none;border-bottom:1px solid #e0ddd8}
-  .fact:last-child{border-bottom:none}
 }
 </style>
 </head>
@@ -100,52 +99,121 @@ footer a:hover{color:#FAF8F3}
     <li><a href="events.html">Events</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <a class="nav-cta" href="newsletter.html">Newsletter →</a>
+  <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
 </nav>
 
 <!-- PAGE HEADER -->
 <header class="page-header">
-  <h1>Formation</h1>
-  <p class="subhead">Structured learning for individuals and teams.</p>
+  <div class="inner">
+    <h1>Formation</h1>
+    <p class="subhead">Structured learning for individuals and teams.</p>
+  </div>
 </header>
 
-<!-- PROGRAM CARDS -->
-<main class="programs">
-
-  <!-- Card 1: Work as Soulcraft -->
-  <div class="program-card accent-soulcraft">
-    <p class="program-label">Online Course</p>
-    <h2 class="program-title">Work as Soulcraft</h2>
-    <p class="program-tagline">Forming a Person in the Age of Intelligent Machines</p>
-    <p class="program-desc">An 8-module program on discernment, agency, and building a life that's actually yours. Rooted in the ideas of <em>Wanting</em> and <em>The One and the Ninety-Nine</em>.</p>
-    <p class="program-audience">For professionals, leaders, and anyone at a crossroads.</p>
-    <a class="btn-primary" href="https://learn.lukeburgis.com/was">Explore the program →</a>
-  </div>
-
-  <!-- Card 2: Foundations of Agency -->
-  <div class="program-card">
-    <p class="program-label">Half-Day Workshop</p>
-    <h2 class="program-title">Foundations of Agency</h2>
-    <p class="program-desc">A half-day workshop for corporate teams on mimetic desire, identity, and what drives human behavior at work. Grounded in the ideas of <em>Wanting</em>.</p>
-    <p class="program-audience">For leadership teams, executive offsites, and organizations.</p>
-    <a class="btn-primary" href="https://learn.lukeburgis.com/foa">Learn more →</a>
-  </div>
-
-  <!-- Card 3: Philosophy of Technology: Rome Experience -->
-  <div class="program-card">
-    <p class="program-label">Cluny Academy · One Week in Rome</p>
-    <h2 class="program-title">Philosophy of Technology: Rome Experience</h2>
-    <p class="program-desc">A one-week program in Rome on the philosophy of technology — 12 hours of instruction plus cultural enrichment. Held in partnership with the Pontifical University of the Holy Cross. Graduates receive a certificate of completion signed by the rector.</p>
-    <p class="program-audience">Selective cohort. Maximum 20 participants. Application required.</p>
-    <div class="program-facts">
-      <div class="fact"><strong>Tuition:</strong> $2,500 (instruction only)</div>
-      <div class="fact"><strong>Applications open:</strong> November 1, 2026</div>
-      <div class="fact"><strong>Waitlist open now</strong></div>
+<!-- BAND 01: Work as Soulcraft -->
+<section class="formation-band" style="padding:80px 0;border-bottom:1px solid #e8e2d6">
+  <div class="inner" style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
+    <div>
+      <div class="gold-rule"></div>
+      <p class="band-number">01</p>
+      <span class="band-label">Online Course</span>
+      <h2 class="band-title">Work as Soulcraft</h2>
+      <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#50826E;margin-bottom:20px">Forming a Person in the Age of Intelligent Machines</p>
+      <p class="band-intro">An 8-module program on discernment, agency, and building a life that's actually yours. Rooted in the ideas of <em>Wanting</em> and <em>The One and the Ninety-Nine</em>.</p>
+      <p class="band-who">For founders, executives, and professionals who want work to be a place of formation — not just production.</p>
+      <ul class="outcome-list">
+        <li>Diagnose the desires driving your decisions.</li>
+        <li>Bring Ignatian discernment to your next move.</li>
+        <li>Rebuild your relationship with work from the inside out.</li>
+      </ul>
+      <a href="https://learn.lukeburgis.com/was" class="band-cta">Explore the program →</a>
     </div>
-    <a class="btn-primary" href="https://learn.lukeburgis.com/pot">Join the waitlist →</a>
+    <div>
+      <div class="facts-rail">
+        <p>Program Details</p>
+        <dl>
+          <dt>Format</dt><dd>Online, self-paced</dd>
+          <dt>Modules</dt><dd>8 modules · ~20 hours of video</dd>
+          <dt>Includes</dt><dd>Work Profile Assessment, Belief Paper, Desire &amp; mimetic audits, Ignatian discernment exercise, AI research tool (1M+ word library), 300+ page Reader, Discord community + alumni network</dd>
+          <dt>Enrollment</dt><dd>Waitlist only</dd>
+          <dt>Tuition</dt><dd>[NEEDS LUKE]</dd>
+        </dl>
+      </div>
+    </div>
   </div>
+</section>
 
-</main>
+<!-- BAND 02: Foundations of Agency -->
+<section class="formation-band" style="padding:80px 0;border-bottom:1px solid #e8e2d6">
+  <div class="inner" style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
+    <div>
+      <div class="gold-rule"></div>
+      <p class="band-number">02</p>
+      <span class="band-label">Half-Day Workshop</span>
+      <h2 class="band-title">Foundations of Agency</h2>
+      <p class="band-intro">A half-day workshop for corporate teams on mimetic desire, identity, and what drives human behavior at work. Grounded in the ideas of <em>Wanting</em>.</p>
+      <p class="band-who">For leadership teams, executive offsites, and organizations seeking a shared diagnostic language.</p>
+      <ul class="outcome-list">
+        <li>Name the mimetic dynamics driving team behavior.</li>
+        <li>Diagnose rivalry and incentive traps before they escalate.</li>
+        <li>Leave with a shared language for desire, identity, and agency.</li>
+      </ul>
+      <a href="https://learn.lukeburgis.com/foa" class="band-cta">Learn more →</a>
+    </div>
+    <div>
+      <div class="facts-rail">
+        <p>Workshop Details</p>
+        <dl>
+          <dt>Format</dt><dd>On-site or virtual [NEEDS LUKE: confirm]</dd>
+          <dt>Duration</dt><dd>Half-day (approx. 4 hours)</dd>
+          <dt>Group size</dt><dd>[NEEDS LUKE]</dd>
+          <dt>Agenda</dt><dd>[NEEDS LUKE: session breakdown]</dd>
+          <dt>Inquiry</dt><dd>Via speaking inquiry form</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND 03: Philosophy of Technology: Rome Experience -->
+<section class="formation-band" style="padding:80px 0;border-bottom:1px solid #e8e2d6">
+  <div class="inner" style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
+    <div>
+      <div class="gold-rule"></div>
+      <p class="band-number">03</p>
+      <span class="band-label">Cluny Academy · One Week in Rome</span>
+      <h2 class="band-title">Philosophy of Technology: Rome Experience</h2>
+      <p style="font-family:var(--font-body);font-size:14px;color:#666;margin-bottom:20px">In partnership with the <strong>Pontifical University of the Holy Cross, Rome</strong></p>
+      <p class="band-intro">One week in Rome exploring the philosophy of technology — what it means to be human in an age of intelligent machines. 12 hours of philosophy instruction plus cultural enrichment.</p>
+      <p class="band-who">Selective cohort. Maximum 20 participants. Application required.</p>
+      <ul class="outcome-list">
+        <li>12 hours of philosophy instruction, taught by Luke Burgis &amp; Special Guests.</li>
+        <li>Certificate of completion signed by the rector of the Pontifical University of the Holy Cross.</li>
+        <li>Cultural enrichment in Rome — one of the world's great centers of learning.</li>
+      </ul>
+      <a href="https://learn.lukeburgis.com/pot" class="band-cta">Join the waitlist →</a>
+    </div>
+    <div>
+      <div class="facts-rail">
+        <p>Program Details</p>
+        <dl>
+          <dt>Location</dt><dd>Rome, Italy</dd>
+          <dt>Duration</dt><dd>One week</dd>
+          <dt>Instruction</dt><dd>12 hours</dd>
+          <dt>Program dates</dt><dd>[NEEDS LUKE]</dd>
+          <dt>Cohort</dt><dd>Maximum 20 participants</dd>
+          <dt>Tuition</dt><dd>$2,500 (instruction only; room &amp; board separate)</dd>
+          <dt>Housing</dt><dd>Budget option (8-min walk from classes) + premium hotels available [NEEDS LUKE: names]</dd>
+          <dt>Certificate</dt><dd>Signed by the rector, Pontifical University of the Holy Cross</dd>
+          <dt>Waitlist</dt><dd>Open now</dd>
+          <dt>Applications open</dt><dd>November 1, 2026</dd>
+          <dt>Applications close</dt><dd>February 15, 2027</dd>
+          <dt>Payment</dt><dd>[NEEDS LUKE]</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -165,7 +233,7 @@ footer a:hover{color:#FAF8F3}
   <div>
     <h4>Connect</h4>
     <ul>
-      <li><a href="newsletter.html">Newsletter</a></li>
+      <li><a href="https://read.lukeburgis.com">Newsletter</a></li>
       <li><a href="https://twitter.com/lukeburgis">Twitter / X</a></li>
       <li><a href="https://linkedin.com/in/lukeburgis">LinkedIn</a></li>
       <li><a href="about.html">Contact</a></li>
@@ -178,6 +246,22 @@ footer a:hover{color:#FAF8F3}
     </ul>
   </div>
 </footer>
+
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  document.querySelectorAll('.formation-band').forEach(function(band){
+    var fired=false;
+    var els=[band.querySelector('.gold-rule'),band.querySelector('.band-number'),band.querySelector('.band-title'),band.querySelector('.band-intro'),band.querySelector('.band-who'),band.querySelector('.outcome-list'),band.querySelector('.band-cta'),band.querySelector('.facts-rail')].filter(Boolean);
+    els.forEach(function(el){el.style.opacity='0';el.style.transform='translateY(14px)';el.style.transition='opacity .5s ease-out,transform .5s ease-out';});
+    new IntersectionObserver(function(entries){
+      if(fired||!entries[0].isIntersecting)return;
+      fired=true;
+      els.forEach(function(el,i){setTimeout(function(){el.style.opacity='1';el.style.transform='translateY(0)';},i*120);});
+    },{threshold:0.15}).observe(band);
+  });
+})();
+</script>
 
 </body>
 </html>

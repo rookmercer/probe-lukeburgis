@@ -591,31 +591,43 @@ footer a:hover{color:#FAF8F3}
 </script>
 
 <!-- PFC POPUP -->
-<div id="pfc-overlay" role="dialog" aria-modal="true" aria-label="Philosophy for Creators — free reading list" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;align-items:center;justify-content:center;padding:20px">
-  <div id="pfc-modal" style="background:#FAF8F3;max-width:560px;width:100%;position:relative;max-height:90vh;overflow-y:auto" tabindex="-1">
+<div id="pfc-overlay" role="dialog" aria-modal="true" aria-label="Philosophy for Creators — free reading list" style="display:none;position:fixed;inset:0;background:rgba(17,17,17,.55);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;padding:20px">
+  <div id="pfc-modal" style="background:#FAF8F3;max-width:880px;border-radius:0;box-shadow:0 24px 80px rgba(0,0,0,0.35);width:100%;position:relative;max-height:90vh;overflow-y:auto;animation:pfcRise .35s ease-out" tabindex="-1">
     <button id="pfc-close" aria-label="Close" onclick="pfcDismiss('close_button')" style="position:absolute;top:16px;right:16px;background:none;border:none;font-size:24px;cursor:pointer;color:#555;line-height:1;z-index:1">&times;</button>
-    <div style="display:grid;grid-template-columns:200px 1fr;min-height:360px">
-      <!-- Left: cover image -->
-      <div style="background:#1a1a1a;overflow:hidden">
-        <img src="assets/images/pfc-cover.png" alt="Philosophy for Creators" style="width:100%;height:100%;object-fit:cover;opacity:.9">
+    <div style="display:grid;grid-template-columns:260px 1fr;min-height:380px">
+      <!-- Left: parchment field with tilted card -->
+      <div style="background:#E2D9C4;display:flex;align-items:center;justify-content:center;padding:32px;min-height:380px">
+        <div style="transform:rotate(-2deg);box-shadow:0 12px 40px rgba(0,0,0,0.18);max-width:220px;width:100%">
+          <img src="assets/images/pfc-preview-p3.png" alt="Philosophy for Creators — preview page" style="width:100%;display:block">
+        </div>
       </div>
       <!-- Right: form -->
-      <div style="padding:36px 32px">
-        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:12px">Free &middot; 93 pages</p>
-        <h3 style="font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.3;margin-bottom:10px;color:#111">Philosophy for Creators</h3>
-        <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:#555;margin-bottom:20px">A curated reading list spanning 2,000 years &mdash; get it free.</p>
+      <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:center">
+        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:16px">Free reading guide</p>
+        <h3 style="font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.3;margin-bottom:14px;color:#111">Two thousand years of essential books, distilled for creators.</h3>
+        <p style="font-family:var(--font-body);font-size:14px;line-height:1.65;color:#444;margin-bottom:16px">A reading map through philosophy, theology, and the examined life — from Plato to Girard. Not a syllabus. A curated path through the books that formed Luke's thinking.</p>
+        <ul style="list-style:none;padding:0;margin:0 0 20px;font-family:var(--font-body);font-size:13px;color:#333;line-height:1.7">
+          <li style="padding:6px 0;border-top:1px solid #e8e2d6">→ The 3, 5, and 10 books to read first</li>
+          <li style="padding:6px 0;border-top:1px solid #e8e2d6">→ One essential pick per century, with commentary</li>
+          <li style="padding:6px 0;border-top:1px solid #e8e2d6">→ Free PDF, delivered instantly</li>
+        </ul>
         <!-- Kajabi form embed -->
         <script src="https://luke-burgis.mykajabi.com/forms/2148674542/embed.js"></script>
-        <p style="font-family:var(--font-label);font-size:10px;color:#999;margin-top:12px;text-transform:uppercase;letter-spacing:.06em">Your email stays private.</p>
+        <p style="font-family:var(--font-label);font-size:10px;color:#999;margin-top:14px;text-transform:uppercase;letter-spacing:.06em;line-height:1.6">Free. The guide arrives by email in under a minute. You'll also get Luke's occasional letter — unsubscribe anytime.</p>
       </div>
     </div>
   </div>
 </div>
 
 <style>
+@keyframes pfcRise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:768px){
   #pfc-section .inner{grid-template-columns:1fr!important;gap:40px!important}
   #pfc-section .inner>div:last-child{max-width:280px;margin:0 auto}
+}
+@media(max-width:600px){
+  #pfc-modal [style*="grid-template-columns:260px"]{grid-template-columns:1fr!important;grid-template-rows:auto auto}
+  #pfc-modal [style*="grid-template-columns:260px"] > div:first-child{min-height:200px!important;padding:24px!important}
 }
 </style>
 

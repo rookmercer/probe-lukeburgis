@@ -614,6 +614,83 @@ footer a:hover{color:#FAF8F3}
 
 <style>
 @keyframes pfcRise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Kajabi embed overrides ── */
+/* Suppress Kajabi's injected headline, description, and consent copy */
+#pfc-modal .kj-email-form-container .kj-email-form-header,
+#pfc-modal .kj-email-form-container h1,
+#pfc-modal .kj-email-form-container h2,
+#pfc-modal .kj-email-form-container h3,
+#pfc-modal .kj-email-form-container p:not(.pfc-microcopy),
+#pfc-modal .kj-email-form-container .kj-email-form-title,
+#pfc-modal .kj-email-form-container .kj-email-form-subtitle,
+#pfc-modal .kj-email-form-container .kj-email-form-description,
+#pfc-modal [class*="kj-"] h1,
+#pfc-modal [class*="kj-"] h2,
+#pfc-modal [class*="kj-"] h3,
+#pfc-modal [class*="kj-"] .consent,
+#pfc-modal [class*="kj-"] p{display:none!important}
+/* Re-show only our own microcopy paragraph */
+#pfc-modal .pfc-microcopy{display:block!important}
+
+/* Style the Kajabi input to match site */
+#pfc-modal input[type="email"],
+#pfc-modal .kj-email-form-input,
+#pfc-modal [class*="kj-"] input[type="email"]{
+  border:2px solid #111!important;
+  border-radius:0!important;
+  padding:12px 16px!important;
+  font-family:'Montserrat',sans-serif!important;
+  font-size:13px!important;
+  background:#fff!important;
+  color:#111!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+  outline:none!important;
+  box-shadow:none!important;
+  margin-bottom:10px!important;
+}
+#pfc-modal input[type="email"]::placeholder,
+#pfc-modal [class*="kj-"] input[type="email"]::placeholder{
+  color:#aaa!important;
+  font-family:'Montserrat',sans-serif!important;
+}
+
+/* Style the Kajabi submit button to match site */
+#pfc-modal button[type="submit"],
+#pfc-modal input[type="submit"],
+#pfc-modal .kj-email-form-submit,
+#pfc-modal [class*="kj-"] button[type="submit"],
+#pfc-modal [class*="kj-"] input[type="submit"]{
+  background:#111!important;
+  color:#FAF8F3!important;
+  border:none!important;
+  border-radius:0!important;
+  padding:13px 30px!important;
+  font-family:'Montserrat',sans-serif!important;
+  font-size:12px!important;
+  text-transform:uppercase!important;
+  letter-spacing:.1em!important;
+  cursor:pointer!important;
+  width:100%!important;
+  transition:background .2s!important;
+  box-shadow:none!important;
+}
+#pfc-modal button[type="submit"]:hover,
+#pfc-modal input[type="submit"]:hover,
+#pfc-modal [class*="kj-"] button[type="submit"]:hover{
+  background:#DC9B3C!important;
+}
+
+/* Remove any Kajabi-injected padding/bg from wrapper */
+#pfc-modal [class*="kj-"]{
+  background:transparent!important;
+  padding:0!important;
+  margin:0!important;
+  border:none!important;
+  box-shadow:none!important;
+}
+
 @media(max-width:768px){
   #pfc-section .inner{grid-template-columns:1fr!important;gap:40px!important}
   #pfc-section .inner>div:last-child{max-width:280px;margin:0 auto}

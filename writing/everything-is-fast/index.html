@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<title>Everything is Fast — Luke Burgis</title>
+<style>
+:root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--color-gold:#DC9B3C;--color-ink:#111111;--color-paper:#FAF8F3;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--color-paper);color:var(--color-ink);line-height:1}
+nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center}
+.nav-logo svg{width:48px;height:auto;display:block}
+.nav-links{list-style:none;display:flex;gap:32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.nav-links a{color:#111;text-decoration:none}
+.nav-links a:hover{color:var(--color-gold)}
+.nav-links a.active{color:var(--color-gold);border-bottom:2px solid var(--color-gold);padding-bottom:2px}
+.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:var(--color-paper);padding:10px 20px;text-decoration:none}
+.essay-wrap{max-width:680px;margin:0 auto;padding:64px 24px 80px}
+.back-link{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;text-decoration:none;display:inline-block;margin-bottom:48px}
+.back-link:hover{color:var(--color-gold)}
+.essay-meta-line{font-family:var(--font-label);font-size:11px;color:#888;letter-spacing:.04em;margin-bottom:32px}
+.needs-luke{display:inline-block;background:#FFF3CD;color:#7a5c00;font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border:1px solid var(--color-gold);border-radius:2px;margin-bottom:32px}
+h1{font-family:var(--font-heading);font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.1;letter-spacing:-.01em;margin-bottom:16px}
+.essay-body{font-size:17px;line-height:1.78;color:#222}
+.essay-body p{margin-bottom:1.4em}
+.essay-body h2{font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.2;margin:2em 0 .7em}
+.essay-body blockquote{border-left:3px solid var(--color-gold);padding-left:20px;margin:1.5em 0;color:#444;font-style:italic}
+.essay-body a{color:var(--color-ink);text-decoration:underline;text-decoration-color:#ccc}
+.essay-body a:hover{text-decoration-color:var(--color-gold)}
+.essay-body em{font-style:italic}
+.essay-nav{margin-top:72px;padding-top:32px;border-top:1px solid #e8e2d6;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.essay-nav a{color:#888;text-decoration:none}
+.essay-nav a:hover{color:var(--color-gold)}
+footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
+footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+footer ul{list-style:none}
+footer li{margin-bottom:8px}
+footer a{color:#777;text-decoration:none}
+footer a:hover{color:#FAF8F3}
+@media(max-width:760px){nav{padding:16px 20px}.essay-wrap{padding:40px 20px 60px}footer{grid-template-columns:1fr 1fr;padding:36px 20px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <a href="/probe-lukeburgis/" aria-label="Luke Burgis home">
+    <svg viewBox="0 0 82.39 81.96" width="44" height="44" role="img" aria-label="Luke Burgis">
+      <path fill="#111" d="M43.55,3.04c-.15.03-.29.07-.4.14-.87.55-.21,2.02-.21,2.8,0,.8.12,1.59.14,2.39.02.96-.11,1.94-.09,2.91.03,1.13.09,2.26.13,3.39.02.45-.05.89-.14,1.35-.15.84-.12,1.67-.13,2.51-.03,2.25.02,4.49,0,6.74,0,1.32.19,2.65-.04,3.96-.25,1.42-.22,2.68,0,4.1.19,1.19.12,2.31-.02,3.49-.06.55-.31,1.74.01,2.24-.02-.02,1.18-.1,1.29-.09.4.03.79.12,1.2.15.89.07,1.77-.11,2.66-.11,1.19,0,2.41.13,3.6-.02.68-.09,1.3-.32,1.98-.28.42.02.84.08,1.27.11.92.07,1.86.08,2.78.06,1.94-.04,3.87-.12,5.81-.13.71,0,1.42.07,2.1-.16.64-.21,1.29-.4,1.93-.63.68-.26,1.06-.49,1.6-.96.53-.46,1.19-.73,1.72-1.2.46-.41.77-.66,1.29-.98s1.01-.7,1.38-1.2c.44-.6.89-1.2,1.24-1.87.42-.82.68-1.57.95-2.44.12-.39.35-.58.57-.91.26-.39.36-.9.47-1.36.22-.89.45-1.77.69-2.66.26-.94.58-2.05.63-3.03.05-.79.04-1.59-.09-2.38-.11-.66-.09-1.4-.26-2.04-.28-1.02-.78-1.96-1.04-3-.23-.9-.72-1.74-1.34-2.44-.43-.48-.45-.98-.74-1.53-.56-1.07-1.9-1.42-2.5-2.41-.38-.62-.31-.8-.95-1.09-.71-.32-1.33-.77-2.04-1.06-.76-.3-1.64-.28-2.37-.54-.39-.14-.69-.46-1.09-.59-.45-.14-.94-.18-1.4-.3-1.04-.28-2.22-.61-3.31-.56-1.17.05-2.38-.13-3.56-.02-1.33.12-2.7.25-4.04.08-.74-.1-1.44-.15-2.17-.08-1.41.13-2.73-.14-4.12-.29-.69-.07-1.38-.09-2.07-.08-.36,0-.89-.05-1.32.02Z"/>
+      <path fill="#111" d="M75.78,69.62c.16-.29.3-.6.42-.93.22-.6.34-1.27.68-1.82.23-.37.49-.6.63-1,.21-.61.57-1.24.68-1.86s.18-1.23.29-1.83c.4-2.2.15-4.18-.2-6.36-.23-1.42-.52-2.86-1.17-4.16-.32-.64-.73-1.14-1.17-1.68-.45-.57-.77-1.25-1.23-1.83-.25-.32-.53-.62-.8-.92-.39-.44-.59-.86-1.13-1.11-.58-.28-1.15-.64-1.73-.97-1.27-.73-2.6-1.34-3.99-1.82-1.72-.59-3.33-1.16-5.19-1.07-.98.04-1.87-.32-2.82-.39-1.5-.11-3.07.03-4.57.17-.85.07-1.68-.01-2.53,0-1.04.03-2.07.13-3.11.12-.88,0-1.75.13-2.63.13-.4,0-.78-.12-1.18-.07-.46.05-.92.21-1.38.25,0,.65.51,1.05.86,1.51.45.59.85,1.34,1.19,2,.28.54.32,1.18.66,1.71.89,1.37,1.31,2.98,2.08,4.43.4.76.84,1.51,1.18,2.31.32.74.32,1.34.92,1.95.76.77.91,1.74,1.37,2.68.22.45.69.71.91,1.16s.4.77.67,1.18c.38.59.56,1.27.92,1.86.21.33.42.66.6,1.01.32.66.8,1.26,1.11,1.9.18.38.25.78.45,1.16.77,1.48,1.74,2.89,2.4,4.4.28.64.72,1.29,1.11,1.88.25.37.45.69.61,1.1.28.69.51,1.67,1.03,2.23.26.29.26.24.65.18s.74-.09,1.13-.11c.41-.03.79-.02,1.21-.04s.89-.07,1.3-.2c1.71-.53,3.44-.94,4.9-1.97.46-.33,1.02-.55,1.45-.93.31-.27.57-.71.87-1.05.9-1.05,1.87-2.01,2.53-3.22Z"/>
+      <path fill="#111" d="M26.34,67.63c.09-.16.18-.32.27-.48.35-.6.75-1.17,1.09-1.77.23-.41.25-.68.36-1.09.27-.99.9-1.99,1.3-2.96s.92-1.8,1.31-2.73c.26-.62.45-1.29.8-1.87.63-1.06,1.07-2.13,1.58-3.26.79-1.72,1.91-3.43,2.43-5.26.3-1.05.62-1.89,1.15-2.87.2-.37.36-.71.61-1.05.94-1.3.85-2.95,1.74-4.25.22-.32.28-.59.38-.96.07-.26.28-.52.34-.75.18-.68-.11-1.39-.01-2.08.13-.92,0-1.82.08-2.74.09-1,.29-2,.25-3.02-.05-1.4.03-2.79-.01-4.19-.03-.96-.04-1.89-.08-2.84-.05-1.25-.11-2.48-.03-3.73.09-1.41.2-2.82.16-4.23-.03-1.16.11-2.39.13-3.56.02-1.35-.06-2.71-.05-4.06,0-.57.09-1.12.09-1.69,0-.97-.08-1.91-.08-2.87-.88-.28-2.07.09-2.97.14-.83.05-1.63-.22-2.45-.3-.66-.07-1.34.11-2.02.1-1.72-.03-3.44-.09-5.16-.09-2.42,0-4.78.22-7.15.32-2.22.1-4.42-.15-6.64.06-2.04.19-3.97-.05-6.03-.03-.86,0-2.83-.4-3.54.22-.7.61-.25,2.56-.26,3.43-.02,2.06.73,4.1.59,6.15-.09,1.2-.59,2.31-.58,3.53.01.94.3,1.87.44,2.78.34,2.1.5,4.28.32,6.41-.07.78-.37,1.52-.43,2.28-.07.94.25,1.95.3,2.89.07,1.6-.21,3.19-.18,4.79.03,1.48-.04,3.02-.09,4.48-.06,1.95-.21,3.75.2,5.68.29,1.38.13,2.76.05,4.15-.07,1.13.23,2.13.19,3.24-.04,1.09-.39,2.14-.34,3.28.1,2.54-.43,4.96-.01,7.52.46,2.79-.13,5.64-.11,8.46.02,1.92.26,3.71.36,5.66,2.94.04,5.84-.13,8.79-.23,1.5-.05,2.89-.17,4.39-.12.92.03,1.82-.08,2.75-.11.28,0,.65.15.92.04.34-.14.49-.61.7-1,.36-.67.7-1.38.97-2.09.46-1.21,1.28-2.25,1.79-3.43.42-.95.29-2.11.84-3,.18-.3.36-.6.53-.9Z"/>
+      <path fill="#111" d="M55.86,73.12c-.07-.1-.15-.2-.23-.3-.56-.69-.93-1.49-1.45-2.2-.66-.9-1.46-1.8-1.92-2.83s-.86-2.05-1.31-3.07c-.75-1.69-1.66-3.31-2.6-4.91-.84-1.43-1.93-2.79-2.48-4.37-.31-.88-.7-1.58-1.14-2.4-.19-.35-.18-.56-.24-.93-.09-.53-.4-.89-.69-1.32-.44-.63-.83-1.53-1.12-2.25-.24-.62-.41-1.29-.7-1.88-.17-.35-.7-2.05-1.09-2.13-.36,1.13-.48,2.34-1.2,3.31-.78,1.07-.78,2.32-1.46,3.45-.86,1.43-1.29,3.03-2.2,4.43-.91,1.4-1.68,2.92-2.19,4.51-.21.65-.73,1.03-1.01,1.6-.25.52-.09,1.15-.36,1.66-.44.82-1.08,1.51-1.46,2.39-.57,1.32-.98,2.73-1.57,4.04-.44.97-1.02,1.83-1.41,2.84-.39,1.02-1.06,1.93-1.46,2.93-.1.25-.05.54-.13.78-.16.51-.51.96-.74,1.43,1.87.35,3.99.04,5.9.06,2.15.03,4.31.06,6.45-.21.72-.09,1.37.18,2.1.16.68-.02,1.36-.07,2.05-.12,1.03-.07,2.06,0,3.11-.02,2.14-.02,4.28-.04,6.42-.1,1.25-.03,2.49.06,3.73-.03.83-.06,1.66-.16,2.46-.22-.5-.39-.78-1.61-1-2.24-.27-.78-.59-1.44-1.07-2.09Z"/>
+    </svg>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/probe-lukeburgis/books.html">Books</a></li>
+    <li><a href="/probe-lukeburgis/speaking.html">Speaking</a></li>
+    <li><a href="/probe-lukeburgis/programs.html">Programs</a></li>
+    <li><a href="/probe-lukeburgis/writing/" class="active">Writing</a></li>
+    <li><a href="/probe-lukeburgis/about.html">About</a></li>
+  </ul>
+  <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
+</nav>
+
+<div class="essay-wrap">
+  <a class="back-link" href="/probe-lukeburgis/writing/">← All Essays</a>
+
+  <span class="needs-luke">★ Curator note needed</span>
+
+  <h1>Everything is Fast</h1>
+  <div class="essay-meta-line">Substack · March 2025 · ~7 min read</div>
+
+  <div class="essay-body">
+    <p>The world started moving too fast at some point in my life, or maybe it was my life that was moving too fast for my soul. The progression of my dad's Alzheimer's happened fast. My mom's health decline sped up faster than I could comprehend it in real-time.</p>
+
+    <p>The days went by too quickly. <em>Is this just what getting older feels like</em>, I thought? There are many unacceptable and unsatisfying answers to that question, many of them trite, and I'm too old to be trite. No.</p>
+
+    <p>I would get to the end of a day and feel like I had just finished my morning coffee. "It's <em>over</em>?" Not even the early days of the COVID lockdowns—when I was holed up in a lake house in Michigan for two months, without being able to bustle about in the city—made a noticeable difference. In other words, that period of time didn't help me slow down. On the contrary, everything sped up. Frantic friends and colleagues wanted to Zoom at all hours. This forced 'downtime' was not downtime at all; it increased the speed of the <em>life that I was traveling in</em> to an even more nauseating pace. Now "I"—no, the life that I was traveling in—was whipping around corners at breakneck speed, and I wasn't sure if I trusted the driver. I didn't know who the driver was.</p>
+
+    <p>I began to wonder if digital scrolling was something akin to an alcohol-induced blackout: in a digital blackout, part of your day disappears into the Internet netherworld because it's simply so unmemorable—everything unworthy of being conjured up later in life as having been a meaningful moment—that our brains simply shut off to preserve energy for the things truly worth storing in long-term memory, like the smile on my daughter's face when she bursts into my office unannounced while I'm writing. Maybe our bodies are trying to protect us.</p>
+
+    <p>I think the acceleration of time for me started in 2018. I noticed it on a very specific night.</p>
+
+    <p>I went to a nice restaurant near my house and did a self-indulgent thing that I like to do every once in a while: I sat at the bar alone with a good book (on that night, <em>The Painted Veil</em> by W. Somerset Maugham). The restaurant was busy and buzzy. The one advantage of being alone is that you can always snag a stray seat at the bar.</p>
+
+    <p>Over the course of two hours or so, I had a few glasses of wine, read my book, texted a few friends, and ate a bowl of fennel and sausage rigatoni. Then I looked up, and I was the last person in the restaurant. Someone was sweeping the floor around my chair. The bartenders were finishing their clean-up; in their kindness, they hadn't asked me to leave, but I was embarrassed.</p>
+
+    <p>I promise you that the book was not that engrossing (though it is very good), and I hadn't had <em>that</em> much to drink—but the feeling was jarring. "When did everyone leave? And why hadn't I noticed?" I walked home that night with a sense that I needed to slow my life down so that I don't get to the end of it and wonder where everyone went when I wasn't looking.</p>
+
+    <p>I kept telling myself that this was just a particularly busy season, that things would ease up in a few months. But those months never arrived—only more demands, more difficult news, more success tied to more responsibility. The future didn't open up the way I imagined. It narrowed into the truth: this is the life I have, and the time to live it is now.</p>
+
+    <p>I know that I'm not alone in this feeling of speed because I talked to dozens of people openly about this sensation since 2018 or so. Even most of the ones who have the most "go out and touch grass" type of personas on social media—who moved their family to a farm in 2019 (and told everyone on Twitter and Instagram about it, daily)—are also struggling with speed privately because we now live in a global village and the cost of revoking one's right of citizenship in that village is too frightening, the cost too high, to forsake it completely. We always keep one ship behind us that we don't burn, and that ship has a way of bringing the entire world to our shore.</p>
+
+    <p>That's because it's not ships that we're talking about here but bits and bytes capable of transmitting untold amounts of information, and desires previously untold, hidden since the foundation of the world, now unleashed like Pandora's box on millions of people who weren't given any warning, or any personal and human formation, that might help them adjust well.</p>
+
+    <p>I don't have that excuse. I had just returned from living in Italy for three years, from 2013–2016, getting some of the best human, spiritual, intellectual, and pastoral formation on earth. And my life slowed down dramatically during that time. I lived in a community, and I spent several hours of my day in reading, prayer, meditating, and <em>meriggiaring</em>. It certainly helps that the Italian culture simply moves slower than the American one.</p>
+
+    <p>If a problem arose, it was typical of my Italian friends to shrug their shoulders and say "Boh"—an untranslatable word that means something like "I have no idea what to say or do, or what you want me to say or do, so I'm just going to make this funny sound and move on with my day." You can see why this might be great for entrepreneurship or innovation or in service industry, or even tackling the many small problems of daily life like an order at a restaurant getting messed up or delayed—but it certainly takes the edge off when you have <em>boh</em> in your back pocket.</p>
+
+    <p>There is no doubt that technology plays a huge role in what we are collectively experiencing, and so does the frenetic pace of media and content production—thousands of new podcasts every day, and a political environment in which actors are intentionally moving faster than anyone can keep up with, legally, legislatively, or cognitively.</p>
+
+    <p>And most of us, including myself, are stricken by some degree of acedia, the most widespread disease of our time (not seed oils). <em>Acedia</em> is commonly translated as "sloth"—but the lived experience of this disease feels like exactly the opposite. A mind and a soul that is not at peace attempts to escape—and escapes are always high pressure affairs with a ticking clock. Witness the rise of 'escape rooms' over the past 10–15 years, which are the most on-the-nose sign of our malaise that one could possibly imagine. For the individual suffering from this ailment, all of life is an escape room. He paces around in his room and can't sit still. Even vacations are brutal because of the forced inactivity that they require. Acedia is an unhealthy restlessness. Everything is fast, so we feel we must be moving fast too—at all times.</p>
+
+    <p>That stems from a lack of faith.</p>
+
+    <p>The paradigm of acceleration fails to grasp the deeper human tension between action and contemplation. It's a false binary, one that Benedict XVI (then Joseph Ratzinger) identified clearly in <em>Introduction to Christianity</em>. He described modernity's obsession with <em>Machen</em>—do/make—as the belief that only what we can build, manipulate, or produce is real. This becomes the default metaphysics of acceleration: faster iteration, more output, more control. But Ratzinger contrasts this with another mode of being: <em>Verstehen</em> and <em>Stehen</em>—to understand and to stand. That is, to stand before the world as a question, not a project. To be receptive, not just productive. To attend to what <em>is</em>, not only what <em>could be</em>.</p>
+
+    <p>Accelerationism in its raw form collapses into an ethic of perpetual building. And even the "effective" version can fall into the trap of thinking that the antidote is merely more thoughtful building—directional <em>Machen</em>. But the deeper response is not to build better alone, but to recover the human capacity to <em>stand-understand</em> before we <em>do-make</em>. This is the contemplative root of any real transformation. And the lack of it—the inability to dwell in mystery, to receive a telos not of our own design—is what produces the false dichotomy between chaos and control in the first place. Without faith—faith understood as the courage to stand before what is not of our own making—we will always default to control, and we will call it progress.</p>
+
+    <p>As I look back on that night in 2018, I realize that it marked the beginning of a period in which the habits that I've developed in five years of intentional living in a quasi-monastic environment began to fall away because I didn't have the intentional structures and community to support me. Pride makes promises the soul can't keep. I thought that I could tough it out; I thought that I could walk into the middle of the desert with a single jug of water and survive for 50 years. It's shocking that I survived for 18 months (from my time leaving Italy in 2016 until that winter of 2018).</p>
+
+    <p>There's a lot of talk about developing "high agency" these days—reclaiming agency in our lives so that we can act with integrity even when the most base incentives are pointing us in a different direction. The problem with nearly all of the attempts that I've seen, though, is that agency is associated with something we have the power to exercise on our own: as if we can pull ourselves out of the mud by our own hair. The foundation of agency, it turns out, is contemplation. It is prayer. It is surrender.</p>
+
+    <p>The future won't be built merely by those who move fastest, but by those who remember how to stand still. Until we recover the courage to receive what we cannot produce, we will mistake velocity for vision. And we'll keep accelerating—not toward the good, but simply away from the ground.</p>
+
+    <p><em>Innovation without conversion is just iteration.</em></p>
+  </div>
+
+  <nav class="essay-nav" aria-label="Essay navigation">
+    <div class="prev">
+      <a href="/probe-lukeburgis/writing/">← All Essays</a>
+    </div>
+  </nav>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div style="font-family:Georgia,serif;font-size:18px;color:#FAF8F3;margin-bottom:14px;letter-spacing:-.01em">Luke Burgis</div>
+    <p style="color:#555;font-size:11px;margin-top:4px">Author · Professor · Founder<br>lukeburgis.com</p>
+  </div>
+  <div>
+    <h4>Work</h4>
+    <ul>
+      <li><a href="/probe-lukeburgis/books.html">Books</a></li>
+      <li><a href="/probe-lukeburgis/speaking.html">Speaking</a></li>
+      <li><a href="/probe-lukeburgis/programs.html">Programs</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="https://read.lukeburgis.com">Newsletter</a></li>
+      <li><a href="https://twitter.com/lukeburgis" target="_blank" rel="noopener">Twitter / X</a></li>
+      <li><a href="https://linkedin.com/in/lukeburgis" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="/probe-lukeburgis/contact.html">Contact</a></li>
+      <li><a href="https://read.lukeburgis.com">Full archive at read.lukeburgis.com</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Cluny Institute</h4>
+    <ul><li><a href="https://cluny.org">cluny.org</a></li></ul>
+  </div>
+</footer>
+
+</body>
+</html>

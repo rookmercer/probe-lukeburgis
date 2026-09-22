@@ -39,16 +39,25 @@ nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:20px 5
 
 /* Essay list */
 .essays-section{max-width:1120px;margin:0 auto;padding:0 56px 80px}
-.essay-item{border-top:1px solid #e8e2d6;padding:32px 0;display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:start}
+
+/* Section labels */
+.section-label{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#888;padding:28px 0 8px;border-top:2px solid var(--color-gold);margin-top:16px}
+.section-label:first-child{border-top:none;padding-top:0}
+
+/* Essay cards */
+.essay-item{border-top:1px solid #e8e2d6;padding:28px 0;display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:start}
 .essay-item:last-child{border-bottom:1px solid #e8e2d6}
 .essay-num{font-family:var(--font-label);font-size:13px;color:#bbb;letter-spacing:.04em;padding-top:4px}
-.essay-body h2{font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.2;margin-bottom:8px}
+.essay-body h2{font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.2;margin-bottom:4px}
 .essay-body h2 a{color:var(--color-ink);text-decoration:none}
 .essay-body h2 a:hover{color:var(--color-gold)}
+.essay-meta{font-family:var(--font-label);font-size:11px;color:#888;letter-spacing:.04em;margin:4px 0 8px}
 .needs-luke{display:inline-block;background:#FFF3CD;color:#7a5c00;font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border:1px solid #DC9B3C;border-radius:2px;margin-top:4px}
-.essay-placeholder{opacity:.5}
 .essay-arrow{font-family:var(--font-label);font-size:12px;color:var(--color-gold);white-space:nowrap;padding-top:6px;text-decoration:none}
 .essay-arrow:hover{text-decoration:underline}
+.essay-outbound{font-family:var(--font-label);font-size:12px;color:var(--color-gold);white-space:nowrap;padding-top:6px;text-decoration:none;border:1px solid var(--color-gold);padding:6px 12px;display:inline-block}
+.essay-outbound:hover{background:var(--color-gold);color:#fff}
+.essay-locked{opacity:.5;pointer-events:none}
 
 /* Footer */
 footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
@@ -63,7 +72,7 @@ footer a:hover{color:#FAF8F3}
   .page-header{padding:48px 20px 36px}
   .essays-section{padding:0 20px 60px}
   .essay-item{grid-template-columns:40px 1fr;gap:16px}
-  .essay-arrow{display:none}
+  .essay-arrow,.essay-outbound{display:none}
   footer{grid-template-columns:1fr 1fr;padding:36px 20px}
 }
 </style>
@@ -95,17 +104,21 @@ footer a:hover{color:#FAF8F3}
 <!-- PAGE HEADER -->
 <div class="page-header">
   <span class="eyebrow">Writing</span>
-  <h1>Essential Essays</h1>
-  <p>Six essays on desire, imitation, and how to want what actually matters.</p>
+  <h1>Essays</h1>
+  <p>Essays on desire, imitation, and the forces that shape who we become</p>
 </div>
 
 <!-- ESSAY LIST -->
 <div class="essays-section">
 
+  <!-- SECTION: Start here -->
+  <div class="section-label">Start here</div>
+
   <div class="essay-item">
     <span class="essay-num">01</span>
     <div class="essay-body">
       <h2><a href="/probe-lukeburgis/writing/mimetic-desire-101/">Mimetic Desire 101</a></h2>
+      <div class="essay-meta">Substack · 2021 · ~8 min read</div>
       <span class="needs-luke">★ Curator note needed</span>
     </div>
     <a class="essay-arrow" href="/probe-lukeburgis/writing/mimetic-desire-101/">Read →</a>
@@ -114,78 +127,87 @@ footer a:hover{color:#FAF8F3}
   <div class="essay-item">
     <span class="essay-num">02</span>
     <div class="essay-body">
-      <h2><a href="/probe-lukeburgis/writing/culture-war-as-imitation-game/">Culture War as Imitation Game</a></h2>
+      <h2><a href="/probe-lukeburgis/writing/the-prologue-one-and-ninety-nine/">Prologue: The One and the Ninety-Nine</a></h2>
+      <div class="essay-meta">St. Martin's Press · 2026</div>
       <span class="needs-luke">★ Curator note needed</span>
+      &nbsp;<span class="needs-luke">[NEEDS LUKE: text needed from publisher]</span>
     </div>
-    <a class="essay-arrow" href="/probe-lukeburgis/writing/culture-war-as-imitation-game/">Read →</a>
+    <a class="essay-arrow" href="/probe-lukeburgis/writing/the-prologue-one-and-ninety-nine/">Read →</a>
   </div>
 
   <div class="essay-item">
     <span class="essay-num">03</span>
     <div class="essay-body">
-      <h2><a href="/probe-lukeburgis/writing/the-three-city-problem-of-modern-life/">The Three-City Problem of Modern Life</a></h2>
+      <h2><a href="/probe-lukeburgis/writing/everything-is-fast/">Everything is Fast</a></h2>
+      <div class="essay-meta">Substack · 2025 · ~7 min read</div>
       <span class="needs-luke">★ Curator note needed</span>
     </div>
-    <a class="essay-arrow" href="/probe-lukeburgis/writing/the-three-city-problem-of-modern-life/">Read →</a>
+    <a class="essay-arrow" href="/probe-lukeburgis/writing/everything-is-fast/">Read →</a>
   </div>
+
+  <!-- SECTION: The theory at work -->
+  <div class="section-label">The theory at work</div>
 
   <div class="essay-item">
     <span class="essay-num">04</span>
     <div class="essay-body">
       <h2><a href="/probe-lukeburgis/writing/how-to-know-what-you-really-want/">How to Know What You Really Want</a></h2>
+      <div class="essay-meta">Psyche · 2021</div>
       <span class="needs-luke">★ Curator note needed</span>
     </div>
-    <a class="essay-arrow" href="/probe-lukeburgis/writing/how-to-know-what-you-really-want/">Read →</a>
+    <a class="essay-outbound" href="https://psyche.co/guides/how-to-know-what-you-really-want-and-be-free-from-mimetic-desire" target="_blank" rel="noopener">Read at Psyche →</a>
   </div>
 
   <div class="essay-item">
     <span class="essay-num">05</span>
     <div class="essay-body">
-      <h2><a href="/probe-lukeburgis/writing/the-promise-of-entrepreneurial-education/">The Promise of Entrepreneurial Education</a></h2>
+      <h2><a href="/probe-lukeburgis/writing/culture-war-as-imitation-game/">Culture War as Imitation Game</a></h2>
+      <div class="essay-meta">The New Atlantis · 2023</div>
       <span class="needs-luke">★ Curator note needed</span>
     </div>
-    <a class="essay-arrow" href="/probe-lukeburgis/writing/the-promise-of-entrepreneurial-education/">Read →</a>
+    <a class="essay-outbound" href="https://www.thenewatlantis.com/publications/culture-war-as-imitation-game" target="_blank" rel="noopener">Read at The New Atlantis →</a>
   </div>
 
   <div class="essay-item">
     <span class="essay-num">06</span>
     <div class="essay-body">
-      <h2><a href="/probe-lukeburgis/writing/the-wonder-of-collaboration-finding-a-new-spark-of-creativity-with-liana-finck/">The Wonder of Collaboration (with Liana Finck)</a></h2>
+      <h2><a href="/probe-lukeburgis/writing/the-three-city-problem-of-modern-life/">The Three-City Problem of Modern Life</a></h2>
+      <div class="essay-meta">Wired · 2022</div>
       <span class="needs-luke">★ Curator note needed</span>
+      &nbsp;<span class="needs-luke">[NEEDS LUKE: note re NOVITATE / Cluny founding doc]</span>
     </div>
-    <a class="essay-arrow" href="/probe-lukeburgis/writing/the-wonder-of-collaboration-finding-a-new-spark-of-creativity-with-liana-finck/">Read →</a>
+    <a class="essay-outbound" href="https://www.wired.com/story/technology-philosophy-three-city-problem/" target="_blank" rel="noopener">Read at Wired →</a>
   </div>
 
-  <div class="essay-item essay-placeholder">
+  <!-- SECTION: Where the work is going -->
+  <div class="section-label">Where the work is going</div>
+
+  <div class="essay-item essay-locked">
     <span class="essay-num">07</span>
     <div class="essay-body">
-      <h2 style="color:#999">[NEEDS LUKE: Essay title]</h2>
-      <span class="needs-luke">★ Title + curator note needed</span>
+      <h2>A Bull Market in the Humanities</h2>
+      <div class="essay-meta">Substack · 2024 · ~7 min read</div>
+      <span class="needs-luke">LOCKED — Luke/Ann must unlock paid post before this card goes live</span>
     </div>
   </div>
 
-  <div class="essay-item essay-placeholder">
+  <div class="essay-item">
     <span class="essay-num">08</span>
     <div class="essay-body">
-      <h2 style="color:#999">[NEEDS LUKE: Essay title]</h2>
-      <span class="needs-luke">★ Title + curator note needed</span>
+      <h2>magnifica humanitas</h2>
+      <div class="essay-meta">ARES Magazine</div>
+      <span class="needs-luke">[NEEDS LUKE: year, reading time, rights decision]</span>
     </div>
   </div>
 
-  <div class="essay-item essay-placeholder">
+  <div class="essay-item">
     <span class="essay-num">09</span>
     <div class="essay-body">
-      <h2 style="color:#999">[NEEDS LUKE: Essay title]</h2>
-      <span class="needs-luke">★ Title + curator note needed</span>
+      <h2><a href="/probe-lukeburgis/writing/how-the-family-forges-us-into-persons/">"How the Family Forges Us Into Persons"</a></h2>
+      <div class="essay-meta">IFS · excerpt from <em>The One and the Ninety-Nine</em>, St. Martin's Press · 2026</div>
+      <span class="needs-luke">★ Curator note needed</span>
     </div>
-  </div>
-
-  <div class="essay-item essay-placeholder">
-    <span class="essay-num">10</span>
-    <div class="essay-body">
-      <h2 style="color:#999">[NEEDS LUKE: Essay title]</h2>
-      <span class="needs-luke">★ Title + curator note needed</span>
-    </div>
+    <a class="essay-outbound" href="https://ifstudies.org/blog/the-first-forge-of-the-self" target="_blank" rel="noopener">Read at IFS →</a>
   </div>
 
 </div>
@@ -208,10 +230,12 @@ footer a:hover{color:#FAF8F3}
     <h4>Connect</h4>
     <ul>
       <li><a href="https://read.lukeburgis.com">Newsletter</a></li>
-      <li>Twitter / X</li>
-      <li>LinkedIn</li>
+      <li><a href="https://twitter.com/lukeburgis" target="_blank" rel="noopener">Twitter / X</a></li>
+      <li><a href="https://linkedin.com/in/lukeburgis" target="_blank" rel="noopener">LinkedIn</a></li>
       <li><a href="/probe-lukeburgis/contact.html">Contact</a></li>
+      <li><a href="https://read.lukeburgis.com">Full archive at read.lukeburgis.com</a></li>
     </ul>
+    <p style="color:#555;font-size:11px;margin-top:8px">[NEEDS LUKE: HubSpot form embed code here]</p>
   </div>
   <div>
     <h4>Cluny Institute</h4>

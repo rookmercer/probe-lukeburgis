@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<title>Speaker Kit — Luke Burgis</title>
+<style>
+:root{
+  --font-heading:'Eczar',Georgia,serif;
+  --font-body:'Sura',Georgia,serif;
+  --font-label:'Montserrat',sans-serif;
+  --color-parchment:#E2D9C4;
+  --color-gold:#DC9B3C;
+  --color-ink:#111111;
+  --color-paper:#FAF8F3;
+}
+body{font-family:var(--font-body)}
+h1,h2{font-family:var(--font-heading);font-weight:600}
+h3,h4,h5,h6{font-family:var(--font-heading);font-weight:400}
+nav,.nav-links,.nav-links a,.nav-cta,.label,.pub-line,.btn-dark,.btn-light{font-family:var(--font-label)}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,serif;background:#FAF8F3;color:#111}
+
+section{position:relative;border:2px solid #ccc;background:#fff;padding:48px}
+section+section{border-top:none}
+nav{background:#fff;border:2px solid #ccc;padding:18px 48px;display:flex;align-items:center;justify-content:space-between}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:var(--font-label);font-size:13px}
+.nav-links a{text-decoration:none;color:#111}
+.nav-links a:hover{color:var(--color-gold)}
+.nav-cta{border:2px solid #111;background:#111;color:#fff;padding:10px 18px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none}
+h1{font-size:48px;font-weight:normal;line-height:1.1;max-width:800px;margin-bottom:16px}
+h2{font-size:28px;font-weight:normal;margin-bottom:16px}
+h3{font-size:20px;font-weight:normal;margin-bottom:10px}
+p{font-size:16px;line-height:1.7;max-width:680px;margin-bottom:14px;color:#222}
+.inner{max-width:1100px;margin:0 auto;padding:0 48px}
+
+/* Page header */
+.page-header{background:#eeebe6;border:2px solid #ccc;border-top:none;padding:72px 48px 64px}
+.page-header .inner{}
+.page-header h1{font-size:52px}
+.page-header .subhead{font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:#777;margin-top:12px;margin-bottom:0;max-width:none}
+
+/* Gold rule */
+.gold-rule{width:40px;height:3px;background:var(--color-gold);margin-bottom:20px}
+
+/* Section layout */
+.kit-section{padding:56px 0;border-bottom:1px solid #e8e2d6}
+.kit-section:last-of-type{border-bottom:none}
+.section-label{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#999;margin-bottom:8px}
+.kit-section h2{font-size:26px;margin-bottom:20px}
+
+/* Placeholder blocks */
+.placeholder-block{background:#f4f1eb;border:1px dashed #c8c0b0;padding:24px 28px;font-family:var(--font-label);font-size:12px;color:#888;letter-spacing:.04em;max-width:680px;line-height:1.7}
+.placeholder-block strong{color:#b08860;font-weight:600}
+
+/* Headshots grid */
+.headshots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:760px}
+.headshot-placeholder{border:2px dashed #c8c0b0;background:#f4f1eb;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;font-family:var(--font-label);font-size:11px;color:#aaa;text-align:center;padding:16px}
+
+/* CTA */
+.kit-cta-block{background:#111;padding:56px 48px;text-align:center;border:2px solid #111;border-top:none}
+.kit-cta-block h2{color:#FAF8F3;font-size:30px;margin-bottom:10px}
+.kit-cta-block p{color:#aaa;max-width:520px;margin:0 auto 28px;font-size:14px}
+.kit-cta-btn{display:inline-block;background:var(--color-gold);color:#111;padding:16px 36px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;transition:background .2s}
+.kit-cta-btn:hover{background:#c8881e}
+
+/* Footer */
+footer{background:#1a1a1a;color:#777;padding:48px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
+footer h4{color:#fff;margin-bottom:14px;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+footer ul{list-style:none}
+footer li{margin-bottom:7px}
+footer a{color:#777;text-decoration:none}
+footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div style="font-family:Georgia,serif;font-size:18px;font-weight:normal;letter-spacing:-.01em;color:#FAF8F3;margin-bottom:14px">Luke Burgis</div>
+  <ul class="nav-links">
+    <li><a href="books.html">Books</a></li>
+    <li><a href="speaking.html">Speaking</a></li>
+    <li><a href="formation.html">Programs</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="inner">
+    <h1>Speaker Kit</h1>
+    <p class="subhead">Everything a planner needs.</p>
+  </div>
+</div>
+
+<!-- SHORT BIO -->
+<section>
+  <div class="inner">
+    <div class="kit-section">
+      <div class="gold-rule"></div>
+      <p class="section-label">Short Bio</p>
+      <h2>One-Line Introduction</h2>
+      <div class="placeholder-block">
+        <strong>[NEEDS LUKE — 1 sentence]</strong><br>
+        Example: "Luke Burgis is the author of <em>Wanting</em> and a professor at The Catholic University of America."
+      </div>
+    </div>
+
+    <!-- MEDIUM BIO -->
+    <div class="kit-section">
+      <div class="gold-rule"></div>
+      <p class="section-label">Medium Bio</p>
+      <h2>Short Paragraph</h2>
+      <div class="placeholder-block">
+        <strong>[NEEDS LUKE — 1 paragraph]</strong><br>
+        Suitable for event programs, website listings, and podcast show notes.
+      </div>
+    </div>
+
+    <!-- FULL BIO -->
+    <div class="kit-section">
+      <div class="gold-rule"></div>
+      <p class="section-label">Full Bio</p>
+      <h2>Extended Biography</h2>
+      <div class="placeholder-block">
+        <strong>[NEEDS LUKE — 2–3 paragraphs]</strong><br>
+        For keynote programs, conference brochures, and press materials.
+      </div>
+    </div>
+
+    <!-- HEADSHOTS -->
+    <div class="kit-section">
+      <div class="gold-rule"></div>
+      <p class="section-label">Headshots</p>
+      <h2>Approved Hi-Res Photos</h2>
+      <p style="font-family:var(--font-label);font-size:12px;color:#888;margin-bottom:24px">All photos are approved for editorial and promotional use. Please credit: © Luke Burgis.</p>
+      <div class="headshots-grid">
+        <div class="headshot-placeholder">[NEEDS LUKE —<br>approved hi-res photo 1]</div>
+        <div class="headshot-placeholder">[NEEDS LUKE —<br>approved hi-res photo 2]</div>
+        <div class="headshot-placeholder">[NEEDS LUKE —<br>approved hi-res photo 3]</div>
+      </div>
+    </div>
+
+    <!-- AV NEEDS -->
+    <div class="kit-section">
+      <div class="gold-rule"></div>
+      <p class="section-label">AV Needs</p>
+      <h2>Audio / Visual Requirements</h2>
+      <div class="placeholder-block">
+        <strong>[NEEDS LUKE — mic/stage/screen requirements]</strong><br>
+        Include: microphone preference, stage setup, screen/projector specs, clicker, tech rider notes.
+      </div>
+    </div>
+
+    <!-- INTRO SCRIPT -->
+    <div class="kit-section">
+      <div class="gold-rule"></div>
+      <p class="section-label">Intro Script</p>
+      <h2>Host Introduction</h2>
+      <div class="placeholder-block">
+        <strong>[NEEDS LUKE — host intro text]</strong><br>
+        A brief script for the emcee or host to read aloud before Luke takes the stage. Typically 60–90 seconds.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="kit-cta-block">
+  <h2>Ready to Book Luke?</h2>
+  <p>Submit a speaking inquiry and we'll be in touch within 48 hours.</p>
+  <a href="speaking.html#inquiry" class="kit-cta-btn">Book Luke for Your Event →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div style="font-family:Georgia,serif;font-size:18px;font-weight:normal;letter-spacing:-.01em;color:#FAF8F3;margin-bottom:14px">Luke Burgis</div>
+    <p style="color:#555;font-size:12px;margin-top:8px">Author · Professor · Founder<br>lukeburgis.com</p>
+  </div>
+  <div>
+    <h4>Work</h4>
+    <ul>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="speaking.html">Speaking</a></li>
+      <li><a href="formation.html">Programs</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="https://read.lukeburgis.com">Newsletter</a></li>
+      <li><a href="https://twitter.com/lukeburgis">Twitter / X</a></li>
+      <li><a href="https://linkedin.com/in/lukeburgis">LinkedIn</a></li>
+      <li><a href="about.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Cluny Institute</h4>
+    <ul>
+      <li><a href="https://cluny.org">cluny.org</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

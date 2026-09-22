@@ -541,6 +541,7 @@ footer a:hover{color:#FAF8F3}
       <li><a href="https://read.lukeburgis.com">Newsletter</a></li>
       <li>Twitter / X</li>
       <li>LinkedIn</li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
   <div>
@@ -605,8 +606,76 @@ footer a:hover{color:#FAF8F3}
           <li style="padding:6px 0;border-top:1px solid #e8e2d6">→ Free PDF, delivered instantly</li>
         </ul>
         <!-- Kajabi form embed -->
-        <script src="https://luke-burgis.mykajabi.com/forms/2148674542/embed.js"></script>
-        <p style="font-family:var(--font-label);font-size:10px;color:#999;margin-top:14px;text-transform:uppercase;letter-spacing:.06em;line-height:1.6">Free. The guide arrives by email in under a minute. You'll also get Luke's occasional letter — unsubscribe anytime.</p>
+        <div id="pfc-kajabi-wrap">
+          <script src="https://luke-burgis.mykajabi.com/forms/2148674542/embed.js"></script>
+        </div>
+        <p class="pfc-microcopy" style="font-family:var(--font-label);font-size:10px;color:#999;margin-top:14px;text-transform:uppercase;letter-spacing:.06em;line-height:1.6">Free. The guide arrives by email in under a minute. You'll also get Luke's occasional letter — unsubscribe anytime.</p>
+        <script>
+        (function(){
+          var KILL_TEXT = ['Subscribe to receive','By inputting your email','you consent to be','philosophy books for creators'];
+          function cleanKajabi(){
+            var wrap = document.getElementById('pfc-kajabi-wrap');
+            if(!wrap) return;
+            // Kill injected text nodes / elements by content
+            wrap.querySelectorAll('h1,h2,h3,h4,p,div,span,label').forEach(function(el){
+              var t = el.textContent || '';
+              for(var i=0;i<KILL_TEXT.length;i++){
+                if(t.indexOf(KILL_TEXT[i])!==-1 && el.children.length===0){
+                  el.style.display='none';
+                  el.style.height='0';
+                  el.style.margin='0';
+                  el.style.padding='0';
+                  el.style.overflow='hidden';
+                  break;
+                }
+              }
+            });
+            // Also kill any wrapper div that contains ONLY hidden children
+            wrap.querySelectorAll('div').forEach(function(el){
+              var kids = Array.from(el.children);
+              if(kids.length > 0 && kids.every(function(k){
+                return k.style.display==='none' || k.tagName==='INPUT' || k.tagName==='BUTTON';
+              })){
+                // don't hide — it may contain the form
+              }
+            });
+            // Style input
+            wrap.querySelectorAll('input[type="email"],input:not([type="submit"]):not([type="hidden"])').forEach(function(el){
+              el.style.cssText='border:2px solid #111!important;border-radius:0!important;padding:12px 16px!important;font-family:Montserrat,sans-serif!important;font-size:13px!important;background:#fff!important;color:#111!important;width:100%!important;box-sizing:border-box!important;outline:none!important;box-shadow:none!important;margin-bottom:10px!important;display:block!important';
+              el.setAttribute('placeholder','your@email.com');
+            });
+            // Style submit button
+            wrap.querySelectorAll('button[type="submit"],input[type="submit"],button:not([aria-label])').forEach(function(el){
+              el.style.cssText='background:#111!important;color:#FAF8F3!important;border:none!important;border-radius:0!important;padding:13px 30px!important;font-family:Montserrat,sans-serif!important;font-size:12px!important;text-transform:uppercase!important;letter-spacing:.1em!important;cursor:pointer!important;width:100%!important;transition:background .2s!important;box-shadow:none!important;display:block!important';
+              el.textContent='Send me the guide';
+              el.onmouseover=function(){this.style.background='#DC9B3C';};
+              el.onmouseout=function(){this.style.background='#111';};
+            });
+          }
+          // Run on DOM mutation (Kajabi injects async)
+          var observer = new MutationObserver(function(mutations){
+            var wrap = document.getElementById('pfc-kajabi-wrap');
+            if(wrap && wrap.querySelector('input,button')) { cleanKajabi(); }
+          });
+          function startObserver(){
+            var wrap = document.getElementById('pfc-kajabi-wrap');
+            if(wrap){
+              observer.observe(wrap, {childList:true, subtree:true});
+              // Also run immediately + after short delay
+              cleanKajabi();
+              setTimeout(cleanKajabi, 500);
+              setTimeout(cleanKajabi, 1500);
+            } else {
+              setTimeout(startObserver, 100);
+            }
+          }
+          if(document.readyState==='loading'){
+            document.addEventListener('DOMContentLoaded', startObserver);
+          } else {
+            startObserver();
+          }
+        })();
+        </script>
       </div>
     </div>
   </div>

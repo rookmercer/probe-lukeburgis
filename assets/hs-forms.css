@@ -1,0 +1,200 @@
+/* ============================================================
+   HubSpot Form Styles — lukeburgis.com staging
+   Targets .hs-form (inline embed, not iframe) on all pages.
+   Single source of truth — do not duplicate per-page.
+   ============================================================ */
+
+/* ── Field wrapper spacing ── */
+.hs-form .hs-form-field {
+  margin-bottom: 22px;
+}
+
+/* ── Labels ── */
+.hs-form label {
+  display: block;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 6px;
+  letter-spacing: .03em;
+}
+
+/* ── Text / email / tel inputs & textarea ── */
+.hs-form input[type="text"],
+.hs-form input[type="email"],
+.hs-form input[type="tel"],
+.hs-form input[type="number"],
+.hs-form input[type="url"],
+.hs-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Georgia, serif;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  background: #ffffff;
+  color: #111111;
+  outline: none;
+  transition: border-color .15s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.hs-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ── Focus ── */
+.hs-form input[type="text"]:focus,
+.hs-form input[type="email"]:focus,
+.hs-form input[type="tel"]:focus,
+.hs-form input[type="number"]:focus,
+.hs-form input[type="url"]:focus,
+.hs-form textarea:focus {
+  border-color: #111111;
+  box-shadow: none;
+}
+
+/* ── Dropdowns / select ── */
+.hs-form select {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Georgia, serif;
+  padding: 14px 40px 14px 16px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  background: #ffffff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+  color: #111111;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+
+.hs-form select:focus {
+  border-color: #111111;
+  box-shadow: none;
+}
+
+/* ── Submit button ── */
+.hs-form input[type="submit"],
+.hs-form .hs-button {
+  display: inline-block;
+  background: #111111;
+  color: #FAF8F3;
+  border: none;
+  border-radius: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: background .2s;
+  min-height: 44px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.hs-form input[type="submit"]:hover,
+.hs-form .hs-button:hover {
+  background: #DC9B3C;
+  color: #111111;
+}
+
+/* ── Error states ── */
+.hs-form .hs-error-msgs {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+}
+
+.hs-form .hs-error-msgs label,
+.hs-form .hs-error-msg {
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  color: #cc2200;
+  font-weight: 400;
+  margin: 0;
+}
+
+.hs-form input.error,
+.hs-form textarea.error,
+.hs-form select.error {
+  border-color: #cc2200;
+}
+
+/* ── Required markers ── */
+.hs-form .hs-form-required {
+  color: #888;
+  font-size: 11px;
+  margin-left: 2px;
+}
+
+/* ── Consent / legal text ── */
+.hs-form .hs-richtext,
+.hs-form .legal-consent-container p,
+.hs-form .hs-form-booleancheckbox-display > span {
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  color: #888;
+  line-height: 1.5;
+}
+
+/* ── Checkbox alignment ── */
+.hs-form .hs-form-booleancheckbox label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #888;
+  font-weight: 400;
+}
+
+.hs-form .hs-form-booleancheckbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  margin-top: 2px;
+  accent-color: #111111;
+  cursor: pointer;
+}
+
+/* ── Hide HubSpot branding (where plan allows) ── */
+.hs-form .hs-form-iframe,
+.hs-form .hubspot-link__container,
+.hs-form .hs-submit .hs-richtext {
+  display: none !important;
+}
+
+/* ── Multi-column layout override — single column on all breakpoints ── */
+.hs-form .form-columns-1 .hs-input,
+.hs-form .form-columns-2 .hs-input {
+  width: 100% !important;
+}
+
+/* ── Mobile: full-width, tap targets ── */
+@media (max-width: 640px) {
+  .hs-form input[type="text"],
+  .hs-form input[type="email"],
+  .hs-form input[type="tel"],
+  .hs-form textarea,
+  .hs-form select {
+    font-size: 16px; /* prevents iOS zoom */
+    padding: 14px 16px;
+    width: 100%;
+  }
+
+  .hs-form input[type="submit"],
+  .hs-form .hs-button {
+    width: 100%;
+    min-height: 48px;
+  }
+}

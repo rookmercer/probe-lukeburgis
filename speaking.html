@@ -83,6 +83,67 @@ footer li{margin-bottom:7px}
   <a class="nav-cta" href="speaking/kit/" style="margin-left:12px">Speaker Kit</a>
 </nav>
 
+<!-- VENUE MARQUEE — slow monochrome text ticker, above the fold -->
+<style>
+@media (prefers-reduced-motion: reduce) {
+  .venue-marquee { display: none; }
+}
+.venue-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #FAF8F3;
+  border-bottom: 1px solid #e8e2d6;
+  padding: 10px 0;
+}
+.venue-marquee-inner {
+  display: inline-flex;
+  align-items: center;
+  animation: venueTicker 60s linear infinite;
+}
+.venue-marquee-inner:hover {
+  animation-play-state: paused;
+}
+.venue-marquee-item {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #111111;
+  padding: 0 1.6em;
+}
+.venue-marquee-sep {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: #111111;
+  opacity: 0.35;
+  flex-shrink: 0;
+}
+@keyframes venueTicker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+<div class="venue-marquee" aria-hidden="true">
+  <div class="venue-marquee-inner">
+    <!-- Venue list — add new <span class="venue-marquee-item"> entries here -->
+    <span class="venue-marquee-item">Oxford University</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">Cambridge University</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">92nd Street Y</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">Brookfield Properties</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">Athenaeum Center</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">Main Street Summit</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">Capital Camp</span><span class="venue-marquee-sep">·</span>
+    <!-- Duplicate set for seamless infinite loop -->
+    <span class="venue-marquee-item">Oxford University</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">Cambridge University</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">92nd Street Y</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">Brookfield Properties</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">Athenaeum Center</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">Main Street Summit</span><span class="venue-marquee-sep">·</span>
+    <span class="venue-marquee-item">Capital Camp</span><span class="venue-marquee-sep">·</span>
+  </div>
+</div>
+
 <!-- PAGE HEADER -->
 <style>
 .sh-word{display:inline-block;transform:translateY(110%);opacity:0}

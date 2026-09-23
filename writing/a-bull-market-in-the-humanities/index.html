@@ -23,11 +23,21 @@ nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:20px 5
 .essay-wrap{max-width:680px;margin:0 auto;padding:64px 24px 80px}
 .back-link{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;text-decoration:none;display:inline-block;margin-bottom:48px}
 .back-link:hover{color:var(--color-gold)}
-.needs-luke{display:inline-block;background:#FFF3CD;color:#7a5c00;font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border:1px solid var(--color-gold);border-radius:2px;margin-bottom:16px}
-h1{font-family:var(--font-heading);font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.1;letter-spacing:-.01em;margin-bottom:16px;opacity:.5}
 .essay-meta-line{font-family:var(--font-label);font-size:11px;color:#888;letter-spacing:.04em;margin-bottom:32px}
-.stub-box{background:#f5f2ec;border-left:3px solid var(--color-gold);padding:24px 28px;margin-top:40px;font-family:var(--font-body);font-size:16px;line-height:1.7;color:#555}
-.stub-box strong{color:#333}
+.needs-luke{display:inline-block;background:#FFF3CD;color:#7a5c00;font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border:1px solid var(--color-gold);border-radius:2px;margin-bottom:32px}
+h1{font-family:var(--font-heading);font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.1;letter-spacing:-.01em;margin-bottom:16px}
+.essay-body{font-size:17px;line-height:1.78;color:#222}
+.essay-body p{margin-bottom:1.4em}
+.essay-body p:first-of-type::first-letter{font-family:var(--font-heading);float:left;font-size:3.4em;line-height:.82;padding-right:8px;padding-top:4px;color:var(--color-ink)}
+.pull-quote{border-left:4px solid var(--color-gold);padding:20px 0 20px 28px;margin:2.2em 0;font-family:var(--font-heading);font-size:20px;font-style:italic;line-height:1.55;color:#333;font-weight:400}
+.essay-body h2{font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.2;margin:2em 0 .7em}
+.essay-body blockquote{border-left:3px solid var(--color-gold);padding-left:20px;margin:1.5em 0;color:#444;font-style:italic}
+.essay-body a{color:var(--color-ink);text-decoration:underline;text-decoration-color:#ccc}
+.essay-body a:hover{text-decoration-color:var(--color-gold)}
+.essay-body em{font-style:italic}
+.essay-nav{margin-top:72px;padding-top:32px;border-top:1px solid #e8e2d6;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.essay-nav a{color:#888;text-decoration:none}
+.essay-nav a:hover{color:var(--color-gold)}
 footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
 footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
 footer ul{list-style:none}
@@ -35,9 +45,15 @@ footer li{margin-bottom:8px}
 footer a{color:#777;text-decoration:none}
 footer a:hover{color:#FAF8F3}
 @media(max-width:760px){nav{padding:16px 20px}.essay-wrap{padding:40px 20px 60px}footer{grid-template-columns:1fr 1fr;padding:36px 20px}}
+/* Reading progress bar */
+#reading-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:#111111;z-index:9999;opacity:0;transition:opacity .2s}
+#reading-progress.visible{opacity:1}
+@media(prefers-reduced-motion:reduce){#reading-progress{display:none}}
 </style>
 </head>
 <body>
+<!-- Reading progress bar -->
+<div id="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 
 <!-- NAV -->
 <nav>
@@ -64,14 +80,82 @@ footer a:hover{color:#FAF8F3}
 <div class="essay-wrap">
   <a class="back-link" href="/probe-lukeburgis/writing/">← All Essays</a>
 
-  <span class="needs-luke">LOCKED — Luke/Ann must unlock paid post before this card goes live</span>
+  <span class="needs-luke">★ Curator note needed</span>
 
   <h1>A Bull Market in the Humanities</h1>
   <div class="essay-meta-line">Substack · 2024 · ~7 min read</div>
 
-  <div class="stub-box">
-    <strong>This essay is currently locked.</strong> Luke and Ann need to unlock the paid Substack post before the full text can be published here. Check back or <a href="https://read.lukeburgis.com" style="color:var(--color-gold)">subscribe to the newsletter</a> to read it first.
+  <div class="essay-body">
+    <p>The real world is never going to get outdated or automated. I feel bad for those recently trained for very specific STEM jobs these past few years which AI is already encroaching on. Imagine spending four years learning to code Python, graduating in 2021, only to see AI code in 5 minutes what would have taken you 500 hours. Traditional education, especially technical education, is still training people for jobs that may no longer exist by the time they graduate.</p>
+
+    <p>The education of the future is going to be an education in sensory perception, and therefore an education in the humanities—especially in the arts—because artistic training is training in how to see, how to perceive, and how to communicate. Even students in business schools will benefit from this kind of training (my colleague Andreas Widmer teaches a class on entrepreneurship by teaching how to draw and connecting this to key entrepreneurial skill sets related to perception and expression—he has been way ahead of the game in this regard).</p>
+
+    <div class="pull-quote">The humanities, rightly understood, are the things that technology cannot take away or substitute for.</div>
+
+    <p> Of course, I don't mean 'humanities' in the way that they've been hijacked as ideological programs of cultural change by many elite universities. I mean humanities broadly understood as the exploration of what it truly means to be human and the skills and practices of being and doing those things. The humanities are "the study of history, philosophy and religion, modern and ancient languages and literatures, fine and performing arts, media and cultural studies, and other fields."<sup><a href="#fn1" id="fnref1">1</a></sup> The thread that unites them all is the training of the senses—helping humans to be able to see, hear, touch, feel, and taste in a way that helps us enter into the mystery of the human experience at a deeper level.</p>
+
+    <p>At the end of the day, generative AI works through a mathematical process. It is simply math. And math has severe limitations when it comes to human experience.</p>
+
+    <p>Yes, there will be a corresponding bear market in this.</p>
+
+    <p>And that is why even Peter Thiel sees the writing on the wall with his fairly counter-intuitive take (as usual): the advent of AI doesn't mean that we're going to see a bull market in jobs for people who are good at calculating thought (in my words), but people who are good at meditative thought. AI will be able to replace many of the mathematical functioning that made many people in such high demand in the Silicon Valley of the 90s and 00s. Now, there's going to be a reversal. In a recent interview posted on X by Zain Kahn (Superhuman.ai), Thiel said the following:</p>
+
+    <blockquote>
+      <p>It seems much worse for the math people than the word people.  People have told me they think within three to five years the AI models will be able to solve all the U.S. math Olympiad problems. And that would shift things quite a bit. Silicon Valley in the early 21st century—it's way too biased towards the math people. I don't know if it's a French revolution thing or a Russian sort of Straussian secret cabal control thing…but that's the thing that seems deeply unstable.</p>
+    </blockquote>
+
+    <blockquote>
+      <p>And that's what I would bet on getting reversed. Where math ability…it's sort of…the thing that's the test for everything, right? It's like, if you want to go to medical school, we weed people out through physics and calculus. And I'm not sure that's really correlated with your, I don't know, your dexterity as a neurosurgeon. I don't really want someone operating on my brain to be doing prime number factorizations in their head while they're operating on my brain…</p>
+    </blockquote>
+
+    <blockquote>
+      <p>In the late 80s, early 90s, I had sort of a chess bias because I was a pretty good chess player. And so my chess bias was you should just test everyone on chess ability and that should be the gating factor. Why even do math? Why not just chess? And that got undermined by computers in 1997. Isn't that what's going to happen to math?</p>
+    </blockquote>
+
+    <blockquote>
+      <p>And isn't that a long overdue rebalancing of our society?</p>
+    </blockquote>
+
+    <p class="editorial-note" style="font-family:var(--font-label);font-size:12px;color:#888;font-style:italic;margin:-.5em 0 1.5em">(Note: I think what Thiel is referring to with 1997—with such specificity—is this: it's the year that Deep Blue beat Kasparov.)</p>
+
+    <p>While I agree with Thiel that the AI revolution will lead to a rebalancing toward the verbal and away from the mathematical, I don't think stellar verbal skills alone will be enough. We're not just going to see a shift from shape-shifters (math geniuses) to wordcels (those with stellar verbal skills)—that is far too simplistic. AI will soon get to the point where it can fool even the best readers and editors with its beautiful descriptions of a sunset—something it has never seen—and so verbal ability alone is not enough.</p>
+
+    <p>The most fundamental human response to this electronic age should be a return to the most personal, affective, human part of our existence. Therefore, I don't just believe there's going to be a bull market in the humanities—I believe there's going to be a return to existentialism (atheistic and Christian alike), and a return to a form of personalism that rails against the machinistic impulses of those tethered to the machines, as the stench of death becomes too overwhelming for any of us to ignore much longer.</p>
+
+    <p>So mine is not a call to double down on the study of the classical Trivium, training in rhetoric, and improv. That would take us right back to the days of 4th and 5th century Rome, when the young Augustine of Hippo was enamored with training in rhetoric in order to achieve prestige as a rhetorician. For even the sophists were great orators. I'm suggesting something beyond the verbal.</p>
+
+    <p>Communication creates community. The way we communicate forms the types of communities we form: communities where the highest good sought is great entertainment and prestige ("he prepares for those podcasts like none other, and asks banger questions!") or communities oriented toward the truth and encounters with the real.</p>
+
+    <p>The young Augustine began to see through the facade of the prestige-seeking rhetoricians. He sought to use those same "forms", but he wanted to re-voice them, breathe new life into them, so that he could communicate more intimate things in a self-emptying, rather than a self-aggrandizing, way—after his model.</p>
+
+    <p>So not only do I think there is going to be a bull market in the humanities and the liberal arts, and that Peter is also right that those with verbal talent are going to have a more important skill set to offer the world in the coming decades, as the AI revolution takes hold—I think that those who are able to give expression to and speak to the deepest desires of the human heart will be the voices the world needs most.</p>
+
+    <p>This, by definition, means an intentional detachment from the thin desires and the engagement that come with them, and a cultivation of the thick desires in oneself and others that come from sustained encounters with the real, who are able to speak suaviter et fortiter about the real things that have never entered into the data training of an AI, and perhaps have not even entered into the heart of man.</p>
+
+    <p>The great mystery—the mysterium tremendum et fascinans—is the well that never runs dry, even after Joe Rogan has exhausted every celebrity and academic guest with esoteric takes on the periodic table of elements.</p>
+
+    <p>A great writer once wrote that "Everything that rises must converge." What is that point of convergence?</p>
+
+    <p>We will soon find out.</p>
+
+    <p>Maybe.</p>
+
+    <p>Whether it happens depends on whether or not you believe we are 'rising' or 'falling'. If we're falling, there is no guarantee of convergence at all. In fact, we should expect divergence.</p>
+
+    <p>But somewhere above the petty mimetic squabbles, in the realm of the thick desires cultivated by the humanities, there is communion.</p>
+
+
+    <section class="footnotes" style="margin-top:3em;padding-top:1.5em;border-top:1px solid #e8e2d6;font-size:14px;color:#666">
+    <h2 style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:1em">Notes</h2>
+    <p id="fn1" style="margin-bottom:.8em"><sup>1</sup> National Humanities Center: the study of history, philosophy and religion, modern and ancient languages and literatures, fine and performing arts, media and cultural studies, and other fields. <a href="#fnref1" style="color:var(--color-gold)">↩</a></p>
+    </section>
   </div>
+
+  <nav class="essay-nav" aria-label="Essay navigation">
+    <div class="prev">
+      <a href="/probe-lukeburgis/writing/">← All Essays</a>
+    </div>
+  </nav>
 </div>
 
 <!-- FOOTER -->
@@ -104,5 +188,26 @@ footer a:hover{color:#FAF8F3}
   </div>
 </footer>
 
+<script>
+(function(){
+  var bar = document.getElementById("reading-progress");
+  if(!bar) return;
+  var hasScrolled = false;
+  function update(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docH = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if(docH <= 0) return;
+    var pct = Math.min(100, Math.round(scrollTop / docH * 100));
+    bar.style.width = pct + "%";
+    bar.setAttribute("aria-valuenow", pct);
+    if(!hasScrolled && scrollTop > 0){
+      hasScrolled = true;
+      bar.classList.add("visible");
+    }
+  }
+  window.addEventListener("scroll", update, {passive: true});
+  update();
+})();
+</script>
 </body>
 </html>

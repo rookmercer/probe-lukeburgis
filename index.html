@@ -63,7 +63,7 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 
 @keyframes markMove{
   0%,55%  {left:50%;top:48%;width:min(300px,52vw);}
-  68%,100%{left:calc(50% - min(320px,32vw));top:48%;width:120px;}
+  68%,100%{left:max(calc(50% - 560px + 20px),20px);top:48%;width:120px;}
 }
 
 .draw{
@@ -89,7 +89,7 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 /* Words appear after mark settles left */
 .hero-words{padding-left:16px;z-index:10;
   position:absolute;
-  left:calc(50% - min(320px,32vw) + 148px);
+  left:max(calc(50% - 560px + 140px),140px);
   top:48%;
   transform:translateY(-50%);
   max-width:560px;
@@ -141,7 +141,7 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 
 /* Reduced motion */
 @media(prefers-reduced-motion:reduce){
-  .mark-wrap{z-index:10;animation:none;left:calc(50% - min(320px,32vw));top:48%;width:120px;transform:translateY(-50%)}
+  .mark-wrap{z-index:10;animation:none;left:max(calc(50% - 560px + 20px),20px);top:48%;width:120px;transform:translateY(-50%)}
   .draw{display:none}
   .fill{opacity:1;animation:none}
   .hero-words h1,.hero-words .hero-sub,.hero-words .hero-byline{animation:none;opacity:1}
@@ -516,7 +516,7 @@ footer a:hover{color:#FAF8F3}
       <input type="email" placeholder="your@email.com">
       <button>Subscribe</button>
     </div>
-    <p style="font-size:12px;color:#555;margin-top:12px">Free. Read at <a href="https://read.lukeburgis.com" style="color:#888">read.lukeburgis.com</a></p>
+    <p style="font-size:12px;color:#555;margin-top:12px">Free. Unsubscribe anytime. Read at <a href="https://read.lukeburgis.com" style="color:#888">read.lukeburgis.com</a></p>
     </div>
 </div>
 

@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-<title>magnifica humanitas — Luke Burgis</title>
+<title>Per Forza di Levare — Luke Burgis</title>
 <style>
 :root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--color-gold:#DC9B3C;--color-ink:#111111;--color-paper:#FAF8F3;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -23,11 +23,22 @@ nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:20px 5
 .essay-wrap{max-width:680px;margin:0 auto;padding:64px 24px 80px}
 .back-link{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;text-decoration:none;display:inline-block;margin-bottom:48px}
 .back-link:hover{color:var(--color-gold)}
-.needs-luke{display:inline-block;background:#FFF3CD;color:#7a5c00;font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border:1px solid var(--color-gold);border-radius:2px;margin-bottom:16px}
-h1{font-family:var(--font-heading);font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.1;letter-spacing:-.01em;margin-bottom:16px}
 .essay-meta-line{font-family:var(--font-label);font-size:11px;color:#888;letter-spacing:.04em;margin-bottom:32px}
-.stub-box{background:#f5f2ec;border-left:3px solid var(--color-gold);padding:24px 28px;margin-top:40px;font-family:var(--font-body);font-size:16px;line-height:1.7;color:#555}
-.stub-box strong{color:#333}
+.needs-luke{display:inline-block;background:#FFF3CD;color:#7a5c00;font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border:1px solid var(--color-gold);border-radius:2px;margin-bottom:32px}
+h1{font-family:var(--font-heading);font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.1;letter-spacing:-.01em;margin-bottom:16px}
+.essay-body{font-size:17px;line-height:1.78;color:#222}
+.essay-body p{margin-bottom:1.4em}
+.essay-body p:first-of-type::first-letter{font-family:var(--font-heading);float:left;font-size:3.4em;line-height:.82;padding-right:8px;padding-top:4px;color:var(--color-ink)}
+.section-break{border:none;border-top:1px solid #e8e2d6;margin:2.5em auto;width:60px}
+.pull-quote{border-left:4px solid var(--color-gold);padding:20px 0 20px 28px;margin:2.2em 0;font-family:var(--font-heading);font-size:20px;font-style:italic;line-height:1.55;color:#333;font-weight:400}
+.essay-body h2{font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.2;margin:2em 0 .7em}
+.essay-body blockquote{border-left:3px solid var(--color-gold);padding-left:20px;margin:1.5em 0;color:#444;font-style:italic}
+.essay-body a{color:var(--color-ink);text-decoration:underline;text-decoration-color:#ccc}
+.essay-body a:hover{text-decoration-color:var(--color-gold)}
+.essay-body em{font-style:italic}
+.essay-nav{margin-top:72px;padding-top:32px;border-top:1px solid #e8e2d6;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.essay-nav a{color:#888;text-decoration:none}
+.essay-nav a:hover{color:var(--color-gold)}
 footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
 footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
 footer ul{list-style:none}
@@ -35,9 +46,15 @@ footer li{margin-bottom:8px}
 footer a{color:#777;text-decoration:none}
 footer a:hover{color:#FAF8F3}
 @media(max-width:760px){nav{padding:16px 20px}.essay-wrap{padding:40px 20px 60px}footer{grid-template-columns:1fr 1fr;padding:36px 20px}}
+/* Reading progress bar */
+#reading-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:#111111;z-index:9999;opacity:0;transition:opacity .2s}
+#reading-progress.visible{opacity:1}
+@media(prefers-reduced-motion:reduce){#reading-progress{display:none}}
 </style>
 </head>
 <body>
+<!-- Reading progress bar -->
+<div id="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 
 <!-- NAV -->
 <nav>
@@ -64,14 +81,95 @@ footer a:hover{color:#FAF8F3}
 <div class="essay-wrap">
   <a class="back-link" href="/probe-lukeburgis/writing/">← All Essays</a>
 
-  <span class="needs-luke">[NEEDS LUKE: year, reading time, rights decision]</span>
+  <span class="needs-luke">★ Curator note needed</span>
 
-  <h1>magnifica humanitas</h1>
-  <div class="essay-meta-line">ARES Magazine</div>
+  <h1>Per Forza di Levare</h1>
+  <p class="essay-subtitle" style="font-family:var(--font-heading);font-size:clamp(18px,2.5vw,24px);font-weight:400;font-style:italic;line-height:1.3;color:#555;margin-bottom:24px">The Via Negativa of Magnifica Humanitas</p>
+  <div class="essay-meta-line">ARES Magazine · 2025 · ~14 min read</div>
 
-  <div class="stub-box">
-    <strong>Pending rights confirmation.</strong> This essay was published in ARES Magazine. Year, reading time, and on-site hosting rights need to be confirmed before this page goes live. <span style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#7a5c00">[NEEDS LUKE: rights decision — on-site vs. outbound link]</span>
+  <div class="essay-body">
+    <p>Visitors to the Galleria dell’Accademia in Florence encounter four sculptures by Michelangelo lining a hallway. Looming at the end, beneath the domed skylight of a tribune, is his masterpiece <em>David</em>. The 17-foot-high statue is carved to perfection from a single piece of marble. But it would be a mistake to not see the statues in the hall as masterpieces in their own right—perhaps with even more to tell us about humanity than the David.</p>
+
+    <p>The sculptures in the hall are traditionally known as his <em>Prigioni</em>, or prisoners—four individual figures in separate pieces of stone who appear to be struggling to free themselves and emerge complete. There is scholarly debate about whether Michelangelo intentionally left them unfinished.</p>
+
+    <p>In a sonnet to Vittoria Colonna, he wrote: “The greatest artist has no conception that a single block of marble does not already contain within its excess; and only the hand that obeys the intellect can reach it.” He distinguished arts such as painting or modeling in clay as working “by way of adding”; sculpting works <em>per forza di levare</em>, or “by force of taking away.”</p>
+
+    <p>Today we are living inside what Pope Francis referred to in his 2015 encyclical <em>Laudato Si’</em> as a “technocratic paradigm” (LS 101). The Catholic Church has been probing this paradigm long before it had a name—from Pope Leo XIII’s <em>Rerum Novarum</em> in 1891, which addressed the human and social problems caused by new forms of industrial technologies; to Romano Guardini’s <em>Letters from Lake Como</em> written from 1923-1925 about the ways technology is quietly destroying organic human culture; to more recent documents from the Holy See on bioethics (<em>Dignitas Personae</em>, 2008), including a chapter in Pope Benedict XVI’s 2009 encyclical <em>Caritas in Veritate</em> dedicated to technological progress, in which he calls special attention to its “astounding applications in the field of biology” (CV 69).</p>
+
+    <p>That biology—not intelligence—was the special callout in that encyclical points to the dramatic changes in the technological landscape in the fifteen years since <em>Caritas in Veritate</em> was published, culminating in the invention of the transformer and the original public release of ChatGPT’s powerful large language model (GPT-3.5) in late 2022.</p>
+
+    <p>The world began trying to make sense of this powerful new technology, and many looked to the Church for answers as the leaders of the technological development began using religious language to describe their project. In October 2024, the co-founder and CEO of Anthropic, one of the largest AI companies in the world, penned an essay on AI's future titled “Machines of Loving Grace,” borrowing from a 1967 poem by Richard Brautigan that imagines a 'cybernetic ecology' where humans are 'watched over by machines of loving grace.'</p>
+
+    <p>In January 2025, the Dicastery for the Doctrine of the Faith and the Dicastery for Culture and Education published <em>Antiqua et Nova</em>, reserving the word “intelligence” in its full sense for the human person. This was followed by Pope Leo XIV’s publication of <em>Magnifica Humanitas</em> in May 2026. It’s the first encyclical that takes technology not just into account but as a formal object of inquiry. The subtitle is specific: “Safeguarding the Human Person in the Time of Artificial Intelligence.” Because the theme of the letter is safeguarding the human person at a particular time and from a particular technology, the opportunity remains for a generation of thinkers and builders, Christian and non-Christian alike, to develop a full philosophy of technology. <em>Magnifica Humanitas</em> is the cornerstone of that project, not its completion.</p>
+
+    <p>The pope looks at the technocratic paradigm the way the sculptor looks at a block of stone: he sees the magnificent form of the person within it. And there are many excesses—what Michelangelo refers to as <em>superchio</em>—which need to be removed: the underlying narratives of transhumanism and posthumanism, invasive surveillance, efficiency as the ultimate measure of value, and the concentration of digital power are among those named.</p>
+
+    <p>Still, the Pope knows that the human person is not a sculpture—he is not built; he is created and called. The human person’s “deepest vocation is to enter into the Trinitarian dynamic of love received and shared,” Pope Leo writes before addressing AI directly (MH 48). The spiritual life of the human person, which includes a <em>c</em><em>apax </em><em>Dei</em>, or the capacity to be in communion with God and therefore with one another, is what must be safeguarded.</p>
+
+    <p>Are we to add or subtract? Build or take away? Painters or sculptors? Michelangelo was both. The founders have decided: build. The pope takes up the builder's image too—but throughout the letter we see an approach to creation that has more in common with the artist than the technologist. The tradition opened a <em>via </em><em>negativa</em> toward God; technology is now opening one back to the human person.</p>
+
+    <hr class="section-break">
+
+    <p>The <em>via negativa</em>, or what the Greek Fathers called the <em>apophatic</em> <em>way</em>, is the pathway to knowing something about God by understanding what God is not.</p>
+
+    <p>Father Giulio Maspero, a priest and Dean of the Faculty of Theology at the Pontifical University of the Holy Cross in Rome, defines apophaticism as “the impossibility of speaking of God unless in the face of His infinite greatness.” One area of Maspero's research is the Cappadocian Fathers' claim that “substances cannot be expressed in words,” writes Maspero. That is because “The sphere of language is different from that of being.” This is particularly relevant to our time of artificial intelligence, which is characterized by what are known as “large language models” which claim intelligence through the construction of words through a highly technical process which I won’t address here, but it’s important to note that that process relies on a form of probabilistic, language-based prediction based on an existing set of data (which these large language models are “trained” on).</p>
+
+    <p><em>Being</em> is of another order, which words cannot contain but only indicate. While large language models function based on the relationships between different words, the relationship between substances is what Maspero and others before him call a relational ontology: relation is not an accident added to being but constitutive of it. “The being of God is a relational being,” as John D. Zizioulas put it, and nothing exists as pure ‘individual’, for there is no true being without communion.</p>
+
+    <p>It is fitting then, that Pope Leo’s encyclical <em>Magnifica </em><em>Humanitas</em><em> </em>opens with a biblical image that sheds light on the relationship between language and communion: the Tower of Babel, a story told in Genesis 11. The tower, in the Pope’s interpretation, was “a project conceived without reference to God, supported by a uniformity that eliminated diversity and that chose homogenization over communion” (MH 7). From the outset, there is an <em>ontological </em>problem: “homogenization over communion” is the opposite of the Trinitarian model of relations. Instead, the builders chose “a single language, a single technology, a single direction”—but without reference to God, and ultimately without being in communion. That is why, the Pope implied, their project failed. Language without being contains a profound danger.</p>
+
+    <p>In contrast to this warning, the Pope offers a different image taken from the Book of Nehemiah at the beginning of the encyclical to point toward a better way of building. A Jew in the service of the Persian king, Nehemiah returns to his ancestral city to reconstruct the walls of Jerusalem after the Babylonian exile (Neh 2-6). “Before taking action, he fasted, prayed and interceded for the people,” the Pope notes (MH 8). Fasting is itself a <em>via </em><em>negativa</em>—the removal of food as the way toward knowing something greater—and it is the first thing we are told Nehemiah does.</p>
+
+    <p>When he begins, he doesn’t impose solutions from the top-down but convenes the people and assigns tasks according to the unique gifts and talents of each person and family, addressing any opposition directly. God is at the center, and it is the kind of undertaking “which rebuilds relationships before rebuilding with stones.” Communion is ontologically prior to building.</p>
+
+    <p>These are the two opening images of the <em>Magnifica Humanitas</em>, the Pope’s first encyclical, so we must not underestimate their importance. The Augustinian Pope, Leo, draws on contrasting images of building, which Augustine of Hippo did in his <em>City of God</em>. Before that, though, he calls attention to the apophatic way by warning about the “pretense that a single language—even a digital one—can translate everything, including the mystery of the human person, into data and performance” (MH 10). Augustine himself referred to the <em>pugna</em><em> verborum</em> (<em>De </em><em>doctrina</em><em> </em><em>christiana</em> I.6), a battle that breaks out in language itself whenever it reaches the edge of the sayable. Here, I believe, Pope Leo sees artificial intelligence as a perennial temptation to reduce the mystery of God—and the mystery of the human person, made in His image and likeness—to something that they are not.</p>
+
+    <p>While the <em>via </em><em>negativa</em> has traditionally been a pathway to God through negation—by removing everything that is not God—artificial intelligence itself may be a kind of <em>via negativa</em> to the human person. By looking clearly at what it is not and what it cannot do, we see more clearly the magnificence of the human person in our full capacity as creatures capable of entering into the Triune life of God.</p>
+
+    <p><em>Magnifica Humanitas</em>, therefore, practices a <em>via </em><em>negativa</em> without announcing it. When Pope Leo wants to show the grandeur of humanity, he does not produce a definition but a negation: the splendor of the human person, he tells us at the outset, is something “no machine can ever replace” (MH 15). The value of the human person “does not depend on what they achieve or produce” (MH 51). Later, he writes that truth is “not the property of those with power or influence” (MH 137). I count 74 uses of the phrase “is not” in the document.</p>
+
+    <p>But all the negations are in the service of one great affirmation: the magnificence of the human person not in himself, but because he is the only creature on earth willed by God for his own sake, and called to communion in the life of the Trinity. In one of the most striking lines in the letter, he refers to the social doctrine of the Church as a “theology of communion in history” (MH 27). Examining artificial intelligence as a technology that affects the human person’s ability to be in communion, then—with God, and with one another—is a central task of the document and of the Church in the years ahead.</p>
+
+    <hr class="section-break">
+
+    <p>Michelangelo used technology to create his sculptures and paint the ceiling of the Sistine Chapel. Technology and art are not, after all, opposed to one another. They can be—but they are not by necessity. Technology is never neutral. This is a point the Pope makes clear in <em>Magnifica Humanitas</em>, at the outset. After pointing to the power of technology to be an instrument of good, he writes: “In practice, however, technology is never neutral, because it takes on the characteristics of those who devise, finance, regulate and use it” (MH 9).</p>
+
+    <p>Magnificence is a virtue. It simply means, at its root, “to make great things.” The grandest cathedrals are magnificent because the people who made them were. If the technology is to be used for good—or to make great things—it must be wielded by magnificent people. We may not all be Michelangelo, but we all have the capacity to cultivate the virtue and to enter into the requisite communion and the life of grace that enables us to be the kinds of people who can use technology responsibly.</p>
+
+    <p>Technology is never neutral, which means that it’s always forming—or deforming, if you will—the human person. The image that is being <em>formed, </em>though, is not an individual; it’s a communion of persons. In that sense, Michelangelo’s prisoners—as solitary forms emerging from their own blocks of stone—are insufficient images. What wants to emerge out of the technological paradigm are not individuals, but persons capable of building a civilization of love: persons in communion with one another.</p>
+
+    <p>If we return to our image of the sculptor and Michelangelo’s prisoners, we’d see figures emerging from the stone with outstretched hands, groping for one another.</p>
+
+    <hr class="section-break">
+
+    <p>The Holy Father, it turns out, has already reconciled the sculptor and the builder. In the closing lines of his introduction he names the task of the present age: to be builders of communion rather than architects of Babel (MH 16). Everything is contained in that opposition. Babel builds by addition—tower upon tower, layer upon layer, data upon data—toward a unity that is mere homogenization, and which causes us to lose the distinctiveness of our personhood. Communion is built the way Nehemiah built: by focusing on communion first, and removing everything that obscures or becomes an obstacle to it. That is to say: <em>per forza di levare</em>, subtraction first.</p>
+
+    <p>To anyone who was left wanting from this encyclical—anyone who may have sought more practical applications and examples of things we must do: the encyclical’s job is not to do that, but to lay out basic principles through which the baptized may carry out the real work in the world and to be able to read the signs of the times. The Pope has given a roadmap for doing so.</p>
+
+    <p>The age of artificial intelligence is just beginning. The advent of the transformer and the consumer versions of apps and tools which allowed its proliferation were <em>events</em> which few foresaw, but which are shaking the foundations of the world. We must not forget that these events may also help certain truths penetrate our hearts and minds. If we see them rightly, these events will have much to say to us about who we are and our vocation.</p>
+
+    <p>The great Catholic thinker René Girard, elected to the Académie française in 2005, wrote these words in his magnum opus,<em> Things Hidden Since the Foundation of the World</em>,<em> </em>referring to the unprecedented and radical changes he believed humanity was undergoing. In the future, he wrote, “Books themselves will have no more than minor importance. The events within which such books emerge will be infinitely more eloquent than whatever we write and will establish truths we have difficulty describing…”.</p>
+
+    <p>The events—namely, the technological advancements—out of which this encyclical emerged are of paramount importance. <em>Magnifica </em><em>Humanitas</em> has taken up the task of rearticulating and reestablishing truths about the human person which the events themselves have the power to communicate. But they require interpretation. In the case of AI, the way is a negative one: a <em>via </em><em>negativa</em>.</p>
+
+    <p>We must discover the true power in the creative act — a power that is not ours alone: it flows from our nature as creatures made in the image and likeness of the Creator, so that in creating we share in his creative work. The machine can produce; only a person can participate.</p>
+
+    <p>Even this act of creation is apophatic. John Paul II, in his 1999 <em>Letter to Artists</em>, wrote: “All artists experience the unbridgeable gap which lies between the work of their hands, however successful it may be, and the dazzling perfection of the beauty glimpsed in the ardour of the creative moment: what they manage to express in their painting, their sculpting, their creating is no more than a glimmer of the splendour which flared for a moment before the eyes of their spirit.” (<em>Letter to Artists</em>, n. 6)</p>
+
+    <p>Pope Leo appeals specifically to creators of AI to remind them that they cannot create without an anthropology, a vision of the human person, whether it is real or merely implied. “In one sense, technological innovation can represent human participation in the divine act of creation,” he writes (MH 111). “Developers, therefore, bear a particular ethical and spiritual responsibility, for every design choice reflects a vision of humanity.” In the creative act and the events which are its consequence, we stake a claim on who we are. Is it justified?</p>
+
+    <p>To answer that question I turn to an unlikely contributor: the Russian Orthodox philosopher Nikolai Berdyaev. AI is forcing us to justify ourselves: intellectually, artistically, spiritually, existentially. As it continues to simulate or mimic or do the things that we believed were ours alone, we must re-examine what or who we are. Do we believe that we are magnificent?</p>
+
+    <p>“Many have written their justification of God, their theodicy,” Berdyaev wrote in the preface to his famous book, <em>The Meaning of the Creative Act</em>. “But the time has come to write a justification of man, an anthropodicy. Perhaps an anthropodicy is the only way to a theodicy, the only way not yet lived and used to the full.”</p>
+
+    <p>Pope Leo, in <em>Magnifica Humanitas</em>, has given us a start.</p>
   </div>
+
+  <nav class="essay-nav" aria-label="Essay navigation">
+    <div class="prev">
+      <a href="/probe-lukeburgis/writing/">← All Essays</a>
+    </div>
+  </nav>
 </div>
 
 <!-- FOOTER -->
@@ -104,5 +202,26 @@ footer a:hover{color:#FAF8F3}
   </div>
 </footer>
 
+<script>
+(function(){
+  var bar = document.getElementById("reading-progress");
+  if(!bar) return;
+  var hasScrolled = false;
+  function update(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docH = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if(docH <= 0) return;
+    var pct = Math.min(100, Math.round(scrollTop / docH * 100));
+    bar.style.width = pct + "%";
+    bar.setAttribute("aria-valuenow", pct);
+    if(!hasScrolled && scrollTop > 0){
+      hasScrolled = true;
+      bar.classList.add("visible");
+    }
+  }
+  window.addEventListener("scroll", update, {passive: true});
+  update();
+})();
+</script>
 </body>
 </html>

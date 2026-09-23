@@ -43,9 +43,15 @@ footer li{margin-bottom:8px}
 footer a{color:#777;text-decoration:none}
 footer a:hover{color:#FAF8F3}
 @media(max-width:760px){nav{padding:16px 20px}.essay-wrap{padding:40px 20px 60px}footer{grid-template-columns:1fr 1fr;padding:36px 20px}}
+/* Reading progress bar */
+#reading-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:#111111;z-index:9999;opacity:0;transition:opacity .2s}
+#reading-progress.visible{opacity:1}
+@media(prefers-reduced-motion:reduce){#reading-progress{display:none}}
 </style>
 </head>
 <body>
+<!-- Reading progress bar -->
+<div id="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 
 <!-- NAV -->
 <nav>
@@ -160,5 +166,26 @@ footer a:hover{color:#FAF8F3}
   </div>
 </footer>
 
+<script>
+(function(){
+  var bar = document.getElementById("reading-progress");
+  if(!bar) return;
+  var hasScrolled = false;
+  function update(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docH = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if(docH <= 0) return;
+    var pct = Math.min(100, Math.round(scrollTop / docH * 100));
+    bar.style.width = pct + "%";
+    bar.setAttribute("aria-valuenow", pct);
+    if(!hasScrolled && scrollTop > 0){
+      hasScrolled = true;
+      bar.classList.add("visible");
+    }
+  }
+  window.addEventListener("scroll", update, {passive: true});
+  update();
+})();
+</script>
 </body>
 </html>

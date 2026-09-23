@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<title>Political Judas — Luke Burgis</title>
+<style>
+:root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--color-gold:#DC9B3C;--color-ink:#111111;--color-paper:#FAF8F3;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--color-paper);color:var(--color-ink);line-height:1}
+
+/* Reading progress bar */
+#reading-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:#111111;z-index:9999;opacity:0;transition:opacity .2s}
+#reading-progress.visible{opacity:1}
+@media(prefers-reduced-motion:reduce){#reading-progress{display:none}}
+
+nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center}
+.nav-logo svg{width:48px;height:auto;display:block}
+.nav-links{list-style:none;display:flex;gap:32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.nav-links a{color:#111;text-decoration:none}
+.nav-links a:hover{color:var(--color-gold)}
+.nav-links a.active{color:var(--color-gold);border-bottom:2px solid var(--color-gold);padding-bottom:2px}
+.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:var(--color-paper);padding:10px 20px;text-decoration:none}
+.essay-wrap{max-width:680px;margin:0 auto;padding:64px 24px 80px}
+.back-link{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;text-decoration:none;display:inline-block;margin-bottom:48px}
+.back-link:hover{color:var(--color-gold)}
+.essay-meta-line{font-family:var(--font-label);font-size:11px;color:#888;letter-spacing:.04em;margin-bottom:32px}
+.needs-luke{display:inline-block;background:#FFF3CD;color:#7a5c00;font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border:1px solid var(--color-gold);border-radius:2px;margin-bottom:32px}
+h1{font-family:var(--font-heading);font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.1;letter-spacing:-.01em;margin-bottom:16px}
+.essay-body{font-size:18px;line-height:1.78;color:#222}
+.essay-body p{margin-bottom:1.4em}
+.essay-body h2{font-family:var(--font-heading);font-size:24px;font-weight:600;line-height:1.2;margin:2.5em 0 .7em;letter-spacing:-.01em}
+.essay-body h3{font-family:var(--font-heading);font-size:19px;font-weight:400;font-style:italic;line-height:1.3;margin:2em 0 .6em;color:#444}
+.essay-body blockquote{border-left:3px solid var(--color-gold);padding-left:20px;margin:1.5em 0;color:#444;font-style:italic}
+.essay-body a{color:var(--color-ink);text-decoration:underline;text-decoration-color:#ccc}
+.essay-body a:hover{text-decoration-color:var(--color-gold)}
+.essay-body em{font-style:italic}
+.essay-body sup a{font-size:.75em;color:#888;text-decoration:none;vertical-align:super}
+.essay-body sup a:hover{color:var(--color-gold)}
+
+/* Section headers (Part I, Part II etc.) */
+.part-header{margin:3em 0 1.5em;padding-bottom:1em;border-bottom:1px solid #e8e2d6}
+.part-label{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--color-gold);display:block;margin-bottom:.4em}
+.part-title{font-family:var(--font-heading);font-size:clamp(22px,3vw,30px);font-weight:600;line-height:1.15;letter-spacing:-.01em}
+
+/* Pull quote / definition box */
+.definition-box{border:1px solid #e8e2d6;padding:24px 28px;margin:2em 0;background:#fff}
+.definition-box .def-term{font-family:var(--font-heading);font-size:17px;font-weight:600;margin-bottom:.5em}
+.definition-box .def-body{font-size:16px;color:#444;line-height:1.7;font-style:italic}
+
+/* Essay images */
+.essay-image{margin:2.5em 0}
+.essay-image img{width:100%;height:auto;display:block}
+.essay-image figcaption{font-family:var(--font-label);font-size:10px;color:#888;letter-spacing:.06em;margin-top:8px;text-align:center;text-transform:uppercase}
+
+/* Audio player */
+.audio-player-wrap{background:#111;padding:20px 24px;margin:2.5em 0;display:flex;align-items:center;gap:16px}
+.audio-player-wrap label{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#888;white-space:nowrap}
+.audio-player-wrap audio{flex:1;min-width:0;height:32px;accent-color:var(--color-gold)}
+
+/* Endnotes */
+.endnotes{margin-top:64px;padding-top:32px;border-top:1px solid #e8e2d6}
+.endnotes h2{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:20px}
+.endnotes ol{padding-left:20px}
+.endnotes li{font-size:14px;line-height:1.65;color:#555;margin-bottom:10px}
+.endnotes li a{color:#888;text-decoration:none}
+.endnotes li a:hover{color:var(--color-gold)}
+.back-to-ref{font-size:.8em;color:#bbb;text-decoration:none;margin-left:4px}
+.back-to-ref:hover{color:var(--color-gold)}
+
+.essay-nav{margin-top:72px;padding-top:32px;border-top:1px solid #e8e2d6;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.essay-nav a{color:#888;text-decoration:none}
+.essay-nav a:hover{color:var(--color-gold)}
+footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
+footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+footer ul{list-style:none}
+footer li{margin-bottom:8px}
+footer a{color:#777;text-decoration:none}
+footer a:hover{color:#FAF8F3}
+@media(max-width:760px){nav{padding:16px 20px}.essay-wrap{padding:40px 20px 60px}footer{grid-template-columns:1fr 1fr;padding:36px 20px}}
+</style>
+</head>
+<body>
+
+<!-- Reading progress bar -->
+<div id="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <a href="/probe-lukeburgis/" aria-label="Luke Burgis home">
+    <svg viewBox="0 0 82.39 81.96" width="44" height="44" role="img" aria-label="Luke Burgis">
+      <path fill="#111" d="M43.55,3.04c-.15.03-.29.07-.4.14-.87.55-.21,2.02-.21,2.8,0,.8.12,1.59.14,2.39.02.96-.11,1.94-.09,2.91.03,1.13.09,2.26.13,3.39.02.45-.05.89-.14,1.35-.15.84-.12,1.67-.13,2.51-.03,2.25.02,4.49,0,6.74,0,1.32.19,2.65-.04,3.96-.25,1.42-.22,2.68,0,4.1.19,1.19.12,2.31-.02,3.49-.06.55-.31,1.74.01,2.24-.02-.02,1.18-.1,1.29-.09.4.03.79.12,1.2.15.89.07,1.77-.11,2.66-.11,1.19,0,2.41.13,3.6-.02.68-.09,1.3-.32,1.98-.28.42.02.84.08,1.27.11.92.07,1.86.08,2.78.06,1.94-.04,3.87-.12,5.81-.13.71,0,1.42.07,2.1-.16.64-.21,1.29-.4,1.93-.63.68-.26,1.06-.49,1.6-.96.53-.46,1.19-.73,1.72-1.2.46-.41.77-.66,1.29-.98s1.01-.7,1.38-1.2c.44-.6.89-1.2,1.24-1.87.42-.82.68-1.57.95-2.44.12-.39.35-.58.57-.91.26-.39.36-.9.47-1.36.22-.89.45-1.77.69-2.66.26-.94.58-2.05.63-3.03.05-.79.04-1.59-.09-2.38-.11-.66-.09-1.4-.26-2.04-.28-1.02-.78-1.96-1.04-3-.23-.9-.72-1.74-1.34-2.44-.43-.48-.45-.98-.74-1.53-.56-1.07-1.9-1.42-2.5-2.41-.38-.62-.31-.8-.95-1.09-.71-.32-1.33-.77-2.04-1.06-.76-.3-1.64-.28-2.37-.54-.39-.14-.69-.46-1.09-.59-.45-.14-.94-.18-1.4-.3-1.04-.28-2.22-.61-3.31-.56-1.17.05-2.38-.13-3.56-.02-1.33.12-2.7.25-4.04.08-.74-.1-1.44-.15-2.17-.08-1.41.13-2.73-.14-4.12-.29-.69-.07-1.38-.09-2.07-.08-.36,0-.89-.05-1.32.02Z"/>
+      <path fill="#111" d="M75.78,69.62c.16-.29.3-.6.42-.93.22-.6.34-1.27.68-1.82.23-.37.49-.6.63-1,.21-.61.57-1.24.68-1.86s.18-1.23.29-1.83c.4-2.2.15-4.18-.2-6.36-.23-1.42-.52-2.86-1.17-4.16-.32-.64-.73-1.14-1.17-1.68-.45-.57-.77-1.25-1.23-1.83-.25-.32-.53-.62-.8-.92-.39-.44-.59-.86-1.13-1.11-.58-.28-1.15-.64-1.73-.97-1.27-.73-2.6-1.34-3.99-1.82-1.72-.59-3.33-1.16-5.19-1.07-.98.04-1.87-.32-2.82-.39-1.5-.11-3.07.03-4.57.17-.85.07-1.68-.01-2.53,0-1.04.03-2.07.13-3.11.12-.88,0-1.75.13-2.63.13-.4,0-.78-.12-1.18-.07-.46.05-.92.21-1.38.25,0,.65.51,1.05.86,1.51.45.59.85,1.34,1.19,2,.28.54.32,1.18.66,1.71.89,1.37,1.31,2.98,2.08,4.43.4.76.84,1.51,1.18,2.31.32.74.32,1.34.92,1.95.76.77.91,1.74,1.37,2.68.22.45.69.71.91,1.16s.4.77.67,1.18c.38.59.56,1.27.92,1.86.21.33.42.66.6,1.01.32.66.8,1.26,1.11,1.9.18.38.25.78.45,1.16.77,1.48,1.74,2.89,2.4,4.4.28.64.72,1.29,1.11,1.88.25.37.45.69.61,1.1.28.69.51,1.67,1.03,2.23.26.29.26.24.65.18s.74-.09,1.13-.11c.41-.03.79-.02,1.21-.04s.89-.07,1.3-.2c1.71-.53,3.44-.94,4.9-1.97.46-.33,1.02-.55,1.45-.93.31-.27.57-.71.87-1.05.9-1.05,1.87-2.01,2.53-3.22Z"/>
+      <path fill="#111" d="M26.34,67.63c.09-.16.18-.32.27-.48.35-.6.75-1.17,1.09-1.77.23-.41.25-.68.36-1.09.27-.99.9-1.99,1.3-2.96s.92-1.8,1.31-2.73c.26-.62.45-1.29.8-1.87.63-1.06,1.07-2.13,1.58-3.26.79-1.72,1.91-3.43,2.43-5.26.3-1.05.62-1.89,1.15-2.87.2-.37.36-.71.61-1.05.94-1.3.85-2.95,1.74-4.25.22-.32.28-.59.38-.96.07-.26.28-.52.34-.75.18-.68-.11-1.39-.01-2.08.13-.92,0-1.82.08-2.74.09-1,.29-2,.25-3.02-.05-1.4.03-2.79-.01-4.19-.03-.96-.04-1.89-.08-2.84-.05-1.25-.11-2.48-.03-3.73.09-1.41.2-2.82.16-4.23-.03-1.16.11-2.39.13-3.56.02-1.35-.06-2.71-.05-4.06,0-.57.09-1.12.09-1.69,0-.97-.08-1.91-.08-2.87-.88-.28-2.07.09-2.97.14-.83.05-1.63-.22-2.45-.3-.66-.07-1.34.11-2.02.1-1.72-.03-3.44-.09-5.16-.09-2.42,0-4.78.22-7.15.32-2.22.1-4.42-.15-6.64.06-2.04.19-3.97-.05-6.03-.03-.86,0-2.83-.4-3.54.22-.7.61-.25,2.56-.26,3.43-.02,2.06.73,4.1.59,6.15-.09,1.2-.59,2.31-.58,3.53.01.94.3,1.87.44,2.78.34,2.1.5,4.28.32,6.41-.07.78-.37,1.52-.43,2.28-.07.94.25,1.95.3,2.89.07,1.6-.21,3.19-.18,4.79.03,1.48-.04,3.02-.09,4.48-.06,1.95-.21,3.75.2,5.68.29,1.38.13,2.76.05,4.15-.07,1.13.23,2.13.19,3.24-.04,1.09-.39,2.14-.34,3.28.1,2.54-.43,4.96-.01,7.52.46,2.79-.13,5.64-.11,8.46.02,1.92.26,3.71.36,5.66,2.94.04,5.84-.13,8.79-.23,1.5-.05,2.89-.17,4.39-.12.92.03,1.82-.08,2.75-.11.28,0,.65.15.92.04.34-.14.49-.61.7-1,.36-.67.7-1.38.97-2.09.46-1.21,1.28-2.25,1.79-3.43.42-.95.29-2.11.84-3,.18-.3.36-.6.53-.9Z"/>
+      <path fill="#111" d="M55.86,73.12c-.07-.1-.15-.2-.23-.3-.56-.69-.93-1.49-1.45-2.2-.66-.9-1.46-1.8-1.92-2.83s-.86-2.05-1.31-3.07c-.75-1.69-1.66-3.31-2.6-4.91-.84-1.43-1.93-2.79-2.48-4.37-.31-.88-.7-1.58-1.14-2.4-.19-.35-.18-.56-.24-.93-.09-.53-.4-.89-.69-1.32-.44-.63-.83-1.53-1.12-2.25-.24-.62-.41-1.29-.7-1.88-.17-.35-.7-2.05-1.09-2.13-.36,1.13-.48,2.34-1.2,3.31-.78,1.07-.78,2.32-1.46,3.45-.86,1.43-1.29,3.03-2.2,4.43-.91,1.4-1.68,2.92-2.19,4.51-.21.65-.73,1.03-1.01,1.6-.25.52-.09,1.15-.36,1.66-.44.82-1.08,1.51-1.46,2.39-.57,1.32-.98,2.73-1.57,4.04-.44.97-1.02,1.83-1.41,2.84-.39,1.02-1.06,1.93-1.46,2.93-.1.25-.05.54-.13.78-.16.51-.51.96-.74,1.43,1.87.35,3.99.04,5.9.06,2.15.03,4.31.06,6.45-.21.72-.09,1.37.18,2.1.16.68-.02,1.36-.07,2.05-.12,1.03-.07,2.06,0,3.11-.02,2.14-.02,4.28-.04,6.42-.1,1.25-.03,2.49.06,3.73-.03.83-.06,1.66-.16,2.46-.22-.5-.39-.78-1.61-1-2.24-.27-.78-.59-1.44-1.07-2.09Z"/>
+    </svg>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="/probe-lukeburgis/books.html">Books</a></li>
+    <li><a href="/probe-lukeburgis/speaking.html">Speaking</a></li>
+    <li><a href="/probe-lukeburgis/programs.html">Programs</a></li>
+    <li><a href="/probe-lukeburgis/writing/" class="active">Writing</a></li>
+    <li><a href="/probe-lukeburgis/about.html">About</a></li>
+  </ul>
+  <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
+</nav>
+
+<div class="essay-wrap">
+  <a class="back-link" href="/probe-lukeburgis/writing/">← All Essays</a>
+
+  <span class="needs-luke">★ Curator note needed</span>
+
+  <h1>Political Judas</h1>
+  <div class="essay-meta-line">politicaljudas.com · ~30 min read</div>
+
+  <!-- Audio player -->
+  <div class="audio-player-wrap">
+    <label>Listen to the Essay</label>
+    <audio controls preload="none">
+      <source src="/probe-lukeburgis/assets/political-judas-audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <div class="essay-body">
+
+    <h2>Introduction</h2>
+
+    <blockquote>
+      <p>"Something must have happened to me sometime."</p>
+      <p><em>— Bob Slocum, in Joseph Heller's novel Something Happened, 1974</em></p>
+    </blockquote>
+
+    <p>Today many of us have an odd feeling that we can't put our finger on. It feels like both the best of times and the worst of times, and global events seem "cataclysmic, yet insignificant."<sup><a href="#fn1" id="ref1">[1]</a></sup> It's as if we've managed to catch not a tiger by the tail but rather a mouse.</p>
+
+    <p>The nature of this Muridaean battle is fundamentally religious. Nearly all contentious things today, from abortion to vaccines to foreign policy, are spoken of in latent religious terms like sacrifice, victimhood, reparation, excommunication—and public acts of repentance are common.<sup><a href="#fn2" id="ref2">[2]</a></sup> Politics has not replaced religion, but rather allowed itself to be the migratory destination of the holy.<sup><a href="#fn3" id="ref3">[3]</a></sup> In short: politics is inherently more religious in an irreligious world.<sup><a href="#fn4" id="ref4">[4]</a></sup></p>
+
+    <p>There has been a strange blurring of the lines. Religion has entered into academia; politics has entered into religion; innovation has entered into everything. Athens, Jerusalem, and Silicon Valley are communing in ways not fully understood.<sup><a href="#fn5" id="ref5">[5]</a></sup> But we should strive to understand. The consequences of not understanding the metaphysical assumptions and commitments being formed in this new environment are grave on both a societal and personal level.</p>
+
+    <p>One assumption being challenged right now is human agency. With the advent of increasingly powerful forms of artificial intelligence and the narrative emphasis on systems and processes of which we are a part (political, economic, social), perhaps the debate over free speech is a cover-up for a more important conversation: free will.<sup><a href="#fn6" id="ref6">[6]</a></sup></p>
+
+    <p>The tension between slavery and freedom lies at the heart of the great political and technological questions of our time, and at the heart of René Girard's theory. To what extent is a man free to transcend the political machinations of his age? To what extent is disengaging from mimetic processes even possible? The idea or reality of agency, or free will, lies at the heart of these questions.</p>
+
+    <p>This essay will explore these questions in the light of Girard's mimetic theory, but I'd like to begin in what may seem like a surprising place: the biblical story of Judas Iscariot, the apostle of Christ. He will be our lens through which we shall explore this question of agency as it relates to mimesis.</p>
+
+    <p>Right out of the gate, we have to grapple with the question of Judas's freedom: the Gospels of Luke and John tell us that Judas became demonically possessed before he betrayed Christ, giving the reader the impression that his betrayal of Jesus was part of a fatalistic, cosmic plan.<sup><a href="#fn7" id="ref7">[7]</a></sup></p>
+
+    <p>Was Judas at the mercy of a mimetic process that was beyond his power to escape?<sup><a href="#fn8" id="ref8">[8]</a></sup> In the earlier part of his career, Girard presents Judas as a mere pawn:</p>
+
+    <blockquote>
+      <p>There is no special difficulty in understanding why the Gospels treat the pseudo-conspiracy of Judas and the ecclesiastical authorities in the way that they do. This conspiracy is presented as real but powerless. Jesus is the victim of a mimetic contagion that spreads to the whole community, and there can be no question of viewing him as the victim of one particularly evil individual, or even of several. The ways in which individuals behave are never of more than secondary importance, since everything culminates in the unanimous movement that is being formed against Jesus.<sup><a href="#fn9" id="ref9">[9]</a></sup></p>
+    </blockquote>
+
+    <p>To say that "the ways in which individuals behave are never of more than secondary importance" is seriously to denigrate the realm of the personal—most importantly, the ability of a person to act with intentionality. In my view, the early Girard does not do justice to the role traditionally ascribed to the will, the seat of human action. He misses an opportunity to clarify the role or even the possibility of intentionality in moral acts.<sup><a href="#fn10" id="ref10">[10]</a></sup></p>
+
+    <p>I believe the later Girard, had he revisited the Judas question, would have used the opportunity to clarify the role of agency in his theory while respecting its mystery and drama.</p>
+
+    <p>After all: Peter, too, betrayed Christ—but his outcome was very different.</p>
+
+    <figure class="essay-image">
+      <img src="/probe-lukeburgis/assets/images/political-judas-section1.jpg" alt="Caravaggio, The Calling of Saint Matthew, 1599–1600. San Luigi dei Francesi, Rome.">
+      <figcaption>Caravaggio, The Calling of Saint Matthew, 1599–1600. San Luigi dei Francesi, Rome.</figcaption>
+    </figure>
+
+
+    <div class="part-header">
+      <span class="part-label">Part I</span>
+      <h2 class="part-title">Three Types of Political Atheism</h2>
+    </div>
+
+    <p>Freedom is intimately connected to belief. A person who does not at least believe he is free isn't free in any meaningful sense. What one believes helps determine the realm of possibility for action. The will is not moved to do anything for which it can't at least hope for the possibility of success.</p>
+
+    <p>I propose that Girard used the term <em>political atheist</em> to refer to a specific rejection of belief: in the state, or in a politician (or party), claiming to be divinely ordained or having a divine mandate. This claim formed the basis of the cult of Caesar Augustus at the time of Jesus. Christ desacralized it. Of course, many politicians since Augustus have been associated with a divine mandate, whether they explicitly claim it or not. The idea of "atheism" in Girard's phrase refers, first and foremost, to a rejection of a belief in claims of sacred power in the political order.<sup><a href="#fn11" id="ref11">[11]</a></sup></p>
+
+    <p>But the rejection of a prior belief can be a dangerous and despairing thing unless it is replaced by a different belief. The political figure of Judas, I will argue, moves through two different manifestations of political atheism. In the end, he despairs without ever experiencing the third: a form of political atheism that we might even call Christian.</p>
+
+    <p>The first variety of political atheist is one who has retreated from the political processes completely, into the underground.<sup><a href="#fn12" id="ref12">[12]</a></sup> Nihilism is "not enough," but it can be an understandable first response to the disillusionment that people feel when their political aspirations and hopes are dashed—when the person or thing they believed in as salvific is revealed to be fallible and temporary. This is what I'll call the <em>black-pilled political atheist</em>: one who, as a response to the realization that their trust has been misplaced, adopts a fatalistic and hopeless stance toward the world.<sup><a href="#fn13" id="ref13">[13]</a></sup></p>
+
+    <p>The second type of political atheist is the <em>Machiavellian</em>: one who sees politics principally as the struggle for power, which he, or his preferred political candidate, must win at any cost.<sup><a href="#fn14" id="ref14">[14]</a></sup> The ends justify any means. The Machiavellian political atheist might emerge from the black-pilled state, or he may precede it. Judas, as we'll see, appeared to move between the two.</p>
+
+    <p>The third type of political atheist, however, is the Christian who responds to a corrupt political world that demands belief in its own illusory power. The Christian political atheist situates his belief in something, or someone, that transcends worldly politics. In this way, he becomes immunized from the volatility and anxiety associated with those who have invested their belief in the power of the state to provide solutions to the most fundamental human problems.</p>
+
+    <p>Girard's original use of the term came in his 1961 book <em>Deceit, Desire, and the Novel</em>. In it, he referred to the French writer Stendhal as an "atheist in politics" (<em>athée en politique</em>). Stendhal's spirit of political atheism is embodied in Julien Sorel, the protagonist of his novel <em>The Red and the Black</em>.<sup><a href="#fn15" id="ref15">[15]</a></sup></p>
+
+    <p>When Julien learns that his former employer has switched parties, he smiles. Girard comments on this scene: "Julien savors the 'conversion'… as a music lover who sees a melodramatic theme re-appear under a new orchestral disguise. Most men are taken by disguises. Stendhal places a smile on Julien's lips so that his readers will not be deceived."<sup><a href="#fn16" id="ref16">[16]</a></sup> Julien, the political atheist, sees the political machinations of his day as the superficial games that they are; when Stendhal places a smile on his lips, he is hinting that Julien sees through the mimesis. He refuses to believe in any type of deeper meaning that others might attach to a turncoat.</p>
+
+    <p>To the naive, every conversion—whether political or religious—is genuine. The Stendhalian revelation was his pulling back of the veil on the real dynamics of superficial change through his characters.</p>
+
+    <p>Monsieur de Rênal's "false" conversion, as well as Julien's reaction to it, is reminiscent of the biblical Judas and the illusion of his outward signs and appearances. When witnessing a woman pouring perfumed oil to anoint Christ's feet, Judas said the politically correct thing: "Why was this ointment not sold for three hundred denarii and given to the poor?"<sup><a href="#fn17" id="ref17">[17]</a></sup> In the very next sentence, he is called a thief by the Gospel writer.</p>
+
+    <p>But Judas is more than a thief. He is also a cynic. He would later sell Christ for one-tenth the amount of those three hundred denarii that he suggested giving to the poor. The words that he speaks with his lips, and the signs he communicates with his actions (he kissed Christ as a "sign" of his friendship, which simultaneously signaled his betrayal) are but false signals of a false conversion—of an interior disposition that has, by this point in the story, become that of the Machiavellian political atheist. Like Julien Sorel in Stendhal's story, he does not hesitate to wrap himself in false appearances to accomplish his political aims.</p>
+
+    <p>Judas, however, quickly migrates from the Machiavellian to the black-pilled. And this darker type of political atheist rejects not only religious belief and belief in politics, he also ceases to believe in his own ability to act within or upon political structures. Unlike the Machiavellian political atheist who finds a way to survive within the existing structures—maybe even exploit them—the black-pilled political atheist believes that current political systems are thoroughly corrupt and unsalvageable. He believes that the only thing reasonable for a self-respecting person to do is remove oneself from participating in such a system.</p>
+
+    <p>The black-pilled political atheist is like Fyodor Dostoevsky's "Underground Man," who attempts to opt out of what he finds to be a repressive system.<sup><a href="#fn18" id="ref18">[18]</a></sup> He constructs his own naively anti-mimetic world of autonomy only to find himself ruled by internal mediation, the rivalrous and envious desire to imitate and ultimately supplant the proximate other.<sup><a href="#fn19" id="ref19">[19]</a></sup> He is like the biblical man who believes he has driven out one demon only to find seven more powerful taking over his house.<sup><a href="#fn20" id="ref20">[20]</a></sup> As he attempts to assert his free will, the black-pilled political atheist becomes embroiled in mimetic rivalry with—and fulfills the will of—the same authoritarian state that seeks to quiet him.</p>
+
+    <p>Judas took the original black pill. He moved from political belief (most likely in Christ as a political liberator) to Machiavellian disbelief (he struck a deal with the state, which he would come to regret) to black-pilled and nihilistic—representing the complete loss of faith, not only in a single political leader or in the state, but even of all hope in the future. As we know, the political evolution of Judas led to his disillusionment, despair, and death.<sup><a href="#fn21" id="ref21">[21]</a></sup></p>
+
+    <p>Now we can turn to the Christian political atheist. Does such a man even exist? And if so, what might he be like?</p>
+
+    <p>First, let's look at some biblical perspectives about the relationship of God to human political affairs. Going back much further than the incarnation of Christ, there is a long biblical tradition that speaks of God looking at human political affairs with amusement, even disdain. In Psalm 2: "The kings of the earth rise up, and the rulers band together," while "The One enthroned in heaven laughs; the Lord scoffs at them."<sup><a href="#fn22" id="ref22">[22]</a></sup> In the first book of Samuel, God gives Israel a king after their rejection of him, but Israel is warned about the mimetic conflict that will follow, and the folly that will result.<sup><a href="#fn23" id="ref23">[23]</a></sup></p>
+
+    <p>In contrast to the "worldly prudence" that political actors try to convince the populace they possess, we can read in Christ's selection of Judas as an apostle an otherworldly orientation. He chose a man that he knew would ultimately betray him to be one of his most intimate collaborators and friends. It is difficult to conceive of a normal politician ever doing this, even if he had some form of supernatural knowledge. Such a politician would be terrified at the thought of a potential traitor in his inner circle.</p>
+
+    <p>On the worldly political plane, events unfold in unpredictable ways so long as humans are agents. Because nobody has the power to stamp out human agency entirely (as much as the state may try), we live in a world where the possibility of sin and even betrayal must be permitted. If it were not, we would be attempting to eliminate freedom itself.</p>
+
+    <p>To deny the possibility of betrayal (and therefore Judas) is to deny the unique character of the Christian revelation and its apocalyptic dimension. Judas must be allowed to emerge. Attempts to restrain him, stamp him out, or pretend that he does not exist will be the marks of an Antichrist—because the Antichrist, unlike Christ, does not have the power to overcome betrayal, sin, and death.<sup><a href="#fn24" id="ref24">[24]</a></sup> The Antichrist can only engage in a cheap mimicry of salvation; he must try to hide or muffle any kind of weakness or scandal. The Antichrist cannot tolerate agency.</p>
+
+    <p>In the world of inevitability that Antichrist attempts to construct, there is simply no space for change. There is no room for conversion. Everything follows a predictable pattern. That's because conversion is dangerous to any leader who isn't himself converted. Conversion represents a weakening of his own power.<sup><a href="#fn25" id="ref25">[25]</a></sup></p>
+
+    <figure class="essay-image">
+      <img src="/probe-lukeburgis/assets/images/political-judas-section2.jpg" alt="Caravaggio, The Denial of Saint Peter, c. 1610. The Metropolitan Museum of Art, New York.">
+      <figcaption>Caravaggio, The Denial of Saint Peter, c. 1610. The Metropolitan Museum of Art, New York.</figcaption>
+    </figure>
+
+    <div class="part-header">
+      <span class="part-label">Part II</span>
+      <h2 class="part-title">The Satanic Principle and the Girardian Moment</h2>
+    </div>
+
+    <blockquote>
+      <p>"As human history continues, this satanic mechanism will be subverted more and more."</p>
+      <p><em>— René Girard, I See Satan Fall Like Lightning, 2001</em></p>
+    </blockquote>
+
+    <p>Conversion subverts the satanic mechanism. Both Peter and Judas betrayed Christ, but only Peter seems free to change after realizing what he has done. What happened to Peter that didn't happen to Judas? In the mimetic process, is there a moment in time pregnant with the possibility for change, after which change becomes more difficult?</p>
+
+    <p>We may imagine the liminal space between betrayal and conversion. For Peter, the cock crowing three times was the moment of accusation from which he could have fled but to which he instead responded with tears of repentance (he "went outside and wept bitterly," the Gospel writer Luke tells us).<sup><a href="#fn26" id="ref26">[26]</a></sup> For Judas, his liminal moment is when he throws the thirty pieces of silver at the Pharisees' feet. Their mockery and rejection of him is their accusation.</p>
+
+    <p>But unlike Peter, Judas does not respond with tears. Instead, he flees from that terrifying space in which there is time to choose how to respond to the revelation of one's own villainy.</p>
+
+    <p>We may consider the possibility of a "Girardian Moment"—the final moment at which a person still has the freedom to act in such a way that accelerates destructive mimesis or in a way that counteracts it, traveling in a different vector to it.<sup><a href="#fn27" id="ref27">[27]</a></sup></p>
+
+    <div class="definition-box">
+      <div class="def-term">Girardian Moment</div>
+      <div class="def-body">The moment after which the opportunity to make a fundamental choice has passed, and resisting mimetic contagion becomes far more difficult.</div>
+    </div>
+
+    <p>This opens up the debate on the question of free will—a debate that, despite modern tendencies, is to be understood as a theological and not scientific category. I am going to engage the question of free will from the theological perspective and avoid the scientific debates—rooted in a materialist outlook that denies any spirit and, therefore, freedom—about whether free will is, in fact, "a thing." I am axiomatically presuming free will is a thing; contrary to those who say "Free will is not a thing," it is very much one—indeed it lies at the foundation of the moral life.</p>
+
+    <p>Here I am drawing on an older tradition that has a broader and more expansive understanding of human reason. This tradition sees reason as verifying the truth of things by allowing the world to reveal itself, whereby reason receives and responds to the world as it shows itself. Freedom, then, is integrated with reason as a response to reality in its whole. Freedom and reason need each other. Freedom, then, is won or lost based on how a person responds to past experiences and the choices he makes in response to them.<sup><a href="#fn28" id="ref28">[28]</a></sup></p>
+
+    <p>In this older (Catholic) tradition, grace and the human will must cooperate. It is the encounter of two freedoms: God's and man's. The human subject must willingly accept the gift of grace, and the gift can never be imposed without this cooperation.<sup><a href="#fn29" id="ref29">[29]</a></sup> Genuine Christian conversion, while often depicted as an unstoppable process that happens to a person, requires freedom to become complete: an intentional turning away from evil things and inordinate attachments by turning toward the good. That process does not happen all at once; the turning is gradual and often comes with a steep learning curve.</p>
+
+    <p>Even in the realm of evil, human freedom must be involved. Just as grace requires human cooperation, so does evil. Theological reflection going back to Augustine's demonology in <em>De civitate Dei</em> (and long before that, to the trials of Saint Anthony in the desert) depicts demonic forces as unable to possess a person without some prior assent by the one who would become possessed. In other words, the demons cannot possess solely by force. They require an invitation.</p>
+
+    <p>This perspective from demonology gives us a new way to think about mimetic power: at a certain point, after a person has given up enough of his freedom and invited these forces in, he loses much, even all, of his remaining power to resist.<sup><a href="#fn30" id="ref30">[30]</a></sup> There is some tipping point, some Girardian moment, after which a fundamental choice is no longer possible or is, at the very least, extraordinarily difficult.</p>
+
+    <p>But there must be freedom involved. If there is no possibility of freedom in the face of a mimetic mediator, then any culpability for morally evil acts would effectively be destroyed—and we would enter the nihilistic milieu of our own day in which technology companies are seen to possess the power to "control" the entire population.<sup><a href="#fn31" id="ref31">[31]</a></sup> But even if you do believe that, I ask: is not there a Girardian moment when that was not, or would not be, the case? Have we already passed it?</p>
+
+    <p>Girard referred to destructive mimetic powers as satanic and demonic on numerous occasions, but I believe his lack of theological clarity or precision can cause confusion.</p>
+
+    <p>In some sense, it seems that Girard demythologized Satan and rendered the structural nature of human self-destruction more intelligible through mimetic theory—but at what cost? Yes, Girard's demythologizing saves us from the intellectual gymnastics required to accept the imagery of Satan given to us by Dante and Milton. We need only conceive of Satan as a violent mimetic process and not as a red, horned creature with a pitchfork. Yet, the demythologizing tendencies in mimetic theory can easily go too far. Satan is not an all-powerful puppeteer taking advantage of unsuspecting humans; at the same time, Satan is not just a name given for the personification of mimetic violence.<sup><a href="#fn32" id="ref32">[32]</a></sup></p>
+
+    <p>If Satan is merely a mimetic process, then the scapegoat mechanism becomes an impersonal "force" through which people may commit violence or self-destruct. This makes it difficult, perhaps impossible, to identify or disambiguate any particular person's moral act or culpability—even the person who cast the first stone ("the demon made me do it!").<sup><a href="#fn33" id="ref33">[33]</a></sup> The role of human agency is eclipsed, or at least greatly diminished, and Girard's theory would then represent an entryway into either historicism or determinism rather than being a theory that grapples seriously with the reality of the will.<sup><a href="#fn34" id="ref34">[34]</a></sup></p>
+
+    <p>Girard's warning to us about the dynamics of crowds is correct: looking at the person who casts the first stone will often mislead us, because we can tend to lose sight of the larger dynamics at work in a crowd. But Satan is not a "structure"—Satan is an agent who requires willing cooperators. (And if all he needs to do is find the weakest person in a crowd, then his job is easy.)</p>
+
+    <p>Satan's attempt to bring us under his control may be better understood with the distinction between possession and oppression. Alan Jacobs writes:</p>
+
+    <blockquote>
+      <p>Those possessed by demons—or to use the language I here prefer, those who have been absorbed into the demonic realm—lack volition. They feature in a behaviorist puppet show. The more fortunate, though perhaps also the more miserable, are the merely oppressed: The demonic acts on them from without, they feel its force but are capable of resisting it; or perhaps only of desiring to resist it.<sup><a href="#fn35" id="ref35">[35]</a></sup></p>
+    </blockquote>
+
+    <p>Here Jacobs distinguishes between a person with the capacity to resist, and a person who has already lost that capacity—as a drug addict loses the capacity to say "no" to the next offer of the drug.</p>
+
+    <p>Let's now return to the Satanic principle, but in the context of a crowd. The first-century religious leader Apollonius of Tyana is said to have led a crowd in a stoning of a blind beggar in an amphitheater in Ephesus to rid the community of a disease. In this story, told by Philostratus, Apollonius is the personification of a demonic agent. He did not throw the first stone at the blind beggar; rather, he persuaded some patsy to throw it for him. He misled others with lies.</p>
+
+    <p>This allowed him to effect the change he promised to the crowd, but his power was completely reliant on the degree to which the crowd believed him. There was some level of consent to the violent power of the stoning ritual. Apollonius was an agent, and he found a willing agent in the crowd; at a certain point, the mimetic process entered into and surpassed the Girardian moment I have referred to above.</p>
+
+    <p>The epistemic transformation that occurred as this mimetic process took hold was symbolized in the transformation of the blind beggar into a demon with fiery eyes.<sup><a href="#fn36" id="ref36">[36]</a></sup> Mimesis changes perception. It affects belief. That is why to be a Christian political atheist means, at some level, to reject belief in the sacred power of cheap mimetic processes in which appearances mask substance.</p>
+
+    <p>Dietrich von Hildebrand, in his essay "The Dangers of Quietism" from 1935, saw this tendency of formal power to misrepresent its intent and cloak itself in benevolent motives:</p>
+
+    <blockquote>
+      <p>In truth, even if Hitler were to burn all the neo-pagan books; even if he were to condemn Rosenberg, Bergmann, and Gebhardt to the same fate as Roehm [whom Hitler had executed]; even if he were to forbid all direct attacks on the Church; even if he were not merely to ratify favorable concordats, but also abide by them—even then, as long as it refused to dissolve and liquidate itself completely, National Socialism would remain every bit as much the Antichrist against which we must fight relentlessly.<sup><a href="#fn37" id="ref37">[37]</a></sup></p>
+    </blockquote>
+
+    <p>Von Hildebrand is arguing that the demonic never appears as demonic. Rather, it will always appear under the form of the "good." Because "Satan has fallen from the sky like lightning" (a passage from the Gospel of Luke, and the title of one of Girard's books), the scapegoat mechanism must take on new forms—it must be a shape-shifter, indeed must never appear to be scapegoating, to be effective.<sup><a href="#fn38" id="ref38">[38]</a></sup> Likewise, the Antichrist will not come announcing himself—and neither will his collaborators. Like the political atheist Julien Sorel in Stendhal's novel, the Christian political atheist must be able to see beneath appearances.</p>
+
+    <p>People who stand in the face of the mimetic process, even while immersed in the environment in which it is brewing, show us that there may indeed be an anti-mimetic option.<sup><a href="#fn39" id="ref39">[39]</a></sup> Von Hildebrand, who at one point became Hitler's number-one intellectual enemy, is an example. While living in the midst of a culture that was swiftly (and mimetically) being seduced by Hitler, he had the courage to resist and speak out at great personal risk to himself and his family. But first he was able to see past the appearances, underneath the mimetic machinations, and grasp the essence of Nazism.</p>
+
+    <p>While Girard most often used the term "anti-mimetic" in a disparaging way—to point out the naive postmodern response to mimesis, in which "everyone leaves the beaten path only to fall into the same ditch"<sup><a href="#fn40" id="ref40">[40]</a></sup>—he did refer to anti-mimetic acts, such as forgiveness and mercy. These acts can transcend the logic of destructive mimesis. They have the power to stop and even reverse destructive mimetic processes.</p>
+
+    <p>Christ modeled one of these acts in his reversal of the stoning of the adulterous woman.<sup><a href="#fn41" id="ref41">[41]</a></sup> The idea of an anti-mimetic act makes sense only if we rescue it from the horizontal plane of action—from internal mediation—and think of a genuine anti-mimetic act as a free response to a vertical dimension where there is an external mediator of a higher order. The horizontal plane could be thought of as "centripetal," always turning back on itself and always eventually destructive. The vertical plane is the place where true transcendence may be found—not the false, deviated transcendence that Girard often refers to the scapegoat mechanism as effecting.<sup><a href="#fn42" id="ref42">[42]</a></sup></p>
+
+    <p>Christianity claims there is indeed a transcendent dimension that extends to us the possibility of being lifted out of mimetic slavery and into the higher logic of charity.<sup><a href="#fn43" id="ref43">[43]</a></sup> The Christian idea of agency is deeply bound up with the idea of cooperation: a non-rivalrous cooperation with grace, the opening and response of the will to a receptive, interdependent state of being.<sup><a href="#fn44" id="ref44">[44]</a></sup> Agency is paradoxically tied to the ability to receive that which is good; it is not merely the ability to give or to do. Real freedom, in other words, requires communion.<sup><a href="#fn45" id="ref45">[45]</a></sup> The truly anti-mimetic act requires freedom from the mimetic process; mere contrarianism does not. The anti-mimetic act is at once a rejection of the worldly mimesis exemplified by politics and the simultaneous acceptance of heavenly mimesis exemplified by the self-sacrificing love of Christ.</p>
+
+    <figure class="essay-image">
+      <img src="/probe-lukeburgis/assets/images/political-judas-section3.jpg" alt="Rembrandt van Rijn, The Denial of Peter, 1660. Rijksmuseum, Amsterdam.">
+      <figcaption>Rembrandt van Rijn, The Denial of Peter, 1660. Rijksmuseum, Amsterdam.</figcaption>
+    </figure>
+
+
+    <div class="part-header">
+      <span class="part-label">Part III</span>
+      <h2 class="part-title">From Judas to Peter: Conversion and Innovation</h2>
+    </div>
+
+    <p>We now return to Girard's early treatment of Judas to see if we can find some additional insight into the possibility of conversion. He writes:</p>
+
+    <blockquote>
+      <p>The jealousy of Judas is ultimately at one with the political attitude of Pilate and the naïve snobbery of Peter, who betrays his master because he is ashamed of his provincial accent in the court of the High Priest. On the surface, motives appear to be individual, and conduct appears to fall into different patterns. But everything comes back in the end to the effect of mimesis, which works its power on everyone without exception.<sup><a href="#fn46" id="ref46">[46]</a></sup></p>
+    </blockquote>
+
+    <p>It is typical of the early Girard for him to say that "everything comes back in the end to the effect of mimesis" (emphasis mine). Is he saying that people willingly succumb to the seductive power of mimesis, or something else?</p>
+
+    <p>Girard does admit that there is a crucial difference between Judas and Peter: "The only difference between Judas and Peter resides, not in the betrayal, but in Judas's inability to come back to Jesus."<sup><a href="#fn47" id="ref47">[47]</a></sup> He does not explain the source of this inability, though. Was it demonic possession?</p>
+
+    <p>What led to one man's conversion and another's despair?</p>
+
+    <p>I am proposing here that Judas and Peter had different progressions in their relationship to politics, and thus to Christ. They had different "Girardian Moments" because each man had a different disposition after his betrayal. And this is not an insignificant detail.</p>
+
+    <p>By the time the critical moment of potential conversion was available to each, one seemed unable to respond to the grace of conversion, while the other does respond. It is not so much that one had agency and the other did not, but rather that both made a decisive choice at a certain point, a choice which determined how they would relate to the whole of reality. One man (Peter) was open to the grace of conversion. The other refused to cooperate.</p>
+
+    <p>But perhaps the respective abilities of each man to respond were affected by the prior political choices they had made, which entailed metaphysical commitments to the whole of reality. There may be no atheists in foxholes, but there are plenty of black-pilled political atheists in Washington.</p>
+
+    <p>Mimesis cannot be fully understood in a snapshot, like a balance sheet, but as a process—especially when that process involves conversion, the process of true <em>metanoia</em> in which a person reverses course. The darkly mimetic forces can have a greater or lesser pull on us depending on the state we're in when we encounter them, but the process is never too late so long as we're still alive. The Good Thief on the cross next to Christ is evidence of that.</p>
+
+    <p>Peter shows the difference between Judas's betrayal and his own when he gives his threefold profession of love in the post-Resurrection account of the risen Christ, standing on the shores of the Sea of Galilee. Christ has cooked a fish breakfast for a group of the apostles before taking Peter aside for questioning. "Do you love me?" Jesus asks Peter, three times, to which Peter responds with an affirmative "yes, Lord."<sup><a href="#fn48" id="ref48">[48]</a></sup> Peter made a choice. But even prior to this encounter on the shore, Peter had already made a choice.</p>
+
+    <p>A death had to occur in Peter to allow him to make this profession of love in the first place, which Judas was incapable of doing. Both men died, but only one man changed.</p>
+
+    <p>Girard expresses this difference in his analysis of Dostoevsky's <em>The Possessed</em> in the concluding chapter of <em>Deceit, Desire, and the Novel</em>, in which he distinguishes between the antithetical deaths of two major characters: "one death which is an extinction of the spirit and one death which is spirit; Stavrogin's death is only death, Stepan's death is life."<sup><a href="#fn49" id="ref49">[49]</a></sup> Judas's death is only death; Peter's death is life.<sup><a href="#fn50" id="ref50">[50]</a></sup></p>
+
+    <figure class="essay-image">
+      <img src="/probe-lukeburgis/assets/images/political-judas-section4.jpg" alt="Rembrandt van Rijn, The Return of the Prodigal Son, c. 1668. The Hermitage, St. Petersburg.">
+      <figcaption>Rembrandt van Rijn, The Return of the Prodigal Son, c. 1668. The Hermitage, St. Petersburg.</figcaption>
+    </figure>
+
+    <div class="part-header">
+      <span class="part-label">Part IV</span>
+      <h2 class="part-title">Resurrection from the Field</h2>
+    </div>
+
+    <p>In his threefold acclamation of love, Peter acknowledged his guilt and trusted in the one he knew would forgive him. Judas's despair, on the other hand, saw no reversal. He remained one of the two nihilistic varieties of political atheist to the end. He rejected the lies of the world, but there was no corresponding acceptance on the other side of that rejection. At the very moment when he may have been closest to conversion, he closed himself off to it.</p>
+
+    <p>The movement from political belief to political atheism to belief in a transcendent order depends, in large part, on a single primordial belief: belief in one's own agency, or belief that there is a point at which mimesis may be withstood and even subverted. If this spiritual freedom is denied, a central promise of Christianity must also be denied.</p>
+
+    <p>We should look for this freedom even in the Passion narrative. If we do not, we ascribe excessive power to Satan, and to the scapegoat mechanism—a power they do not possess. I do not mean to say the power isn't real. Jesus's statements about Satan as a "ruler of this world" demonstrate even a relativized sense of power. (If it's not real power, then what has Jesus destroyed?) Death has a power—it is the ultimate weapon of the kingdom of Satan. Power is the expression of agency. But it is spiritual agency, freedom in relationship to God, that breaks the mimetic stronghold and power over this world.</p>
+
+    <p>If we naively accept the premise of Satan's power, or if we believe in the absolute inevitability of mimetic violence (as opposed to its relative inevitability), we miss the central point of the Christian revelation: that the best Satan can do is ape God under false appearances.<sup><a href="#fn51" id="ref51">[51]</a></sup></p>
+
+    <p>It is true that the political forces that led to Christ's death have been revealed to be contagious, mimetic violence—a revelation that posits Judas as one traitor among many. But one's personal disposition in the face of mimesis matters. In the murder of Christ, all are guilty—but the wide variety of individual responses within that universal "all" refutes fatalistic misreadings and reaffirms the role of freedom within the events of the Passion.</p>
+
+    <p>This brings us to a central problem: how, then, are we to live in a society of potential Judases?</p>
+
+    <p>In nearly everyone's view, Judas is dangerous—he's a threat. But he is more than that. He is an agent, not merely a pawn. And unless this false understanding is corrected, we should expect to see more attempts to snuff out agency—and with it, the possibility of conversion.</p>
+
+    <p>Near the end of his life, Girard stated at a conference that "Politics can no longer save us." Politics no longer possesses the sacred power that it once did. It cannot magically produce cathartic social solutions as it once did. And so man must resist the temptation to turn everything into a political matter. Doing so results in various forms of political atheism, often resulting in nihilism, which plagued Judas, and which continue to plague people who fail to grasp the transcendent dimension, or collapse it into the immanent.</p>
+
+    <p>The French mystic Charles Péguy lamented that "Everything begins in mysticism and ends in politics."<sup><a href="#fn52" id="ref52">[52]</a></sup> Every movement begins as a spiritual or mystical force and is subsequently incarnated in concrete action. Péguy continued with a warning: "The interest, the question, the essential is that in each order, in each system, the mysticism not be devoured by the politics to which it gave birth."<sup><a href="#fn53" id="ref53">[53]</a></sup></p>
+
+    <p>Public life and politics become sterile without mysticism. I believe the Christian political atheist must become, and must remain, a mystic. It's the remaining, as we have seen in the case of Judas, that is the hard part.</p>
+
+    <p>In some cases, the believer must have the "salt water of doubt," of nihilism, washed into his mouth before he comes to the realization that nihilism is not enough.<sup><a href="#fn54" id="ref54">[54]</a></sup> But that nihilism must lead to a greater belief.</p>
+
+    <p>Hope is the answer to the worst accusations that can be made about a man because it allows him to know that his future will be different than his past or his present. The example of Peter shows that remaining a mystic does not mean that one will never descend into paltry politics or never participate in mimetic violence. No, remaining a mystic means maintaining a commitment to the continual conversion through which a man is able to be a mystic even after he realizes that he is Judas.</p>
+
+  </div><!-- /essay-body -->
+
+  <!-- ENDNOTES -->
+  <div class="endnotes">
+    <h2>Notes</h2>
+    <ol>
+      <li id="fn1">René Girard, <em>Deceit, Desire, and the Novel</em>, trans. Yvonne Freccero (Baltimore: Johns Hopkins University Press, 1965), 138. <a class="back-to-ref" href="#ref1">↩</a></li>
+      <li id="fn2">"Cancel Culture," while I dislike the term, may be the most obvious example. <a class="back-to-ref" href="#ref2">↩</a></li>
+      <li id="fn3">See William Cavanaugh, <em>Migrations of the Holy</em> (Grand Rapids: Wm. B. Eerdmans Publishing Co, 2011). <a class="back-to-ref" href="#ref3">↩</a></li>
+      <li id="fn4">It's also instructive to look at the use of theological words in technology. See Antonio Spadaro, SJ, <em>Cybertheology: Thinking Christianity in the Era of the Internet</em>, trans. Maria Way (New York: Fordham University Press, 2014). <a class="back-to-ref" href="#ref4">↩</a></li>
+      <li id="fn5">See Luke Burgis, "The Three City Problem of Modern Life," <em>Wired</em>, August 2022. <a class="back-to-ref" href="#ref5">↩</a></li>
+      <li id="fn6">The Twitter co-founder Jack Dorsey raised this point in a 2024 conversation at an Oslo Freedom Forum interview. He stated: "I think the free-speech debate is a complete distraction right now. I think the real debate should be about free will. And we feel it right now because we are being programmed." <a class="back-to-ref" href="#ref6">↩</a></li>
+      <li id="fn7">The Apocryphal Arabic Gospel of the Infancy says that Satan possessed Judas even from his birth. Cf. Montague Rhodes James, ed. &amp; trans., <em>The Apocryphal New Testament</em> (Oxford: Clarendon Press, 1924), 80–83. <a class="back-to-ref" href="#ref7">↩</a></li>
+      <li id="fn8">There is a sense of inevitability about any mimetic process that has been put into motion and accelerates past a certain point. The ninth and tenth stones thrown in a ritual stoning are one example. We can rightfully ask, as some have, whether Christ's prevention (and mimetic reversal) of the stoning of the adulterous woman was something natural—did he merely say the right words to redirect the violent energy of the crowds?—or supernatural. It is fair to ask whether Christ worked a miracle, and whether it was thus grace that broke in and changed the trajectory of normal human affairs. Christ's intervention in the stoning of the adulterous woman is not classically considered one of his "signs" or "miracles." <a class="back-to-ref" href="#ref8">↩</a></li>
+      <li id="fn9">René Girard, <em>Things Hidden Since the Foundation of the World</em>, trans. Stephen Bann &amp; Michael Metteer (Stanford: Stanford University Press, 1987), 247. <a class="back-to-ref" href="#ref9">↩</a></li>
+      <li id="fn10">Thomas Aquinas and Augustine of Hippo wrote extensively about free will, the latter in his refutation of Manichaeism and in his writings against Pelagius. The early Jesuits were challenged in their teaching on free will by the Jansenists, who denied that a human's free response to grace was required. Likewise the so-called <em>De Auxiliis</em> controversy of the late sixteenth century saw a fierce debate between Jesuits and Dominicans on the subject. Eventually Jansenism was condemned, but both Jesuits, who followed Luis de Molina in emphasizing divine-human synergy, and Dominicans, who followed Domingo Bañez in emphasizing divine providence, received papal approbation. <a class="back-to-ref" href="#ref10">↩</a></li>
+      <li id="fn11">The claims can relate to a specific ruler or political candidate, or to the political order itself. <a class="back-to-ref" href="#ref11">↩</a></li>
+      <li id="fn12">René Girard, <em>Resurrection from the Underground: Feodor Dostoevsky</em>, trans. James G. Williams (East Lansing: Michigan State University Press, 2012). <a class="back-to-ref" href="#ref12">↩</a></li>
+      <li id="fn13">The term "Black Pilled" seems to have originated in the "incel" community, a mostly online group of men who consider themselves unattractive to women and unable to change their position or their fate. I use it here in a more general way to refer to the disillusioned state of a person who loses any belief in their own agency and believes that they are stuck inside of a system they can't change. <a class="back-to-ref" href="#ref13">↩</a></li>
+      <li id="fn14">For an excellent treatment on Machiavelli in dialogue with Dante, see James Burnham, <em>The Machiavellians: Defenders of Freedom</em> (New York: John Day, 1943). <a class="back-to-ref" href="#ref14">↩</a></li>
+      <li id="fn15">Published in 1830, this novel ostensibly treats the issue of monarchism versus liberalism during the Bourbon Restoration following the French Revolution. <a class="back-to-ref" href="#ref15">↩</a></li>
+      <li id="fn16">Girard, <em>Deceit</em>, 132. <a class="back-to-ref" href="#ref16">↩</a></li>
+      <li id="fn17">See John 12:4–6. <a class="back-to-ref" href="#ref17">↩</a></li>
+      <li id="fn18">Fyodor Dostoevsky, <em>Notes from Underground</em>, trans. Richard Pevear and Larissa Volokhonsky (New York: Vintage Classics, 1994). <a class="back-to-ref" href="#ref18">↩</a></li>
+      <li id="fn19">Girard uses "internal mediation" in contrast to "external mediation." An internal mediator of desire is within the subject's world; an external mediator is outside of the subject's immediate world. <a class="back-to-ref" href="#ref19">↩</a></li>
+      <li id="fn20">"Then it goes and brings with it seven other spirits more wicked than itself, and they go in and dwell there; and the final plight of that man is worse than the first." (Matthew 12:45). <a class="back-to-ref" href="#ref20">↩</a></li>
+      <li id="fn21">The movement doesn't necessarily flow in the same order for everyone. <a class="back-to-ref" href="#ref21">↩</a></li>
+      <li id="fn22">Psalm 2:2, 4. <a class="back-to-ref" href="#ref22">↩</a></li>
+      <li id="fn23">"But the thing displeased Samuel, when they said, Give us a king to judge us…" 1 Samuel 8. Another text that is relevant here is Augustine of Hippo's <em>City of God</em>. <a class="back-to-ref" href="#ref23">↩</a></li>
+      <li id="fn24">Scripture seems to indicate the possibility of multiple Antichrists (e.g., 1 John 2:18), not just one as is held in the popular imagination, including structures that could be Antichristic. <a class="back-to-ref" href="#ref24">↩</a></li>
+      <li id="fn25">"He must increase, but I must decrease." John 3:30. <a class="back-to-ref" href="#ref25">↩</a></li>
+      <li id="fn26">Luke 22:62. <a class="back-to-ref" href="#ref26">↩</a></li>
+      <li id="fn27">The person of Franz Jägerstätter comes to mind as a real-life example: he was a lone Austrian peasant who refused to take the soldiers' oath of allegiance to Hitler, ultimately being executed for insubordination. The recent film <em>A Hidden Life</em> (2019) dramatizes his story. <a class="back-to-ref" href="#ref27">↩</a></li>
+      <li id="fn28">From the classical point of view, drug addiction would be classed as a <em>habitus</em> (<em>hexis</em>), that is, a mode of existence, built up over repeated stimulus and action, that one "has" or "bears" like clothing. Once adopted, a <em>habitus</em> can be changed, but it is quite difficult, requiring more than mental resolve and willpower. See Kent Dunnington, <em>Addiction and Virtue: Beyond the Models of Disease and Choice</em> (Westmont: IVP Academic, 2011). <a class="back-to-ref" href="#ref28">↩</a></li>
+      <li id="fn29">"The Council of Trent declared that the free will of man, moved and excited by God, can by its consent cooperate with God…" See Michael Maher, "Free Will," in <em>Catholic Encyclopedia</em> (New York: Robert Appleton Company, 1909). <a class="back-to-ref" href="#ref29">↩</a></li>
+      <li id="fn30">It is that the definitive choice—the sin against the Holy Spirit—has finally happened. Macbeth's dream of being in the middle of a river is a powerful image: it is just as easy to go forward as it is to go back. This is what the Germans call "<em>Grundentscheidung</em>": the fundamental choice out of which all other actions lie. <a class="back-to-ref" href="#ref30">↩</a></li>
+      <li id="fn31">Whether the power to resist those demonic forces, or to resist evil, is natural or supernatural is beyond the scope of this paper. <a class="back-to-ref" href="#ref31">↩</a></li>
+      <li id="fn32"><em>Catechism of the Catholic Church</em>, 2nd ed. (United States: United States Catholic Conference, Inc.—Libreria Editrice Vaticana, 2000), paragraph 395. <a class="back-to-ref" href="#ref32">↩</a></li>
+      <li id="fn33">Demons are classically conceived as immaterial intelligences that primarily work in the realm of thought. A recent Athonite monk compared these thoughts to airplanes circling over an airport: we must take care when considering which planes we will allow to land. <a class="back-to-ref" href="#ref33">↩</a></li>
+      <li id="fn34">Marshall McLuhan, too, was accused of technological determinism for his theory that the "medium is the message," but this understanding of his work neglects the strong role that agency still played in his understanding of human society. <a class="back-to-ref" href="#ref34">↩</a></li>
+      <li id="fn35">Alan Jacobs, "Something Happened By Us: A Demonology," <em>The New Atlantis</em>, Spring 2022. <a class="back-to-ref" href="#ref35">↩</a></li>
+      <li id="fn36">Girard refers to this transformation in his work <em>I See Satan Fall Like Lightning</em> (Maryknoll: Orbis, 2001), in the chapter "The Horrible Miracle of Apollonius of Tyana." <a class="back-to-ref" href="#ref36">↩</a></li>
+      <li id="fn37">Dietrich von Hildebrand, "The Danger of Quietism," in <em>My Battle Against Hitler</em>, trans. &amp; ed. John Henry Crosby and John F. Crosby (New York: Image, 2014), 290. March 10, 1935. <a class="back-to-ref" href="#ref37">↩</a></li>
+      <li id="fn38">Luke 10:18, and the inspiration behind one of Girard's greatest works, <em>I See Satan Fall Like Lightning</em>. <a class="back-to-ref" href="#ref38">↩</a></li>
+      <li id="fn39">By anti-mimetic, I don't mean free from mimesis. As I explain in my book <em>Wanting: The Power of Mimetic Desire in Everyday Life</em> (New York: St. Martin's, 2021), I am referring to the possibility of responding to the call of deviated transcendence with real transcendence. <a class="back-to-ref" href="#ref39">↩</a></li>
+      <li id="fn40">Girard, <em>Deceit</em>, 100. <a class="back-to-ref" href="#ref40">↩</a></li>
+      <li id="fn41">John 8:3–11. <a class="back-to-ref" href="#ref41">↩</a></li>
+      <li id="fn42">Girard, <em>Deceit</em>, 61. "Deviated transcendency is a caricature of vertical transcendency. There is not one element of this distorted mysticism which does not have its luminous counterpart in Christian truth." <a class="back-to-ref" href="#ref42">↩</a></li>
+      <li id="fn43">In Christian terms, <em>agape</em>. <a class="back-to-ref" href="#ref43">↩</a></li>
+      <li id="fn44">See Augustine's discussion of true sacrifice in Book 10 of the <em>City of God</em>. <a class="back-to-ref" href="#ref44">↩</a></li>
+      <li id="fn45">Cf. Cardinal Joseph Ratzinger, "Funeral Homily for Msgr. Luigi Giussani," <em>Communio</em> 31 (Fall 2004): 685–687. <a class="back-to-ref" href="#ref45">↩</a></li>
+      <li id="fn46">Girard, <em>Things Hidden</em>, 247. <a class="back-to-ref" href="#ref46">↩</a></li>
+      <li id="fn47">Girard, <em>Things Hidden</em>, 247. <a class="back-to-ref" href="#ref47">↩</a></li>
+      <li id="fn48">John 21:15. Christ uses the Greek word <em>agape</em> for "love" in his questioning. <a class="back-to-ref" href="#ref48">↩</a></li>
+      <li id="fn49">Girard, <em>Deceit</em>, 291. <a class="back-to-ref" href="#ref49">↩</a></li>
+      <li id="fn50">"Unless a grain of wheat falls and dies it cannot bear much fruit, but if it dies, it bears fruit a hundredfold." (John 12:24). <a class="back-to-ref" href="#ref50">↩</a></li>
+      <li id="fn51">Perhaps it would be more accurate to speak of the <em>relative</em> inevitability of mimetic violence. The Christian Gospel, however, in cooperation and an openness to grace, reveals the power of mimetic violence as relative in the grand scheme, and fundamentally destroyed in the end. The Resurrection both reveals and demonstrates this. <a class="back-to-ref" href="#ref51">↩</a></li>
+      <li id="fn52">"Tout commence en mystique et finit en politique." <a class="back-to-ref" href="#ref52">↩</a></li>
+      <li id="fn53">Cited in Robert Royal, "Everything Begins in Mysticism," <em>The Catholic Thing</em>, January 23, 2023. <a class="back-to-ref" href="#ref53">↩</a></li>
+      <li id="fn54">A phrase used by Joseph Ratzinger in his <em>Introduction to Christianity</em> (San Francisco: Ignatius, 2010). <a class="back-to-ref" href="#ref54">↩</a></li>
+    </ol>
+  </div><!-- /endnotes -->
+
+  <nav class="essay-nav" aria-label="Essay navigation">
+    <div class="prev">
+      <a href="/probe-lukeburgis/writing/">← All Essays</a>
+    </div>
+  </nav>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div style="font-family:Georgia,serif;font-size:18px;color:#FAF8F3;margin-bottom:14px;letter-spacing:-.01em">Luke Burgis</div>
+    <p style="color:#555;font-size:11px;margin-top:4px">Author · Professor · Founder<br>lukeburgis.com</p>
+  </div>
+  <div>
+    <h4>Work</h4>
+    <ul>
+      <li><a href="/probe-lukeburgis/books.html">Books</a></li>
+      <li><a href="/probe-lukeburgis/speaking.html">Speaking</a></li>
+      <li><a href="/probe-lukeburgis/programs.html">Programs</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="https://read.lukeburgis.com">Newsletter</a></li>
+      <li><a href="https://twitter.com/lukeburgis" target="_blank" rel="noopener">Twitter / X</a></li>
+      <li><a href="https://linkedin.com/in/lukeburgis" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="/probe-lukeburgis/contact.html">Contact</a></li>
+      <li><a href="https://read.lukeburgis.com">Full archive at read.lukeburgis.com</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Cluny Institute</h4>
+    <ul><li><a href="https://cluny.org">cluny.org</a></li></ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('reading-progress');
+  if(!bar) return;
+  var hasScrolled = false;
+  function update(){
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docH = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if(docH <= 0) return;
+    var pct = Math.min(100, Math.round(scrollTop / docH * 100));
+    bar.style.width = pct + '%';
+    bar.setAttribute('aria-valuenow', pct);
+    if(!hasScrolled && scrollTop > 0){
+      hasScrolled = true;
+      bar.classList.add('visible');
+    }
+  }
+  window.addEventListener('scroll', update, {passive: true});
+  update();
+})();
+</script>
+
+</body>
+</html>

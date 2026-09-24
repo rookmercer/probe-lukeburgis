@@ -379,7 +379,7 @@ footer a:hover{color:#FAF8F3}
     <div class="speaking-preview">
       <div>
         <span class="label">Speaking</span>
-        <h2>Ideas worth the stage.</h2>
+        <h2>[NEEDS LUKE: speaking section headline]</h2>
         <p><span style="background:#fff3cd;color:#7a5c00;font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:2px 6px;border:1px solid #e6c84a">[NEEDS LUKE: speaking preview one-liner in your voice]</span></p>
         <div style="margin-bottom:20px;border-top:1px solid #e8e2d6;padding-top:16px">
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
@@ -655,7 +655,7 @@ footer a:hover{color:#FAF8F3}
           // Run on DOM mutation (Kajabi injects async)
           var observer = new MutationObserver(function(mutations){
             var wrap = document.getElementById('pfc-kajabi-wrap');
-            if(wrap && wrap.querySelector('input,button')) { cleanKajabi(); }
+            if(wrap && wrap.querySelector('input,button')) { observer.disconnect(); cleanKajabi(); }
           });
           function startObserver(){
             var wrap = document.getElementById('pfc-kajabi-wrap');

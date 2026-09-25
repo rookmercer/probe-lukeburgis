@@ -377,7 +377,11 @@ footer a:hover{color:#111}
     </div>
     <div style="display:flex;justify-content:center;align-items:center">
       <div style="transform:rotate(2.5deg);box-shadow:0 16px 56px rgba(0,0,0,0.18);max-width:340px;width:100%;cursor:pointer" onclick="pfcOpenPopup('preview_card')">
-        <img src="assets/images/preview-1-cover-01.png" alt="Philosophy for Creators — preview" style="width:100%;display:block">
+        <div style="background:#FAF8F3;border:1px solid #d0c9bc;padding:48px 32px;text-align:center;aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#888;margin-bottom:24px">Free Reading Guide</p>
+          <h3 style="font-family:var(--font-heading);font-size:clamp(20px,2.5vw,28px);font-weight:400;line-height:1.2;color:#111;margin-bottom:24px;font-style:italic">If You Only Read<br>Three Books<br>From This List</h3>
+          <p style="font-family:var(--font-label);font-size:11px;color:#888;letter-spacing:.06em">Luke Burgis</p>
+        </div>
       </div>
     </div>
   </div>
@@ -604,7 +608,11 @@ footer a:hover{color:#111}
       <!-- Left: parchment field with tilted card -->
       <div style="background:#E2D9C4;display:flex;align-items:center;justify-content:center;padding:32px;min-height:380px">
         <div style="transform:rotate(-2deg);box-shadow:0 12px 40px rgba(0,0,0,0.18);max-width:220px;width:100%">
-          <img src="assets/images/preview-1-cover-01.png" alt="Philosophy for Creators — preview page" style="width:100%;display:block">
+          <div style="background:#FAF8F3;border:1px solid #d0c9bc;padding:36px 24px;text-align:center;aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;max-width:240px;margin:0 auto">
+          <p style="font-family:var(--font-label);font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:#888;margin-bottom:16px">Free Reading Guide</p>
+          <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:400;line-height:1.2;color:#111;margin-bottom:16px;font-style:italic">If You Only Read<br>Three Books<br>From This List</h3>
+          <p style="font-family:var(--font-label);font-size:10px;color:#888;letter-spacing:.06em">Luke Burgis</p>
+        </div>
         </div>
       </div>
       <!-- Right: form -->
@@ -774,7 +782,7 @@ footer a:hover{color:#111}
 
 @media(max-width:768px){
   #pfc-section .inner{grid-template-columns:1fr!important;gap:40px!important}
-  #pfc-section .inner>div:last-child{max-width:280px;margin:0 auto}
+  #pfc-section .inner>div:last-child{max-width:360px;margin:0 auto}
 }
 @media(max-width:600px){
   #pfc-modal [style*="grid-template-columns:260px"]{grid-template-columns:1fr!important;grid-template-rows:auto auto}

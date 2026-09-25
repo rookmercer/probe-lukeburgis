@@ -45,8 +45,17 @@ section+section{border-top:none}
 /* ── Nav ── */
 nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .nav-logo{display:flex;align-items:center;gap:0}
-.homepage-mark-active .nav-logo{visibility:hidden}
+
 .nav-logo svg{width:48px;height:auto;display:block}
+/* Nav logo draw animation — plays once on load, ~3s */
+.nav-fill{opacity:0;animation:navFillIn .6s ease forwards}
+.nav-fill:nth-child(1){animation-delay:0s}
+.nav-fill:nth-child(2){animation-delay:.6s}
+.nav-fill:nth-child(3){animation-delay:1.2s}
+.nav-fill:nth-child(4){animation-delay:1.8s}
+@keyframes navFillIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.nav-fill{opacity:1!important;animation:none!important;transform:none!important}}
+
 .nav-links{list-style:none;display:flex;gap:32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
 .nav-links a{color:#111;text-decoration:none}
 .nav-links a:hover{text-decoration:none;color:var(--color-gold)}
@@ -54,7 +63,7 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 
 /* ── Hero ── */
 .hero{position:relative;width:100%;height:min(88vh,640px);min-height:420px;background:transparent;overflow:hidden}
-.hero-photo-panel{position:absolute;right:0;top:0;height:100%;width:min(46%,560px);z-index:1;opacity:0;animation:photoReveal 1.8s ease 4.2s forwards}
+.hero-photo-panel{position:absolute;right:0;top:0;height:100%;width:min(46%,560px);z-index:1;opacity:0;animation:photoReveal 1.6s ease .3s forwards}
 .hero-photo-panel img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(100%)}
 .hero-photo-panel::before{content:'';position:absolute;left:0;top:0;width:25%;height:100%;background:linear-gradient(to right,#FAF8F3 0%,rgba(250,248,243,0.6) 50%,transparent 100%);z-index:2;pointer-events:none}
 
@@ -64,53 +73,24 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 }
 
 /* Mark animation: draws centered, glides to upper-left nav */
-.mark-wrap{z-index:200;
-  position:fixed;
-  left:50%;
-  top:38vh;
-  width:min(240px,40vw);
-  transform:translate(-50%,-50%);
-  animation:markMove 7s cubic-bezier(.65,.05,.36,1) forwards;
-  pointer-events:none;
-}
-.mark-wrap.settled{pointer-events:auto;cursor:pointer}
-.mark-wrap svg{width:100%;height:auto;display:block}
-
-@keyframes markMove{
-  0%,50%  {left:50%;top:38vh;width:min(240px,40vw);transform:translate(-50%,-50%)}
-  100%    {left:24px;top:20px;width:36px;transform:translate(0,0)}
+100%    {left:24px;top:20px;width:36px;transform:translate(0,0)}
 }
   75%     {position:fixed;left:50%;top:48%;width:min(300px,52vw);transform:translate(-50%,-50%);opacity:1}
   100%    {position:fixed;left:24px;top:18px;width:40px;transform:translate(0,0);opacity:1}
 }
 
-.draw{
-  fill:none;stroke:#111;stroke-width:1.6;stroke-linecap:round;
-  stroke-dasharray:1;stroke-dashoffset:1;
-  animation:drawStroke 1.15s cubic-bezier(.6,.05,.3,1) forwards,
-            strokeFade .6s ease forwards;
 }
-.d1{animation-delay:.2s, 2.6s}
-.d2{animation-delay:.55s,2.75s}
-.d3{animation-delay:.9s, 2.9s}
-.d4{animation-delay:1.25s,3.05s}
-@keyframes drawStroke{to{stroke-dashoffset:0}}
-@keyframes strokeFade{to{opacity:0}}
+}
 
-.fill{fill:#111;opacity:0;animation:fillIn .7s ease forwards}
-.f1{animation-delay:2.2s}
-.f2{animation-delay:2.45s}
-.f3{animation-delay:2.7s}
-.f4{animation-delay:2.95s}
-@keyframes fillIn{to{opacity:1}}
+}
 
 /* Words appear after mark starts moving to corner */
 .hero-words{z-index:10;
   position:absolute;
-  left:max(calc(50% - 520px + 40px),48px);
-  top:52%;
+  left:max(calc(50% - 580px + 40px),40px);
+  top:50%;
   transform:translateY(-50%);
-  max-width:580px;
+  max-width:56%;
   padding-right:40px;
 }
 .hero-words h1,
@@ -118,21 +98,21 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 
 
 .hero-words h1{
-  font-size:clamp(38px,5.2vw,64px);
+  font-size:clamp(2.8rem,7vw,5.5rem);
   font-weight:normal;
-  line-height:1.06;
-  letter-spacing:-.02em;
-  margin-bottom:24px;
+  line-height:1.04;
+  letter-spacing:-.025em;
+  margin-bottom:28px;
   opacity:0;
-  animation:textSlideUp 1s cubic-bezier(.22,.61,.36,1) 4.6s forwards;
+  animation:textSlideUp 1s cubic-bezier(.22,.61,.36,1) .6s forwards;
 }
 .hero-words .hero-sub{
-  font-size:clamp(16px,1.7vw,19px);
+  font-size:clamp(1rem,1.8vw,1.25rem);
   line-height:1.7;
-  color:#333;
+  color:#444;
   margin-bottom:0;
   opacity:0;
-  animation:textSlideUp .9s cubic-bezier(.22,.61,.36,1) 5.2s forwards;
+  animation:textSlideUp .9s cubic-bezier(.22,.61,.36,1) 1.1s forwards;
 }
 
 
@@ -157,19 +137,17 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
   .hero-words{left:16px!important;top:auto!important;bottom:48px!important;transform:none!important;padding-right:16px!important;max-width:100%!important}
 }
 
+
+}
+}
+  .mark-wrap .mark-wrap .hero-words h1,.hero-words .hero-sub,
+}
+
+
 @media(prefers-reduced-motion:reduce){
-  .mark-wrap{left:24px!important;top:20px!important;width:36px!important;transform:none!important;animation:none!important;position:fixed!important;pointer-events:auto!important;cursor:pointer!important;z-index:200!important}
-  .mark-wrap .draw{animation:none!important;opacity:0!important}
-  .mark-wrap .fill{opacity:1!important;animation:none!important}
   .hero-photo-panel{opacity:1!important;animation:none!important;transform:none!important}
   .hero-words h1,.hero-words .hero-sub{opacity:1!important;animation:none!important;transform:none!important}
 }
-}
-  .mark-wrap .draw{stroke-dashoffset:0!important;animation:none!important;opacity:0!important}
-  .mark-wrap .fill{opacity:1!important;animation:none!important}
-  .hero-words h1,.hero-words .hero-sub,
-}
-
 /* Mobile hero: static layout */
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
 .hamburger span{display:block;width:22px;height:2px;background:#111}
@@ -311,21 +289,6 @@ footer a:hover{color:#111}
 </div>
 <!-- §1 HERO -->
 <div class="hero" id="heroStage">
-  <!-- Monogram: draws itself, then glides to upper-left as home link -->
-  <div class="mark-wrap" id="markWrap" onclick="window.location='/'">
-    <svg viewBox="0 0 82.39 81.96" id="markSvg" role="img" aria-label="Luke Burgis monogram"></svg>
-  </div>
-
-  <div class="hero-photo-panel">
-    <img src="assets/images/luke-hero-bw.jpg" alt="Luke Burgis" width="560" height="680">
-  </div>
-<!-- Words: fade in after mark settles -->
-  <div class="hero-words">
-    <h1>History is a story of desire.</h1>
-    <p class="hero-sub">We don&rsquo;t form our desires alone &mdash; we borrow them from the people around us: models, rivals, friends. And those borrowed desires move markets, fracture institutions, and build entire cultures.</p>
-  </div>
-</div>
-
 <!-- §3 BOOKS -->
 <section style="background:#fafafa">
   <div class="inner">
@@ -579,75 +542,14 @@ footer a:hover{color:#111}
 <script>
 (function(){
   // Mark animation - draws centered, glides to upper-left corner as home link
-  var NS='http://www.w3.org/2000/svg';
-  var PATHS=[
-    "M43.55,3.04c-.15.03-.29.07-.4.14-.87.55-.21,2.02-.21,2.8,0,.8.12,1.59.14,2.39.02.96-.11,1.94-.09,2.91.03,1.13.09,2.26.13,3.39.02.45-.05.89-.14,1.35-.15.84-.12,1.67-.13,2.51-.03,2.25.02,4.49,0,6.74,0,1.32.19,2.65-.04,3.96-.25,1.42-.22,2.68,0,4.1.19,1.19.12,2.31-.02,3.49-.06.55-.31,1.74.01,2.24-.02-.02,1.18-.1,1.29-.09.4.03.79.12,1.2.15.89.07,1.77-.11,2.66-.11,1.19,0,2.41.13,3.6-.02.68-.09,1.3-.32,1.98-.28.42.02.84.08,1.27.11.92.07,1.86.08,2.78.06,1.94-.04,3.87-.12,5.81-.13.71,0,1.42.07,2.1-.16.64-.21,1.29-.4,1.93-.63.68-.26,1.06-.49,1.6-.96.53-.46,1.19-.73,1.72-1.2.46-.41.77-.66,1.29-.98s1.01-.7,1.38-1.2c.44-.6.89-1.2,1.24-1.87.42-.82.68-1.57.95-2.44.12-.39.35-.58.57-.91.26-.39.36-.9.47-1.36.22-.89.45-1.77.69-2.66.26-.94.58-2.05.63-3.03.05-.79.04-1.59-.09-2.38-.11-.66-.09-1.4-.26-2.04-.28-1.02-.78-1.96-1.04-3-.23-.9-.72-1.74-1.34-2.44-.43-.48-.45-.98-.74-1.53-.56-1.07-1.9-1.42-2.5-2.41-.38-.62-.31-.8-.95-1.09-.71-.32-1.33-.77-2.04-1.06-.76-.3-1.64-.28-2.37-.54-.39-.14-.69-.46-1.09-.59-.45-.14-.94-.18-1.4-.3-1.04-.28-2.22-.61-3.31-.56-1.17.05-2.38-.13-3.56-.02-1.33.12-2.7.25-4.04.08-.74-.1-1.44-.15-2.17-.08-1.41.13-2.73-.14-4.12-.29-.69-.07-1.38-.09-2.07-.08-.36,0-.89-.05-1.32.02Z",
-    "M75.78,69.62c.16-.29.3-.6.42-.93.22-.6.34-1.27.68-1.82.23-.37.49-.6.63-1,.21-.61.57-1.24.68-1.86s.18-1.23.29-1.83c.4-2.2.15-4.18-.2-6.36-.23-1.42-.52-2.86-1.17-4.16-.32-.64-.73-1.14-1.17-1.68-.45-.57-.77-1.25-1.23-1.83-.25-.32-.53-.62-.8-.92-.39-.44-.59-.86-1.13-1.11-.58-.28-1.15-.64-1.73-.97-1.27-.73-2.6-1.34-3.99-1.82-1.72-.59-3.33-1.16-5.19-1.07-.98.04-1.87-.32-2.82-.39-1.5-.11-3.07.03-4.57.17-.85.07-1.68-.01-2.53,0-1.04.03-2.07.13-3.11.12-.88,0-1.75.13-2.63.13-.4,0-.78-.12-1.18-.07-.46.05-.92.21-1.38.25,0,.65.51,1.05.86,1.51.45.59.85,1.34,1.19,2,.28.54.32,1.18.66,1.71.89,1.37,1.31,2.98,2.08,4.43.4.76.84,1.51,1.18,2.31.32.74.32,1.34.92,1.95.76.77.91,1.74,1.37,2.68.22.45.69.71.91,1.16s.4.77.67,1.18c.38.59.56,1.27.92,1.86.21.33.42.66.6,1.01.32.66.8,1.26,1.11,1.9.18.38.25.78.45,1.16.77,1.48,1.74,2.89,2.4,4.4.28.64.72,1.29,1.11,1.88.25.37.45.69.61,1.1.28.69.51,1.67,1.03,2.23.26.29.26.24.65.18s.74-.09,1.13-.11c.41-.03.79-.02,1.21-.04s.89-.07,1.3-.2c1.71-.53,3.44-.94,4.9-1.97.46-.33,1.02-.55,1.45-.93.31-.27.57-.71.87-1.05.9-1.05,1.87-2.01,2.53-3.22Z",
-    "M26.34,67.63c.09-.16.18-.32.27-.48.35-.6.75-1.17,1.09-1.77.23-.41.25-.68.36-1.09.27-.99.9-1.99,1.3-2.96s.92-1.8,1.31-2.73c.26-.62.45-1.29.8-1.87.63-1.06,1.07-2.13,1.58-3.26.79-1.72,1.91-3.43,2.43-5.26.3-1.05.62-1.89,1.15-2.87.2-.37.36-.71.61-1.05.94-1.3.85-2.95,1.74-4.25.22-.32.28-.59.38-.96.07-.26.28-.52.34-.75.18-.68-.11-1.39-.01-2.08.13-.92,0-1.82.08-2.74.09-1,.29-2,.25-3.02-.05-1.4.03-2.79-.01-4.19-.03-.96-.04-1.89-.08-2.84-.05-1.25-.11-2.48-.03-3.73.09-1.41.2-2.82.16-4.23-.03-1.16.11-2.39.13-3.56.02-1.35-.06-2.71-.05-4.06,0-.57.09-1.12.09-1.69,0-.97-.08-1.91-.08-2.87-.88-.28-2.07.09-2.97.14-.83.05-1.63-.22-2.45-.3-.66-.07-1.34.11-2.02.1-1.72-.03-3.44-.09-5.16-.09-2.42,0-4.78.22-7.15.32-2.22.1-4.42-.15-6.64.06-2.04.19-3.97-.05-6.03-.03-.86,0-2.83-.4-3.54.22-.7.61-.25,2.56-.26,3.43-.02,2.06.73,4.1.59,6.15-.09,1.2-.59,2.31-.58,3.53.01.94.3,1.87.44,2.78.34,2.1.5,4.28.32,6.41-.07.78-.37,1.52-.43,2.28-.07.94.25,1.95.3,2.89.07,1.6-.21,3.19-.18,4.79.03,1.48-.04,3.02-.09,4.48-.06,1.95-.21,3.75.2,5.68.29,1.38.13,2.76.05,4.15-.07,1.13.23,2.13.19,3.24-.04,1.09-.39,2.14-.34,3.28.1,2.54-.43,4.96-.01,7.52.46,2.79-.13,5.64-.11,8.46.02,1.92.26,3.71.36,5.66,2.94.04,5.84-.13,8.79-.23,1.5-.05,2.89-.17,4.39-.12.92.03,1.82-.08,2.75-.11.28,0,.65.15.92.04.34-.14.49-.61.7-1,.36-.67.7-1.38.97-2.09.46-1.21,1.28-2.25,1.79-3.43.42-.95.29-2.11.84-3,.18-.3.36-.6.53-.9Z",
-    "M55.86,73.12c-.07-.1-.15-.2-.23-.3-.56-.69-.93-1.49-1.45-2.2-.66-.9-1.46-1.8-1.92-2.83s-.86-2.05-1.31-3.07c-.75-1.69-1.66-3.31-2.6-4.91-.84-1.43-1.93-2.79-2.48-4.37-.31-.88-.7-1.58-1.14-2.4-.19-.35-.18-.56-.24-.93-.09-.53-.4-.89-.69-1.32-.44-.63-.83-1.53-1.12-2.25-.24-.62-.41-1.29-.7-1.88-.17-.35-.7-2.05-1.09-2.13-.36,1.13-.48,2.34-1.2,3.31-.78,1.07-.78,2.32-1.46,3.45-.86,1.43-1.29,3.03-2.2,4.43-.91,1.4-1.68,2.92-2.19,4.51-.21.65-.73,1.03-1.01,1.6-.25.52-.09,1.15-.36,1.66-.44.82-1.08,1.51-1.46,2.39-.57,1.32-.98,2.73-1.57,4.04-.44.97-1.02,1.83-1.41,2.84-.39,1.02-1.06,1.93-1.46,2.93-.1.25-.05.54-.13.78-.16.51-.51.96-.74,1.43,1.87.35,3.99.04,5.9.06,2.15.03,4.31.06,6.45-.21.72-.09,1.37.18,2.1.16.68-.02,1.36-.07,2.05-.12,1.03-.07,2.06,0,3.11-.02,2.14-.02,4.28-.04,6.42-.1,1.25-.03,2.49.06,3.73-.03.83-.06,1.66-.16,2.46-.22-.5-.39-.78-1.61-1-2.24-.27-.78-.59-1.44-1.07-2.09Z"
-  ];
-
-  var SEEN='lb_hero_seen';
-  var svg=document.getElementById('markSvg');
-  if(!svg)return;
-
-  if(sessionStorage.getItem(SEEN)){
-    var s=document.createElement('style');
-    s.textContent='.hero-words h1,.hero-words .hero-sub{animation:none!important;opacity:1!important;transform:none!important}.hero-photo-panel{opacity:1!important;animation:none!important;transform:none!important}.mark-wrap{left:24px!important;top:20px!important;width:36px!important;transform:none!important;animation:none!important;position:fixed!important;pointer-events:auto!important;cursor:pointer!important}';
-    document.head.appendChild(s);
-  } else {
-    sessionStorage.setItem(SEEN,'1');
-  }
-
-  PATHS.forEach(function(d,i){
-    var n=i+1;
-    var fill=document.createElementNS(NS,'path');
-    fill.setAttribute('d',d);fill.setAttribute('class','fill f'+n);
-    var draw=document.createElementNS(NS,'path');
-    draw.setAttribute('d',d);draw.setAttribute('class','draw d'+n);
-    draw.setAttribute('pathLength','1');
-    svg.appendChild(fill);svg.appendChild(draw);
-  });
-
-  var SEEN='lb_hero_seen';
-  var svg=document.getElementById('markSvg');
-  if(!svg)return;
-
-  if(sessionStorage.getItem(SEEN)){
-    var s=document.createElement('style');
-    s.textContent='.hero-words h1,.hero-words .hero-sub{animation:none!important;opacity:1!important;transform:none!important}.hero-photo-panel{opacity:1!important;animation:none!important;transform:none!important}.mark-wrap{left:24px!important;top:20px!important;width:36px!important;transform:none!important;animation:none!important;position:fixed!important;pointer-events:auto!important;cursor:pointer!important}';
-    document.head.appendChild(s);
-  } else {
-    sessionStorage.setItem(SEEN,'1');
-  }
-
-  // After animation: fix mark in nav position, hide static logo
-  setTimeout(function() {
-    var wrap = document.getElementById('markWrap');
-    if (wrap) {
-      wrap.style.position = 'fixed';
-      wrap.style.left = '24px';
-      wrap.style.top = '20px';
-      wrap.style.width = '36px';
-      wrap.style.transform = 'none';
-      wrap.style.animation = 'none';
-      wrap.classList.add('settled');
-      // Hide static nav logo
-      var navLogo = document.querySelector('.nav-logo');
-      if (navLogo) navLogo.style.visibility = 'hidden';
-    }
-  }, 8500);
+  
 
   
-  // Fallback: force hero visible after 10s regardless of animation state
-  setTimeout(function() {
-    var photo = document.querySelector('.hero-photo-panel');
-    var h1 = document.querySelector('.hero-words h1');
-    var sub = document.querySelector('.hero-words .hero-sub');
-    if (photo) photo.style.opacity = '1';
-    if (h1) { h1.style.opacity = '1'; h1.style.transform = 'none'; }
-    if (sub) { sub.style.opacity = '1'; sub.style.transform = 'none'; }
-  }, 10000);
+
+  
+
+  
+  
 
 })();
 </script>

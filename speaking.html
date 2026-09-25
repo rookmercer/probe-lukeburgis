@@ -8,14 +8,13 @@
 <meta name="description" content="Luke Burgis speaks to boards, executive teams, and conference audiences about mimetic desire, rivalry, and the hidden dynamics that shape organizations.">
 <meta property="og:title" content="Speaking — Luke Burgis">
 <meta property="og:description" content="Luke Burgis speaks to boards, executive teams, and conference audiences about the hidden dynamics that determine what organizations actually do.">
-<meta property="og:image" content="https://rookmercer.github.ioassets/images/luke-speaking.jpg">
+<meta property="og:image" content="https://rookmercer.github.io/assets/images/luke-speaking.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/svg/LB-monogram-black.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/hs-forms.css">
 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
 <style>
 :root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--color-parchment:#E2D9C4;--color-gold:#DC9B3C;--color-ink:#111;--color-paper:#FAF8F3}
@@ -51,15 +50,30 @@ nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:18px 4
 .mobile-menu a{font-family:var(--font-label);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block}
 .mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
 
-/* MARQUEE */
-.venue-marquee{overflow:hidden;white-space:nowrap;background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:10px 0}
-.venue-marquee-inner{display:inline-flex;align-items:center;animation:venueTicker 60s linear infinite}
-.venue-marquee-inner:hover{animation-play-state:paused}
-.venue-marquee-item{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:#111;padding:0 1.6em}
-.venue-marquee-item.venue-featured{font-size:14px;font-weight:600}
-.venue-marquee-sep{font-family:var(--font-label);font-size:11px;color:#111;opacity:.35;flex-shrink:0}
-@keyframes venueTicker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){.venue-marquee{display:none}}
+/* LOGO ROW */
+.logo-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:36px 48px;padding:10px 0}
+.logo-row-item{font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:#111;opacity:.4;white-space:nowrap;line-height:1}
+
+/* OFFERINGS */
+.offerings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:32px}
+.offering-card{border-top:2px solid var(--color-gold);padding-top:24px}
+.offering-tier{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#888;margin-bottom:10px}
+.offering-title{font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.25;margin-bottom:14px;color:#111}
+.offering-body{font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0}
+
+/* PROOF */
+.proof-stat{font-family:var(--font-body);font-size:18px;line-height:1.65;color:#FAF8F3;max-width:720px;margin:0 auto 12px}
+.proof-stat-source{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);margin-top:8px}
+.proof-quote{border-left:3px solid var(--color-gold);padding:16px 0 16px 24px;margin:0 0 28px}
+.proof-quote p{font-family:var(--font-body);font-size:17px;font-style:italic;line-height:1.65;color:#222;margin:0 0 8px;max-width:none}
+.proof-quote cite{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#888;font-style:normal}
+.placeholder-note{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#bbb;display:block;margin-top:4px}
+
+/* CLIPS */
+.clips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-top:32px}
+.clip-placeholder{background:#1a1a1a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:#555;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.clip-title{font-family:var(--font-heading);font-size:17px;font-weight:600;margin:14px 0 4px;color:#111}
+.clip-event{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999}
 
 /* FOOTER */
 footer{background:#1a1a1a;color:#777;padding:48px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
@@ -76,14 +90,12 @@ footer a:hover{color:#FAF8F3}
   .hamburger{display:flex}
   .inner{padding:0 20px}
   nav{padding:14px 20px}
-  .inner [style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}
-  .inner [style*="grid-template-columns:1fr 2fr"]{grid-template-columns:1fr!important}
-  .inner [style*="grid-template-columns:2fr 1fr"]{grid-template-columns:1fr!important}
+  .offerings-grid{grid-template-columns:1fr}
+  .clips-grid{grid-template-columns:1fr}
   footer{grid-template-columns:1fr 1fr;gap:28px;padding:40px 20px}
+  .logo-row{gap:20px 32px}
+  .logo-row-item{font-size:11px}
 }
-
-.sh-word{display:inline-block;transform:translateY(110%);opacity:0}
-.sh-body,.sh-punch{opacity:0;transform:translateY(10px)}
 </style>
 </head>
 <body>
@@ -126,138 +138,154 @@ footer a:hover{color:#FAF8F3}
   <a href="#speaking-inquiry" onclick="this.parentElement.classList.remove('open')">Speaking Inquiries &rarr;</a>
 </div>
 
-<!-- VENUE MARQUEE -->
-<div class="venue-marquee" id="stages" aria-hidden="true">
-  <div class="venue-marquee-inner">
-    <span class="venue-marquee-item venue-featured">92nd Street Y</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Oxford University</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Brookfield Properties</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Cambridge University</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Athenaeum Center</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Main Street Summit</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Capital Camp</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Quilt AI</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item venue-featured">92nd Street Y</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Oxford University</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Brookfield Properties</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Cambridge University</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Athenaeum Center</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Main Street Summit</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Capital Camp</span><span class="venue-marquee-sep">&middot;</span>
-    <span class="venue-marquee-item">Quilt AI</span><span class="venue-marquee-sep">&middot;</span>
-  </div>
-</div>
-
-<!-- PAGE HEADER -->
-<section style="padding:96px 0 72px;border-bottom:1px solid #e8e2d6;overflow:hidden">
+<!-- ============================================================
+     1. HERO — headline + video
+     ============================================================ -->
+<section style="padding:96px 0 0;overflow:hidden">
   <div class="inner">
-    <span class="label sh-body">Speaking</span>
-    <h1 style="font-family:var(--font-heading);font-size:clamp(36px,5.5vw,64px);font-weight:600;line-height:1.08;margin:20px 0 32px;max-width:800px">
-      <span style="display:block;overflow:hidden"><span class="sh-word">Desire runs every organization.</span></span>
-      <span style="display:block;overflow:hidden"><span class="sh-word" style="transition-delay:.12s">Almost no one can see it.</span></span>
-    </h1>
-    <div style="max-width:640px">
-      <p class="sh-body" style="font-family:var(--font-body);font-size:19px;line-height:1.65;color:#333;margin-bottom:0">Luke Burgis speaks to boards, executive teams, and conference audiences about the hidden dynamics &mdash; imitation, rivalry, desire &mdash; that shape what organizations actually do.</p>
-      <p class="sh-punch" style="font-family:var(--font-heading);font-size:30px;font-weight:600;margin:24px 0 0">Not motivation.</p>
-      <p class="sh-punch" style="font-family:var(--font-heading);font-size:40px;font-weight:600;margin:6px 0 0;color:#111">Diagnosis.</p>
-    </div>
+    <h1 style="font-family:var(--font-heading);font-size:clamp(36px,5.5vw,64px);font-weight:600;line-height:1.08;margin:0 0 24px;max-width:800px">Desire runs every organization.<br>Almost no one can see it.</h1>
+    <p style="font-family:var(--font-body);font-size:18px;line-height:1.65;color:#333;margin-bottom:0;max-width:640px">Luke Burgis speaks to boards, executive teams, and conference audiences about the hidden dynamics that shape what organizations actually do.</p>
   </div>
 </section>
 
-<!-- VIDEO SECTION -->
-<section style="background:#111;padding:0;line-height:0">
+<!-- Hero video -->
+<section style="background:#111;padding:0;line-height:0;margin-top:48px">
   <video src="assets/speaking-reel-720p.mp4" style="width:100%;display:block;max-height:80vh;object-fit:cover" controls preload="metadata" playsinline poster="assets/images/speaking-reel-poster.jpg"></video>
 </section>
 
-<!-- FORMATS -->
+<!-- ============================================================
+     2. LOGO ROW — static monochrome wordmarks
+     ============================================================ -->
+<section style="padding:28px 0;border-bottom:1px solid #e8e2d6">
+  <div class="inner" style="text-align:center">
+    <span style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#999;display:block;margin-bottom:18px">Has spoken at</span>
+    <div class="logo-row">
+      <span class="logo-row-item">92nd Street Y</span>
+      <span class="logo-row-item">Athenaeum Center</span>
+      <span class="logo-row-item">Brookfield Properties</span>
+      <span class="logo-row-item">Main Street Summit</span>
+      <span class="logo-row-item">Acton Institute</span>
+      <span class="logo-row-item">Oxford</span>
+      <span class="logo-row-item">Cambridge</span>
+      <span class="logo-row-item">Capital Camp</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3. OFFERINGS — three tiers, no prices
+     ============================================================ -->
 <section id="formats" style="padding:72px 0;border-bottom:1px solid #e8e2d6">
   <div class="inner">
-    <span class="label">Formats</span>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:32px">
-      <div>
-        <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:12px">Keynote</p>
-        <p style="font-family:var(--font-heading);font-size:20px;font-weight:600;margin-bottom:12px;line-height:1.3">45&ndash;90 minutes</p>
-        <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555">For conferences, board meetings, and annual gatherings. Drawn from <em>Wanting</em> and <em>The One and the Ninety-Nine</em>, applied to the questions your audience is actually facing. No two keynotes are the same talk.</p>
+    <span class="label">Offerings</span>
+    <div class="offerings-grid">
+
+      <div class="offering-card">
+        <p class="offering-tier">Keynote</p>
+        <h3 class="offering-title"><!-- [PLACEHOLDER TITLE — awaiting Luke's confirmation] -->Mimetic Desire and the Organization</h3>
+        <p class="offering-body">A diagnosis of the imitation patterns that silently drive hiring, strategy, and culture — drawn from <em>Wanting</em> and applied to the questions your audience is actually facing. Built for conferences, board meetings, and annual gatherings. No two keynotes are the same talk.</p>
       </div>
-      <div>
-        <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:12px">Half-Day Session</p>
-        <p style="font-family:var(--font-heading);font-size:20px;font-weight:600;margin-bottom:12px;line-height:1.3">For leadership teams</p>
-        <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555">A working session, not a talk: the frameworks applied directly to the rivalries, incentives, and imitation patterns inside your organization. Pre-work for participants; a shared diagnostic language by the end.</p>
+
+      <div class="offering-card">
+        <p class="offering-tier">Half-Day Workshop</p>
+        <h3 class="offering-title">Applied Mimetic Analysis</h3>
+        <p class="offering-body">A working session for leadership teams: the frameworks applied directly to the rivalries, incentives, and imitation patterns inside your organization. Pre-work for participants; a shared diagnostic language by the end. The room leaves with a map of the dynamics no one was naming.</p>
       </div>
-      <div>
-        <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:12px">Executive Retreat</p>
-        <p style="font-family:var(--font-heading);font-size:20px;font-weight:600;margin-bottom:12px;line-height:1.3">Full day with a senior team</p>
-        <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555">The complete arc &mdash; diagnosis through application &mdash; for organizations at an inflection point: succession, acquisition, rapid growth, cultural drift. Each participant leaves with a personal plan.</p>
+
+      <div class="offering-card">
+        <p class="offering-tier">Full Executive Retreat</p>
+        <h3 class="offering-title">Diagnosis Through Application</h3>
+        <p class="offering-body">The complete arc for organizations at an inflection point — succession, acquisition, rapid growth, cultural drift. Each participant works through the mimetic forces shaping their own decisions. The team leaves with a shared framework and individual action plans.</p>
       </div>
+
     </div>
-    <p style="font-family:var(--font-body);font-size:14px;color:#888;font-style:italic;margin-top:32px;max-width:none">Luke accepts a limited number of engagements each year. Each one is scoped in a call with his team.</p>
+    <p style="font-family:var(--font-body);font-size:14px;color:#888;font-style:italic;margin-top:36px;max-width:none">Each engagement is scoped in a call with Luke's team. <a href="#speaking-inquiry" style="color:var(--color-gold);border-bottom:1px solid var(--color-gold)">Check availability &rarr;</a></p>
   </div>
 </section>
 
-<!-- SIGNATURE TOPICS -->
+<!-- ============================================================
+     4. PROOF BLOCK — quantified result + testimonials
+     ============================================================ -->
+<section style="background:#111;padding:72px 0;color:#FAF8F3">
+  <div class="inner" style="text-align:center">
+    <span style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.45);display:block;margin-bottom:24px">Results</span>
+    <p class="proof-stat">&ldquo;At Acton University 2026, every respondent rated Luke&rsquo;s session &lsquo;relevant and challenging&rsquo; &mdash; 100% top-two-box scores across content, presentation, and delivery, above the faculty average.&rdquo;</p>
+    <p class="proof-stat-source">Acton University Post-Session Survey, 2026</p>
+  </div>
+</section>
+
+<section style="padding:72px 0;border-bottom:1px solid #e8e2d6">
+  <div class="inner" style="max-width:760px">
+    <span class="label">What attendees say</span>
+
+    <!-- Verified Acton testimonial -->
+    <div class="proof-quote" style="margin-top:24px">
+      <p>&ldquo;Simply incredible. The best class I have ever taken. [...] It left me so deep in thought that I had to buy the book.&rdquo;</p>
+      <cite>&mdash; Attendee, Acton University 2026</cite>
+    </div>
+
+    <!-- [PLACEHOLDER] — awaiting verified quote -->
+    <div class="proof-quote">
+      <p style="color:#999">&ldquo;[Placeholder — awaiting verified testimonial from event organizer]&rdquo;</p>
+      <cite style="color:#bbb">&mdash; [NEEDS LUKE]</cite>
+      <span class="placeholder-note">Placeholder</span>
+    </div>
+
+    <!-- [PLACEHOLDER] — awaiting verified quote -->
+    <div class="proof-quote">
+      <p style="color:#999">&ldquo;[Placeholder — awaiting verified testimonial from corporate engagement]&rdquo;</p>
+      <cite style="color:#bbb">&mdash; [NEEDS LUKE]</cite>
+      <span class="placeholder-note">Placeholder</span>
+    </div>
+
+    <!-- [PLACEHOLDER] — awaiting verified quote -->
+    <div class="proof-quote">
+      <p style="color:#999">&ldquo;[Placeholder — awaiting verified testimonial from conference attendee]&rdquo;</p>
+      <cite style="color:#bbb">&mdash; [NEEDS LUKE]</cite>
+      <span class="placeholder-note">Placeholder</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     5. ADDITIONAL CLIPS — titled by idea, not event
+     ============================================================ -->
 <section style="padding:72px 0;border-bottom:1px solid #e8e2d6">
   <div class="inner">
-    <span class="label">Signature Topics</span>
-    <div style="margin-top:32px;display:grid;gap:0">
-      <div style="padding:28px 0;border-top:1px solid #e8e2d6;display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:start">
-        <h3 style="font-family:var(--font-heading);font-size:18px;font-weight:600;line-height:1.3;margin:0;color:#111">Wanting: The Hidden Engine of Ambition</h3>
-        <p style="font-family:var(--font-body);font-size:15px;line-height:1.65;color:#555;margin:0">Why your best people want what they want &mdash; and what happens to a company when rivalry quietly replaces mission.</p>
-      </div>
-      <div style="padding:28px 0;border-top:1px solid #e8e2d6;display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:start">
-        <h3 style="font-family:var(--font-heading);font-size:18px;font-weight:600;line-height:1.3;margin:0;color:#111">The One and the Ninety-Nine</h3>
-        <p style="font-family:var(--font-body);font-size:15px;line-height:1.65;color:#555;margin:0">Forging identity and independent judgment inside institutions built for conformity. Why the strongest teams are made of the strongest selves.</p>
-      </div>
-      <div style="padding:28px 0;border-top:1px solid #e8e2d6;display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:start">
-        <h3 style="font-family:var(--font-heading);font-size:18px;font-weight:600;line-height:1.3;margin:0;color:#111">The Three City Problem</h3>
-        <p style="font-family:var(--font-body);font-size:15px;line-height:1.65;color:#555;margin:0">Athens, Jerusalem, and Silicon Valley: how leaders navigate the collision of reason, faith, and technology inside their own organizations.</p>
-      </div>
-      <div style="padding:28px 0;border-top:1px solid #e8e2d6;border-bottom:1px solid #e8e2d6;display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:start">
-        <h3 style="font-family:var(--font-heading);font-size:18px;font-weight:600;line-height:1.3;margin:0;color:#111">Work as Soulcraft</h3>
-        <p style="font-family:var(--font-body);font-size:15px;line-height:1.65;color:#555;margin:0">What AI forces every organization to answer about the meaning of human work &mdash; and how to answer it before your people do.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <span class="label">Selected Clips</span>
+    <div class="clips-grid">
 
-<!-- PRAISE -->
-<section style="padding:72px 0">
-  <div class="inner">
-    <div style="display:grid;grid-template-columns:2fr 1fr;gap:80px;align-items:start">
       <div>
-        <span class="label">Praise</span>
-        <blockquote style="border-left:3px solid var(--color-gold);padding:16px 0 16px 24px;margin:24px 0 0">
-          <p style="font-family:var(--font-body);font-size:18px;font-style:italic;line-height:1.65;color:#222;margin:0 0 10px">&ldquo;One of my favorite current thinkers.&rdquo;</p>
-          <cite style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#888;font-style:normal">&mdash; Tyler Cowen, <em>Conversations with Tyler</em>, April 2026</cite>
-        </blockquote>
-        <blockquote style="border-left:3px solid var(--color-gold);padding:16px 0 16px 24px;margin:24px 0 0">
-          <p style="font-family:var(--font-body);font-size:18px;font-style:italic;line-height:1.65;color:#222;margin:0 0 10px">&ldquo;Luke Burgis masterfully shows us how to understand and manage our desires, and thus achieve more meaning and purpose in our lives and work.&rdquo;</p>
-          <cite style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#888;font-style:normal">&mdash; Arthur Brooks</cite>
-        </blockquote>
-        <blockquote style="border-left:3px solid var(--color-gold);padding:16px 0 16px 24px;margin:24px 0 0">
-          <p style="font-family:var(--font-body);font-size:18px;font-style:italic;line-height:1.65;color:#222;margin:0 0 10px">&ldquo;Luke Burgis will leave you rethinking your own motivations for months and maybe even years later.&rdquo;</p>
-          <cite style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#888;font-style:normal">&mdash; Adam Grant</cite>
-        </blockquote>
-        <blockquote style="border-left:3px solid var(--color-gold);padding:16px 0 16px 24px;margin:24px 0 0">
-          <p style="font-family:var(--font-body);font-size:18px;font-style:italic;line-height:1.65;color:#222;margin:0 0 10px">&ldquo;Burgis offers all of us powerful explanations for why we want things, and why society seems to be going haywire in our increasingly connected world.&rdquo;</p>
-          <cite style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#888;font-style:normal">&mdash; Jonathan Haidt</cite>
-        </blockquote>
+        <div class="clip-placeholder"><!-- [PLACEHOLDER VIDEO] -->[Video]</div>
+        <h3 class="clip-title">Why We Want What We Want</h3>
+        <p class="clip-event">92nd Street Y</p>
       </div>
-      <div style="padding-top:8px">
-        <a href="#speaking-inquiry" class="btn-dark" onmouseover="this.style.background='var(--color-gold)';this.style.color='#111'" onmouseout="this.style.background='#111';this.style.color='#FAF8F3'">Inquire About Availability</a>
-        <div style="margin-top:16px">
-          <a href="speaking/kit/" style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#555;border-bottom:1px solid #ccc;padding-bottom:2px">Download the speaker kit &rarr;</a>
-        </div>
+
+      <div>
+        <div class="clip-placeholder"><!-- [PLACEHOLDER VIDEO] -->[Video]</div>
+        <h3 class="clip-title">Thick and Thin Desire</h3>
+        <p class="clip-event">Acton University</p>
       </div>
+
+      <div>
+        <div class="clip-placeholder"><!-- [PLACEHOLDER VIDEO] -->[Video]</div>
+        <h3 class="clip-title">Rivalry Inside Organizations</h3>
+        <p class="clip-event">Main Street Summit</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- INQUIRY FORM -->
+<!-- ============================================================
+     6. INQUIRY FORM — HubSpot embed (exact CSS string)
+     ============================================================ -->
 <section id="speaking-inquiry" style="background:#fafafa;padding:72px 0;border-top:1px solid #e8e2d6">
   <div class="inner">
     <span class="label">Inquiry</span>
     <h2 style="font-family:var(--font-heading);font-size:32px;font-weight:600;margin:16px 0 8px">Check Availability</h2>
-    <p style="font-family:var(--font-body);font-size:16px;color:#555;margin-bottom:0">Fill out the form and Luke's team will be in touch within 48 hours.</p>
+    <p style="font-family:var(--font-body);font-size:16px;color:#555;margin-bottom:0">Fill out the form and Luke&rsquo;s team will be in touch within 48 hours.</p>
     <div class="hs-form-area" style="margin-top:24px;max-width:700px">
       <script>hbspt.forms.create({region:"na1",portalId:"39943621",formId:"0ee36f15-3350-4fc5-9948-963dd4d38930",css:"fieldset.form-columns-0 .hs-richtext img{display:none!important}fieldset.form-columns-0{margin-bottom:0!important;padding:0!important;border:0!important}.hs-form-field label{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:#111!important;font-weight:600!important}.hs-form-field label .hs-form-required{color:#DC9B3C!important}.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important;border:1px solid #d0c9bc!important;border-radius:0!important;padding:10px 12px!important;background:#FAF8F3!important;color:#111!important}.hs-input:focus{border-color:#111!important;outline:none!important;box-shadow:none!important}select.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important}textarea.hs-input{min-height:100px!important}.hs-button{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.12em!important;background:#111!important;color:#FAF8F3!important;border:none!important;border-radius:0!important;padding:13px 30px!important;cursor:pointer!important;font-weight:600!important}.hs-richtext{font-family:Sura,Georgia,serif!important;font-size:13px!important;color:#666!important;line-height:1.6!important}.hs-error-msgs label{font-size:11px!important;color:#dc2127!important;text-transform:none!important;letter-spacing:normal!important;font-weight:400!important}.hs-form-field{margin-bottom:18px!important}fieldset.form-columns-2 .hs-form-field{padding:0 8px!important}.legal-consent-container{font-family:Sura,Georgia,serif!important;font-size:12px!important}"});</script>
     </div>
@@ -297,8 +325,6 @@ footer a:hover{color:#FAF8F3}
   </div>
   <div class="footer-bottom"><a href="privacy.html">Privacy Policy</a></div>
 </footer>
-
-
 
 </body>
 </html>

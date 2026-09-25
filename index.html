@@ -38,7 +38,7 @@ body{font-family:Georgia,'Times New Roman',serif;background:#FAF8F3;color:#111;l
 /* ── Annotation classes ── */
 
 /* ── Layout primitives ── */
-section{position:relative;border:2px solid #ccc;background:#fff;padding:48px 56px}
+section{position:relative;;background:#fff;padding:48px 56px}
 section+section{border-top:none}
 .inner{max-width:1120px;margin:0 auto}
 
@@ -53,8 +53,8 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 .nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none;border:none}
 
 /* ── Hero ── */
-.hero{position:relative;width:100%;height:min(94vh,680px);min-height:460px;background:transparent;overflow:hidden;border:2px solid #ccc}
-.hero-photo-panel{position:absolute;right:0;top:0;height:100%;width:min(46%,560px);z-index:1}
+.hero{position:relative;width:100%;height:min(88vh,640px);min-height:420px;background:transparent;overflow:hidden}
+.hero-photo-panel{position:absolute;right:0;top:0;height:100%;width:min(46%,560px);z-index:1;opacity:0;animation:photoReveal 1.8s ease 4.2s forwards}
 .hero-photo-panel img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(100%)}
 .hero-photo-panel::before{content:'';position:absolute;left:0;top:0;width:25%;height:100%;background:linear-gradient(to right,#FAF8F3 0%,rgba(250,248,243,0.6) 50%,transparent 100%);z-index:2;pointer-events:none}
 
@@ -65,20 +65,20 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 
 /* Mark animation: draws centered, glides to upper-left nav */
 .mark-wrap{z-index:200;
-  position:absolute;
+  position:fixed;
   left:50%;
-  top:48%;
-  width:min(300px,52vw);
+  top:38vh;
+  width:min(240px,40vw);
   transform:translate(-50%,-50%);
-  animation:markMove 8s cubic-bezier(.65,.05,.36,1) forwards;
+  animation:markMove 7s cubic-bezier(.65,.05,.36,1) forwards;
   pointer-events:none;
 }
 .mark-wrap.settled{pointer-events:auto;cursor:pointer}
 .mark-wrap svg{width:100%;height:auto;display:block}
 
 @keyframes markMove{
-  0%,55%  {left:50%;top:48%;width:min(300px,52vw);transform:translate(-50%,-50%)}
-  100%    {left:24px;top:16px;width:40px;transform:translate(0,0)}
+  0%,50%  {left:50%;top:38vh;width:min(240px,40vw);transform:translate(-50%,-50%)}
+  100%    {left:24px;top:20px;width:36px;transform:translate(0,0)}
 }
   75%     {position:fixed;left:50%;top:48%;width:min(300px,52vw);transform:translate(-50%,-50%);opacity:1}
   100%    {position:fixed;left:24px;top:18px;width:40px;transform:translate(0,0);opacity:1}
@@ -105,12 +105,12 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 @keyframes fillIn{to{opacity:1}}
 
 /* Words appear after mark starts moving to corner */
-.hero-words{padding-left:16px;z-index:10;
+.hero-words{z-index:10;
   position:absolute;
-  left:max(calc(50% - 560px + 56px),56px);
-  top:48%;
+  left:max(calc(50% - 520px + 40px),48px);
+  top:52%;
   transform:translateY(-50%);
-  max-width:560px;
+  max-width:580px;
   padding-right:40px;
 }
 .hero-words h1,
@@ -118,23 +118,33 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 
 
 .hero-words h1{
-  font-size:clamp(32px,4.4vw,56px);
+  font-size:clamp(38px,5.2vw,64px);
   font-weight:normal;
-  line-height:1.08;
-  letter-spacing:-.01em;
-  margin-bottom:22px;
-  animation:wordsIn .9s ease 4.9s forwards;
+  line-height:1.06;
+  letter-spacing:-.02em;
+  margin-bottom:24px;
+  opacity:0;
+  animation:textSlideUp 1s cubic-bezier(.22,.61,.36,1) 4.6s forwards;
 }
 .hero-words .hero-sub{
-  font-size:clamp(15px,1.55vw,18px);
+  font-size:clamp(16px,1.7vw,19px);
   line-height:1.7;
   color:#333;
-  margin-bottom:20px;
-  animation:wordsIn .9s ease 5.5s forwards;
+  margin-bottom:0;
+  opacity:0;
+  animation:textSlideUp .9s cubic-bezier(.22,.61,.36,1) 5.2s forwards;
 }
 
-@keyframes wordsIn{
-  from{opacity:0;transform:translateY(14px)}
+
+@keyframes photoReveal{
+  from{opacity:0;transform:translateX(20px)}
+  to  {opacity:1;transform:translateX(0)}
+}
+@keyframes textSlideUp{
+  from{opacity:0;transform:translateY(28px)}
+  to  {opacity:1;transform:translateY(0)}
+}
+
   to  {opacity:1;transform:translateY(0)}
 }
 
@@ -148,10 +158,12 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 }
 
 @media(prefers-reduced-motion:reduce){
-  .mark-wrap{left:24px!important;top:16px!important;width:40px!important;transform:none!important;animation:none!important;position:fixed!important;pointer-events:auto!important;cursor:pointer!important;z-index:200!important}
+  .mark-wrap{left:24px!important;top:20px!important;width:36px!important;transform:none!important;animation:none!important;position:fixed!important;pointer-events:auto!important;cursor:pointer!important;z-index:200!important}
   .mark-wrap .draw{animation:none!important;opacity:0!important}
   .mark-wrap .fill{opacity:1!important;animation:none!important}
+  .hero-photo-panel{opacity:1!important;animation:none!important;transform:none!important}
   .hero-words h1,.hero-words .hero-sub{opacity:1!important;animation:none!important;transform:none!important}
+}
 }
   .mark-wrap .draw{stroke-dashoffset:0!important;animation:none!important;opacity:0!important}
   .mark-wrap .fill{opacity:1!important;animation:none!important}
@@ -227,7 +239,7 @@ p{font-size:16px;line-height:1.72;max-width:660px;margin-bottom:12px;color:#222}
 
 /* ── §4 Speaking preview ── */
 .speaking-preview{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center;margin-top:28px}
-.reel-thumb{border:2px solid #ccc;background:#d8d4ce;height:190px;display:flex;align-items:center;justify-content:center;font-family:var(--font-label);font-size:12px;color:#888;flex-shrink:0}
+.reel-thumb{;background:#d8d4ce;height:190px;display:flex;align-items:center;justify-content:center;font-family:var(--font-label);font-size:12px;color:#888;flex-shrink:0}
 
 /* ── §5 Testimonials ── */
 .testimonials-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-top:24px}
@@ -236,7 +248,7 @@ p{font-size:16px;line-height:1.72;max-width:660px;margin-bottom:12px;color:#222}
 .testimonial cite{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
 
 /* ── §6 Freebie ── */
-.freebie{background:var(--color-parchment);border:2px solid #ccc;border-top:none;padding:48px 56px}
+.freebie{background:var(--color-parchment);;border-top:none;padding:48px 56px}
 .freebie-form{display:flex;margin-top:20px;max-width:440px}
 .freebie-form input{flex:1;border:2px solid #111;padding:12px 16px;font-family:var(--font-label);font-size:13px;background:#fff;outline:none}
 .freebie-form button{border:2px solid #111;background:#111;color:#FAF8F3;padding:12px 20px;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;cursor:pointer;white-space:nowrap}
@@ -616,8 +628,8 @@ footer a:hover{color:#111}
     if (wrap) {
       wrap.style.position = 'fixed';
       wrap.style.left = '24px';
-      wrap.style.top = '16px';
-      wrap.style.width = '40px';
+      wrap.style.top = '20px';
+      wrap.style.width = '36px';
       wrap.style.transform = 'none';
       wrap.style.animation = 'none';
       wrap.classList.add('settled');

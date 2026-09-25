@@ -96,6 +96,10 @@ footer a:hover{color:#FAF8F3}
   .logo-row{gap:20px 32px}
   .logo-row-item{font-size:11px}
 }
+
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.logo-ticker:hover{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.logo-ticker{animation:none!important;flex-wrap:wrap;justify-content:center;gap:32px 48px}}
 </style>
 </head>
 <body>
@@ -152,21 +156,28 @@ footer a:hover{color:#FAF8F3}
   <video src="assets/speaking-reel-720p.mp4" style="width:100%;display:block;max-height:80vh;object-fit:cover" controls preload="metadata" playsinline poster="assets/images/speaking-reel-poster.jpg"></video>
 </section>
 
-<!-- ============================================================
-     2. LOGO ROW — static monochrome wordmarks
-     ============================================================ -->
-<section style="padding:28px 0;border-bottom:1px solid #e8e2d6">
-  <div class="inner" style="text-align:center">
-    <span style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#999;display:block;margin-bottom:18px">Has spoken at</span>
-    <div class="logo-row">
-      <span class="logo-row-item">92nd Street Y</span>
-      <span class="logo-row-item">Athenaeum Center</span>
-      <span class="logo-row-item">Brookfield Properties</span>
-      <span class="logo-row-item">Main Street Summit</span>
-      <span class="logo-row-item">Acton University</span>
-      <span class="logo-row-item">Oxford</span>
-      <span class="logo-row-item">Cambridge</span>
-      <span class="logo-row-item">Capital Camp</span>
+<!-- LOGO TICKER -->
+<section style="padding:28px 0;border-bottom:1px solid #e8e2d6;overflow:hidden">
+  <div style="text-align:center;margin-bottom:18px">
+    <span style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#999">Has spoken at</span>
+  </div>
+  <div style="overflow:hidden;width:100%;position:relative">
+    <div class="logo-ticker" style="display:flex;gap:64px;animation:tickerScroll 35s linear infinite;white-space:nowrap;align-items:center;width:max-content">
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">92nd Street Y</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Athenaeum Center</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Main Street Summit</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Capital Camp</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Acton University</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Oxford</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Cambridge</span>
+      <!-- duplicate for seamless loop -->
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">92nd Street Y</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Athenaeum Center</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Main Street Summit</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Capital Camp</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Acton University</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Oxford</span>
+      <span style="font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#111;opacity:.4;flex-shrink:0">Cambridge</span>
     </div>
   </div>
 </section>

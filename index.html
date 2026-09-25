@@ -45,6 +45,7 @@ section+section{border-top:none}
 /* ── Nav ── */
 nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .nav-logo{display:flex;align-items:center;gap:0}
+.homepage-mark-active .nav-logo{visibility:hidden}
 .nav-logo svg{width:48px;height:auto;display:block}
 .nav-links{list-style:none;display:flex;gap:32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
 .nav-links a{color:#111;text-decoration:none}
@@ -63,8 +64,8 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 }
 
 /* Mark animation: draws centered, glides to upper-left nav */
-.mark-wrap{z-index:10;
-  position:fixed;
+.mark-wrap{z-index:200;
+  position:absolute;
   left:50%;
   top:48%;
   width:min(300px,52vw);
@@ -76,7 +77,9 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 .mark-wrap svg{width:100%;height:auto;display:block}
 
 @keyframes markMove{
-  0%,55%  {position:fixed;left:50%;top:48%;width:min(300px,52vw);transform:translate(-50%,-50%);opacity:1}
+  0%,55%  {left:50%;top:48%;width:min(300px,52vw);transform:translate(-50%,-50%)}
+  100%    {left:24px;top:16px;width:40px;transform:translate(0,0)}
+}
   75%     {position:fixed;left:50%;top:48%;width:min(300px,52vw);transform:translate(-50%,-50%);opacity:1}
   100%    {position:fixed;left:24px;top:18px;width:40px;transform:translate(0,0);opacity:1}
 }
@@ -112,7 +115,7 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 }
 .hero-words h1,
 .hero-words .hero-sub,
-.hero-words .hero-byline{opacity:0}
+
 
 .hero-words h1{
   font-size:clamp(32px,4.4vw,56px);
@@ -129,13 +132,7 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
   margin-bottom:20px;
   animation:wordsIn .9s ease 5.5s forwards;
 }
-.hero-words .hero-byline{
-  font-size:14px;
-  font-style:italic;
-  color:#666;
-  line-height:1.6;
-  animation:wordsIn .9s ease 6.1s forwards;
-}
+
 @keyframes wordsIn{
   from{opacity:0;transform:translateY(14px)}
   to  {opacity:1;transform:translateY(0)}
@@ -151,10 +148,14 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 }
 
 @media(prefers-reduced-motion:reduce){
-  .mark-wrap{left:24px!important;top:18px!important;width:40px!important;transform:none!important;animation:none!important;position:fixed!important;pointer-events:auto!important;cursor:pointer!important}
+  .mark-wrap{left:24px!important;top:16px!important;width:40px!important;transform:none!important;animation:none!important;position:fixed!important;pointer-events:auto!important;cursor:pointer!important;z-index:200!important}
+  .mark-wrap .draw{animation:none!important;opacity:0!important}
+  .mark-wrap .fill{opacity:1!important;animation:none!important}
+  .hero-words h1,.hero-words .hero-sub{opacity:1!important;animation:none!important;transform:none!important}
+}
   .mark-wrap .draw{stroke-dashoffset:0!important;animation:none!important;opacity:0!important}
   .mark-wrap .fill{opacity:1!important;animation:none!important}
-  .hero-words h1,.hero-words .hero-sub,.hero-words .hero-byline{opacity:1!important;animation:none!important;transform:none!important}
+  .hero-words h1,.hero-words .hero-sub,
 }
 
 /* Mobile hero: static layout */
@@ -171,12 +172,10 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 
   
   .hero-words{padding-left:16px;z-index:10;left:50%;top:58%;transform:translate(-50%,-50%);width:88%;max-width:400px;padding:0;text-align:center}
-  .hero-words h1,.hero-words .hero-sub,.hero-words .hero-byline{
-    animation:fadeUpMobile .8s ease forwards;opacity:0
-  }
+  .hero-words h1,.hero-words .hero-sub,
   .hero-words h1{animation-delay:.3s}
   .hero-words .hero-sub{animation-delay:.7s}
-  .hero-words .hero-byline{animation-delay:1.1s}
+  
   @keyframes fadeUpMobile{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 }
 
@@ -185,7 +184,7 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
   
   
   
-  .hero-words h1,.hero-words .hero-sub,.hero-words .hero-byline{animation:none;opacity:1}
+  .hero-words h1,.hero-words .hero-sub,
 }
 
 /* ── Proof strip ── */
@@ -312,7 +311,6 @@ footer a:hover{color:#111}
   <div class="hero-words">
     <h1>History is a story of desire.</h1>
     <p class="hero-sub">We don&rsquo;t form our desires alone &mdash; we borrow them from the people around us: models, rivals, friends. And those borrowed desires move markets, fracture institutions, and build entire cultures.</p>
-    <p class="hero-byline">Luke Burgis is the author of the bestselling <em>Wanting</em>, a professor at The Catholic University of America, and founder of the Cluny Institute.</p>
   </div>
 </div>
 
@@ -584,7 +582,7 @@ footer a:hover{color:#111}
 
   if(sessionStorage.getItem(SEEN)){
     var s=document.createElement('style');
-    s.textContent='.mark-wrap{animation:none!important;left:calc(50% - min(320px,32vw))!important;top:48%!important;width:120px!important;transform:translateY(-50%)!important}.draw{display:none!important}.fill{opacity:1!important;animation:none!important}.hero-words h1,.hero-words .hero-sub,.hero-words .hero-byline{animation:none!important;opacity:1!important}';
+    s.textContent='.mark-wrap{animation:none!important;left:calc(50% - min(320px,32vw))!important;top:48%!important;width:120px!important;transform:translateY(-50%)!important}.draw{display:none!important}.fill{opacity:1!important;animation:none!important}.hero-words h1,.hero-words .hero-sub,';
     document.head.appendChild(s);
   } else {
     sessionStorage.setItem(SEEN,'1');
@@ -606,20 +604,26 @@ footer a:hover{color:#111}
 
   if(sessionStorage.getItem(SEEN)){
     var s=document.createElement('style');
-    s.textContent='.mark-wrap{animation:none!important;left:calc(50% - min(320px,32vw))!important;top:48%!important;width:120px!important;transform:translateY(-50%)!important}.draw{display:none!important}.fill{opacity:1!important;animation:none!important}.hero-words h1,.hero-words .hero-sub,.hero-words .hero-byline{animation:none!important;opacity:1!important}';
+    s.textContent='.mark-wrap{animation:none!important;left:calc(50% - min(320px,32vw))!important;top:48%!important;width:120px!important;transform:translateY(-50%)!important}.draw{display:none!important}.fill{opacity:1!important;animation:none!important}.hero-words h1,.hero-words .hero-sub,';
     document.head.appendChild(s);
   } else {
     sessionStorage.setItem(SEEN,'1');
   }
 
-  // After animation: add settled class for pointer events + hide static nav logo
+  // After animation: fix mark in nav position, hide static logo
   setTimeout(function() {
     var wrap = document.getElementById('markWrap');
     if (wrap) {
+      wrap.style.position = 'fixed';
+      wrap.style.left = '24px';
+      wrap.style.top = '16px';
+      wrap.style.width = '40px';
+      wrap.style.transform = 'none';
+      wrap.style.animation = 'none';
       wrap.classList.add('settled');
-      // Hide static nav logo on homepage (mark replaces it)
-      var navLogo = document.querySelector('.nav-logo, a[href="index.html"] img, a[href="/"] img');
-      if (navLogo) navLogo.style.opacity = '0';
+      // Hide static nav logo
+      var navLogo = document.querySelector('.nav-logo');
+      if (navLogo) navLogo.style.visibility = 'hidden';
     }
   }, 8500);
 

@@ -21,7 +21,7 @@
   --font-body:'Sura',Georgia,serif;
   --font-label:'Montserrat',sans-serif;
   --color-parchment:#E2D9C4;
-  --color-gold:#922B21;
+  --color-gold:#E60028;
   --color-ink:#111111;
   --color-paper:#FAF8F3;
 }
@@ -200,9 +200,9 @@ p{font-size:16px;line-height:1.72;max-width:660px;margin-bottom:12px;color:#222}
 
 /* Buttons */
 .btn-dark{display:inline-block;background:#111;color:#FAF8F3;padding:14px 32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:6px 10px 6px 0;text-decoration:none;border:2px solid #111;transition:background .18s,border-color .18s,color .18s}
-.btn-dark:hover{background:var(--color-gold);border-color:var(--color-gold);color:#111}
+.btn-dark:hover{background:#E60028;border-color:#E60028;color:#FAF8F3}
 .btn-light{display:inline-block;background:transparent;color:#111;border:2px solid #111;padding:12px 30px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:6px 0;text-decoration:none;transition:border-color .18s,color .18s}
-.btn-light:hover{border-color:var(--color-gold);color:var(--color-gold)}
+.btn-light:hover{border-color:#E60028;color:#E60028}
 
 /* ── §2 Questions ── */
 .questions-index{margin-top:28px}
@@ -375,7 +375,7 @@ footer a:hover{color:#111}
       <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#6b5c3e;margin-bottom:20px">Free · Curated Reading List</p>
       <h2 style="font-family:var(--font-heading);font-size:38px;font-weight:600;line-height:1.2;margin-bottom:20px;color:#111;margin-top:0">Two thousand years of essential books, distilled for creators.</h2>
       <p style="font-family:var(--font-body);font-size:17px;line-height:1.7;color:#3a2e1e;margin-bottom:32px;max-width:420px">A non-random walk through history — philosophy, theology, and the examined life. Luke's curated reading list for anyone serious about ideas.</p>
-      <button id="pfc-cta-btn" onclick="pfcOpenPopup('section_cta')" data-utm="utm_source=pfc_section&utm_medium=site&utm_campaign=philosophy-for-creators" style="display:inline-block;background:#111;color:#FAF8F3;padding:15px 36px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;border:none;cursor:pointer;transition:background .2s" onmouseover="this.style.background='#922B21'" onmouseout="this.style.background='#111'">Get the free guide →</button>
+      <button id="pfc-cta-btn" onclick="pfcOpenPopup('section_cta')" data-utm="utm_source=pfc_section&utm_medium=site&utm_campaign=philosophy-for-creators" style="display:inline-block;background:#111;color:#FAF8F3;padding:15px 36px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;border:none;cursor:pointer;transition:background .2s" onmouseover="this.style.background='#E60028'" onmouseout="this.style.background='#111'">Get the free guide →</button>
     </div>
     <div style="display:flex;justify-content:center;align-items:center">
       <div style="transform:rotate(2.5deg);box-shadow:0 16px 56px rgba(0,0,0,0.18);max-width:340px;width:100%;cursor:pointer" onclick="pfcOpenPopup('preview_card')">
@@ -699,7 +699,7 @@ footer a:hover{color:#111}
             wrap.querySelectorAll('button[type="submit"],input[type="submit"],button:not([aria-label])').forEach(function(el){
               el.style.cssText='background:#111!important;color:#FAF8F3!important;border:none!important;border-radius:0!important;padding:13px 30px!important;font-family:Montserrat,sans-serif!important;font-size:12px!important;text-transform:uppercase!important;letter-spacing:.1em!important;cursor:pointer!important;width:100%!important;transition:background .2s!important;box-shadow:none!important;display:block!important';
               el.textContent='Send me the guide';
-              el.onmouseover=function(){this.style.background='#922B21';};
+              el.onmouseover=function(){this.style.background='#E60028';};
               el.onmouseout=function(){this.style.background='#111';};
             });
           }
@@ -799,7 +799,7 @@ footer a:hover{color:#111}
 #pfc-modal button[type="submit"]:hover,
 #pfc-modal input[type="submit"]:hover,
 #pfc-modal [class*="kj-"] button[type="submit"]:hover{
-  background:#922B21!important;
+  background:#E60028!important;
 }
 
 /* Remove any Kajabi-injected padding/bg from wrapper */

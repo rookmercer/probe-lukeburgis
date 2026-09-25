@@ -8,6 +8,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 <title>Everything is Fast — Luke Burgis</title>
+<link rel="icon" href="/probe-lukeburgis/assets/svg/LB-monogram-black.svg" type="image/svg+xml">
+<meta name="description" content="The most personal piece — written in a season when everything seemed to be speeding up, and a question about what the acceleration was doing to attention and to the soul.">
+<meta property="og:title" content="Everything is Fast — Luke Burgis">
+<meta property="og:description" content="The most personal piece — written in a season when everything seemed to be speeding up, and a question about what the acceleration was doing to attention and to the soul.">
+<meta property="og:image" content="/probe-lukeburgis/assets/images/luke-hero-bw.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--color-gold:#DC9B3C;--color-ink:#111111;--color-paper:#FAF8F3;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -43,7 +50,17 @@ footer ul{list-style:none}
 footer li{margin-bottom:8px}
 footer a{color:#777;text-decoration:none}
 footer a:hover{color:#FAF8F3}
-@media(max-width:760px){nav{padding:16px 20px}.essay-wrap{padding:40px 20px 60px}footer{grid-template-columns:1fr 1fr;padding:36px 20px}}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:#111}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-paper);z-index:200;padding:80px 48px 48px;flex-direction:column;gap:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-label);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block}
+.mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
+
+@media(max-width:760px){
+  nav .nav-links,nav .nav-right{display:none}
+  .hamburger{display:flex}
+nav{padding:16px 20px}.essay-wrap{padding:40px 20px 60px}footer{grid-template-columns:1fr 1fr;padding:36px 20px}}
 /* Reading progress bar */
 #reading-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:#111111;z-index:9999;opacity:0;transition:opacity .2s}
 #reading-progress.visible{opacity:1}
@@ -68,6 +85,9 @@ footer a:hover{color:#FAF8F3}
     </svg>
     </a>
   </div>
+  <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
   <ul class="nav-links">
     <li><a href="/probe-lukeburgis/books.html">Books</a></li>
     <li><a href="/probe-lukeburgis/speaking.html">Speaking</a></li>
@@ -77,6 +97,16 @@ footer a:hover{color:#FAF8F3}
   </ul>
   <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" aria-label="Close menu" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <a href="/probe-lukeburgis/books.html">Books</a>
+  <a href="/probe-lukeburgis/writing/">Writing</a>
+  <a href="/probe-lukeburgis/speaking.html">Speaking</a>
+  <a href="/probe-lukeburgis/programs.html">Programs</a>
+  <a href="/probe-lukeburgis/about.html">About</a>
+  <a href="https://read.lukeburgis.com">Newsletter</a>
+  <a href="/probe-lukeburgis/speaking.html#speaking-inquiry">Speaking Inquiries &rarr;</a>
+</div>
 
 <div class="essay-wrap">
   <a class="back-link" href="/probe-lukeburgis/writing/">← All Essays</a>

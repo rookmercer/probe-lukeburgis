@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <title>Luke Burgis — Author, Professor, Founder</title>
+<link rel="icon" href="/probe-lukeburgis/assets/svg/LB-monogram-black.svg" type="image/svg+xml">
 <style>
 :root{
   --font-heading:'Eczar',Georgia,serif;
@@ -133,7 +134,17 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 }
 
 /* Mobile hero: static layout */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:#111}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-paper);z-index:200;padding:80px 48px 48px;flex-direction:column;gap:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-label);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block}
+.mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
+
 @media(max-width:740px){
+  nav .nav-links,nav .nav-right{display:none}
+  .hamburger{display:flex}
+
   .mark-wrap{z-index:10;animation:none;left:50%;top:22%;width:100px;transform:translate(-50%,-50%)}
   .hero-words{padding-left:16px;z-index:10;left:50%;top:58%;transform:translate(-50%,-50%);width:88%;max-width:400px;padding:0;text-align:center}
   .hero-words h1,.hero-words .hero-sub,.hero-words .hero-byline{
@@ -242,6 +253,9 @@ footer a:hover{color:#FAF8F3}
       <path class="nav-fill" fill="#111" d="M55.86,73.12c-.07-.1-.15-.2-.23-.3-.56-.69-.93-1.49-1.45-2.2-.66-.9-1.46-1.8-1.92-2.83s-.86-2.05-1.31-3.07c-.75-1.69-1.66-3.31-2.6-4.91-.84-1.43-1.93-2.79-2.48-4.37-.31-.88-.7-1.58-1.14-2.4-.19-.35-.18-.56-.24-.93-.09-.53-.4-.89-.69-1.32-.44-.63-.83-1.53-1.12-2.25-.24-.62-.41-1.29-.7-1.88-.17-.35-.7-2.05-1.09-2.13-.36,1.13-.48,2.34-1.2,3.31-.78,1.07-.78,2.32-1.46,3.45-.86,1.43-1.29,3.03-2.2,4.43-.91,1.4-1.68,2.92-2.19,4.51-.21.65-.73,1.03-1.01,1.6-.25.52-.09,1.15-.36,1.66-.44.82-1.08,1.51-1.46,2.39-.57,1.32-.98,2.73-1.57,4.04-.44.97-1.02,1.83-1.41,2.84-.39,1.02-1.06,1.93-1.46,2.93-.1.25-.05.54-.13.78-.16.51-.51.96-.74,1.43,1.87.35,3.99.04,5.9.06,2.15.03,4.31.06,6.45-.21.72-.09,1.37.18,2.1.16.68-.02,1.36-.07,2.05-.12,1.03-.07,2.06,0,3.11-.02,2.14-.02,4.28-.04,6.42-.1,1.25-.03,2.49.06,3.73-.03.83-.06,1.66-.16,2.46-.22-.5-.39-.78-1.61-1-2.24-.27-.78-.59-1.44-1.07-2.09Z"/>
     </svg>
   </div>
+  <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
   <ul class="nav-links">
     <li><a href="books.html">Books</a></li>
     <li><a href="writing/">Writing</a></li>
@@ -252,6 +266,16 @@ footer a:hover{color:#FAF8F3}
   <a href="https://read.lukeburgis.com" style="font-family:var(--font-label);font-size:11px;color:#111;text-decoration:none;margin-right:16px">Newsletter</a>
   <a class="nav-cta" href="speaking.html#speaking-inquiry">Speaking Inquiries →</a>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" aria-label="Close menu" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <a href="/probe-lukeburgis/books.html">Books</a>
+  <a href="/probe-lukeburgis/writing/">Writing</a>
+  <a href="/probe-lukeburgis/speaking.html">Speaking</a>
+  <a href="/probe-lukeburgis/programs.html">Programs</a>
+  <a href="/probe-lukeburgis/about.html">About</a>
+  <a href="https://read.lukeburgis.com">Newsletter</a>
+  <a href="/probe-lukeburgis/speaking.html#speaking-inquiry">Speaking Inquiries &rarr;</a>
+</div>
 <!-- §1 HERO -->
 <div class="hero" id="heroStage">
   <div class="hero-photo-panel">

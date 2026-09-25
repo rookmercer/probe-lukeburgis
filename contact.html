@@ -18,104 +18,90 @@
 <style>
 html,body{overflow-x:hidden}
 :root{
+  --color-paper:#FAF8F3;
+  --color-ink:#111;
+  --color-gold:#DC9B3C;
   --font-heading:'Eczar',Georgia,serif;
   --font-body:'Sura',Georgia,serif;
   --font-label:'Montserrat',sans-serif;
-  --color-parchment:#E2D9C4;
-  --color-gold:#DC9B3C;
-  --color-ink:#111111;
-  --color-paper:#FAF8F3;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:#FAF8F3;color:#111;line-height:1}
-h1,h2{font-family:var(--font-heading);font-weight:600}
-h3,h4,h5,h6{font-family:var(--font-heading);font-weight:400}
+body{font-family:var(--font-body);background:var(--color-paper);color:var(--color-ink);line-height:1.6}
 
 /* ── Nav ── */
-nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.nav-logo{display:flex;align-items:center;gap:0}
-.nav-logo svg{width:48px;height:auto;display:block}
+nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center}
+.nav-logo svg{width:44px;height:auto;display:block}
 .nav-links{list-style:none;display:flex;gap:32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
-.nav-links a{color:#111;text-decoration:none}
+.nav-links a{color:var(--color-ink);text-decoration:none}
 .nav-links a:hover{color:var(--color-gold)}
-.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none;border:none}
-.nav-cta:hover{background:var(--color-gold);color:#111}
-
-/* ── Hero ── */
-.contact-hero{background:#111;color:#FAF8F3;padding:72px 56px 64px}
-.contact-hero .inner{max-width:1120px;margin:0 auto}
-.contact-hero h1{font-family:var(--font-heading);font-size:clamp(40px,5vw,64px);font-weight:600;line-height:1.05;margin-bottom:18px}
-.contact-hero .hero-sub{font-family:var(--font-body);font-size:clamp(15px,1.6vw,19px);line-height:1.6;color:#bbb;max-width:560px}
-
-/* ── Layout ── */
-.inner{max-width:1120px;margin:0 auto}
-.cards-section{background:#FAF8F3;padding:64px 56px}
-.cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-
-/* ── Inquiry Card ── */
-.card{background:#fff;border:1px solid #e8e2d6;padding:36px 36px 40px}
-.card-label{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:10px;display:block;border-left:3px solid var(--color-gold);padding-left:10px}
-.card h2{font-family:var(--font-heading);font-size:22px;font-weight:600;color:#111;margin-bottom:8px;line-height:1.15}
-.card .card-desc{font-family:var(--font-body);font-size:14px;color:#555;line-height:1.65;margin-bottom:28px;max-width:none}
-.card .card-note{font-family:var(--font-label);font-size:11px;color:#888;line-height:1.5;margin-top:12px}
-.card .card-note a{color:var(--color-gold);text-decoration:none}
-.card .card-note a:hover{text-decoration:underline}
-.card-form-area{border-top:1px solid #f0ece6;padding-top:24px}
-
-/* ── Newsletter section ── */
-.nl-section{background:#111;color:#FAF8F3;padding:64px 56px;border-top:2px solid #000}
-.nl-section h2{font-family:var(--font-heading);font-size:28px;color:#FAF8F3;margin-bottom:10px}
-.nl-section p{font-family:var(--font-body);font-size:15px;color:#aaa;max-width:500px;line-height:1.7;margin-bottom:28px}
-
-/* ── Footer ── */
-footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
-footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
-footer ul{list-style:none}
-footer li{margin-bottom:8px}
-footer a{color:#777;text-decoration:none}
-footer a:hover{color:#FAF8F3}
-
-/* ── Responsive ── */
+.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:var(--color-ink);color:var(--color-paper);padding:10px 20px;text-decoration:none;border:none}
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
-.hamburger span{display:block;width:22px;height:2px;background:#111}
+.hamburger span{display:block;width:22px;height:2px;background:var(--color-ink)}
 .mobile-menu{display:none;position:fixed;inset:0;background:var(--color-paper);z-index:200;padding:80px 48px 48px;flex-direction:column;gap:24px}
 .mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--font-label);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block}
-.mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
+.mobile-menu a{font-family:var(--font-label);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:var(--color-ink);padding:12px 0;border-bottom:1px solid #e8e2d6;display:block;text-decoration:none}
+.mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:var(--color-ink)}
 
-@media(max-width:900px){
-  nav .nav-links,nav .nav-right{display:none}
-  .hamburger{display:flex}
+/* ── Page ── */
+.contact-page{max-width:660px;margin:0 auto;padding:80px 24px 100px}
+.contact-page h1{font-family:var(--font-heading);font-size:clamp(28px,4vw,38px);font-weight:400;margin-bottom:8px;letter-spacing:-.01em}
+.contact-page .subcopy{font-family:var(--font-body);font-size:15px;color:#555;margin-bottom:48px}
 
-  .cards-grid{grid-template-columns:1fr}
-  footer{grid-template-columns:1fr 1fr;gap:28px;padding:40px 24px}
-}
-@media(max-width:600px){
+/* ── Segmented Control ── */
+.segment-label{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#555;font-weight:600;margin-bottom:14px}
+.segments{display:flex;gap:0;border:1px solid #d0c9bc;margin-bottom:40px}
+.segments button{flex:1;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;padding:14px 8px;background:transparent;border:none;cursor:pointer;color:#555;transition:background .2s,color .2s;position:relative}
+.segments button:not(:last-child){border-right:1px solid #d0c9bc}
+.segments button.active{background:var(--color-ink);color:var(--color-paper)}
+.segments button:hover:not(.active){background:#f0ece4}
+
+/* ── Form Panel ── */
+.form-panels{position:relative;min-height:200px}
+.form-panel{display:none;animation:fadeIn .3s ease}
+.form-panel.active{display:block}
+.form-panel h2{font-family:var(--font-heading);font-size:22px;font-weight:400;margin-bottom:6px}
+.form-panel .panel-desc{font-family:var(--font-body);font-size:14px;color:#666;margin-bottom:28px}
+.form-panel .panel-note{font-family:var(--font-body);font-size:13px;color:#999;font-style:italic;margin-top:-20px;margin-bottom:28px}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Footer ── */
+footer{background:#111;color:#ccc;padding:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:40px;font-size:13px}
+footer h4{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#888;margin-bottom:12px;font-weight:600}
+footer ul{list-style:none}
+footer ul li{margin-bottom:6px}
+footer a{color:#ccc;text-decoration:none}
+footer a:hover{color:var(--color-gold)}
+.footer-bottom{grid-column:1/-1;border-top:1px solid #333;padding-top:20px;margin-top:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:11px;color:#666}
+.footer-bottom a{color:#888}
+
+/* ── Responsive ── */
+@media(max-width:768px){
   nav{padding:16px 20px}
-  .contact-hero{padding:48px 24px 40px}
-  .cards-section{padding:40px 24px}
-  .card{padding:24px 20px 28px}
-  .nl-section{padding:48px 24px}
-  footer{grid-template-columns:1fr;padding:36px 20px}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .segments{flex-direction:column;border:none;gap:6px}
+  .segments button{border:1px solid #d0c9bc;text-align:left;padding:14px 16px}
+  .segments button:not(:last-child){border-right:1px solid #d0c9bc}
+  .contact-page{padding:48px 20px 60px}
+  footer{padding:40px 20px;grid-template-columns:1fr 1fr}
 }
 </style>
-<link rel="stylesheet" href="assets/hs-forms.css">
 </head>
 <body>
 
-<!-- NAV -->
+<!-- Nav -->
 <nav>
-  <div class="nav-logo">
-    <a href="" aria-label="Luke Burgis home">
+  <a href="index.html" class="nav-logo">
     <svg viewBox="0 0 82.39 81.96" width="44" height="44" role="img" aria-label="Luke Burgis">
       <path fill="#111" d="M43.55,3.04c-.15.03-.29.07-.4.14-.87.55-.21,2.02-.21,2.8,0,.8.12,1.59.14,2.39.02.96-.11,1.94-.09,2.91.03,1.13.09,2.26.13,3.39.02.45-.05.89-.14,1.35-.15.84-.12,1.67-.13,2.51-.03,2.25.02,4.49,0,6.74,0,1.32.19,2.65-.04,3.96-.25,1.42-.22,2.68,0,4.1.19,1.19.12,2.31-.02,3.49-.06.55-.31,1.74.01,2.24-.02-.02,1.18-.1,1.29-.09.4.03.79.12,1.2.15.89.07,1.77-.11,2.66-.11,1.19,0,2.41.13,3.6-.02.68-.09,1.3-.32,1.98-.28.42.02.84.08,1.27.11.92.07,1.86.08,2.78.06,1.94-.04,3.87-.12,5.81-.13.71,0,1.42.07,2.1-.16.64-.21,1.29-.4,1.93-.63.68-.26,1.06-.49,1.6-.96.53-.46,1.19-.73,1.72-1.2.46-.41.77-.66,1.29-.98s1.01-.7,1.38-1.2c.44-.6.89-1.2,1.24-1.87.42-.82.68-1.57.95-2.44.12-.39.35-.58.57-.91.26-.39.36-.9.47-1.36.22-.89.45-1.77.69-2.66.26-.94.58-2.05.63-3.03.05-.79.04-1.59-.09-2.38-.11-.66-.09-1.4-.26-2.04-.28-1.02-.78-1.96-1.04-3-.23-.9-.72-1.74-1.34-2.44-.43-.48-.45-.98-.74-1.53-.56-1.07-1.9-1.42-2.5-2.41-.38-.62-.31-.8-.95-1.09-.71-.32-1.33-.77-2.04-1.06-.76-.3-1.64-.28-2.37-.54-.39-.14-.69-.46-1.09-.59-.45-.14-.94-.18-1.4-.3-1.04-.28-2.22-.61-3.31-.56-1.17.05-2.38-.13-3.56-.02-1.33.12-2.7.25-4.04.08-.74-.1-1.44-.15-2.17-.08-1.41.13-2.73-.14-4.12-.29-.69-.07-1.38-.09-2.07-.08-.36,0-.89-.05-1.32.02Z"/>
       <path fill="#111" d="M75.78,69.62c.16-.29.3-.6.42-.93.22-.6.34-1.27.68-1.82.23-.37.49-.6.63-1,.21-.61.57-1.24.68-1.86s.18-1.23.29-1.83c.4-2.2.15-4.18-.2-6.36-.23-1.42-.52-2.86-1.17-4.16-.32-.64-.73-1.14-1.17-1.68-.45-.57-.77-1.25-1.23-1.83-.25-.32-.53-.62-.8-.92-.39-.44-.59-.86-1.13-1.11-.58-.28-1.15-.64-1.73-.97-1.27-.73-2.6-1.34-3.99-1.82-1.72-.59-3.33-1.16-5.19-1.07-.98.04-1.87-.32-2.82-.39-1.5-.11-3.07.03-4.57.17-.85.07-1.68-.01-2.53,0-1.04.03-2.07.13-3.11.12-.88,0-1.75.13-2.63.13-.4,0-.78-.12-1.18-.07-.46.05-.92.21-1.38.25,0,.65.51,1.05.86,1.51.45.59.85,1.34,1.19,2,.28.54.32,1.18.66,1.71.89,1.37,1.31,2.98,2.08,4.43.4.76.84,1.51,1.18,2.31.32.74.32,1.34.92,1.95.76.77.91,1.74,1.37,2.68.22.45.69.71.91,1.16s.4.77.67,1.18c.38.59.56,1.27.92,1.86.21.33.42.66.6,1.01.32.66.8,1.26,1.11,1.9.18.38.25.78.45,1.16.77,1.48,1.74,2.89,2.4,4.4.28.64.72,1.29,1.11,1.88.25.37.45.69.61,1.1.28.69.51,1.67,1.03,2.23.26.29.26.24.65.18s.74-.09,1.13-.11c.41-.03.79-.02,1.21-.04s.89-.07,1.3-.2c1.71-.53,3.44-.94,4.9-1.97.46-.33,1.02-.55,1.45-.93.31-.27.57-.71.87-1.05.9-1.05,1.87-2.01,2.53-3.22Z"/>
       <path fill="#111" d="M26.34,67.63c.09-.16.18-.32.27-.48.35-.6.75-1.17,1.09-1.77.23-.41.25-.68.36-1.09.27-.99.9-1.99,1.3-2.96s.92-1.8,1.31-2.73c.26-.62.45-1.29.8-1.87.63-1.06,1.07-2.13,1.58-3.26.79-1.72,1.91-3.43,2.43-5.26.3-1.05.62-1.89,1.15-2.87.2-.37.36-.71.61-1.05.94-1.3.85-2.95,1.74-4.25.22-.32.28-.59.38-.96.07-.26.28-.52.34-.75.18-.68-.11-1.39-.01-2.08.13-.92,0-1.82.08-2.74.09-1,.29-2,.25-3.02-.05-1.4.03-2.79-.01-4.19-.03-.96-.04-1.89-.08-2.84-.05-1.25-.11-2.48-.03-3.73.09-1.41.2-2.82.16-4.23-.03-1.16.11-2.39.13-3.56.02-1.35-.06-2.71-.05-4.06,0-.57.09-1.12.09-1.69,0-.97-.08-1.91-.08-2.87-.88-.28-2.07.09-2.97.14-.83.05-1.63-.22-2.45-.3-.66-.07-1.34.11-2.02.1-1.72-.03-3.44-.09-5.16-.09-2.42,0-4.78.22-7.15.32-2.22.1-4.42-.15-6.64.06-2.04.19-3.97-.05-6.03-.03-.86,0-2.83-.4-3.54.22-.7.61-.25,2.56-.26,3.43-.02,2.06.73,4.1.59,6.15-.09,1.2-.59,2.31-.58,3.53.01.94.3,1.87.44,2.78.34,2.1.5,4.28.32,6.41-.07.78-.37,1.52-.43,2.28-.07.94.25,1.95.3,2.89.07,1.6-.21,3.19-.18,4.79.03,1.48-.04,3.02-.09,4.48-.06,1.95-.21,3.75.2,5.68.29,1.38.13,2.76.05,4.15-.07,1.13.23,2.13.19,3.24-.04,1.09-.39,2.14-.34,3.28.1,2.54-.43,4.96-.01,7.52.46,2.79-.13,5.64-.11,8.46.02,1.92.26,3.71.36,5.66,2.94.04,5.84-.13,8.79-.23,1.5-.05,2.89-.17,4.39-.12.92.03,1.82-.08,2.75-.11.28,0,.65.15.92.04.34-.14.49-.61.7-1,.36-.67.7-1.38.97-2.09.46-1.21,1.28-2.25,1.79-3.43.42-.95.29-2.11.84-3,.18-.3.36-.6.53-.9Z"/>
       <path fill="#111" d="M55.86,73.12c-.07-.1-.15-.2-.23-.3-.56-.69-.93-1.49-1.45-2.2-.66-.9-1.46-1.8-1.92-2.83s-.86-2.05-1.31-3.07c-.75-1.69-1.66-3.31-2.6-4.91-.84-1.43-1.93-2.79-2.48-4.37-.31-.88-.7-1.58-1.14-2.4-.19-.35-.18-.56-.24-.93-.09-.53-.4-.89-.69-1.32-.44-.63-.83-1.53-1.12-2.25-.24-.62-.41-1.29-.7-1.88-.17-.35-.7-2.05-1.09-2.13-.36,1.13-.48,2.34-1.2,3.31-.78,1.07-.78,2.32-1.46,3.45-.86,1.43-1.29,3.03-2.2,4.43-.91,1.4-1.68,2.92-2.19,4.51-.21.65-.73,1.03-1.01,1.6-.25.52-.09,1.15-.36,1.66-.44.82-1.08,1.51-1.46,2.39-.57,1.32-.98,2.73-1.57,4.04-.44.97-1.02,1.83-1.41,2.84-.39,1.02-1.06,1.93-1.46,2.93-.1.25-.05.54-.13.78-.16.51-.51.96-.74,1.43,1.87.35,3.99.04,5.9.06,2.15.03,4.31.06,6.45-.21.72-.09,1.37.18,2.1.16.68-.02,1.36-.07,2.05-.12,1.03-.07,2.06,0,3.11-.02,2.14-.02,4.28-.04,6.42-.1,1.25-.03,2.49.06,3.73-.03.83-.06,1.66-.16,2.46-.22-.5-.39-.78-1.61-1-2.24-.27-.78-.59-1.44-1.07-2.09Z"/>
     </svg>
-    </a>
-  </div>
+  </a>
   <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.add('open')">
     <span></span><span></span><span></span>
   </button>
@@ -126,7 +112,7 @@ footer a:hover{color:#FAF8F3}
     <li><a href="programs.html">Programs</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
+  <a class="nav-cta" href="https://read.lukeburgis.com">Subscribe</a>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-btn" aria-label="Close menu" onclick="this.parentElement.classList.remove('open')">&times;</button>
@@ -138,85 +124,56 @@ footer a:hover{color:#FAF8F3}
   <a href="https://read.lukeburgis.com">Subscribe</a>
 </div>
 
-<!-- HERO BAND -->
-<div class="contact-hero">
-  <div class="inner">
-    <h1>Contact</h1>
-    <p class="hero-sub">Choose the right door.</p>
+<!-- Page Content -->
+<main class="contact-page">
+  <h1>Get in touch.</h1>
+  <p class="subcopy">For speaking, media, podcast bookings, and general inquiries.</p>
+
+  <p class="segment-label">What is this regarding?</p>
+  <div class="segments" role="tablist">
+    <button role="tab" aria-selected="true" class="active" data-tab="speaking" onclick="switchTab('speaking')">Speaking</button>
+    <button role="tab" aria-selected="false" data-tab="media" onclick="switchTab('media')">Media</button>
+    <button role="tab" aria-selected="false" data-tab="podcast" onclick="switchTab('podcast')">Podcast</button>
+    <button role="tab" aria-selected="false" data-tab="general" onclick="switchTab('general')">General</button>
   </div>
-</div>
 
-<!-- INQUIRY CARDS -->
-<div class="cards-section">
-  <div class="inner">
-    <div class="cards-grid">
+  <div class="form-panels">
+    <!-- Speaking -->
+    <div class="form-panel active" id="panel-speaking" role="tabpanel">
+      <h2>Speaking</h2>
+      <p class="panel-desc">Keynotes, conferences, and corporate events.</p>
+      <div id="form-speaking"></div>
+    </div>
 
-      <!-- Card 1: Speaking Inquiries -->
-      <div class="card">
-        <span class="card-label">Speaking</span>
-        <h2>Speaking Inquiries</h2>
-        <p class="card-desc">Keynotes, conferences, and corporate events.</p>
-        <div class="card-form-area">
-          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-          <script>hbspt.forms.create({region:"na1",portalId:"39943621",formId:"0ee36f15-3350-4fc5-9948-963dd4d38930",css:"fieldset.form-columns-0 .hs-richtext img{display:none!important}fieldset.form-columns-0{margin-bottom:0!important;padding:0!important;border:0!important}.hs-form-field label{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:#111!important;font-weight:600!important}.hs-form-field label .hs-form-required{color:#DC9B3C!important}.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important;border:1px solid #d0c9bc!important;border-radius:0!important;padding:10px 12px!important;background:#FAF8F3!important;color:#111!important}.hs-input:focus{border-color:#111!important;outline:none!important;box-shadow:none!important}select.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important}textarea.hs-input{min-height:100px!important}.hs-button{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.12em!important;background:#111!important;color:#FAF8F3!important;border:none!important;border-radius:0!important;padding:13px 30px!important;cursor:pointer!important;font-weight:600!important}.hs-richtext{font-family:Sura,Georgia,serif!important;font-size:13px!important;color:#666!important;line-height:1.6!important}.hs-error-msgs label{font-size:11px!important;color:#dc2127!important;text-transform:none!important;letter-spacing:normal!important;font-weight:400!important}.hs-form-field{margin-bottom:18px!important}fieldset.form-columns-2 .hs-form-field{padding:0 8px!important}.legal-consent-container{font-family:Sura,Georgia,serif!important;font-size:12px!important}"});</script>
-        </div>
-      </div>
+    <!-- Media -->
+    <div class="form-panel" id="panel-media" role="tabpanel">
+      <h2>Media</h2>
+      <p class="panel-desc">Interviews, podcasts as a guest, and press.</p>
+      <div id="form-media"></div>
+    </div>
 
-      <!-- Card 2: Media & Press -->
-      <div class="card">
-        <span class="card-label">Media</span>
-        <h2>Media &amp; Press</h2>
-        <p class="card-desc">Interviews, podcasts as a guest, and press.</p>
-        <p class="card-note">Press and podcast requests: use the Media form. Bios and photos:</p>
-        <div class="card-form-area">
-          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-          <script>hbspt.forms.create({region:"na1",portalId:"39943621",formId:"e6fb8e70-b20d-432e-b264-3f16f0a38aec",css:"fieldset.form-columns-0 .hs-richtext img{display:none!important}fieldset.form-columns-0{margin-bottom:0!important;padding:0!important;border:0!important}.hs-form-field label{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:#111!important;font-weight:600!important}.hs-form-field label .hs-form-required{color:#DC9B3C!important}.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important;border:1px solid #d0c9bc!important;border-radius:0!important;padding:10px 12px!important;background:#FAF8F3!important;color:#111!important}.hs-input:focus{border-color:#111!important;outline:none!important;box-shadow:none!important}select.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important}textarea.hs-input{min-height:100px!important}.hs-button{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.12em!important;background:#111!important;color:#FAF8F3!important;border:none!important;border-radius:0!important;padding:13px 30px!important;cursor:pointer!important;font-weight:600!important}.hs-richtext{font-family:Sura,Georgia,serif!important;font-size:13px!important;color:#666!important;line-height:1.6!important}.hs-error-msgs label{font-size:11px!important;color:#dc2127!important;text-transform:none!important;letter-spacing:normal!important;font-weight:400!important}.hs-form-field{margin-bottom:18px!important}fieldset.form-columns-2 .hs-form-field{padding:0 8px!important}.legal-consent-container{font-family:Sura,Georgia,serif!important;font-size:12px!important}"});</script>
-        </div>
-      </div>
+    <!-- Podcast -->
+    <div class="form-panel" id="panel-podcast" role="tabpanel">
+      <h2>Podcast</h2>
+      <p class="panel-desc">Booking Luke for your show.</p>
+      <div id="form-podcast"></div>
+    </div>
 
-      <!-- Card 3: Podcast Bookings -->
-      <div class="card">
-        <span class="card-label">Podcast</span>
-        <h2>Podcast Bookings</h2>
-        <p class="card-desc">Booking Luke for your show.</p>
-        <div class="card-form-area">
-          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-          <script>hbspt.forms.create({region:"na1",portalId:"39943621",formId:"b80576d7-52ee-4f51-9ba4-4c6a5ece59ab",css:"fieldset.form-columns-0 .hs-richtext img{display:none!important}fieldset.form-columns-0{margin-bottom:0!important;padding:0!important;border:0!important}.hs-form-field label{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:#111!important;font-weight:600!important}.hs-form-field label .hs-form-required{color:#DC9B3C!important}.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important;border:1px solid #d0c9bc!important;border-radius:0!important;padding:10px 12px!important;background:#FAF8F3!important;color:#111!important}.hs-input:focus{border-color:#111!important;outline:none!important;box-shadow:none!important}select.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important}textarea.hs-input{min-height:100px!important}.hs-button{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.12em!important;background:#111!important;color:#FAF8F3!important;border:none!important;border-radius:0!important;padding:13px 30px!important;cursor:pointer!important;font-weight:600!important}.hs-richtext{font-family:Sura,Georgia,serif!important;font-size:13px!important;color:#666!important;line-height:1.6!important}.hs-error-msgs label{font-size:11px!important;color:#dc2127!important;text-transform:none!important;letter-spacing:normal!important;font-weight:400!important}.hs-form-field{margin-bottom:18px!important}fieldset.form-columns-2 .hs-form-field{padding:0 8px!important}.legal-consent-container{font-family:Sura,Georgia,serif!important;font-size:12px!important}"});</script>
-        </div>
-      </div>
-
-      <!-- Card 4: Everything Else -->
-      <div class="card">
-        <span class="card-label">General</span>
-        <h2>Everything Else</h2>
-        <p class="card-desc">We read everything and cannot reply to everything.</p>
-        <div class="card-form-area">
-          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-          <script>hbspt.forms.create({region:"na1",portalId:"39943621",formId:"9112cd5f-3b50-4ae7-a423-c8633f6545db",css:"fieldset.form-columns-0 .hs-richtext img{display:none!important}fieldset.form-columns-0{margin-bottom:0!important;padding:0!important;border:0!important}.hs-form-field label{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:#111!important;font-weight:600!important}.hs-form-field label .hs-form-required{color:#DC9B3C!important}.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important;border:1px solid #d0c9bc!important;border-radius:0!important;padding:10px 12px!important;background:#FAF8F3!important;color:#111!important}.hs-input:focus{border-color:#111!important;outline:none!important;box-shadow:none!important}select.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important}textarea.hs-input{min-height:100px!important}.hs-button{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.12em!important;background:#111!important;color:#FAF8F3!important;border:none!important;border-radius:0!important;padding:13px 30px!important;cursor:pointer!important;font-weight:600!important}.hs-richtext{font-family:Sura,Georgia,serif!important;font-size:13px!important;color:#666!important;line-height:1.6!important}.hs-error-msgs label{font-size:11px!important;color:#dc2127!important;text-transform:none!important;letter-spacing:normal!important;font-weight:400!important}.hs-form-field{margin-bottom:18px!important}fieldset.form-columns-2 .hs-form-field{padding:0 8px!important}.legal-consent-container{font-family:Sura,Georgia,serif!important;font-size:12px!important}"});</script>
-        </div>
-      </div>
-
+    <!-- General -->
+    <div class="form-panel" id="panel-general" role="tabpanel">
+      <h2>General</h2>
+      <p class="panel-desc">Everything else.</p>
+      <p class="panel-note">We read everything and cannot reply to everything.</p>
+      <div id="form-general"></div>
     </div>
   </div>
-</div>
+</main>
 
-<!-- NEWSLETTER SUBSCRIBE -->
-<div class="nl-section">
-  <div class="inner">
-    <span style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#666;display:block;margin-bottom:14px">Newsletter</span>
-    <h2>Stay in the loop.</h2>
-    <p>37,000+ readers. Ideas on desire, identity, culture, and work — delivered when they're ready, not on a schedule.</p>
-    <div>
-      <a href="https://read.lukeburgis.com" target="_blank" rel="noopener" style="display:inline-block;font-family:Montserrat,sans-serif;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;background:#DC9B3C;color:#111;padding:14px 32px;text-decoration:none;transition:background .2s">Subscribe at read.lukeburgis.com →</a>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
+<!-- Footer -->
 <footer>
   <div>
-    <div style="font-family:Georgia,serif;font-size:18px;color:#FAF8F3;margin-bottom:14px;letter-spacing:-.01em">Luke Burgis</div>
-    <p style="color:#555;font-size:11px;margin-top:4px">Author · Professor · Founder<br>© 2026 Luke Burgis</p>
+    <div style="font-family:Georgia,serif;font-size:18px;color:#fff;margin-bottom:14px;letter-spacing:-.01em">Luke Burgis</div>
+    <p style="color:#888;font-size:11px;margin-top:4px">Author · Professor · Founder<br>lukeburgis.com</p>
   </div>
   <div>
     <h4>Work</h4>
@@ -225,13 +182,11 @@ footer a:hover{color:#FAF8F3}
       <li><a href="writing/">Writing</a></li>
       <li><a href="speaking.html">Speaking</a></li>
       <li><a href="programs.html">Programs</a></li>
-      <li><a href="about.html">About</a></li>
     </ul>
   </div>
   <div>
     <h4>Connect</h4>
     <ul>
-      <li></li>
       <li><a href="https://x.com/lukeburgis" target="_blank" rel="noopener">X</a></li>
       <li><a href="https://www.linkedin.com/in/lukeburgis/" target="_blank" rel="noopener">LinkedIn</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -239,11 +194,73 @@ footer a:hover{color:#FAF8F3}
   </div>
   <div>
     <h4>Cluny Institute</h4>
-    <ul><li><a href="https://cluny.org" target="_blank" rel="noopener">cluny.org</a></li></ul>
-    <p style="font-size:10px;color:#555;margin-top:24px"><a href="privacy.html" style="color:#555;text-decoration:none">Privacy Policy</a></p>
+    <ul><li><a href="https://cluny.org">cluny.org</a></li></ul>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Luke Burgis. All rights reserved.</span>
+    <a href="privacy.html">Privacy Policy</a>
   </div>
 </footer>
 
+<!-- HubSpot -->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+var FORM_CSS = ".hs-form-field label{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:#111!important;font-weight:600!important}.hs-form-field label .hs-form-required{color:#DC9B3C!important}.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important;border:1px solid #d0c9bc!important;border-radius:0!important;padding:10px 12px!important;background:#FAF8F3!important;color:#111!important}.hs-input:focus{border-color:#111!important;outline:none!important;box-shadow:none!important}select.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important}textarea.hs-input{min-height:100px!important}.hs-button{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.12em!important;background:#111!important;color:#FAF8F3!important;border:none!important;border-radius:0!important;padding:13px 30px!important;cursor:pointer!important;font-weight:600!important}.hs-richtext{font-family:Sura,Georgia,serif!important;font-size:13px!important;color:#666!important;line-height:1.6!important}.hs-error-msgs label{font-size:11px!important;color:#dc2127!important;text-transform:none!important;letter-spacing:normal!important;font-weight:400!important}.hs-form-field{margin-bottom:18px!important}fieldset.form-columns-2 .hs-form-field{padding:0 8px!important}.legal-consent-container{font-family:Sura,Georgia,serif!important;font-size:12px!important}";
 
+var FORMS = {
+  speaking: "0ee36f15-3350-4fc5-9948-963dd4d38930",
+  media:    "e6fb8e70-b20d-432e-b264-3f16f0a38aec",
+  podcast:  "b80576d7-52ee-4f51-9ba4-4c6a5ece59ab",
+  general:  "9112cd5f-3b50-4ae7-a423-c8633f6545db"
+};
+
+var loaded = {};
+
+function loadForm(type) {
+  if (loaded[type]) return;
+  loaded[type] = true;
+  hbspt.forms.create({
+    region: "na1",
+    portalId: "39943621",
+    formId: FORMS[type],
+    css: FORM_CSS,
+    target: "#form-" + type
+  });
+}
+
+function switchTab(type) {
+  // Update buttons
+  document.querySelectorAll('.segments button').forEach(function(btn) {
+    var isActive = btn.getAttribute('data-tab') === type;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+  });
+  // Update panels
+  document.querySelectorAll('.form-panel').forEach(function(panel) {
+    panel.classList.remove('active');
+  });
+  var panel = document.getElementById('panel-' + type);
+  if (panel) {
+    panel.classList.add('active');
+    loadForm(type);
+  }
+  // Update URL without reload
+  if (history.replaceState) {
+    history.replaceState(null, '', 'contact.html?type=' + type + '#' + type);
+  }
+}
+
+// Deep-linking: read ?type= or #hash on load
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var type = params.get('type');
+  if (!type) {
+    var hash = window.location.hash.replace('#', '');
+    if (hash && FORMS[hash]) type = hash;
+  }
+  if (!type || !FORMS[type]) type = 'speaking';
+  switchTab(type);
+})();
+</script>
 </body>
 </html>

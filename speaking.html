@@ -55,12 +55,6 @@ nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:18px 4
 .logo-row-item{font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:#111;opacity:.4;white-space:nowrap;line-height:1}
 
 /* OFFERINGS */
-.offerings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:32px}
-.offering-card{border-top:2px solid var(--color-gold);padding-top:24px}
-.offering-tier{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#888;margin-bottom:10px}
-.offering-title{font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.25;margin-bottom:14px;color:#111}
-.offering-body{font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0}
-
 /* PROOF */
 .proof-stat{font-family:var(--font-body);font-size:18px;line-height:1.65;color:#FAF8F3;max-width:720px;margin:0 auto 12px}
 .proof-stat-source{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);margin-top:8px}
@@ -90,7 +84,6 @@ footer a:hover{color:#FAF8F3}
   .hamburger{display:flex}
   .inner{padding:0 20px}
   nav{padding:14px 20px}
-  .offerings-grid{grid-template-columns:1fr}
   .clips-grid{grid-template-columns:1fr}
   footer{grid-template-columns:1fr 1fr;gap:28px;padding:40px 20px}
   .logo-row{gap:20px 32px}
@@ -185,37 +178,51 @@ footer a:hover{color:#FAF8F3}
 <!-- ============================================================
      3. OFFERINGS — three tiers, no prices
      ============================================================ -->
-<section id="formats" style="padding:72px 0;border-bottom:1px solid #e8e2d6">
+<section id="talks" style="padding:72px 0;border-bottom:1px solid #e8e2d6">
   <div class="inner">
-    <span class="label">Talks</span>
-    <h2 style="font-family:var(--font-heading);font-size:clamp(24px,3vw,36px);font-weight:400;margin-bottom:40px">Five talks Luke gives</h2>
-    <ol style="list-style:none;padding:0;max-width:680px;counter-reset:talk">
-      <li style="counter-increment:talk;margin-bottom:32px;padding-left:48px;position:relative">
-        <span style="position:absolute;left:0;top:2px;font-family:var(--font-label);font-size:13px;font-weight:600;color:#DC9B3C">01</span>
-        <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;line-height:1.3;margin-bottom:6px">The Secret Economy of Desire</h3>
-        <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0">In your organization, in the market, and in your life.</p>
+    <span style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#999;display:block;margin-bottom:32px">Talks</span>
+
+    <ol style="list-style:none;padding:0;margin:0;max-width:680px;counter-reset:talk">
+      <li style="counter-increment:talk;padding:24px 0;border-top:1px solid #e8e2d6;display:flex;gap:20px;align-items:baseline">
+        <span style="font-family:var(--font-heading);font-size:28px;color:#d0c9bc;font-weight:400">1</span>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;line-height:1.3;margin-bottom:6px;color:#111">The Secret Economy of Desire</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0">In your organization, in the market, and in your life.</p>
+        </div>
       </li>
-      <li style="counter-increment:talk;margin-bottom:32px;padding-left:48px;position:relative">
-        <span style="position:absolute;left:0;top:2px;font-family:var(--font-label);font-size:13px;font-weight:600;color:#DC9B3C">02</span>
-        <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;line-height:1.3;margin-bottom:6px">Differentiation Within Teams</h3>
-        <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0">Building systems that maximize generative creativity.</p>
+      <li style="counter-increment:talk;padding:24px 0;border-top:1px solid #e8e2d6;display:flex;gap:20px;align-items:baseline">
+        <span style="font-family:var(--font-heading);font-size:28px;color:#d0c9bc;font-weight:400">2</span>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;line-height:1.3;margin-bottom:6px;color:#111">Differentiation Within Teams</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0">Building systems that maximize generative creativity.</p>
+        </div>
       </li>
-      <li style="counter-increment:talk;margin-bottom:32px;padding-left:48px;position:relative">
-        <span style="position:absolute;left:0;top:2px;font-family:var(--font-label);font-size:13px;font-weight:600;color:#DC9B3C">03</span>
-        <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;line-height:1.3;margin-bottom:6px">The Foundations of Agency</h3>
-        <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0">How everyone can be a more agentic leader, take charge, and make the impossible happen.</p>
+      <li style="counter-increment:talk;padding:24px 0;border-top:1px solid #e8e2d6;display:flex;gap:20px;align-items:baseline">
+        <span style="font-family:var(--font-heading);font-size:28px;color:#d0c9bc;font-weight:400">3</span>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;line-height:1.3;margin-bottom:6px;color:#111">The Foundations of Agency</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0">How everyone can be a more agentic leader, take charge, and make the impossible happen.</p>
+        </div>
       </li>
-      <li style="counter-increment:talk;margin-bottom:32px;padding-left:48px;position:relative">
-        <span style="position:absolute;left:0;top:2px;font-family:var(--font-label);font-size:13px;font-weight:600;color:#DC9B3C">04</span>
-        <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;line-height:1.3;margin-bottom:6px">The Three City Problem</h3>
-        <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0">How rationality (Athens), religious thinking (Jerusalem and Rome), and technology and capital (Silicon Valley) interact in surprising ways.</p>
+      <li style="counter-increment:talk;padding:24px 0;border-top:1px solid #e8e2d6;display:flex;gap:20px;align-items:baseline">
+        <span style="font-family:var(--font-heading);font-size:28px;color:#d0c9bc;font-weight:400">4</span>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;line-height:1.3;margin-bottom:6px;color:#111">The Three City Problem</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0">How rationality (Athens), religious thinking (Jerusalem and Rome), and technology and capital (Silicon Valley) interact in surprising ways.</p>
+        </div>
       </li>
-      <li style="counter-increment:talk;margin-bottom:32px;padding-left:48px;position:relative">
-        <span style="position:absolute;left:0;top:2px;font-family:var(--font-label);font-size:13px;font-weight:600;color:#DC9B3C">05</span>
-        <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;line-height:1.3;margin-bottom:6px">Thick and Thin Desires</h3>
-        <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0">Shedding the superficial and unessential to pursue what truly matters, for individuals and teams.</p>
+      <li style="counter-increment:talk;padding:24px 0;border-top:1px solid #e8e2d6;border-bottom:1px solid #e8e2d6;display:flex;gap:20px;align-items:baseline">
+        <span style="font-family:var(--font-heading);font-size:28px;color:#d0c9bc;font-weight:400">5</span>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;line-height:1.3;margin-bottom:6px;color:#111">Thick and Thin Desires</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:#555;margin:0">Shedding the superficial and unessential to pursue what truly matters, for individuals and teams.</p>
+        </div>
       </li>
     </ol>
+
+    <div style="margin-top:36px">
+      <a href="#speaking-inquiry" style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:13px 30px;text-decoration:none;display:inline-block">Inquire about availability &rarr;</a>
+    </div>
   </div>
 </section>
 

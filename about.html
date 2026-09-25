@@ -4,39 +4,47 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Luke Burgis</title>
+<meta name="description" content="Luke Burgis is the author of Wanting and The One and the Ninety-Nine, a professor at The Catholic University of America, and the founder of the Cluny Institute.">
+<meta property="og:title" content="About — Luke Burgis">
+<meta property="og:description" content="Author of Wanting and The One and the Ninety-Nine. Professor at CUA. Founder of the Cluny Institute.">
+<meta property="og:image" content="https://rookmercer.github.io/probe-lukeburgis/assets/images/luke-hero-bw.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/svg/LB-monogram-black.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-<title>About — Luke Burgis</title>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --font-heading:'Eczar',Georgia,serif;
-  --font-body:'Sura',Georgia,serif;
-  --font-label:'Montserrat',sans-serif;
-  --color-parchment:#E2D9C4;
-  --color-gold:#DC9B3C;
-  --color-ink:#111111;
-  --color-paper:#FAF8F3;
-}
+:root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--color-parchment:#E2D9C4;--color-gold:#DC9B3C;--color-ink:#111;--color-paper:#FAF8F3}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
 body{font-family:var(--font-body);background:var(--color-paper);color:var(--color-ink);font-size:16px;line-height:1.6}
 a{color:inherit;text-decoration:none}
 h1,h2{font-family:var(--font-heading);font-weight:600}
 h3,h4,h5,h6{font-family:var(--font-heading);font-weight:400}
 
-/* ── NAV (exact copy from index.html) ── */
-nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.nav-logo{display:flex;align-items:center;gap:0}
-.nav-logo svg{width:48px;height:auto;display:block}
-.nav-links{list-style:none;display:flex;gap:32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+/* NAV */
+nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center}
+.nav-logo svg{width:44px;height:auto;display:block}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
 .nav-links a{color:#111;text-decoration:none}
 .nav-links a:hover{color:var(--color-gold)}
-.nav-links .active{color:var(--color-gold)}
-.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none;border:none}
+.nav-links .active{color:var(--color-gold);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-newsletter{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#555}
+.nav-newsletter:hover{color:var(--color-gold)}
+.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:#111;color:#FAF8F3;padding:10px 20px;white-space:nowrap}
 .nav-cta:hover{background:var(--color-gold);color:#111}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:#111}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-paper);z-index:200;padding:80px 48px 48px;flex-direction:column;gap:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-label);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block}
+.mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
 
-/* ── Shared utilities ── */
+/* SHARED */
 .inner{max-width:1120px;margin:0 auto;padding:0 56px}
 .label{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#666;margin-bottom:14px;display:block;border-left:3px solid var(--color-gold);padding-left:10px}
 .gold-rule{width:40px;height:2px;background:var(--color-gold);margin-bottom:24px}
@@ -45,37 +53,29 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 .btn-light{display:inline-block;background:transparent;color:#111;border:2px solid #111;padding:12px 30px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin:6px 0;text-decoration:none;transition:border-color .18s,color .18s}
 .btn-light:hover{border-color:var(--color-gold);color:var(--color-gold)}
 
-/* ── NEEDS LUKE placeholder ── */
-.needs-luke{display:inline-block;background:#FEF3C7;border:1px solid #F59E0B;color:#92400E;font-family:var(--font-label);font-size:11px;letter-spacing:.04em;padding:4px 10px;border-radius:2px;vertical-align:middle;white-space:normal;line-height:1.5}
-
-/* ── HERO ── */
+/* HERO */
 .hero-about{padding:80px 0 72px;background:var(--color-paper);border-bottom:1px solid #e8e2d6}
 .hero-about .inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.hero-text{order:1}
-.hero-portrait{order:2}
-.portrait-placeholder{background:#D6CFBF;border:1px solid #C4BBA6;height:480px;display:flex;align-items:center;justify-content:center;font-family:var(--font-label);font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.08em;flex-direction:column;gap:10px}
-.portrait-placeholder::after{content:'Portrait placeholder';display:block;font-size:11px;color:#aaa;font-family:var(--font-label);text-transform:uppercase;letter-spacing:.06em}
 .hero-eyebrow{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:#888;margin-bottom:20px;display:block;padding-left:14px;border-left:3px solid var(--color-gold)}
 .hero-about h1{font-family:var(--font-heading);font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.1;letter-spacing:-.02em;margin-bottom:24px;color:#111}
 .hero-subhead{font-family:var(--font-body);font-size:18px;line-height:1.75;color:#333;max-width:580px}
 .hero-subhead em{font-style:italic}
 
-/* ── JOURNEY BAND ── */
+/* JOURNEY */
 .journey-band{padding:88px 0;background:var(--color-paper);border-bottom:1px solid #e8e2d6}
 .journey-band h2{font-family:var(--font-heading);font-size:clamp(26px,3vw,36px);font-weight:600;line-height:1.2;margin-bottom:32px;color:#111}
 .journey-prose{font-family:var(--font-body);font-size:17px;line-height:1.78;color:#222;max-width:680px}
 .journey-prose p{margin-bottom:18px}
-.journey-prose p:last-child{margin-bottom:0}
-.journey-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border:1px solid #E2D9C4}
-.stop{padding:28px 24px;border-right:1px solid #E2D9C4;position:relative}
+.journey-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border:1px solid var(--color-parchment)}
+.stop{padding:28px 24px;border-right:1px solid var(--color-parchment);position:relative}
 .stop:last-child{border-right:none}
 .stop-number{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#aaa;margin-bottom:10px;display:block}
 .stop-title{font-family:var(--font-heading);font-size:18px;font-weight:600;color:#111;margin-bottom:8px;line-height:1.2}
 .stop-desc{font-family:var(--font-body);font-size:14px;line-height:1.65;color:#555}
-.stop-arrow{position:absolute;top:50%;right:-13px;transform:translateY(-50%);width:24px;height:24px;background:var(--color-paper);border:1px solid #E2D9C4;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-label);font-size:10px;color:var(--color-gold);z-index:2}
+.stop-arrow{position:absolute;top:50%;right:-13px;transform:translateY(-50%);width:24px;height:24px;background:var(--color-paper);border:1px solid var(--color-parchment);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-label);font-size:10px;color:var(--color-gold);z-index:2}
 .stop:last-child .stop-arrow{display:none}
 
-/* ── WORK BAND ── */
+/* WORK */
 .work-band{padding:88px 0;background:#FAFAF7;border-bottom:1px solid #e8e2d6}
 .work-band h2{font-family:var(--font-heading);font-size:clamp(26px,3vw,36px);font-weight:600;line-height:1.2;margin-bottom:40px;color:#111}
 .book-row{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start;padding:36px 0;border-top:1px solid #e8e2d6}
@@ -85,13 +85,8 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 .book-info h3{font-family:var(--font-heading);font-size:22px;font-weight:400;font-style:italic;margin-bottom:6px;line-height:1.2;color:#111}
 .book-pub{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:10px;display:block}
 .book-info p{font-family:var(--font-body);font-size:16px;line-height:1.72;color:#333;max-width:600px}
-.also-line{font-family:var(--font-body);font-size:16px;line-height:1.72;color:#333;padding:28px 0 0;border-top:1px solid #e8e2d6;max-width:660px}
-.also-line em{font-style:italic}
-.nl-stat{margin-top:28px;padding:24px 0 0;border-top:1px solid #e8e2d6;max-width:660px}
-.nl-stat p{font-family:var(--font-body);font-size:16px;line-height:1.72;color:#333}
-.nl-stat em{font-style:italic}
 
-/* ── WHERE HE WORKS ── */
+/* WHERE HE WORKS */
 .work-places-band{padding:88px 0;background:var(--color-parchment);border-bottom:1px solid #c8bfab}
 .work-places-band h2{font-family:var(--font-heading);font-size:clamp(26px,3vw,36px);font-weight:600;line-height:1.2;margin-bottom:40px;color:#111}
 .place-list{list-style:none;padding:0;margin:0;max-width:740px}
@@ -102,7 +97,7 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 .place-desc{font-family:var(--font-body);font-size:15px;line-height:1.7;color:#444}
 .place-award{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#7B6B4E;margin-top:6px}
 
-/* ── PROOF BAND ── */
+/* PROOF */
 .proof-band{padding:88px 0;background:#111;border-bottom:2px solid #000}
 .proof-band h2{font-family:var(--font-heading);font-size:clamp(22px,2.4vw,30px);font-weight:400;color:#FAF8F3;margin-bottom:40px}
 .quotes-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:900px}
@@ -110,29 +105,33 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 .proof-quote blockquote{font-family:var(--font-body);font-size:20px;line-height:1.6;font-style:italic;color:#FAF8F3;margin-bottom:14px}
 .proof-quote cite{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;font-style:normal}
 
-/* ── CLOSE BAND ── */
+/* CLOSE */
 .close-band{padding:88px 0;background:var(--color-paper);border-bottom:1px solid #e8e2d6}
 .close-band .inner{max-width:700px}
 .close-personal{font-family:var(--font-body);font-size:19px;line-height:1.8;color:#222;margin-bottom:40px}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.planner-line{font-family:var(--font-label);font-size:12px;color:#888;margin-top:20px;letter-spacing:.04em}
+.planner-line a{color:var(--color-gold);text-decoration:underline}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
 footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
 footer ul{list-style:none}
 footer li{margin-bottom:8px}
 footer a{color:#777;text-decoration:none}
 footer a:hover{color:#FAF8F3}
+.footer-bottom{grid-column:1/-1;border-top:1px solid #333;padding-top:16px;text-align:center}
+.footer-bottom a{color:#555;font-size:11px}
 
-/* ── Responsive ── */
+/* RESPONSIVE */
 @media(max-width:860px){
   nav{padding:16px 24px}
+  nav .nav-links,nav .nav-right{display:none}
+  .hamburger{display:flex}
   .inner{padding:0 24px}
   .hero-about .inner{grid-template-columns:1fr;gap:40px}
-  .hero-portrait{order:0}
-  .portrait-placeholder{height:320px}
-  .journey-strip{grid-template-columns:1fr 1fr;border:1px solid #E2D9C4}
-  .stop{border-right:none;border-bottom:1px solid #E2D9C4}
+  .journey-strip{grid-template-columns:1fr 1fr;border:1px solid var(--color-parchment)}
+  .stop{border-right:none;border-bottom:1px solid var(--color-parchment)}
   .stop:last-child{border-bottom:none}
   .stop-arrow{display:none}
   .quotes-grid{grid-template-columns:1fr;gap:28px}
@@ -142,13 +141,12 @@ footer a:hover{color:#FAF8F3}
   .journey-strip{grid-template-columns:1fr}
   .book-row{grid-template-columns:1fr;gap:20px}
   .book-cover-slot{width:72px}
-  nav .nav-links{gap:16px;font-size:11px}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV (exact from index.html — "About" active) -->
+<!-- NAV -->
 <nav>
   <div class="nav-logo">
     <a href="index.html">
@@ -160,6 +158,9 @@ footer a:hover{color:#FAF8F3}
       </svg>
     </a>
   </div>
+  <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
   <ul class="nav-links">
     <li><a href="books.html">Books</a></li>
     <li><a href="writing/">Writing</a></li>
@@ -167,199 +168,185 @@ footer a:hover{color:#FAF8F3}
     <li><a href="programs.html">Programs</a></li>
     <li><span class="active">About</span></li>
   </ul>
-  <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
+  <div class="nav-right">
+    <a class="nav-newsletter" href="https://read.lukeburgis.com">Newsletter &rarr;</a>
+    <a class="nav-cta" href="speaking.html#speaking-inquiry">Speaking Inquiries &rarr;</a>
+  </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" aria-label="Close menu" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <a href="books.html">Books</a>
+  <a href="writing/">Writing</a>
+  <a href="speaking.html">Speaking</a>
+  <a href="programs.html">Programs</a>
+  <a href="about.html">About</a>
+  <a href="https://read.lukeburgis.com">Newsletter</a>
+  <a href="speaking.html#speaking-inquiry">Speaking Inquiries &rarr;</a>
+</div>
 
-<!-- §1 HERO -->
+<!-- HERO -->
 <section class="hero-about">
   <div class="inner">
-
-    <!-- Portrait -->
     <div>
-      <div class="portrait-placeholder" aria-label="Portrait placeholder — NEEDS LUKE">
-        <span class="needs-luke">NEEDS LUKE ▸ Supply portrait photo (replace this div with &lt;img&gt;)</span>
-      </div>
+      <img src="assets/images/luke-hero-bw.jpg" alt="Luke Burgis" width="1024" height="1280" style="width:100%;max-width:480px;height:auto;display:block;border:1px solid #e0dbd4">
     </div>
-
-    <!-- Text -->
     <div>
       <span class="hero-eyebrow">About</span>
       <h1>He has lived the question his work tries to answer.</h1>
       <p class="hero-subhead">Luke Burgis is the author of <em>Wanting</em>, a professor at The Catholic University of America, and the founder of the Cluny Institute. He studies the hidden forces that shape human desire&thinsp;&mdash;&thinsp;imitation, rivalry, contagion&thinsp;&mdash;&thinsp;and what they do to individuals, institutions, and cultures.</p>
     </div>
-
   </div>
 </section>
 
-<!-- §2 FOUR LIVES, ONE QUESTION -->
+<!-- FOUR LIVES, ONE QUESTION -->
 <section class="journey-band">
   <div class="inner">
     <div class="gold-rule"></div>
     <h2>Four lives, one question.</h2>
-
     <div class="journey-prose">
-      <p>Luke Burgis graduated from NYU's Stern School of Business and spent two years on Wall Street. He left.</p>
-      <p>He founded four startups&thinsp;<span class="needs-luke">NEEDS LUKE ▸ name them, or keep it at "four startups"?</span>&thinsp;and walked away from those, too.</p>
-      <p>He spent three years in a Roman seminary, studying theology at a pontifical university on the path to the priesthood&thinsp;<span class="needs-luke">NEEDS LUKE ▸ name the seminary / order?</span>. He discerned out.</p>
-      <p><span class="needs-luke" style="background:#fff3cd;color:#7a5c00;display:inline">NEEDS LUKE ▸ Closing sentence of the Four Lives narrative (interpretive bridging copy — confirm or replace with own words)</span></p>
+      <p>Luke Burgis graduated from NYU&rsquo;s Stern School of Business and spent two years on Wall Street. He left.</p>
+      <p>He founded four companies, and walked away from those, too.</p>
+      <p>He spent three years in Rome studying theology at the Pontifical University of the Holy Cross, on the path to the priesthood. He discerned out.</p>
+      <p>None of them were failures. Each time he got what he wanted &mdash; and discovered that the wanting hadn&rsquo;t been entirely his own.</p>
     </div>
-
-    <!-- Journey strip — DATELESS -->
     <div class="journey-strip">
       <div class="stop">
         <span class="stop-number">I</span>
         <div class="stop-title">Wall Street</div>
-        <p class="stop-desc">NYU Stern → two years in finance. He left.</p>
-        <span class="stop-arrow">→</span>
+        <p class="stop-desc">NYU Stern, then two years in finance. He left.</p>
+        <span class="stop-arrow">&rarr;</span>
       </div>
       <div class="stop">
         <span class="stop-number">II</span>
         <div class="stop-title">Startups</div>
-        <p class="stop-desc">Four companies. Silicon Valley. He walked away from those, too.</p>
-        <span class="stop-arrow">→</span>
+        <p class="stop-desc">Four companies. He walked away from those, too.</p>
+        <span class="stop-arrow">&rarr;</span>
       </div>
       <div class="stop">
         <span class="stop-number">III</span>
         <div class="stop-title">Seminary</div>
         <p class="stop-desc">Three years in Rome, studying theology on the path to the priesthood. He discerned out.</p>
-        <span class="stop-arrow">→</span>
+        <span class="stop-arrow">&rarr;</span>
       </div>
       <div class="stop">
         <span class="stop-number">IV</span>
         <div class="stop-title">Professor &amp; Author</div>
-        <p class="stop-desc">The question each departure raised became his life's work: whose desires are we actually living?</p>
+        <p class="stop-desc">The question each departure raised became his life&rsquo;s work: whose desires are we actually living?</p>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- §3 THE WORK -->
+<!-- THE WORK -->
 <section class="work-band">
   <div class="inner">
     <div class="gold-rule"></div>
     <h2>The work.</h2>
-
     <div class="book-row">
       <div class="book-cover-slot">
         <img src="assets/images/wanting-bookshot-trimmed.png" alt="Wanting" style="width:88px;height:auto;object-fit:contain">
       </div>
       <div class="book-info">
         <h3>Wanting: The Power of Mimetic Desire in Everyday Life</h3>
-        <span class="book-pub">St.&thinsp;Martin's Press &middot; 2021</span>
-        <p><em>Wanting</em> made the ideas of the social theorist René Girard legible to a general audience. It has been translated into more than twenty languages. Tyler Cowen called it &ldquo;the go-to book&rdquo; on mimetic desire.</p>
+        <span class="book-pub">St.&thinsp;Martin&rsquo;s Press &middot; 2021</span>
+        <p><em>Wanting</em> made the ideas of the social theorist Ren&eacute; Girard legible to a general audience. It has been translated into more than twenty languages.</p>
       </div>
     </div>
-
     <div class="book-row">
       <div class="book-cover-slot">
         <img src="assets/images/one-and-99-trimmed.png" alt="The One and the Ninety-Nine" style="width:88px;height:auto;object-fit:contain">
       </div>
       <div class="book-info">
         <h3>The One and the Ninety-Nine</h3>
-        <span class="book-pub">St.&thinsp;Martin's Press &middot; 2026</span>
-        <p><span style="background:#fff3cd;color:#7a5c00;font-family:var(--font-label,Montserrat,sans-serif);font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:2px 6px;border:1px solid #e6c84a">[NEEDS LUKE: description for The One and the Ninety-Nine in your voice]</span></p>
+        <span class="book-pub">St.&thinsp;Martin&rsquo;s Press &middot; 2026</span>
+        <p><em>The One and the Ninety-Nine</em> is about the crisis underneath the others: it is easy to find a tribe and hard not to lose yourself inside one. The book argues that the real challenge of our time is formation &mdash; becoming a person solid enough to withstand the pressure of the crowd &mdash; and offers a map for recognizing counterfeit belonging, escaping coercive dynamics, and passing through the rites of passage that make real community possible.</p>
       </div>
     </div>
-
-    <p class="also-line">He is also the co-author, with Joshua Miller, of <em>Unrepeatable: Cultivating the Unique Calling of Every Person</em>, and the editor of <em>Be Not Conformed: René Girard at the Nexus of Athens, Jerusalem, and Silicon Valley</em>.</p>
-
-    <div class="nl-stat">
-      <p>More than 37,000 readers follow <em>The Luke Burgis Newsletter</em>&thinsp;&mdash;&thinsp;ideas on desire, identity, culture, and work, delivered when they're ready, not on a schedule.</p>
+    <p style="font-family:var(--font-body);font-size:16px;line-height:1.72;color:#333;padding:28px 0 0;border-top:1px solid #e8e2d6;max-width:660px">He is also the co-author, with Joshua Miller, of <em>Unrepeatable: Cultivating the Unique Calling of Every Person</em>, and the editor of <em>Be Not Conformed: Ren&eacute; Girard at the Nexus of Athens, Jerusalem, and Silicon Valley</em>.</p>
+    <div style="margin-top:28px;padding:24px 0 0;border-top:1px solid #e8e2d6;max-width:660px">
+      <p style="font-family:var(--font-body);font-size:16px;line-height:1.72;color:#333">More than 37,000 readers follow <em>The Luke Burgis Newsletter</em>&thinsp;&mdash;&thinsp;ideas on desire, identity, culture, and work.</p>
     </div>
-
   </div>
 </section>
 
-<!-- §4 WHERE HE WORKS -->
+<!-- WHERE HE WORKS -->
 <section class="work-places-band">
   <div class="inner">
     <div class="gold-rule"></div>
     <h2>Where he works.</h2>
-
     <ul class="place-list">
-
       <li class="place-item">
         <div class="place-accent"></div>
         <div>
-          <div class="place-title">Professor of Business, The Catholic University of America</div>
-          <p class="place-desc">Director of Programs at the Ciocca Center for Principled Entrepreneurship; creator of CEDE, now used in dozens of schools.</p>
-          <p class="place-award">Provost's Innovation and Advancement in Teaching Award, 2025</p>
+          <div class="place-title">Professor, Busch School of Business, The Catholic University of America</div>
+          <p class="place-award">Provost&rsquo;s Innovation and Advancement in Teaching Award, 2025</p>
         </div>
       </li>
-
       <li class="place-item">
         <div class="place-accent"></div>
         <div>
           <div class="place-title">Founder and Director, the Cluny Institute</div>
-          <p class="place-desc">Working at the intersection of Athens, Jerusalem, and Silicon Valley.</p>
+          <p class="place-desc">Working at the intersection of Athens, Jerusalem, and Silicon Valley &mdash; reason, faith, and technology.</p>
         </div>
       </li>
-
-      <li class="place-item">
-        <div class="place-accent"></div>
-        <div>
-          <div class="place-title">Founder, Fourth Wall Ventures</div>
-        </div>
-      </li>
-
     </ul>
   </div>
 </section>
 
-<!-- §5 PROOF BAND — Tyler Cowen quotes -->
+<!-- PROOF BAND -->
 <section class="proof-band">
   <div class="inner">
     <span class="label" style="color:#555;border-color:#444">What people say</span>
     <div class="quotes-grid">
-
       <div class="proof-quote">
         <blockquote>&ldquo;One of my favorite current thinkers.&rdquo;</blockquote>
         <cite>Tyler Cowen &mdash; <em>Conversations with Tyler</em>, April 2026</cite>
       </div>
-
       <div class="proof-quote">
-        <blockquote>&ldquo;Luke Burgis has produced the go-to book on this topic, and everyone with mimetic desire&thinsp;&mdash;&thinsp;in other words everyone&thinsp;&mdash;&thinsp;should want to read it.&rdquo;</blockquote>
-        <cite>Tyler Cowen &mdash; on <em>Wanting</em></cite>
+        <blockquote>&ldquo;Luke Burgis masterfully shows us how to understand and manage our desires, and thus achieve more meaning and purpose in our lives and work.&rdquo;</blockquote>
+        <cite>Arthur Brooks</cite>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- §6 PERSONAL CLOSE + CTAs -->
+<!-- CLOSE -->
 <section class="close-band">
   <div class="inner">
     <div class="gold-rule"></div>
     <p class="close-personal">He lives between Washington,&thinsp;D.C. and West Michigan with his wife, Claire, and their children.</p>
     <div class="cta-row">
-      <a class="btn-dark" href="speaking.html">Inquire About Speaking &rarr;</a>
+      <a class="btn-dark" href="speaking.html#speaking-inquiry">Inquire About Speaking &rarr;</a>
       <a class="btn-light" href="https://read.lukeburgis.com">Read the Newsletter &rarr;</a>
     </div>
+    <p class="planner-line">For event teams: bios and photos are in the <a href="speaking/kit/">speaker kit &rarr;</a></p>
   </div>
 </section>
 
-<!-- FOOTER (matches index.html) -->
+<!-- FOOTER -->
 <footer>
   <div>
-    <div style="font-family:Georgia,serif;font-size:18px;color:#FAF8F3;margin-bottom:14px;letter-spacing:-.01em">Luke Burgis</div>
-    <p style="color:#555;font-size:11px;margin-top:4px">Author · Professor · Founder<br>lukeburgis.com</p>
+    <div style="font-family:Georgia,serif;font-size:18px;color:#FAF8F3;margin-bottom:8px;letter-spacing:-.01em">Luke Burgis</div>
+    <p style="color:#555;font-size:11px;line-height:1.6">Author &middot; Professor &middot; Founder</p>
+    <p style="color:#555;font-size:11px;margin-top:12px">&copy; 2026 Luke Burgis</p>
   </div>
   <div>
     <h4>Work</h4>
     <ul>
       <li><a href="books.html">Books</a></li>
-    <li><a href="writing/">Writing</a></li>
+      <li><a href="writing/">Writing</a></li>
       <li><a href="speaking.html">Speaking</a></li>
+      <li><a href="speaking/kit/">Speaker Kit</a></li>
       <li><a href="programs.html">Programs</a></li>
+      <li><a href="about.html">About</a></li>
     </ul>
   </div>
   <div>
     <h4>Connect</h4>
     <ul>
       <li><a href="https://read.lukeburgis.com">Newsletter</a></li>
-      <li>Twitter / X</li>
-      <li>LinkedIn</li>
+      <li><a href="https://x.com/lukeburgis">X</a></li>
+      <li><a href="https://www.linkedin.com/in/lukeburgis/">LinkedIn</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
@@ -367,6 +354,7 @@ footer a:hover{color:#FAF8F3}
     <h4>Cluny Institute</h4>
     <ul><li><a href="https://cluny.org">cluny.org</a></li></ul>
   </div>
+  <div class="footer-bottom"><a href="privacy.html">Privacy Policy</a></div>
 </footer>
 
 </body>

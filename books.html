@@ -4,44 +4,57 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books — Luke Burgis</title>
+<meta name="description" content="Books by Luke Burgis: Wanting, The One and the Ninety-Nine, Be Not Conformed, and Unrepeatable.">
+<meta property="og:title" content="Books — Luke Burgis">
+<meta property="og:description" content="Books by Luke Burgis: Wanting, The One and the Ninety-Nine, and more.">
+<meta property="og:image" content="https://rookmercer.github.io/probe-lukeburgis/assets/images/wanting-bookshot-trimmed.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/svg/LB-monogram-black.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-<title>Books — lukeburgis.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --font-heading:'Eczar',Georgia,serif;
-  --font-body:'Sura',Georgia,serif;
-  --font-label:'Montserrat',sans-serif;
-  --color-parchment:#E2D9C4;
-  --color-gold:#DC9B3C;
-  --color-ink:#111111;
-  --color-paper:#FAF8F3;
-}
-body{font-family:var(--font-body)}
+:root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--color-parchment:#E2D9C4;--color-gold:#DC9B3C;--color-ink:#111;--color-paper:#FAF8F3}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:hidden}
+body{font-family:var(--font-body);background:var(--color-paper);color:#111;font-size:16px;line-height:1.6}
+a{color:inherit;text-decoration:none}
 h1,h2{font-family:var(--font-heading);font-weight:600}
 h3,h4,h5,h6{font-family:var(--font-heading);font-weight:400}
-nav,.nav-links,.nav-links a,.nav-cta,.label,.pub-line,.btn-dark,.btn-light,.also-by-heading{font-family:var(--font-label)}
+p{font-size:16px;line-height:1.7;color:#222;margin-bottom:12px}
 
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Georgia,serif;background:#FAF8F3;color:#111}
-nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+/* NAV */
+nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center}
 .nav-logo svg{width:44px;height:auto;display:block}
-.nav-links{list-style:none;display:flex;gap:32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
 .nav-links a{color:#111;text-decoration:none}
 .nav-links a:hover{color:var(--color-gold)}
-.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none}
+.nav-links .active{color:var(--color-gold);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-newsletter{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#555}
+.nav-newsletter:hover{color:var(--color-gold)}
+.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:#111;color:#FAF8F3;padding:10px 20px;white-space:nowrap}
+.nav-cta:hover{background:var(--color-gold);color:#111}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:#111}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-paper);z-index:200;padding:80px 48px 48px;flex-direction:column;gap:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-label);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block}
+.mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
+
 .inner{max-width:1120px;margin:0 auto;padding:0 40px}
-h1{font-size:42px;font-weight:normal;margin-bottom:6px}
-h2{font-size:24px;font-weight:normal;margin-bottom:16px}
-p{font-size:16px;line-height:1.7;color:#222;margin-bottom:12px}
-.btn-dark{display:inline-block;background:#111;color:#FAF8F3;padding:12px 28px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 8px 4px 0}
-.btn-light{display:inline-block;background:transparent;color:#111;border:2px solid #111;padding:10px 26px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 0}
-/* Featured book layout */
+.btn-dark{display:inline-block;background:#111;color:#FAF8F3;padding:12px 28px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 8px 4px 0;transition:background .18s}
+.btn-dark:hover{background:var(--color-gold);color:#111}
+.btn-light{display:inline-block;background:transparent;color:#111;border:2px solid #111;padding:10px 26px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 0;transition:border-color .18s,color .18s}
+.btn-light:hover{border-color:var(--color-gold);color:var(--color-gold)}
+
+/* Books */
 .book-featured{display:grid;grid-template-columns:220px 1fr;gap:56px;align-items:start;margin-bottom:64px}
 .book-featured:last-child{margin-bottom:0}
-.book-cover-wrap{width:220px;aspect-ratio:2/3;background:transparent;overflow:hidden;flex-shrink:0;box-shadow:0 8px 32px rgba(0,0,0,0.10)}
+.book-cover-wrap{width:220px;aspect-ratio:2/3;background:transparent;overflow:hidden;flex-shrink:0;box-shadow:0 8px 32px rgba(0,0,0,.10)}
 .book-cover-wrap img{width:100%;height:100%;object-fit:cover}
 .pub-line{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:10px}
 .book-title{font-size:30px;font-style:italic;font-weight:normal;margin-bottom:16px}
@@ -49,33 +62,41 @@ p{font-size:16px;line-height:1.7;color:#222;margin-bottom:12px}
 .endorsement{border-left:3px solid #111;padding:14px 20px;margin:20px 0;max-width:520px}
 .endorsement blockquote{font-size:16px;font-style:italic;line-height:1.6;margin-bottom:6px}
 .endorsement cite{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
-/* Compact book layout */
+.also-by-heading{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:28px;padding-top:48px;border-top:2px solid #e8e2d6}
 .book-compact{display:grid;gap:28px;align-items:start;padding:28px 0;border-top:1px solid #e8e2d6}
 .book-compact:first-child{border-top:none}
 .compact-title{font-size:18px;font-style:italic;font-weight:normal;margin-bottom:4px}
-/* Unrepeatable — smallest */
 .book-compact.sm{grid-template-columns:90px 1fr}
-.book-cover-xs{width:90px;aspect-ratio:2/3;background:transparent;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.08)}
+.book-cover-xs{width:90px;aspect-ratio:2/3;background:transparent;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08)}
 .book-cover-xs img{width:100%;height:100%;object-fit:cover}
-/* BNC — compact */
 .book-compact.md{grid-template-columns:120px 1fr}
-.book-cover-sm{width:120px;aspect-ratio:2/3;background:transparent;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.09)}
+.book-cover-sm{width:120px;aspect-ratio:2/3;background:transparent;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.09)}
 .book-cover-sm img{width:100%;height:100%;object-fit:cover}
-/* Section divider */
-.also-by-heading{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:28px;padding-top:48px;border-top:2px solid #e8e2d6}
-footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-top:80px}
+
+/* FOOTER */
+footer{background:#1a1a1a;color:#777;padding:48px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-top:80px}
 footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
 footer ul{list-style:none}
 footer li{margin-bottom:8px}
 footer a{color:#777;text-decoration:none}
-@media(max-width:700px){
+footer a:hover{color:#FAF8F3}
+.footer-bottom{grid-column:1/-1;border-top:1px solid #333;padding-top:16px;text-align:center}
+.footer-bottom a{color:#555;font-size:11px}
+
+@media(max-width:768px){
+  nav .nav-links,nav .nav-right{display:none}
+  .hamburger{display:flex}
+  .inner{padding:0 20px}
+  nav{padding:14px 20px}
   .book-featured{grid-template-columns:1fr;gap:28px}
   .book-cover-wrap{width:160px;margin:0 auto}
-  footer{grid-template-columns:1fr 1fr;gap:24px}
+  footer{grid-template-columns:1fr 1fr;gap:24px;padding:40px 20px}
 }
 </style>
 </head>
 <body>
+
+<!-- NAV -->
 <nav>
   <div class="nav-logo">
     <a href="index.html"><svg viewBox="0 0 82.39 81.96" width="44" height="44" role="img" aria-label="Luke Burgis">
@@ -85,21 +106,36 @@ footer a{color:#777;text-decoration:none}
       <path fill="#111" d="M55.86,73.12c-.07-.1-.15-.2-.23-.3-.56-.69-.93-1.49-1.45-2.2-.66-.9-1.46-1.8-1.92-2.83s-.86-2.05-1.31-3.07c-.75-1.69-1.66-3.31-2.6-4.91-.84-1.43-1.93-2.79-2.48-4.37-.31-.88-.7-1.58-1.14-2.4-.19-.35-.18-.56-.24-.93-.09-.53-.4-.89-.69-1.32-.44-.63-.83-1.53-1.12-2.25-.24-.62-.41-1.29-.7-1.88-.17-.35-.7-2.05-1.09-2.13-.36,1.13-.48,2.34-1.2,3.31-.78,1.07-.78,2.32-1.46,3.45-.86,1.43-1.29,3.03-2.2,4.43-.91,1.4-1.68,2.92-2.19,4.51-.21.65-.73,1.03-1.01,1.6-.25.52-.09,1.15-.36,1.66-.44.82-1.08,1.51-1.46,2.39-.57,1.32-.98,2.73-1.57,4.04-.44.97-1.02,1.83-1.41,2.84-.39,1.02-1.06,1.93-1.46,2.93-.1.25-.05.54-.13.78-.16.51-.51.96-.74,1.43,1.87.35,3.99.04,5.9.06,2.15.03,4.31.06,6.45-.21.72-.09,1.37.18,2.1.16.68-.02,1.36-.07,2.05-.12,1.03-.07,2.06,0,3.11-.02,2.14-.02,4.28-.04,6.42-.1,1.25-.03,2.49.06,3.73-.03.83-.06,1.66-.16,2.46-.22-.5-.39-.78-1.61-1-2.24-.27-.78-.59-1.44-1.07-2.09Z"/>
     </svg></a>
   </div>
+  <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="books.html"><strong>Books</strong></a></li>
+    <li><span class="active">Books</span></li>
     <li><a href="writing/">Writing</a></li>
     <li><a href="speaking.html">Speaking</a></li>
     <li><a href="programs.html">Programs</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
+  <div class="nav-right">
+    <a class="nav-newsletter" href="https://read.lukeburgis.com">Newsletter &rarr;</a>
+    <a class="nav-cta" href="speaking.html#speaking-inquiry">Speaking Inquiries &rarr;</a>
+  </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" aria-label="Close menu" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <a href="books.html">Books</a>
+  <a href="writing/">Writing</a>
+  <a href="speaking.html">Speaking</a>
+  <a href="programs.html">Programs</a>
+  <a href="about.html">About</a>
+  <a href="https://read.lukeburgis.com">Newsletter</a>
+  <a href="speaking.html#speaking-inquiry">Speaking Inquiries &rarr;</a>
+</div>
 
 <div style="padding:56px 0 0">
   <div class="inner">
-    <h1>Books</h1>
-    <p style="color:#888;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-top:6px">Works by Luke Burgis</p>
+    <h1 style="font-size:42px;font-weight:600;margin-bottom:6px">Books</h1>
+    <p style="color:#888;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-top:6px;max-width:none">Works by Luke Burgis</p>
   </div>
 </div>
 
@@ -111,11 +147,11 @@ footer a{color:#777;text-decoration:none}
       <img src="assets/images/wanting-bookshot-trimmed.png" alt="Wanting by Luke Burgis">
     </div>
     <div>
-      <p class="pub-line">St. Martin's Press · 2021</p>
+      <p class="pub-line">St. Martin's Press &middot; 2021</p>
       <h2 class="book-title"><em>Wanting: The Power of Mimetic Desire in Everyday Life</em></h2>
-      <p>A landmark exploration of René Girard's theory of mimetic desire — why we want what other people want, and what to do about it. Translated into 20+ languages.</p>
+      <p>A landmark exploration of Ren&eacute; Girard's theory of mimetic desire &mdash; why we want what other people want, and what to do about it. Translated into 20+ languages.</p>
       <div class="endorsement">
-        <blockquote>"The clearest, most accessible introduction to René Girard available."</blockquote>
+        <blockquote>&ldquo;The clearest, most accessible introduction to Ren&eacute; Girard available.&rdquo;</blockquote>
         <cite>Peter Thiel</cite>
       </div>
       <div class="retailer-links">
@@ -123,7 +159,7 @@ footer a{color:#777;text-decoration:none}
         <a class="btn-light" href="https://bookshop.org/p/books/wanting-the-power-of-mimetic-desire-in-everyday-life-luke-burgis/15192737" target="_blank">Bookshop.org</a>
       </div>
       <div style="margin-top:16px">
-        <a href="book-detail.html" style="font-family:var(--font-label);font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Learn more →</a>
+        <a href="book-detail.html" style="font-family:var(--font-label);font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Learn more &rarr;</a>
       </div>
     </div>
   </div>
@@ -133,12 +169,14 @@ footer a{color:#777;text-decoration:none}
       <img src="assets/images/one-and-99-trimmed.png" alt="The One and the Ninety-Nine by Luke Burgis">
     </div>
     <div>
-      <p class="pub-line">St. Martin's Press · 2026</p>
+      <p class="pub-line">St. Martin's Press &middot; 2026</p>
       <h2 class="book-title"><em>The One and the Ninety-Nine</em></h2>
-      <p>How cultures protect — or destroy — the individual. <span style="background:#fff3cd;color:#7a5c00;font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:2px 6px;border:1px solid #e6c84a">[NEEDS LUKE: back-cover or publisher description for The One and the Ninety-Nine]</span></p>
-      <p style="font-family:var(--font-label);font-size:11px;color:#aaa;margin-top:8px">Retailer links coming soon.</p>
-      <div style="margin-top:16px">
-        <a href="book-detail.html" style="font-family:var(--font-label);font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Learn more →</a>
+      <p>It is not hard to find a tribe. The real challenge today is not losing yourself within one. <em>The One and the Ninety-Nine</em> argues that the great crisis of our time is not polarization or loneliness but formation &mdash; the difficulty of building a self solid enough to withstand the pressure of the crowd &mdash; and offers a practical map for recognizing false belonging, escaping coercive dynamics, and becoming someone who can stand alone, so that we can finally stand together.</p>
+      <div class="retailer-links">
+        <a class="btn-dark" href="https://www.amazon.com/dp/1250373034" target="_blank">Amazon</a>
+        <a class="btn-light" href="https://www.barnesandnoble.com/s/9781250373038" target="_blank">Barnes &amp; Noble</a>
+        <a class="btn-light" href="https://bookshop.org/search?keywords=9781250373038" target="_blank">Bookshop.org</a>
+        <a class="btn-light" href="https://us.macmillan.com/books/9781250373038/theoneandtheninetynine/" target="_blank">Publisher</a>
       </div>
     </div>
   </div>
@@ -155,9 +193,9 @@ footer a{color:#777;text-decoration:none}
         <img src="assets/images/be-not-conformed-bookshot-nobg.png" alt="BE NOT CONFORMED">
       </div>
       <div>
-        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">CUA Press · Edited by Luke Burgis</p>
+        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">CUA Press &middot; Edited by Luke Burgis</p>
         <h3 class="compact-title"><em>BE NOT CONFORMED</em></h3>
-        <p style="font-size:14px;color:#555;margin-bottom:0">René Girard at the nexus of Athens, Jerusalem, and Silicon Valley.</p>
+        <p style="font-size:14px;color:#555;margin-bottom:0">Ren&eacute; Girard at the nexus of Athens, Jerusalem, and Silicon Valley.</p>
       </div>
     </div>
 
@@ -166,24 +204,48 @@ footer a{color:#777;text-decoration:none}
         <img src="assets/images/unrepeatable-bookshot.jpg" alt="Unrepeatable">
       </div>
       <div>
-        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">Emmaus Road · Co-authored with Joshua Miller, PhD</p>
+        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">Emmaus Road &middot; 2018</p>
         <h3 class="compact-title" style="font-size:15px"><em>Unrepeatable</em></h3>
-        <p style="font-size:13px;color:#555;margin-bottom:0"><span style="background:#fff3cd;color:#7a5c00;font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:2px 6px;border:1px solid #e6c84a">[NEEDS LUKE: description for Unrepeatable — verify with publisher or co-author]</span></p>
+        <p style="font-size:13px;color:#555;margin-bottom:0">Co-written with Joshua Miller, <em>Unrepeatable</em> is about vocation: the conviction that every person has a unique calling, and that the people around them &mdash; parents, teachers, mentors, managers &mdash; have a responsibility to help draw it out.</p>
       </div>
     </div>
 
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <div>
-    <p style="font-size:14px;font-family:Georgia,serif;color:#FAF8F3;margin-bottom:6px">Luke Burgis</p>
-    <p style="color:#555;font-size:11px">Author · Professor · Founder<br>lukeburgis.com</p>
+    <div style="font-family:Georgia,serif;font-size:18px;color:#FAF8F3;margin-bottom:8px;letter-spacing:-.01em">Luke Burgis</div>
+    <p style="color:#555;font-size:11px;line-height:1.6">Author &middot; Professor &middot; Founder</p>
+    <p style="color:#555;font-size:11px;margin-top:12px">&copy; 2026 Luke Burgis</p>
   </div>
-  <div><h4>Work</h4><ul><li><a href="books.html">Books</a></li>
-    <li><a href="writing/">Writing</a></li><li><a href="speaking.html">Speaking</a></li><li><a href="programs.html">Programs</a></li></ul></div>
-  <div><h4>Connect</h4><ul><li><a href="https://read.lukeburgis.com">Newsletter</a></li><li><a href="#">Twitter / X</a></li><li><a href="#">LinkedIn</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-  <div><h4>Cluny Institute</h4><ul><li><a href="https://cluny.org">cluny.org</a></li></ul></div>
+  <div>
+    <h4>Work</h4>
+    <ul>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="writing/">Writing</a></li>
+      <li><a href="speaking.html">Speaking</a></li>
+      <li><a href="speaking/kit/">Speaker Kit</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="https://read.lukeburgis.com">Newsletter</a></li>
+      <li><a href="https://x.com/lukeburgis">X</a></li>
+      <li><a href="https://www.linkedin.com/in/lukeburgis/">LinkedIn</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Cluny Institute</h4>
+    <ul><li><a href="https://cluny.org">cluny.org</a></li></ul>
+  </div>
+  <div class="footer-bottom"><a href="privacy.html">Privacy Policy</a></div>
 </footer>
+
 </body>
 </html>

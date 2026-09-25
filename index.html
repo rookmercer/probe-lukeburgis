@@ -421,8 +421,8 @@ footer a:hover{color:#111}
 
 
 <!-- SPEAKING IMAGE BAND -->
-<div style="width:100vw;margin-left:calc(-50vw + 50%);overflow:hidden;max-height:520px">
-  <img src="assets/images/luke-speaking.jpg" alt="Luke Burgis speaking on stage" style="width:100%;height:520px;object-fit:cover;object-position:center 40%;display:block">
+<div style="width:100vw;margin-left:calc(-50vw + 50%);overflow:hidden;max-height:640px">
+  <img src="assets/images/luke-speaking.jpg" alt="Luke Burgis speaking on stage" style="width:100%;height:640px;object-fit:cover;object-position:center 80%;display:block">
 </div>
 
 <!-- §2 QUESTIONS I KEEP RETURNING TO -->
@@ -594,7 +594,7 @@ footer a:hover{color:#111}
 
   if(sessionStorage.getItem(SEEN)){
     var s=document.createElement('style');
-    s.textContent='.mark-wrap{animation:none!important;left:calc(50% - min(320px,32vw))!important;top:48%!important;width:120px!important;transform:translateY(-50%)!important}.draw{display:none!important}.fill{opacity:1!important;animation:none!important}.hero-words h1,.hero-words .hero-sub,';
+    s.textContent='.hero-words h1,.hero-words .hero-sub{animation:none!important;opacity:1!important;transform:none!important}.hero-photo-panel{opacity:1!important;animation:none!important;transform:none!important}.mark-wrap{left:24px!important;top:20px!important;width:36px!important;transform:none!important;animation:none!important;position:fixed!important;pointer-events:auto!important;cursor:pointer!important}';
     document.head.appendChild(s);
   } else {
     sessionStorage.setItem(SEEN,'1');
@@ -616,7 +616,7 @@ footer a:hover{color:#111}
 
   if(sessionStorage.getItem(SEEN)){
     var s=document.createElement('style');
-    s.textContent='.mark-wrap{animation:none!important;left:calc(50% - min(320px,32vw))!important;top:48%!important;width:120px!important;transform:translateY(-50%)!important}.draw{display:none!important}.fill{opacity:1!important;animation:none!important}.hero-words h1,.hero-words .hero-sub,';
+    s.textContent='.hero-words h1,.hero-words .hero-sub{animation:none!important;opacity:1!important;transform:none!important}.hero-photo-panel{opacity:1!important;animation:none!important;transform:none!important}.mark-wrap{left:24px!important;top:20px!important;width:36px!important;transform:none!important;animation:none!important;position:fixed!important;pointer-events:auto!important;cursor:pointer!important}';
     document.head.appendChild(s);
   } else {
     sessionStorage.setItem(SEEN,'1');
@@ -639,7 +639,17 @@ footer a:hover{color:#111}
     }
   }, 8500);
 
-  // Mark animation removed
+  
+  // Fallback: force hero visible after 10s regardless of animation state
+  setTimeout(function() {
+    var photo = document.querySelector('.hero-photo-panel');
+    var h1 = document.querySelector('.hero-words h1');
+    var sub = document.querySelector('.hero-words .hero-sub');
+    if (photo) photo.style.opacity = '1';
+    if (h1) { h1.style.opacity = '1'; h1.style.transform = 'none'; }
+    if (sub) { sub.style.opacity = '1'; sub.style.transform = 'none'; }
+  }, 10000);
+
 })();
 </script>
 

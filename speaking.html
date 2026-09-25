@@ -324,5 +324,58 @@ fieldset.form-columns-2 .hs-form-field { padding: 0 8px !important; }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}
 })();
 </script>
+<script>
+(function(){
+  var hsCSS = `fieldset.form-columns-0 .hs-richtext img { display: none !important; }
+fieldset.form-columns-0 { margin-bottom: 0 !important; padding: 0 !important; border: 0 !important; }
+.hs-form-field label { font-family: 'Montserrat', sans-serif !important; font-size: 11px !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; color: #111 !important; font-weight: 600 !important; }
+.hs-form-field label .hs-form-required { color: #DC9B3C !important; }
+.hs-input { font-family: 'Sura', Georgia, serif !important; font-size: 14px !important; border: 1px solid #d0c9bc !important; border-radius: 0 !important; padding: 10px 12px !important; background: #FAF8F3 !important; color: #111 !important; }
+.hs-input:focus { border-color: #111 !important; outline: none !important; box-shadow: none !important; }
+select.hs-input { font-family: 'Sura', Georgia, serif !important; font-size: 14px !important; }
+textarea.hs-input { min-height: 100px !important; }
+.hs-button { font-family: 'Montserrat', sans-serif !important; font-size: 11px !important; text-transform: uppercase !important; letter-spacing: 0.12em !important; background: #111 !important; color: #FAF8F3 !important; border: none !important; border-radius: 0 !important; padding: 13px 30px !important; cursor: pointer !important; font-weight: 600 !important; }
+.hs-button:hover { background: #333 !important; }
+.hs-richtext { font-family: 'Sura', Georgia, serif !important; font-size: 13px !important; color: #666 !important; line-height: 1.6 !important; }
+.hs-error-msgs label { font-size: 11px !important; color: #dc2127 !important; text-transform: none !important; letter-spacing: normal !important; font-weight: 400 !important; }
+.hs-form-field { margin-bottom: 18px !important; }
+fieldset.form-columns-2 .hs-form-field { padding: 0 8px !important; }
+.legal-consent-container { font-family: 'Sura', Georgia, serif !important; font-size: 12px !important; }`;
+  function injectCSS(iframe) {
+    try {
+      var doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (!doc || doc.querySelector('[data-lb-injected]')) return;
+      var style = doc.createElement('style');
+      style.setAttribute('data-lb-injected', 'true');
+      style.textContent = hsCSS;
+      doc.head.appendChild(style);
+    } catch(e) {}
+  }
+  function scanIframes() {
+    document.querySelectorAll('iframe').forEach(function(f) {
+      injectCSS(f);
+      f.addEventListener('load', function() { injectCSS(f); });
+    });
+  }
+  // Run on load and observe for new iframes
+  if (document.readyState === 'complete') { scanIframes(); }
+  else { window.addEventListener('load', scanIframes); }
+  // Also observe DOM for dynamically added iframes
+  new MutationObserver(function(mutations) {
+    mutations.forEach(function(m) {
+      m.addedNodes.forEach(function(n) {
+        if (n.tagName === 'IFRAME') { injectCSS(n); n.addEventListener('load', function() { injectCSS(n); }); }
+        if (n.querySelectorAll) { n.querySelectorAll('iframe').forEach(function(f) { injectCSS(f); f.addEventListener('load', function() { injectCSS(f); }); }); }
+      });
+    });
+  }).observe(document.body, {childList: true, subtree: true});
+  // Retry injection every 2s for 20s (forms load async)
+  var retries = 0;
+  var interval = setInterval(function() {
+    scanIframes();
+    if (++retries >= 10) clearInterval(interval);
+  }, 2000);
+})();
+</script>
 </body>
 </html>

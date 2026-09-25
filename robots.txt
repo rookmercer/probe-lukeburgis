@@ -1,0 +1,4 @@
+# lukeburgis.com — staging (noindex)
+# Flip to allow on launch day
+User-agent: *
+Disallow: /

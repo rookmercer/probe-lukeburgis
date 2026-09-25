@@ -7,50 +7,55 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
-<title>The Three-City Problem of Modern Life — Luke Burgis</title>
+<title>Privacy Policy — Luke Burgis</title>
 <style>
-:root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--color-gold:#DC9B3C;--color-ink:#111111;--color-paper:#FAF8F3;}
+:root{
+  --font-heading:'Eczar',Georgia,serif;
+  --font-body:'Sura',Georgia,serif;
+  --font-label:'Montserrat',sans-serif;
+  --color-gold:#DC9B3C;
+  --color-ink:#111111;
+  --color-paper:#FAF8F3;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{font-family:var(--font-body);background:var(--color-paper);color:var(--color-ink);line-height:1}
+
 nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .nav-logo{display:flex;align-items:center}
 .nav-logo svg{width:48px;height:auto;display:block}
 .nav-links{list-style:none;display:flex;gap:32px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
 .nav-links a{color:#111;text-decoration:none}
 .nav-links a:hover{color:var(--color-gold)}
-.nav-links a.active{color:var(--color-gold);border-bottom:2px solid var(--color-gold);padding-bottom:2px}
-.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:var(--color-paper);padding:10px 20px;text-decoration:none}
-.essay-wrap{max-width:680px;margin:0 auto;padding:64px 24px 80px}
-.back-link{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;text-decoration:none;display:inline-block;margin-bottom:48px}
-.back-link:hover{color:var(--color-gold)}
+.nav-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:var(--color-paper);padding:10px 20px;text-decoration:none;border:none}
+.nav-cta:hover{background:var(--color-gold);color:#111}
+
+.content{max-width:680px;margin:0 auto;padding:72px 24px 80px}
+.eyebrow{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:16px;display:block;border-left:3px solid var(--color-gold);padding-left:10px}
 h1{font-family:var(--font-heading);font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.1;letter-spacing:-.01em;margin-bottom:40px}
-.essay-body{font-size:17px;line-height:1.78;color:#222}
-.essay-body p{margin-bottom:1.4em}
-.essay-body h2{font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.2;margin:2em 0 .7em}
-.essay-body blockquote{border-left:3px solid var(--color-gold);padding-left:20px;margin:1.5em 0;color:#444;font-style:italic}
-.essay-body a{color:var(--color-ink);text-decoration:underline;text-decoration-color:#ccc}
-.essay-body a:hover{text-decoration-color:var(--color-gold)}
-.essay-nav{margin-top:72px;padding-top:32px;border-top:1px solid #e8e2d6;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
-.essay-nav a{color:#888;text-decoration:none}
-.essay-nav a:hover{color:var(--color-gold)}
+h2{font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.2;margin:2em 0 .7em}
+p{font-size:17px;line-height:1.78;color:#222;margin-bottom:1.4em}
+ul{font-size:17px;line-height:1.78;color:#222;margin-bottom:1.4em;padding-left:24px}
+li{margin-bottom:.5em}
+a{color:var(--color-ink);text-decoration:underline;text-decoration-color:#ccc}
+a:hover{text-decoration-color:var(--color-gold)}
+.updated{font-family:var(--font-label);font-size:11px;color:#888;letter-spacing:.04em;margin-bottom:32px}
+
 footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
 footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
-footer ul{list-style:none}
+footer ul{list-style:none;padding-left:0}
 footer li{margin-bottom:8px}
 footer a{color:#777;text-decoration:none}
 footer a:hover{color:#FAF8F3}
-@media(max-width:760px){nav{padding:16px 20px}.essay-wrap{padding:40px 20px 60px}footer{grid-template-columns:1fr 1fr;padding:36px 20px}}
-/* Reading progress bar */
-#reading-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:#111111;z-index:9999;opacity:0;transition:opacity .2s}
-#reading-progress.visible{opacity:1}
-@media(prefers-reduced-motion:reduce){#reading-progress{display:none}}
-.about-essay{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:6px}
-.curator-note{font-style:italic;font-size:15px;line-height:1.6;color:#666;margin-bottom:32px}
+
+@media(max-width:760px){
+  nav{padding:16px 20px}
+  .content{padding:48px 20px 60px}
+  footer{grid-template-columns:1fr 1fr;padding:36px 20px}
+}
 </style>
 </head>
 <body>
-<!-- Reading progress bar -->
-<div id="reading-progress" role="progressbar" aria-label="Reading progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
 
 <!-- NAV -->
 <nav>
@@ -66,42 +71,60 @@ footer a:hover{color:#FAF8F3}
   </div>
   <ul class="nav-links">
     <li><a href="/probe-lukeburgis/books.html">Books</a></li>
+    <li><a href="/probe-lukeburgis/writing/">Writing</a></li>
     <li><a href="/probe-lukeburgis/speaking.html">Speaking</a></li>
     <li><a href="/probe-lukeburgis/programs.html">Programs</a></li>
-    <li><a href="/probe-lukeburgis/writing/" class="active">Writing</a></li>
     <li><a href="/probe-lukeburgis/about.html">About</a></li>
   </ul>
   <a class="nav-cta" href="https://read.lukeburgis.com">Newsletter →</a>
 </nav>
 
-<div class="essay-wrap">
-  <a class="back-link" href="/probe-lukeburgis/writing/">← All Essays</a>
+<div class="content">
+  <span class="eyebrow">Legal</span>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: September 24, 2026</p>
 
+  <p>This policy describes what information lukeburgis.com collects, how it is used, and how to request its removal. It is written in plain language because that is how a privacy policy should read.</p>
 
-  <h1>The Three-City Problem of Modern Life</h1>
+  <h2>What the site collects</h2>
 
-  
-  <p class="about-essay">About this essay</p>
-  <p class="curator-note">The founding document of the Cluny Institute. Written for Wired in 2022, it led directly to the NOVITATE conference and gave the Institute its frame.</p>
+  <p><strong>Contact and inquiry forms.</strong> The speaking inquiry, media, podcast, and general contact forms on this site are powered by HubSpot. When a form is submitted, HubSpot receives and stores the information entered: typically name, email address, organization, and any details provided about an event or inquiry. This data is used solely to respond to the inquiry and to manage the relationship. It is not sold to third parties.</p>
 
-  <div class="essay-body">
-    <p>NASA can land a probe on Saturn's largest moon, 764 million miles from Earth—yet no one has been able to mathematically demonstrate the exact positions of the Earth, sun, and our own moon at a given point in the future. Scientists can make estimates, but these all rely on simplifications.</p>
+  <p><strong>Course enrollment.</strong> Online courses (such as Work as Soulcraft) are hosted on Kajabi. When enrolling in a course, Kajabi collects the information required for enrollment and payment: name, email address, and payment details. Kajabi's own privacy policy governs how that data is stored and processed.</p>
 
-    <p>Two-body problems, like mapping the movement of one planet around one star, are solvable. These binary orbits are easy to predict. But a serious complication arises if a third body is introduced. Our moon, which has the gravitational forces of both the sun and the Earth acting upon it simultaneously, is part of an infamous three-body problem.</p>
+  <p><strong>Newsletter.</strong> The Luke Burgis Newsletter is hosted on Substack. Subscribing is handled entirely on Substack's platform at <a href="https://read.lukeburgis.com">read.lukeburgis.com</a>, and Substack's privacy policy applies to subscriber data.</p>
 
-    <p>Trying to solve for the movement of three large bodies in one another's orbit creates a circular logic. The calculations rely on the initial positions of the three bodies, but these initial positions are unknowable over time because the bodies always affect one another in unpredictable ways. In the 300 years since Isaac Newton outlined the dilemma in his <em>Principia</em>, diligent physicists have only been able to offer special-case solutions for restricted versions of the problem. "In a nonlinear system like the chaotic three-body problem," writes Caroline Delbert for <em>Popular Mechanics</em>, "all bets are off, and our intuitions are scrambled."</p>
+  <h2>Cookies and tracking</h2>
 
-    <p>The three-body problem is the best metaphor I've found for a social complexity that affects us all today—a problem resulting from the interaction of three major centers of gravity. This dynamic is scrambling our intuitions and making us long for order in what feels like an increasingly chaotic world. We're caught on the inside of a three-city problem.</p>
-    <a class="outbound-cta" href="https://www.wired.com/story/technology-philosophy-three-city-problem/" target="_blank" rel="noopener" style="display:inline-block;margin-top:1.5em;font-family:var(--font-label);font-size:12px;letter-spacing:.08em;color:var(--color-gold);border:1px solid var(--color-gold);padding:10px 20px;text-decoration:none;text-transform:uppercase">Read at Wired →</a>
-  
-    <p style="font-family:var(--font-label);font-size:11px;color:#888;margin-top:1.5em">Excerpt. <a href="https://www.wired.com/story/technology-philosophy-three-city-problem/" target="_blank" rel="noopener" style="color:var(--color-gold)">Read the full essay at Wired →</a></p>
-  </div>
+  <p><strong>Google Fonts.</strong> This site loads typefaces from Google Fonts. Google may log the request (IP address, browser, referring page) when fonts are served. No cookies are set by Google Fonts.</p>
 
-  <!-- Prev / Next -->
-    <nav class="essay-nav" aria-label="Essay navigation">
-    <div class="prev"><a href="/probe-lukeburgis/writing/culture-war-as-imitation-game/">← Culture War as Imitation Game</a></div>
-    <div class="next" style="text-align:right"><a href="/probe-lukeburgis/writing/a-bull-market-in-the-humanities/">A Bull Market in the Humanities →</a></div>
-  </nav>
+  <p><strong>HubSpot tracking.</strong> Pages that embed HubSpot forms may load the HubSpot tracking script, which sets cookies to identify returning visitors and measure form performance. These cookies are first-party (set on this domain) and are used for form analytics, not for advertising.</p>
+
+  <p><strong>No advertising trackers.</strong> This site does not run Google Analytics, Facebook Pixel, or any advertising or retargeting scripts.</p>
+
+  <h2>Third-party services</h2>
+
+  <p>The site relies on a small number of third-party services:</p>
+  <ul>
+    <li><strong>HubSpot</strong> — contact forms and CRM</li>
+    <li><strong>Kajabi</strong> — course hosting and enrollment</li>
+    <li><strong>Substack</strong> — newsletter</li>
+    <li><strong>Google Fonts</strong> — web typography</li>
+    <li><strong>GitHub Pages</strong> — site hosting</li>
+  </ul>
+  <p>Each service has its own privacy policy. Data shared with these services is limited to what is necessary for the service to function.</p>
+
+  <h2>Data is not sold</h2>
+
+  <p>Personal information collected through this site is never sold, rented, or traded to third parties.</p>
+
+  <h2>Removal requests</h2>
+
+  <p>To request that personal data be deleted from any form submission, course enrollment, or mailing list, contact <a href="mailto:luke@cluny.org">luke@cluny.org</a>. Requests are handled promptly.</p>
+
+  <h2>Changes</h2>
+
+  <p>This policy may be updated from time to time. The "last updated" date at the top of this page reflects the most recent revision.</p>
 </div>
 
 <!-- FOOTER -->
@@ -137,26 +160,5 @@ footer a:hover{color:#FAF8F3}
   </div>
 </footer>
 
-<script>
-(function(){
-  var bar = document.getElementById("reading-progress");
-  if(!bar) return;
-  var hasScrolled = false;
-  function update(){
-    var scrollTop = window.scrollY || document.documentElement.scrollTop;
-    var docH = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    if(docH <= 0) return;
-    var pct = Math.min(100, Math.round(scrollTop / docH * 100));
-    bar.style.width = pct + "%";
-    bar.setAttribute("aria-valuenow", pct);
-    if(!hasScrolled && scrollTop > 0){
-      hasScrolled = true;
-      bar.classList.add("visible");
-    }
-  }
-  window.addEventListener("scroll", update, {passive: true});
-  update();
-})();
-</script>
 </body>
 </html>

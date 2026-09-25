@@ -24,7 +24,6 @@ nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:20px 5
 .back-link{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;text-decoration:none;display:inline-block;margin-bottom:48px}
 .back-link:hover{color:var(--color-gold)}
 .essay-meta-line{font-family:var(--font-label);font-size:11px;color:#888;letter-spacing:.04em;margin-bottom:32px}
-.needs-luke{display:inline-block;background:#FFF3CD;color:#7a5c00;font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border:1px solid var(--color-gold);border-radius:2px;margin-bottom:32px}
 h1{font-family:var(--font-heading);font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.1;letter-spacing:-.01em;margin-bottom:16px}
 .essay-body{font-size:17px;line-height:1.78;color:#222}
 .essay-body p{margin-bottom:1.4em}
@@ -49,6 +48,8 @@ footer a:hover{color:#FAF8F3}
 #reading-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:#111111;z-index:9999;opacity:0;transition:opacity .2s}
 #reading-progress.visible{opacity:1}
 @media(prefers-reduced-motion:reduce){#reading-progress{display:none}}
+.about-essay{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:6px}
+.curator-note{font-style:italic;font-size:15px;line-height:1.6;color:#666;margin-bottom:32px}
 </style>
 </head>
 <body>
@@ -80,10 +81,13 @@ footer a:hover{color:#FAF8F3}
 <div class="essay-wrap">
   <a class="back-link" href="/probe-lukeburgis/writing/">← All Essays</a>
 
-  <span class="needs-luke">★ Curator note needed</span>
 
   <h1>A Bull Market in the Humanities</h1>
   <div class="essay-meta-line">Substack · 2024 · ~7 min read</div>
+
+  
+  <p class="about-essay">About this essay</p>
+  <p class="curator-note">A prediction, made early, that AI would raise the value of the very things it cannot do: perception, judgment, the education of the senses.</p>
 
   <div class="essay-body">
     <p>The real world is never going to get outdated or automated. I feel bad for those recently trained for very specific STEM jobs these past few years which AI is already encroaching on. Imagine spending four years learning to code Python, graduating in 2021, only to see AI code in 5 minutes what would have taken you 500 hours. Traditional education, especially technical education, is still training people for jobs that may no longer exist by the time they graduate.</p>
@@ -151,10 +155,9 @@ footer a:hover{color:#FAF8F3}
     </section>
   </div>
 
-  <nav class="essay-nav" aria-label="Essay navigation">
-    <div class="prev">
-      <a href="/probe-lukeburgis/writing/">← All Essays</a>
-    </div>
+    <nav class="essay-nav" aria-label="Essay navigation">
+    <div class="prev"><a href="/probe-lukeburgis/writing/the-three-city-problem-of-modern-life/">← The Three-City Problem</a></div>
+    <div class="next" style="text-align:right"></div>
   </nav>
 </div>
 
@@ -162,29 +165,32 @@ footer a:hover{color:#FAF8F3}
 <footer>
   <div>
     <div style="font-family:Georgia,serif;font-size:18px;color:#FAF8F3;margin-bottom:14px;letter-spacing:-.01em">Luke Burgis</div>
-    <p style="color:#555;font-size:11px;margin-top:4px">Author · Professor · Founder<br>lukeburgis.com</p>
+    <p style="color:#555;font-size:11px;margin-top:4px">Author · Professor · Founder<br>© 2026 Luke Burgis</p>
   </div>
   <div>
     <h4>Work</h4>
     <ul>
       <li><a href="/probe-lukeburgis/books.html">Books</a></li>
+      <li><a href="/probe-lukeburgis/writing/">Writing</a></li>
       <li><a href="/probe-lukeburgis/speaking.html">Speaking</a></li>
+      <li><a href="/probe-lukeburgis/speaking/kit/">Speaker Kit</a></li>
       <li><a href="/probe-lukeburgis/programs.html">Programs</a></li>
+      <li><a href="/probe-lukeburgis/about.html">About</a></li>
     </ul>
   </div>
   <div>
     <h4>Connect</h4>
     <ul>
-      <li><a href="https://read.lukeburgis.com">Newsletter</a></li>
-      <li><a href="https://twitter.com/lukeburgis" target="_blank" rel="noopener">Twitter / X</a></li>
-      <li><a href="https://linkedin.com/in/lukeburgis" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://read.lukeburgis.com" target="_blank" rel="noopener">Newsletter</a></li>
+      <li><a href="https://x.com/lukeburgis" target="_blank" rel="noopener">X</a></li>
+      <li><a href="https://www.linkedin.com/in/lukeburgis/" target="_blank" rel="noopener">LinkedIn</a></li>
       <li><a href="/probe-lukeburgis/contact.html">Contact</a></li>
-      <li><a href="https://read.lukeburgis.com">Full archive at read.lukeburgis.com</a></li>
     </ul>
   </div>
   <div>
     <h4>Cluny Institute</h4>
-    <ul><li><a href="https://cluny.org">cluny.org</a></li></ul>
+    <ul><li><a href="https://cluny.org" target="_blank" rel="noopener">cluny.org</a></li></ul>
+    <p style="font-size:10px;color:#555;margin-top:24px"><a href="/probe-lukeburgis/privacy.html" style="color:#555;text-decoration:none">Privacy Policy</a></p>
   </div>
 </footer>
 

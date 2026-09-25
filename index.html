@@ -69,8 +69,8 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 .mark-wrap svg{width:100%;height:auto;display:block}
 
 @keyframes markMove{
-  0%,55%  {left:50%;top:48%;width:min(300px,52vw);}
-  68%,100%{left:max(calc(50% - 560px + 20px),20px);top:48%;width:120px;}
+  0%,55%  {left:50%;top:48%;width:min(300px,52vw);transform:translate(-50%,-50%)}
+  68%,100%{left:max(calc(50% - 560px + 20px),24px);top:48%;width:80px;transform:translate(0,-50%)}
 }
 
 .draw{
@@ -96,7 +96,7 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
 /* Words appear after mark settles left */
 .hero-words{padding-left:16px;z-index:10;
   position:absolute;
-  left:max(calc(50% - 560px + 140px),140px);
+  left:max(calc(50% - 560px + 120px),120px);
   top:48%;
   transform:translateY(-50%);
   max-width:560px;
@@ -133,6 +133,22 @@ nav{background:#FAF8F3;border-bottom:1px solid #e8e2d6;padding:20px 56px;display
   to  {opacity:1;transform:translateY(0)}
 }
 
+
+@media(prefers-reduced-motion:reduce){
+  .mark-wrap{left:max(calc(50% - 560px + 20px),24px)!important;top:48%!important;width:80px!important;transform:translate(0,-50%)!important;animation:none!important}
+  .mark-wrap .draw{stroke-dashoffset:0!important;animation:none!important;opacity:0!important}
+  .mark-wrap .fill{opacity:1!important;animation:none!important}
+  .hero-words h1,.hero-words .hero-sub,.hero-words .hero-byline{opacity:1!important;animation:none!important;transform:none!important}
+}
+
+@media(max-width:680px){
+  .mark-wrap{left:50%!important;top:20%!important;width:60px!important;transform:translate(-50%,-50%)!important}
+  @keyframes markMove{
+    0%,55%{left:50%;top:30%;width:min(200px,40vw);transform:translate(-50%,-50%)}
+    68%,100%{left:50%;top:14%;width:60px;transform:translate(-50%,0)}
+  }
+  .hero-words{left:16px!important;top:auto!important;bottom:48px!important;transform:none!important;padding-right:16px!important;max-width:100%!important}
+}
 /* Mobile hero: static layout */
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
 .hamburger span{display:block;width:22px;height:2px;background:#111}

@@ -71,6 +71,12 @@ to{opacity:1;transform:scale(1)}}
 .hero-words .hero-sub{font-family:var(--font-body);font-size:clamp(1rem,1.8vw,1.25rem);line-height:1.7;color:#444;margin-bottom:0}
 
 .nav-logo.anim-hidden{display:none}
+  .nav-anim-hidden{opacity:1!important}
+
+
+/* Nav animation: links hidden during hero draw, fade in on settle */
+.nav-anim-hidden { opacity: 0; transition: opacity 500ms ease-out; }
+.nav-anim-visible { opacity: 1; }
 
 @media(max-width:680px){
   .hero{height:auto;min-height:480px;padding-bottom:40px}
@@ -208,14 +214,14 @@ footer a:hover{color:#111}
   <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.add('open')">
     <span></span><span></span><span></span>
   </button>
-  <ul class="nav-links">
+  <ul class="nav-links nav-anim-hidden" id="navLinks">
     <li><a href="books.html">Books</a></li>
     <li><a href="writing/">Writing</a></li>
     <li><a href="speaking.html">Speaking</a></li>
     <li><a href="courses.html">Courses</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <a class="nav-cta" href="https://read.lukeburgis.com">Subscribe</a>
+  <a class="nav-cta nav-anim-hidden" id="navCta" href="https://read.lukeburgis.com">Subscribe</a>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-btn" aria-label="Close menu" onclick="this.parentElement.classList.remove('open')">&times;</button>
@@ -589,6 +595,26 @@ footer a:hover{color:#111}
       // Handoff: fade out hero-mono, show nav-logo
       mono.style.transition = 'opacity 0.3s ease';
       mono.style.opacity = '0';
+      // Fade in nav links with stagger
+      var nl = document.getElementById('navLinks');
+      var nr = document.getElementById('navRight') || document.getElementById('navCta');
+      if (nl) {
+        nl.classList.remove('nav-anim-hidden');
+        nl.classList.add('nav-anim-visible');
+        // Stagger individual links
+        var links = nl.querySelectorAll('li');
+        links.forEach(function(li, i) {
+          li.style.opacity = '0';
+          li.style.transition = 'opacity 400ms ease-out';
+          setTimeout(function() { li.style.opacity = '1'; }, i * 60);
+        });
+      }
+      if (nr) {
+        setTimeout(function() {
+          nr.classList.remove('nav-anim-hidden');
+          nr.classList.add('nav-anim-visible');
+        }, 300);
+      }
       setTimeout(function(){
         mono.style.display = 'none';
         if (navLogo) { navLogo.style.display = 'flex'; navLogo.style.visibility = 'visible'; }

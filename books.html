@@ -16,10 +16,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--color-parchment:#E2D9C4;--color-gold:#E60028;--color-ink:#111;--color-paper:#FAF8F3}
+:root {
+  --font-heading:'Eczar',Georgia,serif;
+  --font-body:'Sura',Georgia,serif;
+  --font-label:'Montserrat',sans-serif;
+  --color-paper:#FAF8F3;
+  --color-ink:#111;
+  --color-parchment:#E2D9C4;
+  --color-gold:#E60028;
+}
+/* Book 1: One & 99 — Green */
+[data-book="one-and-99"] { --band-bg: oklch(0.42 0.13 142); --band-deep: oklch(0.34 0.13 142); --band-ink: oklch(0.97 0.01 142); --band-accent: oklch(0.80 0.16 142); }
+/* Book 2: Wanting — Teal */
+[data-book="wanting"] { --band-bg: oklch(0.42 0.13 185); --band-deep: oklch(0.34 0.13 185); --band-ink: oklch(0.97 0.01 185); --band-accent: oklch(0.80 0.16 185); }
+/* Book 3: Be Not Conformed — Warm brown */
+[data-book="be-not-conformed"] { --band-bg: oklch(0.42 0.13 65); --band-deep: oklch(0.34 0.13 65); --band-ink: oklch(0.97 0.01 65); --band-accent: oklch(0.80 0.16 65); }
+/* Book 4: Unrepeatable — Ink blue */
+[data-book="unrepeatable"] { --band-bg: oklch(0.42 0.11 255); --band-deep: oklch(0.34 0.11 255); --band-ink: oklch(0.97 0.01 255); --band-accent: oklch(0.80 0.16 255); }
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{overflow-x:hidden}
-body{font-family:var(--font-body);background:var(--color-paper);color:#111;font-size:16px;line-height:1.6}
+body{font-family:var(--font-body);background:oklch(0.42 0.13 142);color:#111;font-size:16px;line-height:1.6;transition:background-color 600ms cubic-bezier(.2,.7,.2,1)}
+html.js-active .book-section{background:transparent}
 a{color:inherit;text-decoration:none}
 h1,h2{font-family:var(--font-heading);font-weight:600}
 h3,h4,h5,h6{font-family:var(--font-heading);font-weight:400}
@@ -45,36 +63,29 @@ nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:18px 4
 .mobile-menu a{font-family:var(--font-label);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block}
 .mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
 
-.inner{max-width:1120px;margin:0 auto;padding:0 40px}
-.btn-dark{display:inline-block;background:#111;color:#FAF8F3;padding:12px 28px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 8px 4px 0;transition:background .18s}
-.btn-dark:hover{background:var(--color-gold);color:#111}
-.btn-light{display:inline-block;background:transparent;color:#111;border:2px solid #111;padding:10px 26px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin:4px 0;transition:border-color .18s,color .18s}
-.btn-light:hover{border-color:var(--color-gold);color:var(--color-gold)}
+/* RETAILER BUTTONS */
+.retailer-btn{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;padding:10px 20px;border:1.5px solid var(--band-ink);color:var(--band-ink);text-decoration:none;transition:all 180ms;background:transparent;display:inline-block}
+.retailer-btn:hover{background:var(--band-ink);color:var(--band-bg)}
 
-/* Books */
-.book-featured{display:grid;grid-template-columns:220px 1fr;gap:56px;align-items:start;margin-bottom:64px}
-.book-featured:last-child{margin-bottom:0}
-.book-cover-wrap{width:220px;aspect-ratio:2/3;background:transparent;overflow:hidden;flex-shrink:0;box-shadow:0 8px 32px rgba(0,0,0,.10)}
-.book-cover-wrap img{width:100%;height:100%;object-fit:cover}
-.pub-line{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:10px}
-.book-title{font-size:30px;font-style:italic;font-weight:normal;margin-bottom:16px}
-.retailer-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.endorsement{border-left:3px solid #111;padding:14px 20px;margin:20px 0;max-width:520px}
-.endorsement blockquote{font-size:16px;font-style:italic;line-height:1.6;margin-bottom:6px}
-.endorsement cite{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#666}
-.also-by-heading{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:28px;padding-top:48px;border-top:2px solid #e8e2d6}
-.book-compact{display:grid;gap:28px;align-items:start;padding:28px 0;border-top:1px solid #e8e2d6}
-.book-compact:first-child{border-top:none}
-.compact-title{font-size:18px;font-style:italic;font-weight:normal;margin-bottom:4px}
-.book-compact.sm{grid-template-columns:90px 1fr}
-.book-cover-xs{width:90px;aspect-ratio:2/3;background:transparent;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08)}
-.book-cover-xs img{width:100%;height:100%;object-fit:cover}
-.book-compact.md{grid-template-columns:120px 1fr}
-.book-cover-sm{width:120px;aspect-ratio:2/3;background:transparent;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.09)}
-.book-cover-sm img{width:100%;height:100%;object-fit:cover}
+/* MOBILE */
+@media(max-width:768px){
+  nav .nav-links,nav .nav-right{display:none}
+  .hamburger{display:flex}
+  nav{padding:14px 20px}
+  .book-section .inner{grid-template-columns:1fr !important;gap:32px !important;padding:0 20px !important}
+  .book-section{min-height:auto !important;padding:60px 0 !important}
+  .book-cover-link{width:60%;margin:0 auto}
+  .books-header .inner{padding:0 20px !important}
+  footer{grid-template-columns:1fr 1fr;gap:24px;padding:40px 20px}
+}
+
+/* REDUCED MOTION */
+@media(prefers-reduced-motion:reduce){
+  body{transition:none}
+}
 
 /* FOOTER */
-footer{background:#1a1a1a;color:#777;padding:48px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-top:80px}
+footer{background:#1a1a1a;color:#777;padding:48px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-top:0}
 footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
 footer ul{list-style:none}
 footer li{margin-bottom:8px}
@@ -82,16 +93,6 @@ footer a{color:#777;text-decoration:none}
 footer a:hover{color:#FAF8F3}
 .footer-bottom{grid-column:1/-1;border-top:1px solid #333;padding-top:16px;text-align:center}
 .footer-bottom a{color:#555;font-size:11px}
-
-@media(max-width:768px){
-  nav .nav-links,nav .nav-right{display:none}
-  .hamburger{display:flex}
-  .inner{padding:0 20px}
-  nav{padding:14px 20px}
-  .book-featured{grid-template-columns:1fr;gap:28px}
-  .book-cover-wrap{width:160px;margin:0 auto}
-  footer{grid-template-columns:1fr 1fr;gap:24px;padding:40px 20px}
-}
 </style>
 </head>
 <body>
@@ -131,86 +132,99 @@ footer a:hover{color:#FAF8F3}
   <a href="https://read.lukeburgis.com">Subscribe</a>
 </div>
 
-<div style="padding:56px 0 0">
-  <div class="inner">
-    <h1 style="font-size:42px;font-weight:600;margin-bottom:6px">Books</h1>
-    <p style="color:#888;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-top:6px;max-width:none">Works by Luke Burgis</p>
+<!-- PAGE HEADER -->
+<div class="books-header" data-book="one-and-99" style="padding:120px 0 60px;color:var(--band-ink)">
+  <div class="inner" style="max-width:1140px;margin:0 auto;padding:0 40px">
+    <h1 style="font-family:var(--font-heading);font-size:clamp(2.5rem,5vw,4rem);font-weight:normal;margin-bottom:16px">Books</h1>
+    <p style="font-family:var(--font-body);font-size:18px;line-height:1.7;max-width:560px;opacity:.85;color:inherit;margin-bottom:0">Four books on desire, identity, and vocation. <em>Wanting</em> has been translated into twenty languages.</p>
   </div>
 </div>
 
-<!-- Featured books -->
-<div style="padding:64px 0" class="inner">
-
-  <div class="book-featured" id="wanting">
-    <div class="book-cover-wrap">
-      <img src="assets/images/wanting-bookshot-trimmed.png" alt="Wanting by Luke Burgis">
-    </div>
-    <div>
-      <p class="pub-line">St. Martin's Press &middot; 2021</p>
-      <h2 class="book-title"><em>Wanting: The Power of Mimetic Desire in Everyday Life</em></h2>
-      <p>A landmark exploration of Ren&eacute; Girard's theory of mimetic desire &mdash; why we want what other people want, and what to do about it. Translated into 20+ languages.</p>
-      <div class="endorsement">
-        <blockquote>&ldquo;The clearest, most accessible introduction to Ren&eacute; Girard available.&rdquo;</blockquote>
-        <cite>Peter Thiel</cite>
+<!-- BOOK 1: The One and the Ninety-Nine -->
+<section class="book-section" id="one-and-99" data-slug="one-and-99" style="--section-bg:oklch(0.42 0.13 142);background:oklch(0.42 0.13 142);min-height:100svh;display:flex;align-items:center;padding:80px 0" data-book="one-and-99">
+  <div class="inner" style="max-width:1140px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:34% 1fr;gap:60px;align-items:center">
+    <a href="books/one-and-99/" class="book-cover-link" style="display:block">
+      <img src="assets/images/one-and-99-trimmed.png" alt="The One and the Ninety-Nine cover" style="width:100%;height:auto;display:block;border-radius:2px;box-shadow:0 24px 60px -20px rgb(0 0 0/.45);transition:transform 180ms cubic-bezier(.2,.7,.2,1),box-shadow 180ms cubic-bezier(.2,.7,.2,1)" onmouseover="this.style.transform='translateY(-6px) scale(1.02)';this.style.boxShadow='0 32px 80px -20px rgb(0 0 0/.55)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 24px 60px -20px rgb(0 0 0/.45)'">
+    </a>
+    <div style="color:var(--band-ink)">
+      <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;opacity:.72;margin-bottom:12px">01 &middot; 2026 &middot; St. Martin&#8217;s Press</p>
+      <h2 style="font-family:var(--font-heading);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:normal;line-height:1.1;margin-bottom:8px">The One and the Ninety-Nine</h2>
+      <p style="font-family:var(--font-body);font-size:16px;font-style:italic;opacity:.85;margin-bottom:20px;color:inherit">Forging Identity in the Age of Social Contagion</p>
+      <p style="font-family:var(--font-body);font-size:16px;line-height:1.75;margin-bottom:24px;max-width:520px;color:inherit">It is not hard to find a tribe. The hard part is not losing yourself inside one. The crisis of our time is not polarization or loneliness but formation: building a self solid enough to withstand the pressure of the crowd.</p>
+      <blockquote style="font-family:var(--font-body);font-size:15px;font-style:italic;line-height:1.7;margin:0 0 24px;padding-left:16px;border-left:2px solid var(--band-accent);max-width:520px;opacity:.9">&ldquo;Luke Burgis is one of the most interesting thinkers writing today.&rdquo; <cite style="font-style:normal;display:block;margin-top:6px;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--band-accent)">&mdash; Tyler Cowen</cite></blockquote>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+        <a href="https://www.amazon.com/dp/1250373034" target="_blank" rel="noopener" class="retailer-btn">Amazon</a>
+        <a href="https://www.barnesandnoble.com/s/9781250373038" target="_blank" rel="noopener" class="retailer-btn">Barnes &amp; Noble</a>
+        <a href="https://bookshop.org/search?keywords=9781250373038" target="_blank" rel="noopener" class="retailer-btn">Bookshop.org</a>
       </div>
-      <div class="retailer-links">
-        <a class="btn-dark" style="color:#FAF8F3" href="https://www.amazon.com/dp/1250262488" target="_blank">Amazon</a>
-        <a class="btn-light" href="https://bookshop.org/p/books/wanting-the-power-of-mimetic-desire-in-everyday-life-luke-burgis/15192737" target="_blank">Bookshop.org</a>
-      </div>
-      <div style="margin-top:16px">
-        <a href="book-detail.html" style="font-family:var(--font-label);font-size:11px;color:#111;text-transform:uppercase;letter-spacing:.06em">Learn more &rarr;</a>
-      </div>
+      <a href="books/one-and-99/" style="font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--band-ink);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 180ms" onmouseover="this.style.borderBottomColor='var(--band-ink)'" onmouseout="this.style.borderBottomColor='transparent'">Open &rarr;</a>
     </div>
   </div>
+</section>
 
-  <div class="book-featured" id="one-and-99" style="padding-top:56px;border-top:1px solid #e8e2d6">
-    <div class="book-cover-wrap">
-      <img src="assets/images/one-and-99-trimmed.png" alt="The One and the Ninety-Nine by Luke Burgis">
-    </div>
-    <div>
-      <p class="pub-line">St. Martin's Press &middot; 2026</p>
-      <h2 class="book-title"><em>The One and the Ninety-Nine</em></h2>
-      <p>It is not hard to find a tribe. The real challenge today is not losing yourself within one. <em>The One and the Ninety-Nine</em> argues that the great crisis of our time is not polarization or loneliness but formation &mdash; the difficulty of building a self solid enough to withstand the pressure of the crowd &mdash; and offers a practical map for recognizing false belonging, escaping coercive dynamics, and becoming someone who can stand alone, so that we can finally stand together.</p>
-      <div class="retailer-links">
-        <a class="btn-dark" style="color:#FAF8F3" href="https://www.amazon.com/dp/1250373034" target="_blank">Amazon</a>
-        <a class="btn-light" href="https://www.barnesandnoble.com/s/9781250373038" target="_blank">Barnes &amp; Noble</a>
-        <a class="btn-light" href="https://bookshop.org/search?keywords=9781250373038" target="_blank">Bookshop.org</a>
-        <a class="btn-light" href="https://us.macmillan.com/books/9781250373038/theoneandtheninetynine/" target="_blank">Publisher</a>
+<!-- BOOK 2: Wanting -->
+<section class="book-section" id="wanting" data-slug="wanting" style="--section-bg:oklch(0.42 0.13 185);background:oklch(0.42 0.13 185);min-height:100svh;display:flex;align-items:center;padding:80px 0" data-book="wanting">
+  <div class="inner" style="max-width:1140px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:34% 1fr;gap:60px;align-items:center">
+    <a href="books/wanting/" class="book-cover-link" style="display:block">
+      <img src="assets/images/wanting-bookshot-trimmed.png" alt="Wanting cover" style="width:100%;height:auto;display:block;border-radius:2px;box-shadow:0 24px 60px -20px rgb(0 0 0/.45);transition:transform 180ms cubic-bezier(.2,.7,.2,1),box-shadow 180ms cubic-bezier(.2,.7,.2,1)" onmouseover="this.style.transform='translateY(-6px) scale(1.02)';this.style.boxShadow='0 32px 80px -20px rgb(0 0 0/.55)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 24px 60px -20px rgb(0 0 0/.45)'">
+    </a>
+    <div style="color:var(--band-ink)">
+      <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;opacity:.72;margin-bottom:12px">02 &middot; 2021 &middot; St. Martin&#8217;s Press</p>
+      <h2 style="font-family:var(--font-heading);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:normal;line-height:1.1;margin-bottom:8px">Wanting</h2>
+      <p style="font-family:var(--font-body);font-size:16px;font-style:italic;opacity:.85;margin-bottom:20px;color:inherit">The Power of Mimetic Desire in Everyday Life</p>
+      <p style="font-family:var(--font-body);font-size:16px;line-height:1.75;margin-bottom:24px;max-width:520px;color:inherit">Why we want what other people want. The landmark account of Ren&eacute; Girard&#8217;s theory of mimetic desire, and what to do about it. Translated into twenty languages.</p>
+      <blockquote style="font-family:var(--font-body);font-size:15px;font-style:italic;line-height:1.7;margin:0 0 24px;padding-left:16px;border-left:2px solid var(--band-accent);max-width:520px;opacity:.9">&ldquo;The clearest, most accessible introduction to Ren&eacute; Girard available.&rdquo; <cite style="font-style:normal;display:block;margin-top:6px;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--band-accent)">&mdash; Peter Thiel</cite></blockquote>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+        <a href="https://www.amazon.com/dp/1250262488" target="_blank" rel="noopener" class="retailer-btn">Amazon</a>
+        <a href="https://www.barnesandnoble.com/s/9781250262486" target="_blank" rel="noopener" class="retailer-btn">Barnes &amp; Noble</a>
+        <a href="https://bookshop.org/p/books/wanting-the-power-of-mimetic-desire-in-everyday-life-luke-burgis/15192737" target="_blank" rel="noopener" class="retailer-btn">Bookshop.org</a>
       </div>
+      <a href="books/wanting/" style="font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--band-ink);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 180ms" onmouseover="this.style.borderBottomColor='var(--band-ink)'" onmouseout="this.style.borderBottomColor='transparent'">Open &rarr;</a>
     </div>
   </div>
+</section>
 
-</div>
-
-<!-- Also by Luke Burgis -->
-<div style="padding:0 0 80px">
-  <div class="inner">
-    <p class="also-by-heading">Also by Luke Burgis</p>
-
-    <div class="book-compact md" id="bnc">
-      <div class="book-cover-sm">
-        <img src="assets/images/be-not-conformed-bookshot-nobg.png" alt="BE NOT CONFORMED">
+<!-- BOOK 3: Be Not Conformed -->
+<section class="book-section" id="be-not-conformed" data-slug="be-not-conformed" style="--section-bg:oklch(0.42 0.13 65);background:oklch(0.42 0.13 65);min-height:70svh;display:flex;align-items:center;padding:80px 0" data-book="be-not-conformed">
+  <div class="inner" style="max-width:1140px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:34% 1fr;gap:60px;align-items:center">
+    <a href="books/be-not-conformed/" class="book-cover-link" style="display:block">
+      <img src="assets/images/be-not-conformed-bookshot-nobg.png" alt="Be Not Conformed cover" style="width:100%;height:auto;display:block;border-radius:2px;box-shadow:0 24px 60px -20px rgb(0 0 0/.45);transition:transform 180ms cubic-bezier(.2,.7,.2,1),box-shadow 180ms cubic-bezier(.2,.7,.2,1)" onmouseover="this.style.transform='translateY(-6px) scale(1.02)';this.style.boxShadow='0 32px 80px -20px rgb(0 0 0/.55)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 24px 60px -20px rgb(0 0 0/.45)'">
+    </a>
+    <div style="color:var(--band-ink)">
+      <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;opacity:.72;margin-bottom:12px">03 &middot; 2026 &middot; CUA Press &middot; Edited by Luke Burgis</p>
+      <h2 style="font-family:var(--font-heading);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:normal;line-height:1.1;margin-bottom:8px">Be Not Conformed</h2>
+      <p style="font-family:var(--font-body);font-size:16px;font-style:italic;opacity:.85;margin-bottom:20px;color:inherit">Ren&eacute; Girard at the Nexus of Athens, Jerusalem, and Silicon Valley</p>
+      <p style="font-family:var(--font-body);font-size:16px;line-height:1.75;margin-bottom:24px;max-width:520px;color:inherit">Seventeen original essays that put Girard in conversation with von Hildebrand, Giussani, and McLuhan, and take his theory into technology, education, and race. From the NOVIT&#256;TE conference marking the centennial of his birth.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+        <a href="https://www.amazon.com/Be-Not-Conformed-Jerusalem-Silicon/dp/0813240379" target="_blank" rel="noopener" class="retailer-btn">Amazon</a>
+        <a href="https://www.barnesandnoble.com/s/9780813240374" target="_blank" rel="noopener" class="retailer-btn">Barnes &amp; Noble</a>
+        <a href="https://bookshop.org/p/books/be-not-conformed-rene-girard-at-the-nexus-of-athens-jerusalem-and-silicon-valley-luke-burgis/899eb1fc90672692" target="_blank" rel="noopener" class="retailer-btn">Bookshop.org</a>
       </div>
-      <div>
-        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">CUA Press &middot; Edited by Luke Burgis</p>
-        <h3 class="compact-title"><em>BE NOT CONFORMED</em></h3>
-        <p style="font-size:14px;color:#555;margin-bottom:0">Ren&eacute; Girard at the nexus of Athens, Jerusalem, and Silicon Valley.</p>
-      </div>
+      <a href="books/be-not-conformed/" style="font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--band-ink);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 180ms" onmouseover="this.style.borderBottomColor='var(--band-ink)'" onmouseout="this.style.borderBottomColor='transparent'">Open &rarr;</a>
     </div>
-
-    <div class="book-compact sm" id="unrepeatable">
-      <div class="book-cover-xs">
-        <img src="assets/images/unrepeatable-bookshot.jpg" alt="Unrepeatable">
-      </div>
-      <div>
-        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:6px">Emmaus Road &middot; 2018</p>
-        <h3 class="compact-title" style="font-size:15px"><em>Unrepeatable</em></h3>
-        <p style="font-size:13px;color:#555;margin-bottom:0">Co-written with Joshua Miller, <em>Unrepeatable</em> is about vocation: the conviction that every person has a unique calling, and that the people around them &mdash; parents, teachers, mentors, managers &mdash; have a responsibility to help draw it out.</p>
-      </div>
-    </div>
-
   </div>
-</div>
+</section>
+
+<!-- BOOK 4: Unrepeatable -->
+<section class="book-section" id="unrepeatable" data-slug="unrepeatable" style="--section-bg:oklch(0.42 0.11 255);background:oklch(0.42 0.11 255);min-height:70svh;display:flex;align-items:center;padding:80px 0" data-book="unrepeatable">
+  <div class="inner" style="max-width:1140px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:34% 1fr;gap:60px;align-items:center">
+    <a href="books/unrepeatable/" class="book-cover-link" style="display:block">
+      <img src="assets/images/unrepeatable-bookshot.jpg" alt="Unrepeatable cover" style="width:100%;height:auto;display:block;border-radius:2px;box-shadow:0 24px 60px -20px rgb(0 0 0/.45);transition:transform 180ms cubic-bezier(.2,.7,.2,1),box-shadow 180ms cubic-bezier(.2,.7,.2,1)" onmouseover="this.style.transform='translateY(-6px) scale(1.02)';this.style.boxShadow='0 32px 80px -20px rgb(0 0 0/.55)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 24px 60px -20px rgb(0 0 0/.45)'">
+    </a>
+    <div style="color:var(--band-ink)">
+      <p style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;opacity:.72;margin-bottom:12px">04 &middot; 2018 &middot; Emmaus Road &middot; With Joshua Miller</p>
+      <h2 style="font-family:var(--font-heading);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:normal;line-height:1.1;margin-bottom:8px">Unrepeatable</h2>
+      <p style="font-family:var(--font-body);font-size:16px;font-style:italic;opacity:.85;margin-bottom:20px;color:inherit">Cultivating the Unique Calling of Every Person</p>
+      <p style="font-family:var(--font-body);font-size:16px;line-height:1.75;margin-bottom:24px;max-width:520px;color:inherit">On vocation: every person has a calling that is theirs alone, and the people around them&#8202;&mdash;&#8202;parents, teachers, mentors, managers&#8202;&mdash;&#8202;have a duty to help draw it out.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+        <a href="https://www.amazon.com/Unrepeatable-Cultivating-Unique-Calling-Person/dp/1947792687" target="_blank" rel="noopener" class="retailer-btn">Amazon</a>
+        <a href="https://www.barnesandnoble.com/s/9781947792685" target="_blank" rel="noopener" class="retailer-btn">Barnes &amp; Noble</a>
+        <a href="https://bookshop.org/search?keywords=9781947792685" target="_blank" rel="noopener" class="retailer-btn">Bookshop.org</a>
+      </div>
+      <a href="books/unrepeatable/" style="font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--band-ink);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 180ms" onmouseover="this.style.borderBottomColor='var(--band-ink)'" onmouseout="this.style.borderBottomColor='transparent'">Open &rarr;</a>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -244,6 +258,27 @@ footer a:hover{color:#FAF8F3}
   </div>
   <div class="footer-bottom"><a href="privacy.html">Privacy Policy</a></div>
 </footer>
+
+<script>
+document.documentElement.classList.add('js-active');
+var sections = document.querySelectorAll('.book-section');
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      var slug = entry.target.getAttribute('data-slug');
+      document.documentElement.setAttribute('data-book', slug);
+      var bg = getComputedStyle(entry.target).getPropertyValue('--section-bg').trim();
+      if (bg) document.body.style.backgroundColor = bg;
+    }
+  });
+}, { threshold: 0.5 });
+sections.forEach(function(s) { observer.observe(s); });
+// Handle hash on load
+if (location.hash) {
+  var target = document.querySelector(location.hash);
+  if (target) setTimeout(function() { target.scrollIntoView({behavior:'smooth'}); }, 100);
+}
+</script>
 
 </body>
 </html>

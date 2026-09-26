@@ -232,6 +232,8 @@ p{font-size:16px;line-height:1.72;max-width:660px;margin-bottom:12px;color:#222}
 
 /* ── §7 Newsletter ── */
 .newsletter{background:#FAF8F3;color:#111;padding:80px 56px}
+.newsletter .nl-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:768px){.newsletter .nl-grid{grid-template-columns:1fr;gap:32px}}
 .newsletter h2{color:#111;font-size:32px;margin-bottom:14px}
 .newsletter p{color:#aaa;max-width:540px}
 .nl-form{display:flex;margin-top:26px;max-width:480px}
@@ -485,6 +487,9 @@ footer a:hover{color:#111}
 
 <!-- §8 NEWSLETTER -->
 <div class="newsletter">
+  <div class="nl-grid">
+    <div>
+
   <div class="inner">
     <span class="label" style="color:#666">Newsletter</span>
     <h2>The Luke Burgis Newsletter</h2>
@@ -507,6 +512,12 @@ footer a:hover{color:#111}
     <div style="margin-top:20px"><a href="https://read.lukeburgis.com" class="btn-dark" style="color:#FAF8F3;display:inline-block">Subscribe at read.lukeburgis.com →</a></div>
     <p style="font-size:12px;color:#555;margin-top:12px">Free. Unsubscribe anytime. Read at <a href="https://read.lukeburgis.com" style="color:#888">read.lukeburgis.com</a></p>
     </div>
+
+    </div>
+    <div style="overflow:hidden">
+      <img src="assets/images/luke-portrait-couch.webp" alt="Luke Burgis" style="width:100%;height:auto;object-fit:cover;display:block;filter:grayscale(30%)">
+    </div>
+  </div>
 </div>
 
 <!-- FOOTER -->

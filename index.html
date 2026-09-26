@@ -399,26 +399,46 @@ footer a:hover{color:#111}
 </section>
 
 <!-- §X COURSES -->
+<style>
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.course-card{background:#FAF8F3;border:1px solid #e8e2d6;padding:40px 32px 36px;position:relative;transition:transform .3s cubic-bezier(.25,.46,.45,.94),box-shadow .3s ease,border-color .3s ease}
+.course-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.1);border-color:#d0c9bc}
+.course-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#E60028;opacity:0;transition:opacity .3s ease}
+.course-card:hover::before{opacity:1}
+.course-card .card-eyebrow{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#999;margin-bottom:16px;display:block}
+.course-card h3{font-family:var(--font-heading);font-size:22px;font-weight:600;line-height:1.25;margin-bottom:14px;color:#111}
+.course-card .card-desc{font-family:var(--font-body);font-size:15px;line-height:1.7;color:#555;margin-bottom:24px;max-width:none}
+.course-card .card-cta{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#111;text-decoration:none;border-bottom:1.5px solid #E60028;padding-bottom:2px;transition:color .2s ease}
+.course-card:hover .card-cta{color:#E60028}
+@media(max-width:900px){.courses-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}}
+</style>
 <section style="background:#fff;padding:80px 56px">
   <div class="inner">
     <span class="label">Courses</span>
     <h2 style="font-size:clamp(24px,3vw,36px);line-height:1.15;margin-bottom:16px">Not information. Formation.</h2>
-    <p style="font-size:16px;line-height:1.7;color:#444;margin-bottom:48px;max-width:660px">Two ways to work through the ideas at length &mdash; one online, one in Rome.</p>
+    <p style="font-size:16px;line-height:1.7;color:#444;margin-bottom:0;max-width:660px">Three ways to go deeper &mdash; online, immersive, or with your team.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+    <div class="courses-grid">
       <!-- Work as Soulcraft -->
-      <div>
-        <h3 style="font-family:var(--font-heading);font-size:22px;font-weight:600;margin-bottom:8px">Work as Soulcraft</h3>
-        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#888;margin-bottom:16px">Online &middot; Self-paced &middot; Eight modules</p>
-        <p style="font-size:15px;line-height:1.7;color:#444;margin-bottom:20px">Desire, discernment, and agency at work, drawn from <em>Wanting</em> and <em>The One and the Ninety-Nine</em>. For founders, executives, and professionals who want work to shape who they become, not just what they produce.</p>
-        <a href="https://learn.lukeburgis.com/" style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#111;text-decoration:none">Explore the course &rarr;</a>
+      <div class="course-card">
+        <span class="card-eyebrow">Online &middot; Self-paced &middot; Eight modules</span>
+        <h3>Work as Soulcraft</h3>
+        <p class="card-desc">Desire, discernment, and agency at work &mdash; drawn from <em>Wanting</em> and the ideas that move everything.</p>
+        <a href="https://learn.lukeburgis.com/" class="card-cta">Explore the course &rarr;</a>
       </div>
-      <!-- Philosophy of Technology -->
-      <div>
-        <h3 style="font-family:var(--font-heading);font-size:22px;font-weight:600;margin-bottom:8px">Philosophy of Technology</h3>
-        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#888;margin-bottom:16px">Rome &middot; One week &middot; 2027</p>
-        <p style="font-size:15px;line-height:1.7;color:#444;margin-bottom:20px">Twelve hours of instruction with Luke and guests at the Pontifical University of the Holy Cross, on what it means to be human among intelligent machines. Twenty seats, by application. Applications open November 1.</p>
-        <a href="courses.html#rome" style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#111;text-decoration:none">Join the waitlist &rarr;</a>
+      <!-- Foundations of Agency -->
+      <div class="course-card">
+        <span class="card-eyebrow">Immersive &middot; 40-day workshop</span>
+        <h3>Foundations of Agency</h3>
+        <p class="card-desc">A guided formation experience for those ready to confront mimetic patterns and reclaim authorship of their desires.</p>
+        <a href="courses.html" class="card-cta">Learn more &rarr;</a>
+      </div>
+      <!-- Corporate Workshop -->
+      <div class="course-card">
+        <span class="card-eyebrow">Half-day &middot; For senior teams</span>
+        <h3>Corporate Workshop</h3>
+        <p class="card-desc">Foundations of Agency delivered by Luke for executive teams &mdash; mimetic dynamics applied to leadership and culture.</p>
+        <a href="speaking.html#formats" class="card-cta">Inquire about booking &rarr;</a>
       </div>
     </div>
   </div>

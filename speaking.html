@@ -64,10 +64,10 @@ nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:18px 4
 .placeholder-note{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#bbb;display:block;margin-top:4px}
 
 /* CLIPS */
-.clips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-top:32px}
-.clip-placeholder{background:#1a1a1a;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:#555;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
-.clip-title{font-family:var(--font-heading);font-size:17px;font-weight:600;margin:14px 0 4px;color:#111}
-.clip-event{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999}
+
+
+
+
 
 /* FOOTER */
 footer{background:#1a1a1a;color:#777;padding:48px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
@@ -84,7 +84,7 @@ footer a:hover{color:#FAF8F3}
   .hamburger{display:flex}
   .inner{padding:0 20px}
   nav{padding:14px 20px}
-  .clips-grid{grid-template-columns:1fr}
+  
   #formats .inner>[style*="grid-template-columns"]{grid-template-columns:1fr!important;gap:32px!important}
   footer{grid-template-columns:1fr 1fr;gap:28px;padding:40px 20px}
   .logo-row{gap:20px 32px}
@@ -179,9 +179,9 @@ footer a:hover{color:#FAF8F3}
 <!-- ============================================================
      3. OFFERINGS — three tiers, no prices
      ============================================================ -->
-<section id="talks" style="padding:72px 0;border-bottom:1px solid #e8e2d6">
+<section id="talks" style="padding:72px 0;border-bottom:1px solid #e8e2d6;background:#fff">
   <div class="inner">
-    <span style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#999;display:block;margin-bottom:32px">Talks</span>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:600;margin-bottom:12px;color:#111">Keynote Talks</h2><p style="font-size:15px;line-height:1.7;color:#666;margin-bottom:40px;max-width:600px">Each keynote draws on Luke&rsquo;s research into mimetic desire, identity, and agency. Typically 45&ndash;60 minutes plus Q&amp;A.</p>
 
     <ol style="list-style:none;padding:0;margin:0;max-width:680px;counter-reset:talk">
       <li style="counter-increment:talk;padding:24px 0;border-top:1px solid #e8e2d6;display:flex;gap:20px;align-items:baseline">
@@ -230,10 +230,10 @@ footer a:hover{color:#FAF8F3}
 <!-- ============================================================
      FORMATS — workshop tiers
      ============================================================ -->
-<section id="formats" style="padding:72px 0;border-bottom:1px solid #e8e2d6">
+<section id="formats" style="padding:72px 0;border-bottom:1px solid #e8e2d6;background:#f5f2eb">
   <div class="inner">
-    <span style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#999;display:block;margin-bottom:32px">Formats</span>
-    <p style="font-size:16px;line-height:1.7;color:#444;margin-bottom:48px;max-width:660px">Keynotes are drawn from the talks above. For senior teams, two longer formats.</p>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:600;margin-bottom:12px;color:#111">Workshops</h2>
+    <p style="font-size:16px;line-height:1.7;color:#444;margin-bottom:48px;max-width:660px">For senior teams ready to go deeper. Hands-on sessions that apply the frameworks to your organization.</p>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
       <div>
@@ -290,32 +290,7 @@ footer a:hover{color:#FAF8F3}
 <!-- ============================================================
      5. ADDITIONAL CLIPS — titled by idea, not event
      ============================================================ -->
-<section style="padding:72px 0;border-bottom:1px solid #e8e2d6">
-  <div class="inner">
-    <span class="label">Selected Clips</span>
-    <div class="clips-grid">
 
-      <div>
-        <div class="clip-placeholder"><!-- [PLACEHOLDER VIDEO] -->[Video]</div>
-        <h3 class="clip-title">Why We Want What We Want</h3>
-        <p class="clip-event">92nd Street Y</p>
-      </div>
-
-      <div>
-        <div class="clip-placeholder"><!-- [PLACEHOLDER VIDEO] -->[Video]</div>
-        <h3 class="clip-title">Thick and Thin Desire</h3>
-        <p class="clip-event">Acton University</p>
-      </div>
-
-      <div>
-        <div class="clip-placeholder"><!-- [PLACEHOLDER VIDEO] -->[Video]</div>
-        <h3 class="clip-title">Rivalry Inside Organizations</h3>
-        <p class="clip-event">Main Street Summit</p>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ============================================================
      6. INQUIRY FORM — HubSpot embed (exact CSS string)

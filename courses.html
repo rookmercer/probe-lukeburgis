@@ -95,6 +95,10 @@ footer a:hover{color:#FAF8F3}
   .formation-band .inner{grid-template-columns:1fr!important;gap:40px!important}
   footer{grid-template-columns:1fr 1fr;gap:28px;padding:40px 20px}
 }
+
+@keyframes quoteReveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes citeFade{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.giussani-quote{animation:none!important;opacity:1!important;transform:none!important}.giussani-quote cite{animation:none!important;opacity:1!important}}
 </style>
 <!-- v1790473140 -->
 <!-- v1790473218 -->
@@ -175,6 +179,10 @@ footer a:hover{color:#FAF8F3}
 .c1s-tag{opacity:0;animation:c1sfade .9s ease 2.55s both}
 @keyframes c1sfade{to{opacity:1}}
 @media (prefers-reduced-motion:reduce){.c1s-ring,.c1s-dot,.c1s-word,.c1s-tag{animation:none}.c1s-ring{stroke-dashoffset:0}.c1s-dot,.c1s-word,.c1s-tag{opacity:1}}
+
+@keyframes quoteReveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes citeFade{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.giussani-quote{animation:none!important;opacity:1!important;transform:none!important}.giussani-quote cite{animation:none!important;opacity:1!important}}
 </style>
   <g transform="translate(200,16)">
   <path class="c1s-ring" pathLength="100" d="M125.4 45.6A60 60 0 1 1 74.6 45.6"/>
@@ -227,10 +235,12 @@ footer a:hover{color:#FAF8F3}
       <a href="https://www.foundationsofagency.com/" target="_blank" rel="noopener" style="font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;padding:13px 28px;text-decoration:none;display:inline-block;font-weight:600">Learn more &rarr;</a>
     </div>
     <div>
-      <div style="background:#2C2926;padding:48px 36px;display:flex;align-items:center;justify-content:center;min-height:320px;border-radius:4px">
-        <blockquote style="font-family:var(--font-heading);font-size:clamp(1.1rem,2vw,1.5rem);font-weight:400;line-height:1.65;color:#fff;text-align:center;max-width:440px;margin:0;font-style:italic">
-          &ldquo;The purpose of education is to form a new subject, which is the protagonist of its own existence.&rdquo;
-          <cite style="display:block;margin-top:20px;font-family:var(--font-label);font-size:11px;font-style:normal;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.75)">&mdash; Luigi Giussani</cite>
+      <div style="background:linear-gradient(135deg,#1a1512 0%,#2e2520 50%,#1a1512 100%);padding:56px 40px;display:flex;align-items:center;justify-content:center;min-height:340px;border-radius:4px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 30% 40%,rgba(200,169,81,.08) 0%,transparent 70%);pointer-events:none"></div>
+        <blockquote class="giussani-quote" style="font-family:var(--font-heading);font-size:clamp(1.15rem,2.2vw,1.55rem);font-weight:400;line-height:1.7;color:#FAF8F3;text-align:center;max-width:440px;margin:0;font-style:italic;position:relative;opacity:0;transform:translateY(16px);animation:quoteReveal 1.2s ease-out forwards;animation-delay:0.3s">
+          <span style="display:block;font-family:var(--font-heading);font-size:3rem;line-height:1;color:var(--color-gold);margin-bottom:8px;opacity:.5">&ldquo;</span>
+          The purpose of education is to form a new subject, which is the protagonist of its own existence.
+          <cite style="display:block;margin-top:24px;font-family:var(--font-label);font-size:11px;font-style:normal;text-transform:uppercase;letter-spacing:.14em;color:rgba(250,248,243,.55);opacity:0;animation:citeFade .8s ease forwards;animation-delay:1.2s">&mdash; Luigi Giussani</cite>
         </blockquote>
       </div>
     </div>

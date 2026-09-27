@@ -242,29 +242,74 @@ footer a:hover{color:#FAF8F3}
 <!-- ============================================================
      4. PROOF BLOCK — quantified result + testimonials
      ============================================================ -->
-<section style="background:#111;padding:72px 0;color:#FAF8F3">
-  <div class="inner" style="text-align:center">
-    <span style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.45);display:block;margin-bottom:24px">Results</span>
-    <p class="proof-stat">&ldquo;At Acton University 2026, every respondent rated Luke&rsquo;s session &lsquo;relevant and challenging&rsquo; &mdash; 100% top-two-box scores across content, presentation, and delivery, above the faculty average.&rdquo;</p>
-    <p class="proof-stat-source">Acton University Post-Session Survey, 2026</p>
-  </div>
-</section>
+<!-- ============================================================
+     4. ENDORSEMENTS — combined results + testimonials with animation
+     ============================================================ -->
+<section style="background:#111;padding:96px 0;color:#FAF8F3;overflow:hidden">
+  <div class="inner" style="max-width:900px;margin:0 auto;padding:0 40px">
 
-<section style="padding:72px 0;border-bottom:1px solid #e8e2d6">
-  <div class="inner" style="max-width:760px">
-    <span class="label">What attendees say</span>
+    <!-- Animated endorsement carousel -->
+    <div class="endorsement-track" style="position:relative;min-height:200px">
 
-    <!-- Verified Acton testimonial -->
-    <div class="proof-quote" style="margin-top:24px">
-      <p>&ldquo;Simply incredible. The best class I have ever taken. [...] It left me so deep in thought that I had to buy the book.&rdquo;</p>
-      <cite>&mdash; Attendee, Acton University 2026</cite>
+      <!-- Slide 1: Acton testimonial -->
+      <div class="endorsement-slide endorsement-active" style="text-align:center;opacity:1;transform:translateY(0);transition:opacity .8s ease,transform .8s ease">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="rgba(200,169,81,.4)" stroke-width="1.5" style="margin:0 auto 24px;display:block"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        <p style="font-family:var(--font-heading);font-size:clamp(1.4rem,2.8vw,2rem);font-weight:400;line-height:1.55;color:#FAF8F3;margin:0 auto 20px;max-width:720px;font-style:italic">&ldquo;Simply incredible. The best class I&rsquo;ve ever taken here.&rdquo;</p>
+        <cite style="font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:rgba(250,248,243,.5);font-style:normal;display:block">&mdash; Acton University</cite>
+      </div>
+
+      <!-- Slide 2: 100% stat -->
+      <div class="endorsement-slide" style="position:absolute;top:0;left:0;width:100%;text-align:center;opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease">
+        <p style="font-family:var(--font-heading);font-size:clamp(3rem,6vw,5rem);font-weight:600;color:var(--color-gold);margin:0 0 16px;line-height:1">100%</p>
+        <p style="font-family:var(--font-body);font-size:18px;line-height:1.65;color:rgba(250,248,243,.85);max-width:600px;margin:0 auto 12px">Top-two-box scores across content, presentation, and delivery &mdash; above the faculty average.</p>
+        <cite style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(250,248,243,.4);font-style:normal;display:block">Acton University Post-Session Survey, 2026</cite>
+      </div>
+
+      <!-- Slide 3: placeholder for future testimonial -->
+      <div class="endorsement-slide" style="position:absolute;top:0;left:0;width:100%;text-align:center;opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="rgba(200,169,81,.4)" stroke-width="1.5" style="margin:0 auto 24px;display:block"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        <p style="font-family:var(--font-heading);font-size:clamp(1.4rem,2.8vw,2rem);font-weight:400;line-height:1.55;color:#FAF8F3;margin:0 auto 20px;max-width:720px;font-style:italic">&ldquo;It left me so deep in thought that I had to buy the book.&rdquo;</p>
+        <cite style="font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:rgba(250,248,243,.5);font-style:normal;display:block">&mdash; Attendee, Acton University 2026</cite>
+      </div>
+
     </div>
 
-
-
+    <!-- Navigation dots -->
+    <div style="display:flex;justify-content:center;gap:10px;margin-top:36px">
+      <button class="endorsement-dot endorsement-dot-active" onclick="showEndorsement(0)" style="width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;background:var(--color-gold);transition:all .3s"></button>
+      <button class="endorsement-dot" onclick="showEndorsement(1)" style="width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;background:rgba(250,248,243,.25);transition:all .3s"></button>
+      <button class="endorsement-dot" onclick="showEndorsement(2)" style="width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;background:rgba(250,248,243,.25);transition:all .3s"></button>
+    </div>
 
   </div>
 </section>
+
+<script>
+(function(){
+  var slides=document.querySelectorAll('.endorsement-slide');
+  var dots=document.querySelectorAll('.endorsement-dot');
+  var current=0;
+  var timer;
+  function show(i){
+    slides.forEach(function(s,idx){
+      if(idx===i){s.style.opacity='1';s.style.transform='translateY(0)';s.style.position=idx===0?'relative':'absolute';}
+      else{s.style.opacity='0';s.style.transform='translateY(20px)';s.style.position='absolute';}
+    });
+    dots.forEach(function(d,idx){
+      d.style.background=idx===i?'var(--color-gold)':'rgba(250,248,243,.25)';
+    });
+    // adjust container height
+    slides[i].style.position='relative';
+    current=i;
+  }
+  function next(){current=(current+1)%slides.length;show(current);}
+  window.showEndorsement=function(i){show(i);clearInterval(timer);timer=setInterval(next,6000);};
+  timer=setInterval(next,6000);
+  // pause on hover
+  var track=document.querySelector('.endorsement-track');
+  if(track){track.addEventListener('mouseenter',function(){clearInterval(timer);});track.addEventListener('mouseleave',function(){timer=setInterval(next,6000);});}
+})();
+</script>
 
 <!-- ============================================================
      5. ADDITIONAL CLIPS — titled by idea, not event

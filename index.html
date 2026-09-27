@@ -68,7 +68,7 @@ to{opacity:1;transform:scale(1)}}
 .hero-words h1{font-family:var(--font-heading);font-size:clamp(2.8rem,7vw,5.5rem);font-weight:normal;line-height:1.06;letter-spacing:-.02em;margin-bottom:24px;color:var(--color-ink)}
 .hero-words .hero-sub{font-family:var(--font-body);font-size:clamp(1rem,1.8vw,1.25rem);line-height:1.7;color:#444;margin-bottom:0}
 
-.nav-logo.anim-hidden{display:none}
+.nav-logo.anim-hidden{visibility:hidden}
   .nav-anim-hidden{opacity:1!important}
 
 
@@ -524,7 +524,7 @@ footer a:hover{color:#111}
     if (sessionStorage.getItem(SEEN_KEY) || reduceMotion) {
       // Repeat visit: show nav-logo, hide hero-mono, show content immediately
       mono.style.display = 'none';
-      if (navLogo) { navLogo.style.display = 'flex'; navLogo.style.visibility = 'visible'; }
+      if (navLogo) { navLogo.style.visibility = 'visible'; }
       if (photo) photo.classList.add('visible');
       if (words) words.classList.add('visible');
       return;
@@ -614,7 +614,7 @@ footer a:hover{color:#111}
       }
       setTimeout(function(){
         mono.style.display = 'none';
-        if (navLogo) { navLogo.style.display = 'flex'; navLogo.style.visibility = 'visible'; }
+        if (navLogo) { navLogo.style.visibility = 'visible'; }
       }, 350);
     }, settleTime);
   })();

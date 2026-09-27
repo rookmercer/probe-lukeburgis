@@ -302,17 +302,25 @@ footer a:hover{color:#FAF8F3}
     <div id="romeFormContainer"></div>
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
     <script>
-      document.getElementById('romeModal').addEventListener('click', function() {
-        if (!document.getElementById('romeFormContainer').hasChildNodes()) {
-          hbspt.forms.create({
-            region: "na1",
-            portalId: "39943621",
-            formId: "3197b09b-6896-4e05-bb85-0d3b18456402",
-            target: "#romeFormContainer",
-            css: ".hs-form-field label{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:#111!important;font-weight:600!important}.hs-form-required{color:#E60028!important}.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important;border:1px solid #d0c9bc!important;border-radius:0!important;padding:10px 12px!important;background:#FAF8F3!important;color:#111!important}.hs-input:focus{border-color:#111!important;outline:none!important}textarea.hs-input{min-height:100px!important}.hs-button{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.12em!important;background:#111!important;color:#FAF8F3!important;border:none!important;border-radius:0!important;padding:13px 30px!important;cursor:pointer!important;font-weight:600!important}.hs-error-msgs label{font-size:11px!important;color:#dc2127!important;text-transform:none!important;letter-spacing:normal!important;font-weight:400!important}.hs-form-field{margin-bottom:18px!important}"
-          });
-        }
-      }, {once: true});
+      (function() {
+        var btn = document.querySelector('[onclick*="romeModal"]');
+        if (btn) btn.addEventListener('click', function() {
+          setTimeout(function() {
+            if (!document.getElementById('romeFormContainer').hasChildNodes()) {
+              hbspt.forms.create({
+                region: "na1",
+                portalId: "39943621",
+                formId: "3197b09b-6896-4e05-bb85-0d3b18456402",
+                target: "#romeFormContainer",
+                css: ".hs-form-field label{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.08em!important;color:#111!important;font-weight:600!important}.hs-form-required{color:#C8102E!important}.hs-input{font-family:Sura,Georgia,serif!important;font-size:14px!important;border:1px solid #d0c9bc!important;border-radius:0!important;padding:10px 12px!important;background:#FAF8F3!important;color:#111!important}.hs-input:focus{border-color:#111!important;outline:none!important}textarea.hs-input{min-height:100px!important}.hs-button{font-family:Montserrat,sans-serif!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.12em!important;background:#C8102E!important;color:#FAF8F3!important;border:none!important;border-radius:0!important;padding:13px 30px!important;cursor:pointer!important;font-weight:600!important}.hs-error-msgs label{font-size:11px!important;color:#dc2127!important;text-transform:none!important;letter-spacing:normal!important;font-weight:400!important}.hs-form-field{margin-bottom:18px!important}",
+                onFormSubmitted: function() {
+                  document.getElementById('romeFormContainer').innerHTML = '<p style="font-family:var(--font-body);font-size:16px;line-height:1.7;color:#111;margin-top:24px">You will be notified via email as soon as enrollment opens.</p>';
+                }
+              });
+            }
+          }, 100);
+        });
+      })();
     </script>
   </div>
 </div>

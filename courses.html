@@ -190,10 +190,24 @@ footer a:hover{color:#FAF8F3}
 
     <div>
       <div style="margin-bottom:24px">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="48" height="48" role="img" aria-label="Foundations of Agency">
-          <circle cx="100" cy="100" r="80" fill="none" stroke="#111" stroke-width="10"/>
-          <line x1="100" y1="40" x2="100" y2="160" stroke="#111" stroke-width="8" stroke-linecap="round"/>
-          <line x1="60" y1="100" x2="140" y2="100" stroke="#111" stroke-width="8" stroke-linecap="round"/>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="56" height="56" role="img" aria-label="Foundations of Agency">
+          <!-- 3D wireframe tetrahedron — FOA logo -->
+          <!-- Outer triangle -->
+          <polygon points="100,15 10,175 190,175" fill="none" stroke="#111" stroke-width="1.8"/>
+          <!-- Inner triangle (inverted, smaller) -->
+          <polygon points="100,95 55,175 145,175" fill="none" stroke="#111" stroke-width="1.2"/>
+          <!-- Vertical edges from apex to base -->
+          <line x1="100" y1="15" x2="55" y2="175" stroke="#111" stroke-width="1.2"/>
+          <line x1="100" y1="15" x2="145" y2="175" stroke="#111" stroke-width="1.2"/>
+          <!-- Horizontal cross-brace -->
+          <line x1="35" y1="135" x2="165" y2="135" stroke="#111" stroke-width="1.2"/>
+          <!-- Diagonal cross lines in base -->
+          <line x1="55" y1="175" x2="165" y2="135" stroke="#111" stroke-width="1"/>
+          <line x1="145" y1="175" x2="35" y2="135" stroke="#111" stroke-width="1"/>
+          <!-- Mid-height brace -->
+          <line x1="55" y1="95" x2="145" y2="95" stroke="#111" stroke-width="1"/>
+          <line x1="55" y1="95" x2="100" y2="15" stroke="#111" stroke-width="0.8" opacity="0.5"/>
+          <line x1="145" y1="95" x2="100" y2="15" stroke="#111" stroke-width="0.8" opacity="0.5"/>
         </svg>
       </div>
       <span class="band-label">Cluny Institute &middot; 6-Week Cohort &middot; Virtual</span>

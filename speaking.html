@@ -259,36 +259,34 @@ footer a:hover{color:#FAF8F3}
   </div>
 </section>
 
-<!-- WHAT ORGANIZERS ARE SAYING — logo-attributed, rotating -->
+<!-- WHAT ORGANIZERS ARE SAYING — static 2x3 grid with logos -->
 <section style="padding:72px 0;border-bottom:1px solid #e8e2d6;background:#FAF8F3;overflow:hidden">
   <div class="inner" style="max-width:1100px;margin:0 auto;padding:0 40px">
     <span class="label" style="display:block;margin-bottom:32px">What organizers are saying</span>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-top:0" id="orgQuoteGrid">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
 
-      <!-- Set A -->
-      <div class="org-quote org-set-a" style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06);opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease">
+      <div style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
         <img src="assets/images/logos/acton.png" alt="Acton Institute" style="height:28px;width:auto;object-fit:contain;filter:grayscale(100%);mix-blend-mode:multiply;display:block;margin-bottom:12px">
         <p style="font-family:var(--font-body);font-size:15px;font-style:italic;line-height:1.65;color:#333;margin:0">&ldquo;Simply incredible. The best class I&rsquo;ve ever taken.&rdquo;</p>
       </div>
-      <div class="org-quote org-set-a" style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06);opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease">
+      <div style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
         <img src="assets/images/logos/92ny.png" alt="92NY" style="height:28px;width:auto;object-fit:contain;filter:grayscale(100%);mix-blend-mode:multiply;display:block;margin-bottom:12px">
         <p style="font-family:var(--font-body);font-size:15px;font-style:italic;line-height:1.65;color:#333;margin:0">&ldquo;Truly a great experience.&rdquo;</p>
       </div>
-      <div class="org-quote org-set-a" style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06);opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease">
+      <div style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
         <img src="assets/images/logos/main-street-summit.png" alt="Main Street Summit" style="height:28px;width:auto;object-fit:contain;filter:grayscale(100%);mix-blend-mode:multiply;display:block;margin-bottom:12px">
         <p style="font-family:var(--font-body);font-size:15px;font-style:italic;line-height:1.65;color:#333;margin:0">&ldquo;Continue to hear about the impact of the talk.&rdquo;</p>
       </div>
 
-      <!-- Set B -->
-      <div class="org-quote org-set-b" style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06);opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease;position:absolute;visibility:hidden">
+      <div style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
         <img src="assets/images/logos/toronto-society.png" alt="The Toronto Society" style="height:28px;width:auto;object-fit:contain;filter:grayscale(100%);mix-blend-mode:multiply;display:block;margin-bottom:12px">
         <p style="font-family:var(--font-body);font-size:15px;font-style:italic;line-height:1.65;color:#333;margin:0">&ldquo;Still getting peppered with notes about how meaningful and thought-provoking it was.&rdquo;</p>
       </div>
-      <div class="org-quote org-set-b" style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06);opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease;position:absolute;visibility:hidden">
+      <div style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
         <span style="font-family:var(--font-label);font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#E62B1E;display:block;margin-bottom:12px">TED</span>
         <p style="font-family:var(--font-body);font-size:15px;font-style:italic;line-height:1.65;color:#333;margin:0">&ldquo;Inspiring and informative.&rdquo;</p>
       </div>
-      <div class="org-quote org-set-b" style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06);opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease;position:absolute;visibility:hidden">
+      <div style="padding:28px 24px;background:#fff;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.06)">
         <img src="assets/images/logos/athenaeum.png" alt="Athenaeum Center" style="height:28px;width:auto;object-fit:contain;filter:grayscale(100%);mix-blend-mode:multiply;display:block;margin-bottom:12px">
         <p style="font-family:var(--font-body);font-size:15px;font-style:italic;line-height:1.65;color:#333;margin:0">&ldquo;People are still talking about it.&rdquo;</p>
       </div>
@@ -297,27 +295,6 @@ footer a:hover{color:#FAF8F3}
   </div>
 </section>
 
-<script>
-(function(){
-  var setA=document.querySelectorAll('.org-set-a');
-  var setB=document.querySelectorAll('.org-set-b');
-  var showingA=true;
-  function swap(){
-    var fadeOut=showingA?setA:setB;
-    var fadeIn=showingA?setB:setA;
-    fadeOut.forEach(function(el){el.style.opacity='0';el.style.transform='translateY(12px)';});
-    setTimeout(function(){
-      fadeOut.forEach(function(el){el.style.position='absolute';el.style.visibility='hidden';});
-      fadeIn.forEach(function(el){el.style.position='relative';el.style.visibility='visible';});
-      setTimeout(function(){
-        fadeIn.forEach(function(el){el.style.opacity='1';el.style.transform='translateY(0)';});
-      },50);
-    },600);
-    showingA=!showingA;
-  }
-  setInterval(swap,5000);
-})();
-</script>
 
 <!-- ============================================================
      5. ADDITIONAL CLIPS — titled by idea, not event

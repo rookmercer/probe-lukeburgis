@@ -343,5 +343,24 @@ form .hs-button, form input[type=submit] {
   -webkit-appearance: none !important;
 }
 </style>
+<script>
+/* Kill HubSpot orange buttons + hide CAPTCHA after form renders */
+(function(){
+  function fixHS(){
+    document.querySelectorAll('.hs-button, input[type=submit].hs-button, .hs-form input[type=submit]').forEach(function(b){
+      b.style.cssText='font-family:Montserrat,sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;border:none;border-radius:0;padding:13px 30px;cursor:pointer;font-weight:600;-webkit-appearance:none';
+    });
+    document.querySelectorAll('.grecaptcha-badge, .hs-recaptcha').forEach(function(c){
+      c.style.display='none';
+    });
+  }
+  // Run on any DOM change (catches HubSpot async render)
+  var obs=new MutationObserver(fixHS);
+  obs.observe(document.body,{childList:true,subtree:true});
+  // Also run on intervals for first few seconds
+  var i=setInterval(fixHS,500);
+  setTimeout(function(){clearInterval(i)},10000);
+})();
+</script>
 </body>
 </html>

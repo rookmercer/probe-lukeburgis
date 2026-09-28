@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+<title>Your Guide Is Ready — Luke Burgis</title>
+<link rel="icon" href="assets/svg/LB-monogram-black.svg" type="image/svg+xml">
+<style>
+:root{--color-paper:#FAF8F3;--color-ink:#111;--color-gold:#E60028;--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);background:var(--color-paper);color:var(--color-ink);line-height:1.6;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px}
+.thank-you{max-width:600px;text-align:center}
+.thank-you h1{font-family:var(--font-heading);font-size:clamp(28px,4vw,40px);font-weight:600;line-height:1.15;margin-bottom:16px}
+.thank-you p{font-size:17px;line-height:1.7;color:#444;margin-bottom:24px}
+.download-btn{display:inline-block;background:var(--color-ink);color:#FAF8F3;padding:16px 40px;font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;font-weight:600;transition:background .2s}
+.download-btn:hover{background:var(--color-gold)}
+.note{font-family:var(--font-label);font-size:11px;color:#999;text-transform:uppercase;letter-spacing:.06em;margin-top:24px;line-height:1.7}
+.note a{color:#999}
+.cover-img{max-width:280px;margin:0 auto 32px;display:block;border-radius:4px;box-shadow:0 16px 48px -8px rgba(0,0,0,.3)}
+</style>
+<script>
+// Auto-trigger download after 1 second
+setTimeout(function(){
+  var a = document.createElement('a');
+  a.href = 'assets/downloads/philosophy-for-creators.pdf';
+  a.download = 'Philosophy-for-Creators-Luke-Burgis.pdf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}, 1000);
+</script>
+</head>
+<body>
+<div class="thank-you">
+  <img src="assets/images/curated-cover.png" alt="Philosophy for Creators" class="cover-img">
+  <h1>Your guide is ready.</h1>
+  <p>Your download should begin automatically. If it doesn't, click the button below.</p>
+  <a href="assets/downloads/philosophy-for-creators.pdf" download="Philosophy-for-Creators-Luke-Burgis.pdf" class="download-btn">Download PDF →</a>
+  <p class="note">A copy is also on its way to your inbox.<br>
+  <a href="index.html">← Back to lukeburgis.com</a></p>
+</div>
+</body>
+</html>

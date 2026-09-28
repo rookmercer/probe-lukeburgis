@@ -926,5 +926,35 @@ footer a:hover{color:#111}
 })();
 </script>
 
+<script>
+/* Intercept Kajabi form redirect to old site */
+(function(){
+  var origOpen = XMLHttpRequest.prototype.open;
+  var origSubmit = HTMLFormElement.prototype.submit;
+  
+  // Watch for navigation to old thank-you page
+  window.addEventListener('beforeunload', function(){});
+  
+  // Override Kajabi redirect by watching for form submissions in the embed
+  var pfcWrap = document.getElementById('pfc-kajabi-wrap');
+  if(pfcWrap){
+    var obs = new MutationObserver(function(){
+      var forms = pfcWrap.querySelectorAll('form');
+      forms.forEach(function(form){
+        if(!form._pfcPatched){
+          form._pfcPatched = true;
+          form.addEventListener('submit', function(){
+            // After submission, redirect to our thank-you page
+            setTimeout(function(){
+              window.location.href = 'thank-you-pfc.html';
+            }, 2000);
+          });
+        }
+      });
+    });
+    obs.observe(pfcWrap, {childList:true, subtree:true});
+  }
+})();
+</script>
 </body>
 </html>

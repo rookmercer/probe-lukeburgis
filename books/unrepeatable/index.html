@@ -6,6 +6,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Sura:wght@400;700&display=swap" rel="stylesheet">
 <style>
+/* Nav */
+nav{background:var(--color-paper,#FAF8F3);border-bottom:1px solid #e8e2d6;padding:18px 40px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center}
+.nav-logo a{display:flex;align-items:center}
+.nav-logo svg{width:44px;height:auto;display:block}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:var(--font-label,'Montserrat',sans-serif);font-size:12px;text-transform:uppercase;letter-spacing:.1em;justify-self:center}
+.nav-links a,.nav-links span{color:#111;text-decoration:none}
+.nav-links a:hover{color:var(--color-gold,#E60028)}
+.nav-links .active{color:var(--color-gold,#E60028);font-weight:600}
+.nav-cta{justify-self:end;font-family:var(--font-label,'Montserrat',sans-serif);font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none;border:none;white-space:nowrap;font-weight:600}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:#111}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-paper,#FAF8F3);z-index:200;padding:80px 48px 48px;flex-direction:column;gap:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-label,'Montserrat',sans-serif);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block;text-decoration:none}
+.mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
 :root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--bg:oklch(0.42 0.11 255);--deep:oklch(0.34 0.11 255);--ink:oklch(0.97 0.01 255);--a:oklch(0.80 0.16 255)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--font-body)}
@@ -13,8 +29,11 @@ a{color:inherit}
 .inner{max-width:1140px;margin:0 auto;padding:0 40px}
 nav{position:sticky;top:0;z-index:100;background:var(--deep);padding:16px 40px;display:flex;align-items:center;justify-content:space-between}
 nav a{color:var(--ink);text-decoration:none;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
-.nav-links{list-style:none;display:flex;gap:24px;margin:0;padding:0}
-@media(max-width:768px){.stage-grid{grid-template-columns:1fr!important}.stage-cover{width:70%!important;margin:0 auto 32px}.nav-links{display:none}}
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  .nav-links{display:none}
+  .nav-cta{font-size:10px;padding:8px 14px}
+  .hamburger{display:flex}.stage-grid{grid-template-columns:1fr!important}.stage-cover{width:70%!important;margin:0 auto 32px}}
 </style></head><body>
 <nav><a href="../../books.html" style="font-weight:500">&larr; All books</a>
 <ul class="nav-links"><li><a href="../../books.html">Books</a></li><li><a href="../../writing/">Writing</a></li><li><a href="../../speaking.html">Speaking</a></li><li><a href="../../courses.html">Courses</a></li><li><a href="../../about.html">About</a></li></ul></nav>
@@ -26,7 +45,6 @@ nav a{color:var(--ink);text-decoration:none;font-family:var(--font-label);font-s
 <h1 style="font-family:var(--font-heading);font-size:clamp(2rem,4vw,3.2rem);font-weight:normal;line-height:1.1;margin-bottom:8px">Unrepeatable</h1>
 <p style="font-size:17px;font-style:italic;opacity:.85;margin-bottom:28px">Cultivating the Unique Calling of Every Person</p>
 <div style="font-size:17px;line-height:1.75;margin-bottom:28px;max-width:560px"><p>Every person has a calling that is theirs alone. <em>Unrepeatable</em> is about that conviction and its consequence: that the people around us &mdash; parents, teachers, mentors, managers &mdash; have a responsibility to help draw it out.</p><p>Written with Joshua Miller, it is a book about vocation as something cultivated rather than found, for anyone responsible for another person&rsquo;s growth.</p></div>
-
 
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
 <a href="https://www.amazon.com/Unrepeatable-Cultivating-Unique-Calling-Person/dp/1947792687" target="_blank" rel="noopener" style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;padding:10px 20px;border:1.5px solid;color:inherit;text-decoration:none;background:transparent;display:inline-block;transition:all 180ms">Amazon</a>

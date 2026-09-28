@@ -16,18 +16,27 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <style>
+/* Nav */
+nav{background:var(--color-paper,#FAF8F3);border-bottom:1px solid #e8e2d6;padding:18px 40px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center}
+.nav-logo a{display:flex;align-items:center}
+.nav-logo svg{width:44px;height:auto;display:block}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:var(--font-label,'Montserrat',sans-serif);font-size:12px;text-transform:uppercase;letter-spacing:.1em;justify-self:center}
+.nav-links a,.nav-links span{color:#111;text-decoration:none}
+.nav-links a:hover{color:var(--color-gold,#E60028)}
+.nav-links .active{color:var(--color-gold,#E60028);font-weight:600}
+.nav-cta{justify-self:end;font-family:var(--font-label,'Montserrat',sans-serif);font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none;border:none;white-space:nowrap;font-weight:600}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:#111}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-paper,#FAF8F3);z-index:200;padding:80px 48px 48px;flex-direction:column;gap:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-label,'Montserrat',sans-serif);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block;text-decoration:none}
+.mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
 html,body{overflow-x:hidden}
 :root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--color-gold:#E60028;--color-ink:#111111;--color-paper:#FAF8F3;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-body);background:var(--color-paper);color:var(--color-ink);line-height:1}
-nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:20px 56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.nav-logo{display:flex;align-items:center}
-.nav-logo svg{width:48px;height:auto;display:block}
-.nav-links{list-style:none;display:flex;gap:24px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em}
-.nav-links a{color:#111;text-decoration:none}
-.nav-links a:hover{color:var(--color-gold)}
 .nav-links a.active{color:var(--color-gold);border-bottom:2px solid var(--color-gold);padding-bottom:2px}
-.nav-cta{justify-self:end;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none;border:none;white-space:nowrap;display:inline-block;font-weight:600;margin-left:16px}
 .essay-wrap{max-width:680px;margin:0 auto;padding:64px 24px 80px}
 .back-link{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;text-decoration:none;display:inline-block;margin-bottom:48px}
 .back-link:hover{color:var(--color-gold)}
@@ -51,23 +60,23 @@ footer ul{list-style:none}
 footer li{margin-bottom:8px}
 footer a{color:#777;text-decoration:none}
 footer a:hover{color:#FAF8F3}
-.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
-.hamburger span{display:block;width:22px;height:2px;background:#111}
-.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-paper);z-index:200;padding:80px 48px 48px;flex-direction:column;gap:24px}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--font-label);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block}
-.mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
 
 @media(max-width:760px){
   nav .nav-links,nav .nav-right{display:none}
-  .hamburger{display:flex}
-nav{padding:16px 20px}.essay-wrap{padding:40px 20px 60px}footer{grid-template-columns:1fr 1fr;padding:36px 20px}}
+  nav{padding:16px 20px}.essay-wrap{padding:40px 20px 60px}footer{grid-template-columns:1fr 1fr;padding:36px 20px}}
 /* Reading progress bar */
 #reading-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:#111111;z-index:9999;opacity:0;transition:opacity .2s}
 #reading-progress.visible{opacity:1}
 @media(prefers-reduced-motion:reduce){#reading-progress{display:none}}
 .about-essay{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:6px}
 .curator-note{font-style:italic;font-size:15px;line-height:1.6;color:#666;margin-bottom:32px}
+
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  .nav-links{display:none}
+  .nav-cta{font-size:10px;padding:8px 14px}
+  .hamburger{display:flex}
+}
 </style>
 </head>
 <body>
@@ -110,7 +119,6 @@ nav{padding:16px 20px}.essay-wrap{padding:40px 20px 60px}footer{grid-template-co
 
 <div class="essay-wrap">
   <a class="back-link" href="../../writing/">← All Essays</a>
-
 
   <h1>Everything is Fast</h1>
   <div class="essay-meta-line">Substack · March 2025 · ~8 min read</div>

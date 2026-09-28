@@ -9,14 +9,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Sura:wght@400;700&display=swap" rel="stylesheet">
 <style>
+/* Nav */
+nav{background:var(--color-paper,#FAF8F3);border-bottom:1px solid #e8e2d6;padding:18px 40px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center}
+.nav-logo a{display:flex;align-items:center}
+.nav-logo svg{width:44px;height:auto;display:block}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:var(--font-label,'Montserrat',sans-serif);font-size:12px;text-transform:uppercase;letter-spacing:.1em;justify-self:center}
+.nav-links a,.nav-links span{color:#111;text-decoration:none}
+.nav-links a:hover{color:var(--color-gold,#E60028)}
+.nav-links .active{color:var(--color-gold,#E60028);font-weight:600}
+.nav-cta{justify-self:end;font-family:var(--font-label,'Montserrat',sans-serif);font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none;border:none;white-space:nowrap;font-weight:600}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:#111}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-paper,#FAF8F3);z-index:200;padding:80px 48px 48px;flex-direction:column;gap:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-label,'Montserrat',sans-serif);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block;text-decoration:none}
+.mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
 :root{--font-heading:'Eczar',Georgia,serif;--font-body:'Sura',Georgia,serif;--font-label:'Montserrat',sans-serif;--color-paper:#FAF8F3;--color-ink:#111;--color-gold:#C8A951}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body)}
-nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:18px 48px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;position:sticky;top:0;z-index:100}
-.nav-logo svg{width:40px;height:auto;display:block}
 
-
-.nav-links a:hover{opacity:.6}
 .nav-links a.active{border-bottom:2px solid var(--color-gold);padding-bottom:2px}
 
 .about-wrap{max-width:1100px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;min-height:80vh}
@@ -24,8 +36,10 @@ nav{background:var(--color-paper);border-bottom:1px solid #e8e2d6;padding:18px 4
 .about-bio p:last-child{margin-bottom:0}
 .about-photo img{width:100%;height:auto;display:block}
 @media(max-width:768px){
-nav{padding:14px 20px}
-.nav-links{display:none}
+  nav{padding:16px 20px}
+  .nav-links{display:none}
+  .nav-cta{font-size:10px;padding:8px 14px}
+  .hamburger{display:flex}
 .nav-sub{justify-self:end;display:none}
 .about-wrap{grid-template-columns:1fr;gap:40px;padding:40px 20px;min-height:auto}
 .about-photo{order:-1}
@@ -35,16 +49,7 @@ footer{background:var(--color-paper);border-top:1px solid #e8e2d6;padding:40px 4
 footer a{color:#888;text-decoration:none}
 
 nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;padding:18px 40px;max-width:1240px;margin:0 auto}
-.nav-logo{display:flex;align-items:center}
-.nav-logo svg{width:44px;height:auto;display:block}
-.nav-links{list-style:none;display:flex;gap:24px;font-family:var(--font-label);font-size:12px;text-transform:uppercase;letter-spacing:.1em;justify-self:center;margin:0;padding:0}
-.nav-links a{color:#111;text-decoration:none;font-weight:600}
-.nav-links a:hover{color:var(--color-gold)}
-.nav-links .active{color:var(--color-gold);font-weight:600}
 .nav-right{justify-self:end}
-.nav-cta{justify-self:end;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none;border:none;white-space:nowrap;display:inline-block;font-weight:600;margin-left:16px}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.hamburger span{display:block;width:22px;height:2px;background:#111}
 </style>
 </head>
 <body>

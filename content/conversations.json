@@ -1,0 +1,38 @@
+[
+  {
+    "outlet": "Conversations with Tyler",
+    "title": "Luke Burgis on Mimetic Desire, Catholicism, and the Age of Social Contagion",
+    "date": "2026-08",
+    "dateDisplay": "August 2026",
+    "type": "listen",
+    "url": "https://conversationswithtyler.com/episodes/luke-burgis/",
+    "logo": "assets/images/conversations/cwt.jpg"
+  },
+  {
+    "outlet": "92NY",
+    "title": "Luke Burgis in Conversation with David Brooks",
+    "date": "2026-06",
+    "dateDisplay": "June 2026",
+    "type": "watch",
+    "url": "https://www.92ny.org/event/luke-burgis-with-david-brooks",
+    "logo": "assets/images/conversations/92ny.avif"
+  },
+  {
+    "outlet": "Bishop Barron Presents",
+    "title": "Conversations at the Crossroads",
+    "date": "2026-01",
+    "dateDisplay": "2026",
+    "type": "watch",
+    "url": "https://www.wordonfire.org/videos/dialogues/bishop-barron-presents-luke-burgis-wanting-the-power-of-mimetic-desire-in-everyday-life/",
+    "logo": "assets/images/conversations/bishop-barron.jpg"
+  },
+  {
+    "outlet": "The Minimalists",
+    "title": "Wanting",
+    "date": "2021-06",
+    "dateDisplay": "2021",
+    "type": "listen",
+    "url": "https://www.theminimalists.com/podcast/",
+    "logo": "assets/images/conversations/minimalists.jpg"
+  }
+]

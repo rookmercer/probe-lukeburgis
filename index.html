@@ -195,10 +195,11 @@ footer a:hover{color:#111}
 
 
 
-/* Press row mobile */
-@media(max-width:768px){
-  .press-7{display:none}
-}
+
+/* Press ticker */
+@keyframes pressScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.press-ticker:hover{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.press-ticker{animation:none!important;flex-wrap:wrap;justify-content:center;gap:32px 48px}}
 </style>
 <style>
 /* Fix PFC popup button — white text on black */
@@ -268,16 +269,24 @@ footer a:hover{color:#111}
   </div>
 </div>
 
-<!-- PRESS LOGO ROW — static, 7 logos -->
-<div style="padding:28px 0;background:var(--color-paper,#FAF8F3)">
-  <div style="max-width:1140px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:32px">
-    <img src="assets/images/press/nyt-clean.png" alt="The New York Times" style="height:22px;width:auto;opacity:.6;filter:brightness(0)">
-    <img src="assets/images/press/the-atlantic-clean.png" alt="The Atlantic" style="height:28px;width:auto;opacity:.6;filter:brightness(0)">
-    <img src="assets/images/press/financial-times-clean.png" alt="Financial Times" style="height:26px;width:auto;opacity:.6;filter:brightness(0)">
-    <img src="assets/images/press/wsj-clean.png" alt="The Wall Street Journal" style="height:24px;width:auto;opacity:.6;filter:brightness(0)">
-    <img src="assets/images/press/bloomberg-clean.png" alt="Bloomberg" style="height:22px;width:auto;opacity:.6;filter:brightness(0)">
-    <img src="assets/images/press/wired-clean.png" alt="Wired" style="height:26px;width:auto;opacity:.6;filter:brightness(0)">
-    <img class="press-7" src="assets/images/press/vanity-fair-clean.png" alt="Vanity Fair" style="height:20px;width:auto;opacity:.6;filter:brightness(0)">
+<!-- PRESS LOGO ROW — scrolling ticker -->
+<div style="padding:32px 0;background:var(--color-paper,#FAF8F3);overflow:hidden">
+  <div class="press-ticker" style="display:flex;gap:64px;animation:pressScroll 35s linear infinite;white-space:nowrap;align-items:center;width:max-content">
+    <img src="assets/images/press/nyt-clean.png" alt="The New York Times" style="height:44px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/the-atlantic-clean.png" alt="The Atlantic" style="height:50px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/financial-times-clean.png" alt="Financial Times" style="height:48px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/wsj-clean.png" alt="The Wall Street Journal" style="height:46px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/bloomberg-clean.png" alt="Bloomberg" style="height:42px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/wired-clean.png" alt="Wired" style="height:48px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/vanity-fair-clean.png" alt="Vanity Fair" style="height:40px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <!-- Duplicate for seamless loop -->
+    <img src="assets/images/press/nyt-clean.png" alt="" aria-hidden="true" style="height:44px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/the-atlantic-clean.png" alt="" aria-hidden="true" style="height:50px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/financial-times-clean.png" alt="" aria-hidden="true" style="height:48px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/wsj-clean.png" alt="" aria-hidden="true" style="height:46px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/bloomberg-clean.png" alt="" aria-hidden="true" style="height:42px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/wired-clean.png" alt="" aria-hidden="true" style="height:48px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
+    <img src="assets/images/press/vanity-fair-clean.png" alt="" aria-hidden="true" style="height:40px;width:auto;object-fit:contain;filter:grayscale(100%) brightness(0);opacity:.55;flex-shrink:0">
   </div>
 </div>
 

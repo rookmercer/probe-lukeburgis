@@ -208,6 +208,23 @@ footer a:hover{color:#111}
   .convo-grid{grid-template-columns:1fr!important}
   .convo-tile div[style*="aspect-ratio"]{max-height:200px}
 }
+
+/* §1 Mobile layout fixes */
+html,body{overflow-x:hidden;max-width:100%}
+@media(max-width:768px){
+  section{padding:48px 20px!important}
+  .inner{padding:0}
+  .home-books-grid{grid-template-columns:1fr!important;gap:48px!important;max-width:320px}
+  .home-speaking-grid{grid-template-columns:1fr!important;gap:40px!important}
+  .testimonials-grid{grid-template-columns:1fr!important;gap:28px!important}
+  .was-card-grid{grid-template-columns:1fr!important;min-height:0!important}
+  .was-modules{grid-template-columns:1fr!important}
+  .rome-days{grid-template-columns:1fr 1fr!important}
+}
+@media(max-width:480px){
+  .rome-days{grid-template-columns:1fr!important}
+}
+
 </style>
 <style>
 /* Fix PFC popup button — white text on black */
@@ -302,7 +319,7 @@ footer a:hover{color:#111}
 <section style="background:#fafafa">
   <div class="inner">
     
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:900px;margin:0 auto">
+    <div class="home-books-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:900px;margin:0 auto">
 
       <!-- Wanting -->
       <div style="text-align:center">
@@ -368,7 +385,7 @@ footer a:hover{color:#111}
 
 <!-- §5 WORK WITH LUKE -->
 <section style="background:#111;color:#FAF8F3;padding:100px 0;overflow:hidden">
-  <div class="inner" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
+  <div class="inner home-speaking-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
     <!-- Left: Description -->
     <div>
       <span style="font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(250,248,243,.5);display:block;margin-bottom:14px;padding-left:13px;border-left:3px solid #E60028">Work with Luke</span>
@@ -571,7 +588,7 @@ footer a:hover{color:#111}
 
     <!-- COURSE 1: Work as Soulcraft -->
     <div style="background:#1a1a1a;border-radius:6px;overflow:hidden;margin-bottom:32px">
-      <div style="display:grid;grid-template-columns:1fr 1fr;min-height:480px">
+      <div class="was-card-grid" style="display:grid;grid-template-columns:1fr 1fr;min-height:480px">
         <!-- Left: image -->
         <div style="position:relative;overflow:hidden">
           <img src="assets/images/luke-lecturing.jpg" alt="Luke Burgis lecturing" style="width:100%;height:100%;object-fit:cover;display:block">
@@ -582,7 +599,7 @@ footer a:hover{color:#111}
           <h3 style="font-family:var(--font-heading);font-size:clamp(24px,3vw,32px);font-weight:600;color:#FAF8F3;margin-bottom:16px">Work as Soulcraft</h3>
           <p style="font-family:var(--font-body);font-size:15px;line-height:1.7;color:rgba(250,248,243,.75);margin-bottom:28px">An exploration into the nature of work and your place within it&mdash;so you can find the work that matters and do it with excellence. Find more joy, purpose, and meaning in the work you&rsquo;re already doing by engaging with it at a deeper level. Leaders will come away with a full toolkit to bring into their organizations.</p>
           <!-- 8 Modules -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;margin-bottom:28px">
+          <div class="was-modules" style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;margin-bottom:28px">
             <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:rgba(250,248,243,.45);margin:0;padding:6px 0;border-top:1px solid rgba(250,248,243,.08)"><span style="color:rgba(250,248,243,.25);margin-right:6px">01</span> The Nature of Work</p>
             <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:rgba(250,248,243,.45);margin:0;padding:6px 0;border-top:1px solid rgba(250,248,243,.08)"><span style="color:rgba(250,248,243,.25);margin-right:6px">02</span> The Shape of Desire</p>
             <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:rgba(250,248,243,.45);margin:0;padding:6px 0;border-top:1px solid rgba(250,248,243,.08)"><span style="color:rgba(250,248,243,.25);margin-right:6px">03</span> Family as the First System</p>
@@ -612,7 +629,7 @@ footer a:hover{color:#111}
           <a href="courses.html#rome" style="display:inline-block;background:#2a2318;color:#FAF8F3;padding:13px 28px;font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;font-weight:600;transition:background .2s,color .2s;white-space:nowrap;flex-shrink:0" onmouseover="this.style.background='#E60028'" onmouseout="this.style.background='#2a2318'">Join the Waitlist</a>
         </div>
         <!-- Four days across the bottom -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border-top:1px solid rgba(42,35,24,.12);padding-top:20px">
+        <div class="rome-days" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;border-top:1px solid rgba(42,35,24,.12);padding-top:20px">
           <div>
             <p style="font-family:var(--font-label);font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#b0a48e;margin-bottom:4px">Day I</p>
             <p style="font-family:var(--font-body);font-size:13px;color:#5a4f3e;line-height:1.45;margin:0">Introduction and Classical Ideas</p>

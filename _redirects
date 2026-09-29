@@ -2,21 +2,19 @@
 # Deterministic 301s only; writing-section redirects to /writing/ (Luke approved)
 
 # Formation → Programs
-/formation/ /programs/ 301
-/formation /programs/ 301
+/formation/ /courses.html 301
+/formation/ /courses.html 301
 
 # Pages
 /my-philosophy/ /about/ 301
-/consulting/ /programs/ 301
-/workshops/ /programs/ 301
-/faq/ /programs/ 301
+/consulting/ /courses.html 301
+/workshops/ /courses.html 301
+/faq/ /courses.html 301
 /press/ /speaking/ 301
-/philosophy-for-creators/ /programs/ 301
-/thank-you-for-requesting-philosophy-for-creators/ /programs/ 301
+/philosophy-for-creators/ /courses.html 301
+/thank-you-for-requesting-philosophy-for-creators/ /courses.html 301
 /1and99/ /books/ 301
 /wanting-3/ /books/ 301
-/writing/ /writing/ 200
-
 # Events (all → /speaking/)
 /events/* /speaking/ 301
 

@@ -189,7 +189,7 @@ p{font-size:16px;line-height:1.72;max-width:660px;margin-bottom:12px;color:#222}
 footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
 footer h4{color:#111;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
 footer ul{list-style:none}
-footer li{margin-bottom:8px}
+
 footer a{color:#777;text-decoration:none}
 footer a:hover{color:#111}
 .footer-logo{margin-bottom:14px;font-size:11px;color:#555;border:1px solid #444;display:inline-block;padding:8px 16px}
@@ -664,11 +664,11 @@ html,body{overflow-x:hidden;max-width:100%}
 </section>
 
 <!-- §8 NEWSLETTER SIGN-UP -->
-<section style="background:#E60028;padding:48px 0">
+<section style="background:#7A1F34;padding:48px 0">
   <div class="inner" style="max-width:1140px;margin:0 auto;padding:0 40px">
     <div class="am-band" style="display:flex;align-items:center;justify-content:space-between;gap:48px">
       <div style="flex:1;min-width:0">
-        <h2 style="font-family:var(--font-heading);font-size:clamp(22px,2.5vw,28px);font-weight:600;line-height:1.2;color:#FAF8F3;margin-bottom:6px">Anti-Mimetic: Luke&rsquo;s Weekly, Scattered Notes</h2>
+        <h2 style="font-family:var(--font-heading);font-size:clamp(22px,2.5vw,28px);font-weight:600;line-height:1.2;color:#FAF8F3;margin-bottom:6px">Anti-Mimetic: Luke&rsquo;s Weekly Notes</h2>
         <p style="font-family:var(--font-body);font-size:15px;color:rgba(250,248,243,.7);line-height:1.5;margin:0">A selected compilation of Luke&rsquo;s journal entries about what he&rsquo;s reading, watching, or looking at differently in the world.</p>
       </div>
       <div style="flex-shrink:0">
@@ -692,35 +692,42 @@ if(window.location.search.indexOf('subscribed=1')!==-1){
 </script>
 
 <!-- FOOTER -->
-<footer>
-  <div>
-    <div style="font-family:Georgia,serif;font-size:18px;color:#111;margin-bottom:14px;letter-spacing:-.01em">Luke Burgis</div>
+<footer style="background:#FAF8F3;border-top:1px solid #e8e2d6;padding:64px 56px 48px;font-family:var(--font-label);font-size:12px;color:#555">
+  <div style="max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;align-items:start">
+    <div>
+      <div style="font-family:var(--font-heading);font-size:22px;color:#111;margin-bottom:8px">Luke Burgis</div>
+      <p style="font-family:var(--font-body);font-size:14px;color:#888;line-height:1.5;margin:0">Author of <em>Wanting</em> and <em>The One and the Ninety-Nine</em></p>
+    </div>
+    <div>
+      <h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#111;margin-bottom:16px;font-weight:600">Work</h4>
+      <ul style="list-style:none;padding:0">
+        <li style="margin-bottom:10px"><a href="books.html" style="color:#555;text-decoration:none">Books</a></li>
+        <li style="margin-bottom:10px"><a href="writing/" style="color:#555;text-decoration:none">Writing</a></li>
+        <li style="margin-bottom:10px"><a href="conversations.html" style="color:#555;text-decoration:none">Conversations</a></li>
+        <li style="margin-bottom:10px"><a href="speaking.html" style="color:#555;text-decoration:none">Speaking</a></li>
+        <li style="margin-bottom:10px"><a href="courses.html" style="color:#555;text-decoration:none">Courses</a></li>
+        <li style="margin-bottom:10px"><a href="about.html" style="color:#555;text-decoration:none">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#111;margin-bottom:16px;font-weight:600">Connect</h4>
+      <ul style="list-style:none;padding:0">
+        <li style="margin-bottom:10px"><a href="https://x.com/lukeburgis" target="_blank" rel="noopener" style="color:#555;text-decoration:none">X</a></li>
+        <li style="margin-bottom:10px"><a href="https://www.linkedin.com/in/lukeburgis/" target="_blank" rel="noopener" style="color:#555;text-decoration:none">LinkedIn</a></li>
+        <li style="margin-bottom:10px"><a href="contact.html" style="color:#555;text-decoration:none">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#111;margin-bottom:16px;font-weight:600">Cluny Institute</h4>
+      <ul style="list-style:none;padding:0">
+        <li><a href="https://cluny.org" style="color:#555;text-decoration:none">cluny.org</a></li>
+      </ul>
+    </div>
   </div>
-  <div>
-    <h4>Work</h4>
-    <ul>
-      <li><a href="books.html">Books</a></li>
-      <li><a href="writing/">Writing</a></li>
-      <li><a href="conversations.html">Conversations</a></li>
-      <li><a href="speaking.html">Speaking</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </div>
-  <div>
-    <h4>Connect</h4>
-    <ul>
-      <li><a href="https://x.com/lukeburgis" target="_blank" rel="noopener">X</a></li>
-      <li><a href="https://www.linkedin.com/in/lukeburgis/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-  <div>
-    <h4>Cluny Institute</h4>
-    <ul><li><a href="https://cluny.org">cluny.org</a></li></ul>
+  <div style="max-width:1140px;margin:32px auto 0;padding-top:24px;border-top:1px solid #e8e2d6;text-align:center;font-size:11px;color:#aaa">
+    <a href="privacy.html" style="color:#aaa;text-decoration:none">Privacy Policy</a> &middot; &copy; 2026 Fourth Wall Ventures, LLC
   </div>
 </footer>
-<div style="background:#111;padding:12px 56px;font-family:var(--font-label);font-size:10px;color:#555;text-align:center"><a href="privacy.html" style="color:#555;text-decoration:none">Privacy Policy</a> · © 2026 Fourth Wall Ventures, LLC</div>
 <!-- Hero animation script — ported exactly from approved demo -->
 <script>
 (function(){

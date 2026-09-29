@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conversations — Luke Burgis</title>
+<meta name="description" content="Podcasts, interviews, and public conversations with Luke Burgis, 2020–2026.">
+<meta property="og:title" content="Conversations — Luke Burgis">
+<meta property="og:description" content="Podcasts, interviews, and public conversations with Luke Burgis, 2020–2026.">
+<meta property="og:image" content="https://rookmercer.github.io/probe-lukeburgis/assets/images/luke-speaking.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/svg/LB-monogram-black.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;600&family=Sura&family=Montserrat:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Nav */
+nav{background:var(--color-paper,#FAF8F3);border-bottom:1px solid #e8e2d6;padding:18px 40px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center}
+.nav-logo a{display:flex;align-items:center}
+.nav-logo svg{width:44px;height:auto;display:block}
+.nav-links{list-style:none;display:flex;gap:28px;font-family:var(--font-label,'Montserrat',sans-serif);font-size:12px;text-transform:uppercase;letter-spacing:.1em;justify-self:center}
+.nav-links a,.nav-links span{color:#111;text-decoration:none}
+.nav-links a:hover{color:var(--color-gold,#E60028)}
+.nav-links .active{color:var(--color-gold,#E60028);font-weight:600}
+.nav-cta{justify-self:end;font-family:var(--font-label,'Montserrat',sans-serif);font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:#111;color:#FAF8F3;padding:10px 20px;text-decoration:none;border:none;white-space:nowrap;font-weight:600}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:22px;height:2px;background:#111}
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--color-paper,#FAF8F3);z-index:200;padding:80px 48px 48px;flex-direction:column;gap:24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:var(--font-label,'Montserrat',sans-serif);font-size:16px;text-transform:uppercase;letter-spacing:.1em;color:#111;padding:12px 0;border-bottom:1px solid #e8e2d6;display:block;text-decoration:none}
+.mobile-menu .close-btn{position:absolute;top:20px;right:24px;background:none;border:none;font-size:28px;cursor:pointer;color:#111}
+:root{
+  --font-heading:'Eczar',Georgia,serif;
+  --font-body:'Sura',Georgia,serif;
+  --font-label:'Montserrat',sans-serif;
+  --color-parchment:#E2D9C4;
+  --color-gold:#E60028;
+  --color-ink:#111111;
+  --color-paper:#FAF8F3;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:#FAF8F3;color:#111;line-height:1}
+
+/* Page header — matches Writing page */
+.page-header{padding:72px 56px 56px;max-width:1120px;margin:0 auto}
+.eyebrow{font-family:var(--font-label);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#888;margin-bottom:16px;display:block;border-left:3px solid var(--color-gold);padding-left:10px}
+.page-header h1{font-family:var(--font-heading);font-size:clamp(36px,5vw,60px);font-weight:600;line-height:1.08;letter-spacing:-.01em;margin-bottom:18px}
+.page-header p{font-family:var(--font-body);font-size:17px;line-height:1.7;color:#444;max-width:540px}
+.page-header p a{color:var(--color-gold);text-decoration:none}
+.page-header p a:hover{text-decoration:underline}
+
+/* Conversations list */
+.conversations-list{max-width:1120px;margin:0 auto;padding:0 56px 80px}
+.convo-year-group{margin-bottom:48px}
+.convo-year-heading{font-family:var(--font-label);font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#999;margin-bottom:0;padding-bottom:12px;border-bottom:1px solid #e8e2d6}
+.convo-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:20px 0;border-bottom:1px solid #e8e2d6;text-decoration:none;color:inherit;transition:background .15s}
+.convo-row:hover{background:rgba(0,0,0,.02)}
+.convo-row:hover .convo-title{text-decoration:underline}
+.convo-row-body{display:flex;flex-direction:column;gap:4px;min-width:0}
+.convo-outlet{font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999}
+.convo-title{font-family:var(--font-body);font-size:17px;color:#111;line-height:1.4}
+.convo-meta{font-family:var(--font-label);font-size:11px;color:#888;letter-spacing:.04em}
+.convo-action{font-family:var(--font-label);font-size:11px;color:var(--color-gold);white-space:nowrap;flex-shrink:0}
+
+/* Footer */
+footer{background:#1a1a1a;color:#777;padding:48px 56px;font-family:var(--font-label);font-size:12px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;border-top:2px solid #000}
+footer h4{color:#FAF8F3;margin-bottom:14px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+footer ul{list-style:none}
+footer li{margin-bottom:8px}
+footer a{color:#777;text-decoration:none}
+
+/* Mobile */
+@media(max-width:768px){
+  nav{padding:14px 20px;grid-template-columns:auto 1fr auto}
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  .hamburger{display:flex}
+  .page-header{padding:48px 24px 36px}
+  .conversations-list{padding:0 24px 60px}
+  .convo-row{grid-template-columns:1fr;gap:8px}
+  .convo-action{justify-self:start}
+  footer{grid-template-columns:1fr 1fr;padding:36px 24px;gap:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo anim-hidden">
+    <!-- LB monogram — black, single-color. Nav uses mark only. -->
+    <svg viewBox="0 0 82.39 81.96" width="44" height="44" role="img" aria-label="Luke Burgis">
+      <path class="nav-fill" fill="#111" d="M43.55,3.04c-.15.03-.29.07-.4.14-.87.55-.21,2.02-.21,2.8,0,.8.12,1.59.14,2.39.02.96-.11,1.94-.09,2.91.03,1.13.09,2.26.13,3.39.02.45-.05.89-.14,1.35-.15.84-.12,1.67-.13,2.51-.03,2.25.02,4.49,0,6.74,0,1.32.19,2.65-.04,3.96-.25,1.42-.22,2.68,0,4.1.19,1.19.12,2.31-.02,3.49-.06.55-.31,1.74.01,2.24-.02-.02,1.18-.1,1.29-.09.4.03.79.12,1.2.15.89.07,1.77-.11,2.66-.11,1.19,0,2.41.13,3.6-.02.68-.09,1.3-.32,1.98-.28.42.02.84.08,1.27.11.92.07,1.86.08,2.78.06,1.94-.04,3.87-.12,5.81-.13.71,0,1.42.07,2.1-.16.64-.21,1.29-.4,1.93-.63.68-.26,1.06-.49,1.6-.96.53-.46,1.19-.73,1.72-1.2.46-.41.77-.66,1.29-.98s1.01-.7,1.38-1.2c.44-.6.89-1.2,1.24-1.87.42-.82.68-1.57.95-2.44.12-.39.35-.58.57-.91.26-.39.36-.9.47-1.36.22-.89.45-1.77.69-2.66.26-.94.58-2.05.63-3.03.05-.79.04-1.59-.09-2.38-.11-.66-.09-1.4-.26-2.04-.28-1.02-.78-1.96-1.04-3-.23-.9-.72-1.74-1.34-2.44-.43-.48-.45-.98-.74-1.53-.56-1.07-1.9-1.42-2.5-2.41-.38-.62-.31-.8-.95-1.09-.71-.32-1.33-.77-2.04-1.06-.76-.3-1.64-.28-2.37-.54-.39-.14-.69-.46-1.09-.59-.45-.14-.94-.18-1.4-.3-1.04-.28-2.22-.61-3.31-.56-1.17.05-2.38-.13-3.56-.02-1.33.12-2.7.25-4.04.08-.74-.1-1.44-.15-2.17-.08-1.41.13-2.73-.14-4.12-.29-.69-.07-1.38-.09-2.07-.08-.36,0-.89-.05-1.32.02Z"/>
+      <path class="nav-fill" fill="#111" d="M75.78,69.62c.16-.29.3-.6.42-.93.22-.6.34-1.27.68-1.82.23-.37.49-.6.63-1,.21-.61.57-1.24.68-1.86s.18-1.23.29-1.83c.4-2.2.15-4.18-.2-6.36-.23-1.42-.52-2.86-1.17-4.16-.32-.64-.73-1.14-1.17-1.68-.45-.57-.77-1.25-1.23-1.83-.25-.32-.53-.62-.8-.92-.39-.44-.59-.86-1.13-1.11-.58-.28-1.15-.64-1.73-.97-1.27-.73-2.6-1.34-3.99-1.82-1.72-.59-3.33-1.16-5.19-1.07-.98.04-1.87-.32-2.82-.39-1.5-.11-3.07.03-4.57.17-.85.07-1.68-.01-2.53,0-1.04.03-2.07.13-3.11.12-.88,0-1.75.13-2.63.13-.4,0-.78-.12-1.18-.07-.46.05-.92.21-1.38.25,0,.65.51,1.05.86,1.51.45.59.85,1.34,1.19,2,.28.54.32,1.18.66,1.71.89,1.37,1.31,2.98,2.08,4.43.4.76.84,1.51,1.18,2.31.32.74.32,1.34.92,1.95.76.77.91,1.74,1.37,2.68.22.45.69.71.91,1.16s.4.77.67,1.18c.38.59.56,1.27.92,1.86.21.33.42.66.6,1.01.32.66.8,1.26,1.11,1.9.18.38.25.78.45,1.16.77,1.48,1.74,2.89,2.4,4.4.28.64.72,1.29,1.11,1.88.25.37.45.69.61,1.1.28.69.51,1.67,1.03,2.23.26.29.26.24.65.18s.74-.09,1.13-.11c.41-.03.79-.02,1.21-.04s.89-.07,1.3-.2c1.71-.53,3.44-.94,4.9-1.97.46-.33,1.02-.55,1.45-.93.31-.27.57-.71.87-1.05.9-1.05,1.87-2.01,2.53-3.22Z"/>
+      <path class="nav-fill" fill="#111" d="M26.34,67.63c.09-.16.18-.32.27-.48.35-.6.75-1.17,1.09-1.77.23-.41.25-.68.36-1.09.27-.99.9-1.99,1.3-2.96s.92-1.8,1.31-2.73c.26-.62.45-1.29.8-1.87.63-1.06,1.07-2.13,1.58-3.26.79-1.72,1.91-3.43,2.43-5.26.3-1.05.62-1.89,1.15-2.87.2-.37.36-.71.61-1.05.94-1.3.85-2.95,1.74-4.25.22-.32.28-.59.38-.96.07-.26.28-.52.34-.75.18-.68-.11-1.39-.01-2.08.13-.92,0-1.82.08-2.74.09-1,.29-2,.25-3.02-.05-1.4.03-2.79-.01-4.19-.03-.96-.04-1.89-.08-2.84-.05-1.25-.11-2.48-.03-3.73.09-1.41.2-2.82.16-4.23-.03-1.16.11-2.39.13-3.56.02-1.35-.06-2.71-.05-4.06,0-.57.09-1.12.09-1.69,0-.97-.08-1.91-.08-2.87-.88-.28-2.07.09-2.97.14-.83.05-1.63-.22-2.45-.3-.66-.07-1.34.11-2.02.1-1.72-.03-3.44-.09-5.16-.09-2.42,0-4.78.22-7.15.32-2.22.1-4.42-.15-6.64.06-2.04.19-3.97-.05-6.03-.03-.86,0-2.83-.4-3.54.22-.7.61-.25,2.56-.26,3.43-.02,2.06.73,4.1.59,6.15-.09,1.2-.59,2.31-.58,3.53.01.94.3,1.87.44,2.78.34,2.1.5,4.28.32,6.41-.07.78-.37,1.52-.43,2.28-.07.94.25,1.95.3,2.89.07,1.6-.21,3.19-.18,4.79.03,1.48-.04,3.02-.09,4.48-.06,1.95-.21,3.75.2,5.68.29,1.38.13,2.76.05,4.15-.07,1.13.23,2.13.19,3.24-.04,1.09-.39,2.14-.34,3.28.1,2.54-.43,4.96-.01,7.52.46,2.79-.13,5.64-.11,8.46.02,1.92.26,3.71.36,5.66,2.94.04,5.84-.13,8.79-.23,1.5-.05,2.89-.17,4.39-.12.92.03,1.82-.08,2.75-.11.28,0,.65.15.92.04.34-.14.49-.61.7-1,.36-.67.7-1.38.97-2.09.46-1.21,1.28-2.25,1.79-3.43.42-.95.29-2.11.84-3,.18-.3.36-.6.53-.9Z"/>
+      <path class="nav-fill" fill="#111" d="M55.86,73.12c-.07-.1-.15-.2-.23-.3-.56-.69-.93-1.49-1.45-2.2-.66-.9-1.46-1.8-1.92-2.83s-.86-2.05-1.31-3.07c-.75-1.69-1.66-3.31-2.6-4.91-.84-1.43-1.93-2.79-2.48-4.37-.31-.88-.7-1.58-1.14-2.4-.19-.35-.18-.56-.24-.93-.09-.53-.4-.89-.69-1.32-.44-.63-.83-1.53-1.12-2.25-.24-.62-.41-1.29-.7-1.88-.17-.35-.7-2.05-1.09-2.13-.36,1.13-.48,2.34-1.2,3.31-.78,1.07-.78,2.32-1.46,3.45-.86,1.43-1.29,3.03-2.2,4.43-.91,1.4-1.68,2.92-2.19,4.51-.21.65-.73,1.03-1.01,1.6-.25.52-.09,1.15-.36,1.66-.44.82-1.08,1.51-1.46,2.39-.57,1.32-.98,2.73-1.57,4.04-.44.97-1.02,1.83-1.41,2.84-.39,1.02-1.06,1.93-1.46,2.93-.1.25-.05.54-.13.78-.16.51-.51.96-.74,1.43,1.87.35,3.99.04,5.9.06,2.15.03,4.31.06,6.45-.21.72-.09,1.37.18,2.1.16.68-.02,1.36-.07,2.05-.12,1.03-.07,2.06,0,3.11-.02,2.14-.02,4.28-.04,6.42-.1,1.25-.03,2.49.06,3.73-.03.83-.06,1.66-.16,2.46-.22-.5-.39-.78-1.61-1-2.24-.27-.78-.59-1.44-1.07-2.09Z"/>
+    </svg>
+  </div>
+  <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links nav-anim-hidden" id="navLinks">
+    <li><a href="books.html">Books</a></li>
+    <li><a href="writing/">Writing</a></li>
+      <li><a href="conversations.html">Conversations</a></li>
+    <li><a href="speaking.html">Speaking</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a class="nav-cta nav-anim-hidden" id="navCta" href="https://read.lukeburgis.com">Subscribe</a>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" aria-label="Close menu" onclick="this.parentElement.classList.remove('open')">&times;</button>
+  <a href="books.html">Books</a>
+  <a href="writing/">Writing</a>
+  <a href="speaking.html">Speaking</a>
+  <a href="courses.html">Courses</a>
+  <a href="about.html">About</a>
+  <a href="https://read.lukeburgis.com">Subscribe</a>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <span class="eyebrow">Conversations</span>
+  <h1>Podcasts, interviews, and public conversations.</h1>
+  <p>A selection from 2020 to the present, newest first. For interview and podcast requests, see the <a href="contact.html">Contact page</a>.</p>
+</div>
+
+<!-- CONVERSATIONS LIST -->
+<div class="conversations-list">
+<!-- generated from content/conversations.json — edit the JSON, not this markup -->
+<div class="convo-year-group">
+  <h3 class="convo-year-heading">2026</h3>
+<a href="https://conversationswithtyler.com/episodes/luke-burgis/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Conversations with Tyler</span>
+    <span class="convo-title">Luke Burgis on Mimetic Desire, Catholicism, and the Age of Social Contagion</span>
+    <span class="convo-meta">Tyler Cowen · August 2026</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://ondemand.acton.org/luke-burgis-on-forming-solid-selves-in-an-age-of-social-contagion/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Acton Line</span>
+    <span class="convo-title">Forming Solid Selves in an Age of Social Contagion</span>
+    <span class="convo-meta">Dan Hugger · August 2026</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.thesymbolicworld.com/content/the-one-and-the-many-with-luke-burgis" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Symbolic World</span>
+    <span class="convo-title">The One and the Many</span>
+    <span class="convo-meta">Jonathan Pageau · August 2026</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://comment.org/podcasts/how-does-a-person-become-real/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Understory (Comment)</span>
+    <span class="convo-title">How Does a Person Become Real?</span>
+    <span class="convo-meta">Anne Snyder, with Angela Duckworth · July 2026</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.youtube.com/watch?v=KSxP9QcZQVA" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Walk-Ins Welcome</span>
+    <span class="convo-title">Forging Identity in the Age of Social Contagion</span>
+    <span class="convo-meta">Bridget Phetasy · June 2026</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.americamagazine.org/podcasts/2026/06/18/luke-burgis-jesuitical-tribalism/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Jesuitical (America Media)</span>
+    <span class="convo-title">What the Lost Sheep Parable Says About Individuality, Tribalism, and Communion</span>
+    <span class="convo-meta">Zac Davis and Ashley McKinless · June 2026</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.92ny.org/archives/luke-burgis-with-david-brooks-zn8i8ol9yz" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">92NY</span>
+    <span class="convo-title">Luke Burgis in Conversation with David Brooks</span>
+    <span class="convo-meta">With David Brooks · June 2026</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.econtalk.org/the-self-the-crowd-and-social-contagion-with-luke-burgis/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">EconTalk</span>
+    <span class="convo-title">The Self, the Crowd, and Social Contagion</span>
+    <span class="convo-meta">Russ Roberts · June 2026</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://thedispatch.com/podcast/remnant/ubersheep-and-orthogonal-things-interview-luke-burgis/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Remnant (The Dispatch)</span>
+    <span class="convo-title">Übersheep and Orthogonal Things</span>
+    <span class="convo-meta">Jonah Goldberg · June 2026</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.radicalcandor.com/podcast/the-one-and-the-ninety-nine-luke-burgis-8-14" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Radical Candor</span>
+    <span class="convo-title">The One and the Ninety-Nine: Forging Identity in the Age of Social Contagion</span>
+    <span class="convo-meta">Kim Scott · May 2026</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+</div>
+<div class="convo-year-group">
+  <h3 class="convo-year-heading">2025</h3>
+<a href="https://www.oneyoufeed.net/are-your-desires-really-yours/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The One You Feed</span>
+    <span class="convo-title">Are Your Desires Really Yours? How to Recognize and Reclaim What You Truly Want</span>
+    <span class="convo-meta">Eric Zimmer · October 2025</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+</div>
+<div class="convo-year-group">
+  <h3 class="convo-year-heading">2024</h3>
+<a href="https://www.youtube.com/watch?v=NFks7-oEi3w" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Institute for Human Ecology, The Catholic University of America</span>
+    <span class="convo-title">Can Humanity Survive the Digital Age?</span>
+    <span class="convo-meta">Moderated by Ross Douthat · September 2024</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://ttf.org/events/online-conversation-why-do-we-want-what-we-want-with-luke-burgis/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Trinity Forum</span>
+    <span class="convo-title">Why Do We Want What We Want?</span>
+    <span class="convo-meta">July 2024</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://thedispatch.com/podcast/remnant/repeat-after-mimesis/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Remnant (The Dispatch)</span>
+    <span class="convo-title">Repeat After Mimesis</span>
+    <span class="convo-meta">Jonah Goldberg · July 2024</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://newbooksnetwork.com/lukeburgis" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Madison&#x27;s Notes (James Madison Program, Princeton)</span>
+    <span class="convo-title">Faith, Business, and the Nature of Desire: Luke Burgis on René Girard and Mimetic Desire</span>
+    <span class="convo-meta">Annika Nordquist · June 2024</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://bigthink.com/series/the-big-think-interview/social-media-distortions/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Big Think</span>
+    <span class="convo-title">3 Ways to Defend Your Mind Against Social Media Distortions</span>
+    <span class="convo-meta">February 2024</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+</div>
+<div class="convo-year-group">
+  <h3 class="convo-year-heading">2023</h3>
+<a href="https://shows.acast.com/wild-with-sarah-wilson/episodes/luke-burgis-how-humans-want" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">WILD with Sarah Wilson</span>
+    <span class="convo-title">How Humans &#x27;Want&#x27;: Mimetic Desire Explained</span>
+    <span class="convo-meta">Sarah Wilson · August 2023</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://seenunseen.in/episodes/2023/7/10/episode-337-luke-burgis-sees-the-deer-at-his-window/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Seen and the Unseen</span>
+    <span class="convo-title">Luke Burgis Sees the Deer at His Window</span>
+    <span class="convo-meta">Amit Varma · July 2023</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://artofmanliness.com/character/behavior/thick-desires-anti-mimetic-life" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Art of Manliness</span>
+    <span class="convo-title">Thick Desires, Political Atheism, and Living an Anti-Mimetic Life</span>
+    <span class="convo-meta">Brett McKay · July 2023</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://shows.acast.com/not-investment-advice/episodes/106-luke-burgis-on-mimetic-desire-thick-vs-thin-desires-powe" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Not Investment Advice</span>
+    <span class="convo-title">Mimetic Desire, Thick vs. Thin Desires, and the Power of Memes</span>
+    <span class="convo-meta">Jack Butcher, Bilal Zaidi, and Trung Phan · April 2023</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.youtube.com/watch?v=d5b2BLXE4qI" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Free Press</span>
+    <span class="convo-title">Why Do We Hunt Witches?</span>
+    <span class="convo-meta">With Megan Phelps-Roper, Nicholas Christakis, and Tim Urban · March 2023</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+</div>
+<div class="convo-year-group">
+  <h3 class="convo-year-heading">2022</h3>
+<a href="https://www.thesymbolicworld.com/content/revenge-of-the-scapegoat-with-luke-burgis" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Symbolic World</span>
+    <span class="convo-title">Revenge of the Scapegoat</span>
+    <span class="convo-meta">Jonathan Pageau · December 2022</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.houseofstrauss.com/p/hos-pod-luke-burgis" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">House of Strauss</span>
+    <span class="convo-title">On Mimesis, Sports, and Desire</span>
+    <span class="convo-meta">Ethan Strauss · December 2022</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.wordonfire.org/videos/wordonfire-show/episode348/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Word on Fire Show</span>
+    <span class="convo-title">The Power of Mimetic Desire</span>
+    <span class="convo-meta">Bishop Robert Barron with Matthew Petrusek · August 2022</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.youtube.com/watch?v=aynEx6T_tQE" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Rebel Wisdom</span>
+    <span class="convo-title">The Philosophy of René Girard</span>
+    <span class="convo-meta">David Fuller · August 2022</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.wordonfire.org/videos/dialogues/bishop-barron-presents-luke-burgis-wanting-the-power-of-mimetic-desire-in-everyday-life/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Bishop Barron Presents (Word on Fire)</span>
+    <span class="convo-title">Wanting: The Power of Mimetic Desire in Everyday Life</span>
+    <span class="convo-meta">Bishop Robert Barron · June 2022</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://fs.blog/knowledge-project-podcast/luke-burgis/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Knowledge Project</span>
+    <span class="convo-title">The Power of Mimetic Desire</span>
+    <span class="convo-meta">Shane Parrish · May 2022</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.dwarkeshpatel.com/p/luke-burgis" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Lunar Society (Dwarkesh Patel)</span>
+    <span class="convo-title">Mimesis, Scapegoats, and Revolutions</span>
+    <span class="convo-meta">Dwarkesh Patel · May 2022</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.abc.net.au/radionational/programs/counterpoint/14-03-22/13792242" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">ABC Radio National, Counterpoint</span>
+    <span class="convo-title">Hot Capital and Strange Ideas</span>
+    <span class="convo-meta">Amanda Vanstone · March 2022</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.rnz.co.nz/national/programmes/ninetonoon/audio/2018831984/desire-why-we-want-what-we-want" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">RNZ Nine to Noon</span>
+    <span class="convo-title">Desire: Why We Want What We Want</span>
+    <span class="convo-meta">Kathryn Ryan · February 2022</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://podcasts.apple.com/us/podcast/796-why-memes-rule-the-world-w-luke-burgis/id1434060078?i=1000548843480" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Pomp Podcast</span>
+    <span class="convo-title">Why Memes Rule the World</span>
+    <span class="convo-meta">Anthony Pompliano · January 2022</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+</div>
+<div class="convo-year-group">
+  <h3 class="convo-year-heading">2021</h3>
+<a href="https://www.oneyoufeed.net/mimetic-desires-in-everyday-life/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The One You Feed</span>
+    <span class="convo-title">Mimetic Desires in Everyday Life</span>
+    <span class="convo-meta">Eric Zimmer · October 2021</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.panoptica.com/et-podcast-13-wanting/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Epsilon Theory</span>
+    <span class="convo-title">Wanting</span>
+    <span class="convo-meta">Ben Hunt · August 2021</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.youtube.com/watch?v=72svGiOaKMk" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Modern Wisdom</span>
+    <span class="convo-title">Mimetic Desire: Why Do We Want?</span>
+    <span class="convo-meta">Chris Williamson · July 2021</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.bankless.com/-72-the-power-of-mimetic-desire-luke" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Bankless</span>
+    <span class="convo-title">The Power of Mimetic Desire</span>
+    <span class="convo-meta">David Hoffman and Ryan Sean Adams · July 2021</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.youtube.com/watch?v=1T79KLUyXqs" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The North Star Podcast</span>
+    <span class="convo-title">What Is Mimetic Theory?</span>
+    <span class="convo-meta">David Perell, with Johnathan Bi · July 2021</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.kera.org/think_new/we-want-what-we-want-because-others-want-it-too/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">KERA Think</span>
+    <span class="convo-title">We Want What We Want Because Others Want It, Too</span>
+    <span class="convo-meta">Krys Boyd · June 2021</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://hiddenforces.io/podcasts/luke-burgis-mimetic-desire/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Hidden Forces</span>
+    <span class="convo-title">The Power of Mimetic Desire in Markets, Politics, and Culture</span>
+    <span class="convo-meta">Demetri Kofinas · June 2021</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://www.artofmanliness.com/character/behavior/podcast-714-why-do-we-want-what-we-want/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Art of Manliness</span>
+    <span class="convo-title">Why Do We Want What We Want?</span>
+    <span class="convo-meta">Brett McKay · June 2021</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.ineteconomics.org/perspectives/podcasts/the-power-of-desire-in-everyday-life-wanting-and-social-change" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Economics and Beyond (Institute for New Economic Thinking)</span>
+    <span class="convo-title">The Power of Desire in Everyday Life: Wanting and Social Change</span>
+    <span class="convo-meta">Rob Johnson · June 2021</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.somethingyoushouldknow.net/587-desire-why-you-want-what-you-want-how-evolution-made-you-who-you-are/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Something You Should Know</span>
+    <span class="convo-title">Desire: Why You Want What You Want</span>
+    <span class="convo-meta">Mike Carruthers · June 2021</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://dailystoic.com/luke-burgis/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Daily Stoic</span>
+    <span class="convo-title">Mimetic Desire and Getting What You Want in Life</span>
+    <span class="convo-meta">Ryan Holiday · June 2021</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.infiniteloopspodcast.com/luke-burgis-what-drives-human-desire-ep50/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Infinite Loops</span>
+    <span class="convo-title">What Drives Human Desire?</span>
+    <span class="convo-meta">Jim O&#x27;Shaughnessy · June 2021</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.youtube.com/watch?v=Yr9AKzwxOBM" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Minimalists</span>
+    <span class="convo-title">Wanting</span>
+    <span class="convo-meta">Joshua Fields Millburn and Ryan Nicodemus · June 2021</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://medium.com/team-human/team-human-ep-181-luke-burgis-14eb754d65ef" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Team Human</span>
+    <span class="convo-title">Luke Burgis</span>
+    <span class="convo-meta">Douglas Rushkoff · April 2021</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+<a href="https://www.youtube.com/watch?v=J_BcNjD6OhM" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">Village Global (Venture Stories)</span>
+    <span class="convo-title">The Power of Mimetic Desire in Everyday Life</span>
+    <span class="convo-meta">Erik Torenberg · March 2021</span>
+  </div>
+  <span class="convo-action">Watch &rarr;</span>
+</a>
+<a href="https://gregmckeown.com/episodes/season-1/luke-burgis-on-why-we-want-what-we-want/" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">What&#x27;s Essential</span>
+    <span class="convo-title">Why We Want What We Want</span>
+    <span class="convo-meta">Greg McKeown · 2021</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+</div>
+<div class="convo-year-group">
+  <h3 class="convo-year-heading">2020</h3>
+<a href="https://www.themoralimagination.com/p/ep-21-the-economy-of-desire-rene-ef8" target="_blank" rel="noopener" class="convo-row">
+  <div class="convo-row-body">
+    <span class="convo-outlet">The Moral Imagination</span>
+    <span class="convo-title">The Economy of Desire: René Girard on Commerce and Our Everyday Life</span>
+    <span class="convo-meta">Michael Matheson Miller · December 2020</span>
+  </div>
+  <span class="convo-action">Listen &rarr;</span>
+</a>
+</div>
+
+</div>
+
+<footer>
+  <div>
+    <div style="font-family:Georgia,serif;font-size:18px;color:#111;margin-bottom:14px;letter-spacing:-.01em">Luke Burgis</div>
+  </div>
+  <div>
+    <h4>Work</h4>
+    <ul>
+      <li><a href="books.html">Books</a></li>
+    <li><a href="writing/">Writing</a></li>
+      <li><a href="conversations.html">Conversations</a></li>
+      <li><a href="speaking.html">Speaking</a></li>
+      <li><a href="courses.html">Courses</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Connect</h4>
+    <ul>
+      <li><a href="https://x.com/lukeburgis" target="_blank" rel="noopener">X</a></li>
+      <li><a href="https://www.linkedin.com/in/lukeburgis/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Cluny Institute</h4>
+    <ul><li><a href="https://cluny.org">cluny.org</a></li></ul>
+  </div>
+</footer>
+
+<div style="background:#111;padding:12px 56px;font-family:var(--font-label);font-size:10px;color:#555;text-align:center"><a href="privacy.html" style="color:#555;text-decoration:none">Privacy Policy</a> · © 2026 Fourth Wall Ventures, LLC</div>
+
+</body>
+</html>

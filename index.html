@@ -193,12 +193,10 @@ footer a{color:#777;text-decoration:none}
 footer a:hover{color:#111}
 .footer-logo{margin-bottom:14px;font-size:11px;color:#555;border:1px solid #444;display:inline-block;padding:8px 16px}
 
-/* Press logos mobile */
-@media(max-width:768px){
-  .press-logos{flex-wrap:wrap;justify-content:center!important;gap:20px 28px!important}
-  .press-logos img{height:18px!important}
-  .press-logo-7th{display:none}
-}
+
+/* Press logo marquee */
+@keyframes pressScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.press-marquee:hover{animation-play-state:paused}
 </style>
 <style>
 /* Fix PFC popup button — white text on black */
@@ -268,18 +266,24 @@ footer a:hover{color:#111}
   </div>
 </div>
 
-<!-- PRESS LOGO ROW — social proof, no label -->
-<div style="padding:40px 0;background:var(--color-paper,#FAF8F3)">
-  <div class="inner" style="max-width:1140px;margin:0 auto;padding:0 40px">
-    <div class="press-logos" style="display:flex;align-items:center;justify-content:space-between;gap:24px">
-      <img src="assets/images/press/nyt.png" alt="The New York Times" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
-      <img src="assets/images/press/the-atlantic.png" alt="The Atlantic" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
-      <img src="assets/images/press/financial-times.png" alt="Financial Times" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
-      <img src="assets/images/press/wired.png" alt="Wired" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
-      <img src="assets/images/press/wsj.png" alt="The Wall Street Journal" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
-      <img src="assets/images/press/vanity-fair.png" alt="Vanity Fair" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
-      <img class="press-logo-7th" src="assets/images/press/bloomberg.png" alt="Bloomberg" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
-    </div>
+<!-- PRESS LOGO ROW — scrolling marquee -->
+<div style="padding:48px 0;background:var(--color-paper,#FAF8F3);overflow:hidden">
+  <div class="press-marquee" style="display:flex;align-items:center;gap:80px;animation:pressScroll 30s linear infinite;width:max-content">
+    <img src="assets/images/press/nyt.png" alt="The New York Times" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
+    <img src="assets/images/press/the-atlantic.png" alt="The Atlantic" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
+    <img src="assets/images/press/financial-times.png" alt="Financial Times" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
+    <img src="assets/images/press/wired.png" alt="Wired" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
+    <img src="assets/images/press/wsj.png" alt="The Wall Street Journal" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
+    <img src="assets/images/press/vanity-fair.png" alt="Vanity Fair" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
+    <img src="assets/images/press/bloomberg.png" alt="Bloomberg" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
+    <!-- Duplicate for seamless loop -->
+    <img src="assets/images/press/nyt.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
+    <img src="assets/images/press/the-atlantic.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
+    <img src="assets/images/press/financial-times.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
+    <img src="assets/images/press/wired.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
+    <img src="assets/images/press/wsj.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
+    <img src="assets/images/press/vanity-fair.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
+    <img src="assets/images/press/bloomberg.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
   </div>
 </div>
 

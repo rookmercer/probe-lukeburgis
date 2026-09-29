@@ -1128,33 +1128,35 @@ html,body{overflow-x:hidden;max-width:100%}
 </script>
 
 <script>
-/* Intercept Kajabi form redirect to old site */
+/* Redirect to thank-you after Kajabi form submission */
 (function(){
-  var origOpen = XMLHttpRequest.prototype.open;
-  var origSubmit = HTMLFormElement.prototype.submit;
-  
-  // Watch for navigation to old thank-you page
-  window.addEventListener('beforeunload', function(){});
-  
-  // Override Kajabi redirect by watching for form submissions in the embed
   var pfcWrap = document.getElementById('pfc-kajabi-wrap');
-  if(pfcWrap){
-    var obs = new MutationObserver(function(){
-      var forms = pfcWrap.querySelectorAll('form');
-      forms.forEach(function(form){
-        if(!form._pfcPatched){
-          form._pfcPatched = true;
-          form.addEventListener('submit', function(){
-            // After submission, redirect to our thank-you page
-            setTimeout(function(){
-              window.location.href = 'thank-you-pfc.html';
-            }, 2000);
-          });
-        }
+  if(!pfcWrap) return;
+  var redirected = false;
+  function goThankYou(){
+    if(redirected) return;
+    redirected = true;
+    window.location.href = 'thank-you-pfc.html';
+  }
+  var obs = new MutationObserver(function(){
+    /* Patch any form that appears */
+    pfcWrap.querySelectorAll('form').forEach(function(form){
+      if(form._pfcPatched) return;
+      form._pfcPatched = true;
+      form.addEventListener('submit', function(){
+        /* Kajabi posts via XHR; redirect after a short delay */
+        setTimeout(goThankYou, 2500);
       });
     });
-    obs.observe(pfcWrap, {childList:true, subtree:true});
-  }
+    /* Also detect Kajabi's inline success message (shows after submit when no redirect is set) */
+    var successEl = pfcWrap.querySelector('.kj-form-success, .thank-you, [data-testid="success"]');
+    if(successEl && successEl.offsetHeight > 0) goThankYou();
+    /* Check for form disappearing (Kajabi hides form on success) */
+    var formEl = pfcWrap.querySelector('form');
+    if(pfcWrap._hadForm && !formEl) goThankYou();
+    if(formEl) pfcWrap._hadForm = true;
+  });
+  obs.observe(pfcWrap, {childList:true, subtree:true, attributes:true});
 })();
 </script>
 </body>

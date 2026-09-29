@@ -693,7 +693,7 @@ function handleAMSubscribe(e){
   errorEl.style.display = 'none';
   // POST to endpoint (temporary: direct Beehiiv embed fallback)
   // Will be replaced with /api/subscribe when on Cloudflare Pages
-  fetch('https://api.beehiiv.com/v2/publications/pub_PLACEHOLDER/subscriptions', {
+  fetch('https://api.beehiiv.com/v2/publications/pub_53234055-ef5c-4686-a57b-bf76fed2d76c/subscriptions', {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
     body: JSON.stringify({email:email, reactivate_existing:true, send_welcome_email:true, utm_source:'lukeburgis.com', utm_medium:'home-band'})

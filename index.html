@@ -192,6 +192,13 @@ footer li{margin-bottom:8px}
 footer a{color:#777;text-decoration:none}
 footer a:hover{color:#111}
 .footer-logo{margin-bottom:14px;font-size:11px;color:#555;border:1px solid #444;display:inline-block;padding:8px 16px}
+
+/* Press logos mobile */
+@media(max-width:768px){
+  .press-logos{flex-wrap:wrap;justify-content:center!important;gap:20px 28px!important}
+  .press-logos img{height:18px!important}
+  .press-logo-7th{display:none}
+}
 </style>
 <style>
 /* Fix PFC popup button — white text on black */
@@ -258,6 +265,21 @@ footer a:hover{color:#111}
   <div class="hero-words">
     <h1>History is a story of desire.</h1>
     <p class="hero-sub">We don&rsquo;t form our desires alone. They take shape between us&mdash;among models, rivals, friends&mdash;and what takes shape there decides who we become, which institutions endure and which collapse, and what our technology is quietly making of us.</p>
+  </div>
+</div>
+
+<!-- PRESS LOGO ROW — social proof, no label -->
+<div style="padding:40px 0;background:var(--color-paper,#FAF8F3)">
+  <div class="inner" style="max-width:1140px;margin:0 auto;padding:0 40px">
+    <div class="press-logos" style="display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <img src="assets/images/press/nyt.png" alt="The New York Times" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
+      <img src="assets/images/press/the-atlantic.png" alt="The Atlantic" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
+      <img src="assets/images/press/financial-times.png" alt="Financial Times" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
+      <img src="assets/images/press/wired.png" alt="Wired" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
+      <img src="assets/images/press/wsj.png" alt="The Wall Street Journal" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
+      <img src="assets/images/press/vanity-fair.png" alt="Vanity Fair" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
+      <img class="press-logo-7th" src="assets/images/press/bloomberg.png" alt="Bloomberg" style="height:24px;width:auto;opacity:.55;filter:grayscale(100%)">
+    </div>
   </div>
 </div>
 

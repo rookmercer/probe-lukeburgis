@@ -194,9 +194,11 @@ footer a:hover{color:#111}
 .footer-logo{margin-bottom:14px;font-size:11px;color:#555;border:1px solid #444;display:inline-block;padding:8px 16px}
 
 
-/* Press logo marquee */
-@keyframes pressScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.press-marquee:hover{animation-play-state:paused}
+
+/* Press row mobile */
+@media(max-width:768px){
+  .press-7{display:none}
+}
 </style>
 <style>
 /* Fix PFC popup button — white text on black */
@@ -266,31 +268,23 @@ footer a:hover{color:#111}
   </div>
 </div>
 
-<!-- PRESS LOGO ROW — scrolling marquee -->
-<div style="padding:48px 0;background:var(--color-paper,#FAF8F3);overflow:hidden">
-  <div class="press-marquee" style="display:flex;align-items:center;gap:80px;animation:pressScroll 30s linear infinite;width:max-content">
-    <img src="assets/images/press/nyt.png" alt="The New York Times" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
-    <img src="assets/images/press/the-atlantic.png" alt="The Atlantic" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
-    <img src="assets/images/press/financial-times.png" alt="Financial Times" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
-    <img src="assets/images/press/wired.png" alt="Wired" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
-    <img src="assets/images/press/wsj.png" alt="The Wall Street Journal" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
-    <img src="assets/images/press/vanity-fair.png" alt="Vanity Fair" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
-    <img src="assets/images/press/bloomberg.png" alt="Bloomberg" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)">
-    <!-- Duplicate for seamless loop -->
-    <img src="assets/images/press/nyt.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
-    <img src="assets/images/press/the-atlantic.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
-    <img src="assets/images/press/financial-times.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
-    <img src="assets/images/press/wired.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
-    <img src="assets/images/press/wsj.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
-    <img src="assets/images/press/vanity-fair.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
-    <img src="assets/images/press/bloomberg.png" alt="" style="height:48px;width:auto;opacity:.5;filter:grayscale(100%)" aria-hidden="true">
+<!-- PRESS LOGO ROW — static, 7 logos -->
+<div style="padding:28px 0;background:var(--color-paper,#FAF8F3)">
+  <div style="max-width:1140px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:32px">
+    <img src="assets/images/press/nyt-clean.png" alt="The New York Times" style="height:22px;width:auto;opacity:.6;filter:brightness(0)">
+    <img src="assets/images/press/the-atlantic-clean.png" alt="The Atlantic" style="height:28px;width:auto;opacity:.6;filter:brightness(0)">
+    <img src="assets/images/press/financial-times-clean.png" alt="Financial Times" style="height:26px;width:auto;opacity:.6;filter:brightness(0)">
+    <img src="assets/images/press/wsj-clean.png" alt="The Wall Street Journal" style="height:24px;width:auto;opacity:.6;filter:brightness(0)">
+    <img src="assets/images/press/bloomberg-clean.png" alt="Bloomberg" style="height:22px;width:auto;opacity:.6;filter:brightness(0)">
+    <img src="assets/images/press/wired-clean.png" alt="Wired" style="height:26px;width:auto;opacity:.6;filter:brightness(0)">
+    <img class="press-7" src="assets/images/press/vanity-fair-clean.png" alt="Vanity Fair" style="height:20px;width:auto;opacity:.6;filter:brightness(0)">
   </div>
 </div>
 
 <!-- §3 BOOKS -->
 <section style="background:#fafafa">
   <div class="inner">
-    <span class="label">Featured Books</span>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.5vw,42px);font-weight:600;line-height:1.15;margin-bottom:32px;color:#111">Featured Books</h2>
 
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:900px;margin:0 auto">
 
@@ -425,7 +419,7 @@ footer a:hover{color:#111}
 <!-- §CONVERSATIONS -->
 <section>
   <div class="inner">
-    <span class="label">Conversations</span>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.5vw,42px);font-weight:600;line-height:1.15;margin-bottom:32px;color:#111">Conversations</h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 48px">
       <a href="https://conversationswithtyler.com/episodes/luke-burgis/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:flex-start;gap:16px;padding:22px 0;border-top:1px solid #e8e2d6">
         <img src="assets/images/conversations/cwt.jpg" alt="Conversations with Tyler" style="width:40px;height:40px;object-fit:cover;border-radius:4px;opacity:.6;filter:grayscale(100%);flex-shrink:0">
@@ -470,7 +464,7 @@ footer a:hover{color:#111}
 <!-- §2 QUESTIONS I KEEP RETURNING TO -->
 <section>
   <div class="inner">
-    <span class="label">Questions worth returning to</span>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.5vw,42px);font-weight:600;line-height:1.15;margin-bottom:32px;color:#111">Questions I Keep Returning To</h2>
     <div class="questions-index">
       <a href="writing/mimetic-desire-101/" style="text-decoration:none;color:inherit;display:block" class="question-item">
         <div>
@@ -622,7 +616,7 @@ footer a:hover{color:#111}
   <div class="nl-grid">
     <div>
       <div class="inner">
-        <span class="label" style="color:#666">Newsletter</span>
+        
         <h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.5vw,42px);font-weight:600;line-height:1.15;margin-bottom:12px;color:#111">The Newsletter</h2>
         <p style="font-family:var(--font-body);font-size:18px;font-style:italic;color:#666;margin-bottom:28px">Essays, Invitations, Experiments</p>
         <div style="margin-top:20px"><a href="https://read.lukeburgis.com" class="btn-dark" style="color:#FAF8F3;display:inline-block">Subscribe</a></div>

@@ -672,11 +672,9 @@ html,body{overflow-x:hidden;max-width:100%}
         <p style="font-family:var(--font-body);font-size:15px;color:rgba(250,248,243,.7);line-height:1.5;margin:0">A weekly compilation of Luke&rsquo;s journal entries about what he&rsquo;s reading, watching, or looking at differently in the world.</p>
       </div>
       <div style="flex-shrink:0">
-        <form class="am-form" action="https://embeds.beehiiv.com/forms/subscribe" method="POST" style="display:flex;gap:0">
-          <input type="hidden" name="publication_id" value="pub_53234055-ef5c-4686-a57b-bf76fed2d76c">
-          <input type="hidden" name="redirect_url" value="https://rookmercer.github.io/probe-lukeburgis/index.html?subscribed=1">
+        <form class="am-form" onsubmit="return amSubscribe(event)" style="display:flex;gap:0">
           <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="your@email.com" style="width:300px;height:48px;padding:0 16px;font-family:var(--font-body);font-size:16px;background:#FAF8F3;border:0;border-radius:0;outline:none;-webkit-appearance:none;color:#111">
+          <input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="your@email.com" style="width:300px;height:48px;padding:0 16px;font-family:var(--font-body);font-size:16px;background:#FAF8F3;border:1px solid rgba(250,248,243,.3);border-right:0;border-radius:0;outline:none;-webkit-appearance:none;color:#111">
           <button type="submit" style="height:48px;padding:0 24px;font-family:var(--font-label);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;background:#111;color:#FAF8F3;border:0;border-radius:0;cursor:pointer;white-space:nowrap;transition:background .2s" onmouseover="this.style.background='#FAF8F3';this.style.color='#111'" onmouseout="this.style.background='#111';this.style.color='#FAF8F3'">Subscribe</button>
         </form>
         <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:rgba(250,248,243,.4);margin-top:10px">Fridays &middot; Free &middot; Unsubscribe anytime</p>
@@ -685,61 +683,32 @@ html,body{overflow-x:hidden;max-width:100%}
   </div>
 </section>
 <script>
-if(window.location.search.indexOf('subscribed=1')!==-1){
-  var b=document.querySelector('.am-band');
-  if(b){var f=b.querySelector('form');if(f)f.outerHTML='<p style="font-family:var(--font-body);font-size:18px;color:#FAF8F3">You\u2019re in. First one arrives Friday.</p>';history.replaceState(null,'',window.location.pathname)}
+function amSubscribe(e){
+  e.preventDefault();var form=e.target;
+  if(form.querySelector('input[name="website"]').value)return false;
+  var email=form.querySelector('input[name="email"]').value;
+  var btn=form.querySelector('button'),inp=form.querySelector('input[name="email"]');
+  var parent=form.parentElement;
+  btn.textContent='…';btn.disabled=true;inp.readOnly=true;
+  fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,source:'home-band'})})
+  .then(function(r){return r.json().then(function(d){if(r.ok&&d.ok){form.style.transition='opacity .2s';form.style.opacity='0';setTimeout(function(){form.style.display='none';var ok=document.createElement('p');ok.style.cssText='font-family:var(--font-body);font-size:18px;color:#FAF8F3';ok.textContent="You’re in. First one arrives Friday.";parent.insertBefore(ok,parent.firstChild)},200)}else{throw new Error}})})
+  .catch(function(){btn.textContent='SUBSCRIBE';btn.disabled=false;inp.readOnly=false});
+  return false;
 }
 </script>
 
 <!-- FOOTER -->
 <footer style="background:#FAF8F3;border-top:1px solid #e8e2d6;padding:48px 0 0">
-  <div style="max-width:1120px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:repeat(6,1fr);gap:0">
-    <div>
-      <h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600">General</h4>
-      <ul style="list-style:none;padding:0;margin:0">
-        <li><a href="about.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">About</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600">Writing</h4>
-      <ul style="list-style:none;padding:0;margin:0">
-        <li style="margin-bottom:6px"><a href="books.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Books</a></li>
-        <li style="margin-bottom:6px"><a href="writing/" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Essays</a></li>
-        <li><a href="#" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Notes</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600">Media</h4>
-      <ul style="list-style:none;padding:0;margin:0">
-        <li style="margin-bottom:6px"><a href="conversations.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Conversations</a></li>
-        <li><a href="#" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Press</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600;white-space:nowrap">Work With Luke</h4>
-      <ul style="list-style:none;padding:0;margin:0">
-        <li style="margin-bottom:6px"><a href="speaking.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Speaking</a></li>
-        <li><a href="courses.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Courses</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600">Connect</h4>
-      <ul style="list-style:none;padding:0;margin:0">
-        <li style="margin-bottom:6px"><a href="https://x.com/lukeburgis" target="_blank" rel="noopener" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">X</a></li>
-        <li style="margin-bottom:6px"><a href="https://www.instagram.com/lukeburgis/" target="_blank" rel="noopener" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Instagram</a></li>
-        <li style="margin-bottom:6px"><a href="https://www.linkedin.com/in/lukeburgis/" target="_blank" rel="noopener" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">LinkedIn</a></li>
-        <li><a href="contact.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600">Affiliations</h4>
-      <ul style="list-style:none;padding:0;margin:0">
-        <li><a href="https://cluny.org" target="_blank" rel="noopener" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Cluny Institute</a></li>
-      </ul>
-    </div>
-  </div>
-  <div style="max-width:1120px;margin:36px auto 0;padding:16px 56px;border-top:1px solid #e8e2d6;text-align:center;font-family:var(--font-label);font-size:10px;color:#bbb;letter-spacing:.04em">
-    <a href="privacy.html" style="color:#bbb;text-decoration:none">Privacy Policy</a> &middot; &copy; 2026 Fourth Wall Ventures, LLC
+  <div style="max-width:1120px;margin:0 auto;padding:0 56px">
+    <table style="width:100%;border-collapse:collapse;table-layout:fixed"><tr style="vertical-align:top">
+      <td style="padding-right:16px"><h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600">General</h4><a href="about.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">About</a></td>
+      <td style="padding:0 16px"><h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600">Writing</h4><a href="books.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body);display:block;margin-bottom:6px">Books</a><a href="writing/" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body);display:block;margin-bottom:6px">Essays</a><a href="#" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Notes</a></td>
+      <td style="padding:0 16px"><h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600">Media</h4><a href="conversations.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body);display:block;margin-bottom:6px">Conversations</a><a href="#" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Press</a></td>
+      <td style="padding:0 16px"><h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600;white-space:nowrap">Work With Luke</h4><a href="speaking.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body);display:block;margin-bottom:6px">Speaking</a><a href="courses.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Courses</a></td>
+      <td style="padding:0 16px"><h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600">Connect</h4><a href="https://x.com/lukeburgis" target="_blank" rel="noopener" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body);display:block;margin-bottom:6px">X</a><a href="https://www.instagram.com/lukeburgis/" target="_blank" rel="noopener" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body);display:block;margin-bottom:6px">Instagram</a><a href="https://www.linkedin.com/in/lukeburgis/" target="_blank" rel="noopener" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body);display:block;margin-bottom:6px">LinkedIn</a><a href="contact.html" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Contact</a></td>
+      <td style="padding-left:16px"><h4 style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#111;margin-bottom:14px;font-weight:600">Affiliations</h4><a href="https://cluny.org" target="_blank" rel="noopener" style="color:#888;text-decoration:none;font-size:13px;font-family:var(--font-body)">Cluny Institute</a></td>
+    </tr></table>
+    <div style="border-top:1px solid #e8e2d6;margin-top:36px;padding:16px 0;text-align:center;font-family:var(--font-label);font-size:10px;color:#bbb;letter-spacing:.04em"><a href="privacy.html" style="color:#bbb;text-decoration:none">Privacy Policy</a> &middot; &copy; 2026 Fourth Wall Ventures, LLC</div>
   </div>
 </footer>
 <!-- Hero animation script — ported exactly from approved demo -->

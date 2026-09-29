@@ -200,6 +200,14 @@ footer a:hover{color:#111}
 @keyframes pressScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .press-ticker:hover{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.press-ticker{animation:none!important;flex-wrap:wrap;justify-content:center;gap:32px 48px}}
+
+/* Conversations tiles */
+.convo-tile:hover img{filter:grayscale(60%)!important}
+.convo-tile:hover .convo-title{text-decoration:underline}
+@media(max-width:768px){
+  .convo-grid{grid-template-columns:1fr!important}
+  .convo-tile div[style*="aspect-ratio"]{max-height:200px}
+}
 </style>
 <style>
 /* Fix PFC popup button — white text on black */
@@ -429,42 +437,46 @@ footer a:hover{color:#111}
 <section>
   <div class="inner">
     <h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.5vw,42px);font-weight:600;line-height:1.15;margin-bottom:32px;color:#111">Conversations</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 48px">
-      <a href="https://conversationswithtyler.com/episodes/luke-burgis/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:flex-start;gap:16px;padding:22px 0;border-top:1px solid #e8e2d6">
-        <img src="assets/images/conversations/cwt.jpg" alt="Conversations with Tyler" style="width:40px;height:40px;object-fit:cover;border-radius:4px;opacity:.6;filter:grayscale(100%);flex-shrink:0">
-        <div style="flex:1;min-width:0">
-          <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999;margin-bottom:4px">Conversations with Tyler</p>
-          <p style="font-family:var(--font-body);font-size:15px;color:#111;line-height:1.4;margin-bottom:4px">Luke Burgis on Mimetic Desire, Catholicism, and the Age of Social Contagion</p>
-          <p style="font-family:var(--font-label);font-size:10px;color:#aaa;letter-spacing:.06em">August 2026</p>
+    <div class="convo-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+      <a href="https://conversationswithtyler.com/episodes/luke-burgis/" target="_blank" rel="noopener" class="convo-tile" style="text-decoration:none;color:inherit;display:block">
+        <div style="aspect-ratio:16/9;overflow:hidden">
+          <img src="assets/images/conversations/cwt.jpg" alt="Luke Burgis on Mimetic Desire, Catholicism, and the Age of Social Contagion" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%);transition:filter .3s ease">
         </div>
-        <span style="font-family:var(--font-label);font-size:11px;color:var(--color-gold,#E60028);white-space:nowrap;margin-top:4px;flex-shrink:0">Listen &rarr;</span>
+        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999;margin:12px 0 0;display:inline">Conversations with Tyler</p>
+        <span style="color:#ccc;font-size:10px"> &middot; </span>
+        <span class="convo-title" style="font-family:var(--font-body);font-size:14px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline">Luke Burgis on Mimetic Desire, Catholicism, and the Age of Social Contagion</span>
+        <span style="color:#ccc;font-size:10px"> &middot; </span>
+        <span style="font-family:var(--font-label);font-size:11px;color:var(--color-gold,#E60028)">Listen &rarr;</span>
       </a>
-      <a href="https://www.92ny.org/event/luke-burgis-with-david-brooks" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:flex-start;gap:16px;padding:22px 0;border-top:1px solid #e8e2d6">
-        <img src="assets/images/conversations/92ny.avif" alt="92NY" style="width:40px;height:40px;object-fit:cover;border-radius:4px;opacity:.6;filter:grayscale(100%);flex-shrink:0">
-        <div style="flex:1;min-width:0">
-          <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999;margin-bottom:4px">92NY</p>
-          <p style="font-family:var(--font-body);font-size:15px;color:#111;line-height:1.4;margin-bottom:4px">Luke Burgis in Conversation with David Brooks</p>
-          <p style="font-family:var(--font-label);font-size:10px;color:#aaa;letter-spacing:.06em">June 2026</p>
+      <a href="https://www.92ny.org/event/luke-burgis-with-david-brooks" target="_blank" rel="noopener" class="convo-tile" style="text-decoration:none;color:inherit;display:block">
+        <div style="aspect-ratio:16/9;overflow:hidden">
+          <img src="assets/images/conversations/92ny.avif" alt="Luke Burgis in Conversation with David Brooks" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%);transition:filter .3s ease">
         </div>
-        <span style="font-family:var(--font-label);font-size:11px;color:var(--color-gold,#E60028);white-space:nowrap;margin-top:4px;flex-shrink:0">Watch &rarr;</span>
+        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999;margin:12px 0 0;display:inline">92NY</p>
+        <span style="color:#ccc;font-size:10px"> &middot; </span>
+        <span class="convo-title" style="font-family:var(--font-body);font-size:14px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline">Luke Burgis in Conversation with David Brooks</span>
+        <span style="color:#ccc;font-size:10px"> &middot; </span>
+        <span style="font-family:var(--font-label);font-size:11px;color:var(--color-gold,#E60028)">Watch &rarr;</span>
       </a>
-      <a href="https://www.wordonfire.org/videos/dialogues/bishop-barron-presents-luke-burgis-wanting-the-power-of-mimetic-desire-in-everyday-life/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:flex-start;gap:16px;padding:22px 0;border-top:1px solid #e8e2d6">
-        <img src="assets/images/conversations/bishop-barron.jpg" alt="Bishop Barron Presents" style="width:40px;height:40px;object-fit:cover;border-radius:4px;opacity:.6;filter:grayscale(100%);flex-shrink:0">
-        <div style="flex:1;min-width:0">
-          <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999;margin-bottom:4px">Bishop Barron Presents</p>
-          <p style="font-family:var(--font-body);font-size:15px;color:#111;line-height:1.4;margin-bottom:4px">Conversations at the Crossroads</p>
-          <p style="font-family:var(--font-label);font-size:10px;color:#aaa;letter-spacing:.06em">2026</p>
+      <a href="#" target="_blank" rel="noopener" class="convo-tile" style="text-decoration:none;color:inherit;display:block">
+        <div style="aspect-ratio:16/9;overflow:hidden">
+          <img src="assets/images/conversations/duckworth.png" alt="Luke in Conversation with Angela Duckworth" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%);transition:filter .3s ease">
         </div>
-        <span style="font-family:var(--font-label);font-size:11px;color:var(--color-gold,#E60028);white-space:nowrap;margin-top:4px;flex-shrink:0">Watch &rarr;</span>
+        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999;margin:12px 0 0;display:inline">Angela Duckworth</p>
+        <span style="color:#ccc;font-size:10px"> &middot; </span>
+        <span class="convo-title" style="font-family:var(--font-body);font-size:14px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline">Luke in Conversation with Angela Duckworth</span>
+        <span style="color:#ccc;font-size:10px"> &middot; </span>
+        <span style="font-family:var(--font-label);font-size:11px;color:var(--color-gold,#E60028)">Watch &rarr;</span>
       </a>
-      <a href="https://www.theminimalists.com/podcast/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:flex;align-items:flex-start;gap:16px;padding:22px 0;border-top:1px solid #e8e2d6">
-        <img src="assets/images/conversations/minimalists.jpg" alt="The Minimalists" style="width:40px;height:40px;object-fit:cover;border-radius:4px;opacity:.6;filter:grayscale(100%);flex-shrink:0">
-        <div style="flex:1;min-width:0">
-          <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999;margin-bottom:4px">The Minimalists</p>
-          <p style="font-family:var(--font-body);font-size:15px;color:#111;line-height:1.4;margin-bottom:4px">Wanting</p>
-          <p style="font-family:var(--font-label);font-size:10px;color:#aaa;letter-spacing:.06em">2021</p>
+      <a href="https://www.wordonfire.org/videos/dialogues/bishop-barron-presents-luke-burgis-wanting-the-power-of-mimetic-desire-in-everyday-life/" target="_blank" rel="noopener" class="convo-tile" style="text-decoration:none;color:inherit;display:block">
+        <div style="aspect-ratio:16/9;overflow:hidden">
+          <img src="assets/images/conversations/bishop-barron.jpg" alt="Conversations at the Crossroads" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(100%);transition:filter .3s ease">
         </div>
-        <span style="font-family:var(--font-label);font-size:11px;color:var(--color-gold,#E60028);white-space:nowrap;margin-top:4px;flex-shrink:0">Listen &rarr;</span>
+        <p style="font-family:var(--font-label);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#999;margin:12px 0 0;display:inline">Bishop Barron Presents</p>
+        <span style="color:#ccc;font-size:10px"> &middot; </span>
+        <span class="convo-title" style="font-family:var(--font-body);font-size:14px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline">Conversations at the Crossroads</span>
+        <span style="color:#ccc;font-size:10px"> &middot; </span>
+        <span style="font-family:var(--font-label);font-size:11px;color:var(--color-gold,#E60028)">Watch &rarr;</span>
       </a>
     </div>
   </div>
